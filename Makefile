@@ -35,6 +35,8 @@ lint:
 .PHONY: validate
 validate:
 	uv run python scripts/validate_tools_manifest.py
+	uv run python scripts/validate_validation_evidence.py
+	uv run python scripts/validate_validation_status.py
 	uv run python scripts/check_links.py
 
 .PHONY: test
