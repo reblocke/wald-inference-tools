@@ -19,7 +19,7 @@ def test_question_cards_and_comparison_render_from_manifest(page: Page, catalog_
         "href", "https://reblocke.github.io/compatibility-curve/"
     )
     expect(page.locator(".tool-card").first).to_contain_text("Do not use this tool when")
-    expect(page.locator("#catalog-version")).to_contain_text("Catalog 0.1.0")
+    expect(page.locator("#catalog-version")).to_contain_text("Catalog 0.1.1")
     expect(page.locator("#core-repository-link")).to_have_attribute(
         "href", "https://github.com/reblocke/wald-inference-core"
     )

@@ -10,9 +10,9 @@ that condition on assumed true effects and repeated-study selection behavior.
 
 ## Current status
 
-Version `0.1.0` is a release candidate while the final focused apps and integrated workbench are
-being released. Entries marked `release-candidate` in [`data/tools.json`](data/tools.json) must not
-be described as portfolio-validated until the independent validation report is complete.
+Version `0.1.1` records the corrective Core and app release set. Entries marked
+`release-candidate` in [`data/tools.json`](data/tools.json) must not be described as
+portfolio-validated until the independent validation report is complete.
 
 Maintenance owner: Brian Locke. See [`docs/MAINTENANCE.md`](docs/MAINTENANCE.md) for the release and
 metadata-update policy.

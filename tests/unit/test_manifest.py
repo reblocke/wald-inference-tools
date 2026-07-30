@@ -135,7 +135,7 @@ def test_hosted_footer_matches_manifest() -> None:
     [
         ("## Related Wald tools", "missing"),
         ("https://reblocke.github.io/wald-inference-tools/", "catalog URL"),
-        ("wald-inference Core v0.3.0", "pinned Core version"),
+        ("wald-inference Core v0.4.1", "pinned Core version"),
         ("Privacy", "privacy note"),
     ],
 )
@@ -163,7 +163,7 @@ def test_readme_portfolio_block_rejects_missing_metadata(removed: str, message: 
     [
         ("<footer>", "linked footer"),
         ("https://reblocke.github.io/wald-inference-tools/", "catalog URL"),
-        ("wald-inference Core v0.3.0", "pinned Core version"),
+        ("wald-inference Core v0.4.1", "pinned Core version"),
         ("Privacy", "privacy note"),
     ],
 )
