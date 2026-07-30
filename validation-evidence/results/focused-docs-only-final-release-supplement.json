@@ -1,0 +1,195 @@
+{
+  "schema_version": 1,
+  "audit_kind": "cc-mig-11-final-docs-only-app-patch-release-supplement",
+  "audited_at": "2026-07-30T16:55:00Z",
+  "verdict": "go",
+  "core": {
+    "version": "0.4.1",
+    "wheel_url": "https://github.com/reblocke/wald-inference-core/releases/download/v0.4.1/wald_inference-0.4.1-py3-none-any.whl",
+    "wheel_sha256": "d7272023f65088729d3ff997cab7cac57b84f22ac6108244ec2170434557d99b",
+    "staged_package_sha256": "44c52ba0189155e0d976e283d383f17f3db0679563ec6dc6d45b9829c4a43b4d"
+  },
+  "repositories": [
+    {
+      "name": "reblocke/compatibility-curve",
+      "predecessor_tag": "v0.1.2",
+      "predecessor_commit": "64c6264b9ac93d6665d12c30fa5f4290dd571421",
+      "tag": "v0.1.3",
+      "tag_object": "ba55c6e90f377e2b783cfd3d1ee7c344fe88d667",
+      "commit": "0abf653cb455885b07765d4b9fe1af4cc38cf3b2",
+      "main_commit": "0abf653cb455885b07765d4b9fe1af4cc38cf3b2",
+      "tag_signed": false,
+      "release_id": 362580877,
+      "release_prerelease": true,
+      "assets": {
+        "SHA256SUMS": "7e64d6816d7e22e4f9290bae79f647ae13fa546edb03cd6e3e366047546645ba",
+        "browser-stage-manifest-v0.1.3.json": "33f56fb9a686203770f8bfae7cf65f71f87add2c4f78760167badfbae79de82e",
+        "compatibility-curve-v0.1.3.tar.gz": "90d498ef63675d4779c027cb4941c8ba4a882d68fe54e10c0d26d9a44e6c206e"
+      },
+      "source_archive_tracked_files": 54,
+      "source_archive_matches_tag": true,
+      "pages_deployment_id": 5678648585,
+      "pages_commit": "0abf653cb455885b07765d4b9fe1af4cc38cf3b2",
+      "live_manifest_sha256": "33f56fb9a686203770f8bfae7cf65f71f87add2c4f78760167badfbae79de82e",
+      "local_manifest_sha256": "33f56fb9a686203770f8bfae7cf65f71f87add2c4f78760167badfbae79de82e",
+      "app_package_sha256": "1ae3112eb9649de04d6a78ba4832cd041d7ce2079993c20d28e170f3dbd09489",
+      "bundle_sha256": "5ef8850f04895098b3a21c20df1e4bc74d934ba153a1c98463ddc996994e554b",
+      "workflow_runs": {
+        "ci": 30562402814,
+        "pages": 30562402825,
+        "release": 30562751740
+      },
+      "verification": {
+        "python": "3.12.13",
+        "non_e2e_passed": 57,
+        "chromium_passed": 7,
+        "webkit_passed": 1,
+        "extra_regression_passed": 11,
+        "tracked_state_clean": true,
+        "log_sha256": "fe5655a301786f6143dd95f026681533bad0eb80dda249c282c908be272645e2"
+      },
+      "diff_scope": "documentation, version surfaces, and version assertions only"
+    },
+    {
+      "name": "reblocke/critical-effect-size",
+      "predecessor_tag": "v0.1.2",
+      "predecessor_commit": "73bc391adff6cf2f08fba28baa67014c043b9cb0",
+      "tag": "v0.1.3",
+      "tag_object": "5ad8c46820df787b1531cab9ac966a68e6188360",
+      "commit": "a10482c73cdb89d37814bf1b8c955166957ecd6b",
+      "main_commit": "a10482c73cdb89d37814bf1b8c955166957ecd6b",
+      "tag_signed": false,
+      "release_id": 362583459,
+      "release_prerelease": true,
+      "assets": {
+        "SHA256SUMS": "d37359ff7209b8022b35d0555650077b3ee85dc9900051eac6a5c50345179d42",
+        "browser-stage-manifest-v0.1.3.json": "bb752b090753b49b7f19c18b2f14778cbbe25fcd3d0e7c9c35415787107f8b87",
+        "critical-effect-size-v0.1.3.tar.gz": "246cbbe9e80c3790295391476e084d1d6cb5f6781b02a1eff128cfbfec77dd16"
+      },
+      "source_archive_tracked_files": 57,
+      "source_archive_matches_tag": true,
+      "pages_deployment_id": 5678676727,
+      "pages_commit": "a10482c73cdb89d37814bf1b8c955166957ecd6b",
+      "live_manifest_sha256": "bb752b090753b49b7f19c18b2f14778cbbe25fcd3d0e7c9c35415787107f8b87",
+      "local_manifest_sha256": "bb752b090753b49b7f19c18b2f14778cbbe25fcd3d0e7c9c35415787107f8b87",
+      "app_package_sha256": "0106639c9bb196871245b941061bfafe0de71ecdc98503ef85e3ba68c0552c21",
+      "bundle_sha256": "323e8e512b397cd52075cfd885cf9b7d917dbd7ed04791509889d42f188ef195",
+      "workflow_runs": {
+        "ci": 30562550969,
+        "ci_successful_attempt": 2,
+        "pages": 30562550556,
+        "release": 30563030057
+      },
+      "verification": {
+        "python": "3.12.13",
+        "non_e2e_passed": 60,
+        "chromium_passed": 12,
+        "webkit_passed": 1,
+        "extra_regression_passed": 13,
+        "tracked_state_clean": true,
+        "log_sha256": "5877a82eb2a3c4be39a6a1740e439fbae3a651648be29c91ef180626606f2915"
+      },
+      "diff_scope": "documentation, version surfaces, and version assertions only",
+      "nonblocking_observations": [
+        "Main CI attempt 1 had one 120-second WebKit loading timeout; unchanged failed-job attempt 2, exact-tag release CI, and independent local WebKit smoke passed."
+      ]
+    },
+    {
+      "name": "reblocke/type-s-m-calibrator",
+      "predecessor_tag": "v0.1.2",
+      "predecessor_commit": "fd6d384e56626c513ca5b83c92a62cbc29ecdd14",
+      "tag": "v0.1.3",
+      "tag_object": "438d41e5ea623c07c12935b1886c9f087ee1341e",
+      "commit": "ed8881d13eea8ecffa77304555d251296d63f058",
+      "main_commit": "ed8881d13eea8ecffa77304555d251296d63f058",
+      "tag_signed": false,
+      "release_id": 362583371,
+      "release_prerelease": true,
+      "assets": {
+        "SHA256SUMS": "b7c72d9f7685b63924b2d535946405974609815fda644b14e726eec14194c6c6",
+        "browser-stage-manifest-v0.1.3.json": "4a99e9a724bc59fe52bfb0d8fb3db5d7f99f1368361556e64f8be56c5a3952d6",
+        "type-s-m-calibrator-v0.1.3.tar.gz": "5c749e739a0d359540dbed6fd21c856fbceb73e3947d22b7781fd698ac0165b1"
+      },
+      "source_archive_tracked_files": 57,
+      "source_archive_matches_tag": true,
+      "pages_deployment_id": 5678679459,
+      "pages_commit": "ed8881d13eea8ecffa77304555d251296d63f058",
+      "live_manifest_sha256": "4a99e9a724bc59fe52bfb0d8fb3db5d7f99f1368361556e64f8be56c5a3952d6",
+      "local_manifest_sha256": "4a99e9a724bc59fe52bfb0d8fb3db5d7f99f1368361556e64f8be56c5a3952d6",
+      "app_package_sha256": "fe02c6830697873e21a6e5883adcd663645afdca9c4e9171c2ed89bdb335844a",
+      "bundle_sha256": "047e3a0ebed5a57df1481702030fa189c0964b4efc0ace86aea1aa3f5c10b8a0",
+      "workflow_runs": {
+        "ci": 30562550798,
+        "pages": 30562550837,
+        "release": 30562943828
+      },
+      "verification": {
+        "python": "3.12.13",
+        "non_e2e_passed": 74,
+        "chromium_passed": 21,
+        "webkit_passed": 1,
+        "extra_regression_passed": 8,
+        "tracked_state_clean": true,
+        "log_sha256": "690d60876f564d5eea616258d90f93b9d84d60aed0d7fee44a8cf8f34929349b"
+      },
+      "diff_scope": "documentation, version surfaces, and version assertions only"
+    },
+    {
+      "name": "reblocke/precision-guardrail-planner",
+      "predecessor_tag": "v0.1.1",
+      "predecessor_commit": "bfc54c5d4d79e497fb145e931f9f562b31938616",
+      "tag": "v0.1.2",
+      "tag_object": "02c52998b4a16023f51bd90f76755a35179db91c",
+      "commit": "ec47753aa1119b802e12856c4bc18feefa1ad6d5",
+      "main_commit": "ec47753aa1119b802e12856c4bc18feefa1ad6d5",
+      "tag_signed": false,
+      "release_id": 362580665,
+      "release_prerelease": true,
+      "assets": {
+        "SHA256SUMS": "6be2475385fc533198eac7681bdd6db2f0d24195e8b4c850b34ce543f07c596f",
+        "browser-stage-manifest-v0.1.2.json": "5710b0310abea8a30b628ce8edb3dcc50cd4e66846857eb75983c6e687f4ace4",
+        "precision-guardrail-planner-v0.1.2.tar.gz": "5f9063fba32e19c67b169113d86088e81efd1a221c56b7999c91fcc7d85a5ea0"
+      },
+      "source_archive_tracked_files": 56,
+      "source_archive_matches_tag": true,
+      "pages_deployment_id": 5678651657,
+      "pages_commit": "ec47753aa1119b802e12856c4bc18feefa1ad6d5",
+      "live_manifest_sha256": "5710b0310abea8a30b628ce8edb3dcc50cd4e66846857eb75983c6e687f4ace4",
+      "local_manifest_sha256": "5710b0310abea8a30b628ce8edb3dcc50cd4e66846857eb75983c6e687f4ace4",
+      "app_package_sha256": "e3d477b52d9510c2431931dfe3ead3c78bd7a970c0a74424a056089fcc8d9a3a",
+      "bundle_sha256": "0245c2be5e50cf4d36a07aa76b10b6aac952c157c21ed317180e6f6450e1c791",
+      "workflow_runs": {
+        "ci": 30562403106,
+        "pages": 30562404073,
+        "release": 30562752493
+      },
+      "verification": {
+        "python": "3.12.13",
+        "non_e2e_passed": 51,
+        "chromium_passed": 6,
+        "webkit_passed": 1,
+        "extra_regression_passed": 5,
+        "tracked_state_clean": true,
+        "log_sha256": "2f916d89625cc94d4c2b4b16beb39d225a92a6a5f87fc249c2ba0772c84eeeac"
+      },
+      "diff_scope": "documentation, version surfaces, and version assertions only"
+    }
+  ],
+  "cross_repository_checks": {
+    "all_public": true,
+    "all_mit": true,
+    "all_author_brian_locke": true,
+    "all_release_assets_match_github_digests": true,
+    "all_source_archives_match_tags": true,
+    "all_pages_commits_match_tags": true,
+    "all_local_release_live_manifests_byte_identical": true,
+    "all_exact_core_pins_match": true,
+    "all_readmes_use_experimental_maturity_wording": true,
+    "all_release_objects_are_prereleases": true
+  },
+  "remaining_limitations": [
+    "Annotated tags are unsigned.",
+    "This proves clean network installation, not offline installation.",
+    "This supplement does not complete the catalog update, final portfolio report/status hash, or stable-release promotion."
+  ]
+}

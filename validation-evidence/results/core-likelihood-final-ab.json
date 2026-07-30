@@ -1,0 +1,186 @@
+{
+  "schema_version": 1,
+  "audit": {
+    "completed_at": "2026-07-30T16:25:22Z",
+    "lane": [
+      "A",
+      "B"
+    ],
+    "production_mutation": false,
+    "verdict": "pass",
+    "ledger": {
+      "path": "lane_ab_core_v0.4.1_likelihood_v0.1.2_final_7ace2317ca56753e.md",
+      "sha256": "7ace2317ca56753e0c5aeda2b8e0cd9aa62af10a7decfa88aa1d29678d55657f"
+    }
+  },
+  "authority": {
+    "ticket_archive_sha256": "726d8fc86a21141d4cb734eaf7a09375e396e1d9c284d6c734e8a0d1438249d5",
+    "ticket_11_sha256": "acd60a30f7d20d9a7eafecd5091f06861fcc1d427b64d16c246791703032fc30",
+    "baseline_tag": "pre-split-baseline-2026-07-29",
+    "baseline_tag_target": "5fd501dd947d9b951d736014cfc2b310efa5e7b0",
+    "behavior_source": "830756ecb11b4e8161f8dfe1fc75afc346ef4467",
+    "fixture_manifest_sha256": "f54bb2d8311788c07adcf23fc9f038e35702449e4a77a474abea9411246cabcc",
+    "fixture_set_sha256": "81c341b39e711caffc85a444f0c1e4bc1e2d00633474c82e720afeb60def3c4d"
+  },
+  "releases": {
+    "core": {
+      "repository": "reblocke/wald-inference-core",
+      "tag": "v0.4.1",
+      "annotated_tag": true,
+      "tag_object": "838c4aaab08570a17156bd59b1ff65dcabf56bfc",
+      "peeled_commit": "f4613177b6dc81d194aa70762152de2bfa86663b",
+      "head_matches_peeled_commit": true,
+      "prerelease": true,
+      "published_at": "2026-07-30T13:05:44Z"
+    },
+    "likelihood": {
+      "repository": "reblocke/wald-likelihood-support",
+      "tag": "v0.1.2",
+      "annotated_tag": true,
+      "tag_object": "5285b792379cb538bfa93859ecc9d18f07ec2dbb",
+      "peeled_commit": "7f5557d2a93235e25215261ef5890868b3fb07bb",
+      "head_matches_peeled_commit": true,
+      "prerelease": true,
+      "published_at": "2026-07-30T15:08:44Z"
+    }
+  },
+  "formula_ownership": {
+    "verdict": "pass",
+    "sole_production_owner": "reblocke/wald-inference-core",
+    "app_private_core_imports": [],
+    "app_formula_token_offenders": [],
+    "app_scientific_imports_are_root_public": true,
+    "support_comparison_delegates_to_log_support_ratio": true,
+    "support_ratio_delegates_to_log_support_ratio": true,
+    "support_interval_for_ratio_delegates_to_support_interval": true,
+    "installed_app_core_tree_matches_release_wheel": true,
+    "release_wheel_tree_matches_core_tag_source": true
+  },
+  "core_parity": {
+    "tolerance": {
+      "rtol": 1e-12,
+      "atol": 1e-14
+    },
+    "published_asset": {
+      "sha256": "18d020e6a00746646ffed913eb88f1e4b148aa2725872db647823019f1e65dba",
+      "verdict": "pass",
+      "successful_cases": 14,
+      "matched_core_error_cases": 6,
+      "app_only_error_exclusions": 2,
+      "compared_values": 23095,
+      "max_absolute_difference": 2.842170943040401e-14,
+      "max_relative_difference": 1.3881501524486269e-15
+    },
+    "fresh_macos_rerun": {
+      "sha256": "4d8330ea3585a2f438f9db21776907dc73750b4c28627d0e697f115bc27d50a0",
+      "verdict": "pass",
+      "successful_cases": 14,
+      "matched_core_error_cases": 6,
+      "app_only_error_exclusions": 2,
+      "compared_values": 23095,
+      "max_absolute_difference": 5.329070518200751e-15,
+      "max_relative_difference": 4.449372536648163e-16
+    },
+    "asset_and_rerun_byte_identical": false,
+    "difference_scope": "Only per-case and global maximum-difference fields vary; identifiers, counts, statuses, tolerances, paths, and verdict are identical."
+  },
+  "likelihood_anchors": {
+    "verdict": "pass",
+    "anchor_count": 21,
+    "rtol": 1e-12,
+    "atol": 1e-14,
+    "max_absolute_difference": {
+      "value": 1.4210854715202004e-14,
+      "case": "B01",
+      "field": "null_mle_to_candidate_ratio",
+      "actual": 33.97645283375536,
+      "expected": 33.976452833755374
+    },
+    "max_relative_difference": {
+      "value": 4.449372536648163e-16,
+      "case": "B02",
+      "field": "threshold_to_null_ratio",
+      "actual": 11.97712817775266,
+      "expected": 11.977128177752654
+    },
+    "b03_display_endpoints": [
+      0.9,
+      1.1
+    ],
+    "s_minus_2": {
+      "log_relative_likelihood_cutoff": -2.0,
+      "mle_to_bound_ratio": 7.38905609893065,
+      "b01_working_interval": [
+        0.10366765670671452,
+        0.7363323432932855
+      ],
+      "b02_working_interval": [
+        0.1740391559617288,
+        1.0015341738425092
+      ]
+    },
+    "pairwise_b02_a_1_25_b_1_0": {
+      "app_log_likelihood_ratio_a_to_b": 2.4829988458996426,
+      "independent_exact_binary64_log_likelihood_ratio_a_to_b": 2.4829988458996426,
+      "absolute_difference": 0.0,
+      "ordinary_ratio_a_to_b": 11.97712817775266,
+      "direction": "candidate_a_more_supported",
+      "antisymmetry_absolute_residual": 0.0,
+      "identity_log_ratio": 0.0,
+      "identity_ordinary_ratio": 1.0
+    }
+  },
+  "strict_contract": {
+    "verdict": "pass",
+    "strict_json_cases": [
+      "B01",
+      "B02",
+      "B03"
+    ],
+    "validation_error_probes": [
+      "nonfinite_json_constant",
+      "nonpositive_ratio_bound",
+      "custom_ratio_not_greater_than_one",
+      "unpaired_pairwise_candidate",
+      "unexpected_request_field",
+      "adjacent_float_unrepresentable_s_minus_2_boundary"
+    ]
+  },
+  "release_assets": {
+    "core": {
+      "baseline-parity.json": "18d020e6a00746646ffed913eb88f1e4b148aa2725872db647823019f1e65dba",
+      "wald_inference-0.4.1-py3-none-any.whl": "d7272023f65088729d3ff997cab7cac57b84f22ac6108244ec2170434557d99b",
+      "wald_inference-0.4.1.tar.gz": "5b30fbc22c416cc724b75d9920157f42886ba185d34b628b4ad4c66691376bbf",
+      "SHA256SUMS": "57949779d61ac2a75b28710da12606bcbb56c8c13b1e17cd233544aa6c12fd5a"
+    },
+    "likelihood": {
+      "browser-stage-manifest-v0.1.2.json": "21be10dd5197300594401f69605288b95d95a533d448c0284cea2870bfd023b0",
+      "wald-likelihood-support-v0.1.2.tar.gz": "f0a457dfc153a39f1b3183af142a443361e1e965bcd1d76c7f825371ee294bac",
+      "SHA256SUMS": "4d6d4e8732dddfefbf71ac6f441c630df600da6dee314685e2adabfc4226ce81",
+      "staged_bundle_sha256": "b9c5247cba1dc13a004959e8354f1c96c00381aca5e31cda84a121b260316db0"
+    }
+  },
+  "tests": {
+    "core_full": {
+      "collected": 380,
+      "passed": 380
+    },
+    "core_targeted": {
+      "passed": 21,
+      "description": "19 corpus/parity/closed-form/extreme tests plus 2 threshold-transition parameter cases"
+    },
+    "likelihood_non_e2e": {
+      "collected": 73,
+      "passed": 73
+    },
+    "likelihood_targeted": {
+      "passed": 55
+    },
+    "clean_checkouts": true,
+    "git_diff_check": true
+  },
+  "limitations": [
+    "The published Linux Core parity JSON and fresh macOS parity JSON differ in platform-specific maximum-difference fields but both pass the unchanged tolerance.",
+    "This supplement does not replace browser, deployment, documentation, or complete portfolio validation lanes."
+  ]
+}

@@ -1,0 +1,769 @@
+{
+  "artifact_directory": "/private/tmp/cc-mig-11-final-browser-artifacts",
+  "chromiumVersion": "149.0.7827.55",
+  "completed_at": "2026-07-30T18:36:23Z",
+  "driver": {
+    "path": "validation-evidence/drivers/mobile_containment_audit.py",
+    "sha256": "378c99d04ac37fde5c15405ba681539d96be54f04bcd03aee2cc1045224f0683"
+  },
+  "schema_version": 1,
+  "sites": {
+    "compatibility-curve": {
+      "bodyScrollWidth": 390,
+      "consoleErrors": [],
+      "documentClientWidth": 390,
+      "documentScrollWidth": 390,
+      "innerWidth": 390,
+      "keyboard": {
+        "focus_path": [
+          "{\"id\": \"ci-lower\", \"tag\": \"input\", \"text\": \"\", \"type\": \"text\"}",
+          "{\"id\": \"ci-upper\", \"tag\": \"input\", \"text\": \"\", \"type\": \"text\"}",
+          "{\"id\": \"null-value\", \"tag\": \"input\", \"text\": \"\", \"type\": \"text\"}",
+          "{\"id\": \"thresholds\", \"tag\": \"textarea\", \"text\": \"\", \"type\": null}",
+          "{\"id\": \"display-range-lower\", \"tag\": \"input\", \"text\": \"\", \"type\": \"text\"}",
+          "{\"id\": \"display-range-upper\", \"tag\": \"input\", \"text\": \"\", \"type\": \"text\"}",
+          "{\"id\": \"\", \"tag\": \"summary\", \"text\": \"Advanced display controls\", \"type\": null}",
+          "{\"id\": \"calculate\", \"tag\": \"button\", \"text\": \"Update curve\", \"type\": \"submit\"}"
+        ],
+        "reached": true
+      },
+      "pageErrors": [],
+      "pass": true,
+      "plotScreenshot": "/private/tmp/cc-mig-11-final-browser-artifacts/compatibility-curve-corrected-mobile-plot.png",
+      "plotSvgs": [
+        {
+          "className": "main-svg",
+          "clientWidth": 324,
+          "id": "",
+          "left": 33,
+          "minWidth": "0px",
+          "overflowX": "hidden",
+          "plotlyFullLayoutHeight": null,
+          "plotlyFullLayoutWidth": null,
+          "right": 357,
+          "scrollWidth": 324,
+          "tag": "svg",
+          "width": 324
+        },
+        {
+          "className": "main-svg",
+          "clientWidth": 324,
+          "id": "",
+          "left": 33,
+          "minWidth": "0px",
+          "overflowX": "hidden",
+          "plotlyFullLayoutHeight": null,
+          "plotlyFullLayoutWidth": null,
+          "right": 357,
+          "scrollWidth": 324,
+          "tag": "svg",
+          "width": 324
+        },
+        {
+          "className": "main-svg",
+          "clientWidth": 324,
+          "id": "",
+          "left": 33,
+          "minWidth": "0px",
+          "overflowX": "hidden",
+          "plotlyFullLayoutHeight": null,
+          "plotlyFullLayoutWidth": null,
+          "right": 357,
+          "scrollWidth": 324,
+          "tag": "svg",
+          "width": 324
+        }
+      ],
+      "plots": [
+        {
+          "className": "plot js-plotly-plot",
+          "clientWidth": 324,
+          "id": "plot",
+          "left": 33,
+          "minWidth": "0px",
+          "overflowX": "visible",
+          "plotlyFullLayoutHeight": 512,
+          "plotlyFullLayoutWidth": 324,
+          "right": 357,
+          "scrollWidth": 324,
+          "tag": "div",
+          "width": 324
+        }
+      ],
+      "rawOffenderCount": 2,
+      "screenshot": "/private/tmp/cc-mig-11-final-browser-artifacts/compatibility-curve-corrected-mobile-viewport.png",
+      "tables": [],
+      "uncontainedOffenders": []
+    },
+    "conf_curve_likelihood": {
+      "bodyScrollWidth": 390,
+      "consoleErrors": [],
+      "documentClientWidth": 390,
+      "documentScrollWidth": 390,
+      "innerWidth": 390,
+      "keyboard": {
+        "automaticWorkflowCompleted": true,
+        "sentinelField": "#thresholds"
+      },
+      "pageErrors": [],
+      "pass": true,
+      "plotScreenshot": "/private/tmp/cc-mig-11-final-browser-artifacts/conf_curve_likelihood-corrected-mobile-plot.png",
+      "plotSvgs": [
+        {
+          "className": "main-svg",
+          "clientWidth": 312,
+          "id": "",
+          "left": 39,
+          "minWidth": "0px",
+          "overflowX": "hidden",
+          "plotlyFullLayoutHeight": null,
+          "plotlyFullLayoutWidth": null,
+          "right": 351,
+          "scrollWidth": 312,
+          "tag": "svg",
+          "width": 312
+        },
+        {
+          "className": "main-svg",
+          "clientWidth": 312,
+          "id": "",
+          "left": 39,
+          "minWidth": "0px",
+          "overflowX": "hidden",
+          "plotlyFullLayoutHeight": null,
+          "plotlyFullLayoutWidth": null,
+          "right": 351,
+          "scrollWidth": 312,
+          "tag": "svg",
+          "width": 312
+        },
+        {
+          "className": "main-svg",
+          "clientWidth": 312,
+          "id": "",
+          "left": 39,
+          "minWidth": "0px",
+          "overflowX": "hidden",
+          "plotlyFullLayoutHeight": null,
+          "plotlyFullLayoutWidth": null,
+          "right": 351,
+          "scrollWidth": 312,
+          "tag": "svg",
+          "width": 312
+        }
+      ],
+      "plots": [
+        {
+          "className": "plot-surface js-plotly-plot",
+          "clientWidth": 312,
+          "id": "curve-plot",
+          "left": 39,
+          "minWidth": "0px",
+          "overflowX": "visible",
+          "plotlyFullLayoutHeight": 560,
+          "plotlyFullLayoutWidth": 312,
+          "right": 351,
+          "scrollWidth": 312,
+          "tag": "div",
+          "width": 312
+        }
+      ],
+      "rawOffenderCount": 2,
+      "screenshot": "/private/tmp/cc-mig-11-final-browser-artifacts/conf_curve_likelihood-corrected-mobile-viewport.png",
+      "tables": [],
+      "uncontainedOffenders": []
+    },
+    "critical-effect-size": {
+      "bodyScrollWidth": 390,
+      "consoleErrors": [],
+      "documentClientWidth": 390,
+      "documentScrollWidth": 390,
+      "innerWidth": 390,
+      "keyboard": {
+        "focus_path": [
+          "{\"id\": \"meaningful-effect\", \"tag\": \"input\", \"text\": \"\", \"type\": \"text\"}",
+          "{\"id\": \"information-multiplier\", \"tag\": \"input\", \"text\": \"\", \"type\": \"text\"}",
+          "{\"id\": \"\", \"tag\": \"summary\", \"text\": \"Optional display range\", \"type\": null}",
+          "{\"id\": \"calculate\", \"tag\": \"button\", \"text\": \"Calculate exact critical effect\", \"type\": \"submit\"}"
+        ],
+        "reached": true
+      },
+      "pageErrors": [],
+      "pass": true,
+      "plotScreenshot": "/private/tmp/cc-mig-11-final-browser-artifacts/critical-effect-size-corrected-mobile-plot.png",
+      "plotSvgs": [
+        {
+          "className": "main-svg",
+          "clientWidth": 324,
+          "id": "",
+          "left": 33,
+          "minWidth": "0px",
+          "overflowX": "hidden",
+          "plotlyFullLayoutHeight": null,
+          "plotlyFullLayoutWidth": null,
+          "right": 357,
+          "scrollWidth": 324,
+          "tag": "svg",
+          "width": 324
+        },
+        {
+          "className": "main-svg",
+          "clientWidth": 324,
+          "id": "",
+          "left": 33,
+          "minWidth": "0px",
+          "overflowX": "hidden",
+          "plotlyFullLayoutHeight": null,
+          "plotlyFullLayoutWidth": null,
+          "right": 357,
+          "scrollWidth": 324,
+          "tag": "svg",
+          "width": 324
+        },
+        {
+          "className": "main-svg",
+          "clientWidth": 324,
+          "id": "",
+          "left": 33,
+          "minWidth": "0px",
+          "overflowX": "hidden",
+          "plotlyFullLayoutHeight": null,
+          "plotlyFullLayoutWidth": null,
+          "right": 357,
+          "scrollWidth": 324,
+          "tag": "svg",
+          "width": 324
+        }
+      ],
+      "plots": [
+        {
+          "className": "plot js-plotly-plot",
+          "clientWidth": 324,
+          "id": "plot",
+          "left": 33,
+          "minWidth": "0px",
+          "overflowX": "visible",
+          "plotlyFullLayoutHeight": 700,
+          "plotlyFullLayoutWidth": 324,
+          "right": 357,
+          "scrollWidth": 324,
+          "tag": "div",
+          "width": 324
+        }
+      ],
+      "rawOffenderCount": 58,
+      "screenshot": "/private/tmp/cc-mig-11-final-browser-artifacts/critical-effect-size-corrected-mobile-viewport.png",
+      "tables": [
+        {
+          "boundedByScroller": true,
+          "scrollAncestor": {
+            "className": "table-wrap",
+            "clientWidth": 324,
+            "id": "",
+            "left": 33,
+            "minWidth": "0px",
+            "overflowX": "auto",
+            "plotlyFullLayoutHeight": null,
+            "plotlyFullLayoutWidth": null,
+            "right": 357,
+            "scrollWidth": 604,
+            "tag": "div",
+            "width": 324
+          },
+          "table": {
+            "className": "",
+            "clientWidth": 604,
+            "id": "reference-table",
+            "left": 33,
+            "minWidth": "0px",
+            "overflowX": "visible",
+            "plotlyFullLayoutHeight": null,
+            "plotlyFullLayoutWidth": null,
+            "right": 636.66,
+            "scrollWidth": 604,
+            "tag": "table",
+            "width": 603.66
+          }
+        }
+      ],
+      "uncontainedOffenders": []
+    },
+    "precision-guardrail-planner": {
+      "bodyScrollWidth": 390,
+      "consoleErrors": [],
+      "documentClientWidth": 390,
+      "documentScrollWidth": 390,
+      "innerWidth": 390,
+      "keyboard": {
+        "focus_path": [
+          "{\"id\": \"target-true-effect\", \"tag\": \"input\", \"text\": \"\", \"type\": \"text\"}",
+          "{\"id\": \"alpha\", \"tag\": \"input\", \"text\": \"\", \"type\": \"text\"}",
+          "{\"id\": \"selection-rule\", \"tag\": \"select\", \"text\": \"Two-sided p < alpha against the null\\n                \\n                \\n         \", \"type\": null}",
+          "{\"id\": \"claim-direction\", \"tag\": \"select\", \"text\": \"Positive\\n                Negative\", \"type\": null}",
+          "{\"id\": \"target-probability-enabled\", \"tag\": \"input\", \"text\": \"\", \"type\": \"checkbox\"}",
+          "{\"id\": \"minimum-selected-claim-probability\", \"tag\": \"input\", \"text\": \"\", \"type\": \"text\"}",
+          "{\"id\": \"maximum-type-s-enabled\", \"tag\": \"input\", \"text\": \"\", \"type\": \"checkbox\"}",
+          "{\"id\": \"maximum-type-s\", \"tag\": \"input\", \"text\": \"\", \"type\": \"text\"}",
+          "{\"id\": \"maximum-type-m-enabled\", \"tag\": \"input\", \"text\": \"\", \"type\": \"checkbox\"}",
+          "{\"id\": \"maximum-type-m\", \"tag\": \"input\", \"text\": \"\", \"type\": \"text\"}",
+          "{\"id\": \"\", \"tag\": \"summary\", \"text\": \"Sensitivity across assumed true effects\", \"type\": null}",
+          "{\"id\": \"\", \"tag\": \"summary\", \"text\": \"Optional approximate sample-size projection\", \"type\": null}",
+          "{\"id\": \"calculate\", \"tag\": \"button\", \"text\": \"Plan precision\", \"type\": \"submit\"}"
+        ],
+        "reached": true
+      },
+      "pageErrors": [],
+      "pass": true,
+      "plotScreenshot": "/private/tmp/cc-mig-11-final-browser-artifacts/precision-guardrail-planner-corrected-mobile-plot.png",
+      "plotSvgs": [
+        {
+          "className": "main-svg",
+          "clientWidth": 324,
+          "id": "",
+          "left": 33,
+          "minWidth": "0px",
+          "overflowX": "hidden",
+          "plotlyFullLayoutHeight": null,
+          "plotlyFullLayoutWidth": null,
+          "right": 357,
+          "scrollWidth": 324,
+          "tag": "svg",
+          "width": 324
+        },
+        {
+          "className": "main-svg",
+          "clientWidth": 324,
+          "id": "",
+          "left": 33,
+          "minWidth": "0px",
+          "overflowX": "hidden",
+          "plotlyFullLayoutHeight": null,
+          "plotlyFullLayoutWidth": null,
+          "right": 357,
+          "scrollWidth": 324,
+          "tag": "svg",
+          "width": 324
+        },
+        {
+          "className": "main-svg",
+          "clientWidth": 324,
+          "id": "",
+          "left": 33,
+          "minWidth": "0px",
+          "overflowX": "hidden",
+          "plotlyFullLayoutHeight": null,
+          "plotlyFullLayoutWidth": null,
+          "right": 357,
+          "scrollWidth": 324,
+          "tag": "svg",
+          "width": 324
+        }
+      ],
+      "plots": [
+        {
+          "className": "plot js-plotly-plot",
+          "clientWidth": 324,
+          "id": "plot",
+          "left": 33,
+          "minWidth": "0px",
+          "overflowX": "visible",
+          "plotlyFullLayoutHeight": 560,
+          "plotlyFullLayoutWidth": 324,
+          "right": 357,
+          "scrollWidth": 324,
+          "tag": "div",
+          "width": 324
+        }
+      ],
+      "rawOffenderCount": 38,
+      "screenshot": "/private/tmp/cc-mig-11-final-browser-artifacts/precision-guardrail-planner-corrected-mobile-viewport.png",
+      "tables": [
+        {
+          "boundedByScroller": true,
+          "scrollAncestor": {
+            "className": "table-wrap",
+            "clientWidth": 324,
+            "id": "",
+            "left": 33,
+            "minWidth": "0px",
+            "overflowX": "auto",
+            "plotlyFullLayoutHeight": null,
+            "plotlyFullLayoutWidth": null,
+            "right": 357,
+            "scrollWidth": 1080,
+            "tag": "div",
+            "width": 324
+          },
+          "table": {
+            "className": "",
+            "clientWidth": 1080,
+            "id": "target-table",
+            "left": 33,
+            "minWidth": "0px",
+            "overflowX": "visible",
+            "plotlyFullLayoutHeight": null,
+            "plotlyFullLayoutWidth": null,
+            "right": 1113,
+            "scrollWidth": 1080,
+            "tag": "table",
+            "width": 1080
+          }
+        }
+      ],
+      "uncontainedOffenders": []
+    },
+    "scientific-applet-template": {
+      "bodyScrollWidth": 390,
+      "consoleErrors": [],
+      "documentClientWidth": 390,
+      "documentScrollWidth": 390,
+      "innerWidth": 390,
+      "keyboard": {
+        "focus_path": [
+          "{\"id\": \"first-value\", \"tag\": \"input\", \"text\": \"\", \"type\": \"text\"}",
+          "{\"id\": \"second-value\", \"tag\": \"input\", \"text\": \"\", \"type\": \"text\"}",
+          "{\"id\": \"\", \"tag\": \"summary\", \"text\": \"Advanced controls pattern\", \"type\": null}",
+          "{\"id\": \"calculate\", \"tag\": \"button\", \"text\": \"Run demonstration\", \"type\": \"submit\"}"
+        ],
+        "reached": true
+      },
+      "pageErrors": [],
+      "pass": true,
+      "plotScreenshot": "/private/tmp/cc-mig-11-final-browser-artifacts/scientific-applet-template-corrected-mobile-plot.png",
+      "plotSvgs": [
+        {
+          "className": "main-svg",
+          "clientWidth": 324,
+          "id": "",
+          "left": 33,
+          "minWidth": "0px",
+          "overflowX": "hidden",
+          "plotlyFullLayoutHeight": null,
+          "plotlyFullLayoutWidth": null,
+          "right": 357,
+          "scrollWidth": 324,
+          "tag": "svg",
+          "width": 324
+        },
+        {
+          "className": "main-svg",
+          "clientWidth": 324,
+          "id": "",
+          "left": 33,
+          "minWidth": "0px",
+          "overflowX": "hidden",
+          "plotlyFullLayoutHeight": null,
+          "plotlyFullLayoutWidth": null,
+          "right": 357,
+          "scrollWidth": 324,
+          "tag": "svg",
+          "width": 324
+        },
+        {
+          "className": "main-svg",
+          "clientWidth": 324,
+          "id": "",
+          "left": 33,
+          "minWidth": "0px",
+          "overflowX": "hidden",
+          "plotlyFullLayoutHeight": null,
+          "plotlyFullLayoutWidth": null,
+          "right": 357,
+          "scrollWidth": 324,
+          "tag": "svg",
+          "width": 324
+        }
+      ],
+      "plots": [
+        {
+          "className": "plot js-plotly-plot",
+          "clientWidth": 324,
+          "id": "plot",
+          "left": 33,
+          "minWidth": "0px",
+          "overflowX": "visible",
+          "plotlyFullLayoutHeight": 450,
+          "plotlyFullLayoutWidth": 324,
+          "right": 357,
+          "scrollWidth": 324,
+          "tag": "div",
+          "width": 324
+        }
+      ],
+      "rawOffenderCount": 2,
+      "screenshot": "/private/tmp/cc-mig-11-final-browser-artifacts/scientific-applet-template-corrected-mobile-viewport.png",
+      "tables": [
+        {
+          "boundedByScroller": true,
+          "scrollAncestor": {
+            "className": "table-wrap",
+            "clientWidth": 324,
+            "id": "",
+            "left": 33,
+            "minWidth": "0px",
+            "overflowX": "auto",
+            "plotlyFullLayoutHeight": null,
+            "plotlyFullLayoutWidth": null,
+            "right": 357,
+            "scrollWidth": 324,
+            "tag": "div",
+            "width": 324
+          },
+          "table": {
+            "className": "",
+            "clientWidth": 324,
+            "id": "result-table",
+            "left": 33,
+            "minWidth": "0px",
+            "overflowX": "visible",
+            "plotlyFullLayoutHeight": null,
+            "plotlyFullLayoutWidth": null,
+            "right": 357,
+            "scrollWidth": 324,
+            "tag": "table",
+            "width": 324
+          }
+        }
+      ],
+      "uncontainedOffenders": []
+    },
+    "type-s-m-calibrator": {
+      "bodyScrollWidth": 390,
+      "consoleErrors": [],
+      "documentClientWidth": 390,
+      "documentScrollWidth": 390,
+      "innerWidth": 390,
+      "keyboard": {
+        "focus_path": [
+          "{\"id\": \"observed-estimate\", \"tag\": \"input\", \"text\": \"\", \"type\": \"text\"}",
+          "{\"id\": \"reference-thresholds\", \"tag\": \"input\", \"text\": \"\", \"type\": \"text\"}",
+          "{\"id\": \"\", \"tag\": \"summary\", \"text\": \"Advanced display controls\", \"type\": null}",
+          "{\"id\": \"calculate\", \"tag\": \"button\", \"text\": \"Calibrate design\", \"type\": \"submit\"}"
+        ],
+        "reached": true
+      },
+      "pageErrors": [],
+      "pass": true,
+      "plotScreenshot": "/private/tmp/cc-mig-11-final-browser-artifacts/type-s-m-calibrator-corrected-mobile-plot.png",
+      "plotSvgs": [
+        {
+          "className": "main-svg",
+          "clientWidth": 324,
+          "id": "",
+          "left": 33,
+          "minWidth": "0px",
+          "overflowX": "hidden",
+          "plotlyFullLayoutHeight": null,
+          "plotlyFullLayoutWidth": null,
+          "right": 357,
+          "scrollWidth": 324,
+          "tag": "svg",
+          "width": 324
+        },
+        {
+          "className": "main-svg",
+          "clientWidth": 324,
+          "id": "",
+          "left": 33,
+          "minWidth": "0px",
+          "overflowX": "hidden",
+          "plotlyFullLayoutHeight": null,
+          "plotlyFullLayoutWidth": null,
+          "right": 357,
+          "scrollWidth": 324,
+          "tag": "svg",
+          "width": 324
+        },
+        {
+          "className": "main-svg",
+          "clientWidth": 324,
+          "id": "",
+          "left": 33,
+          "minWidth": "0px",
+          "overflowX": "hidden",
+          "plotlyFullLayoutHeight": null,
+          "plotlyFullLayoutWidth": null,
+          "right": 357,
+          "scrollWidth": 324,
+          "tag": "svg",
+          "width": 324
+        }
+      ],
+      "plots": [
+        {
+          "className": "plot js-plotly-plot",
+          "clientWidth": 324,
+          "id": "plot",
+          "left": 33,
+          "minWidth": "0px",
+          "overflowX": "visible",
+          "plotlyFullLayoutHeight": 900,
+          "plotlyFullLayoutWidth": 324,
+          "right": 357,
+          "scrollWidth": 324,
+          "tag": "div",
+          "width": 324
+        }
+      ],
+      "rawOffenderCount": 36,
+      "screenshot": "/private/tmp/cc-mig-11-final-browser-artifacts/type-s-m-calibrator-corrected-mobile-viewport.png",
+      "tables": [
+        {
+          "boundedByScroller": true,
+          "scrollAncestor": {
+            "className": "table-wrap",
+            "clientWidth": 324,
+            "id": "",
+            "left": 33,
+            "minWidth": "0px",
+            "overflowX": "auto",
+            "plotlyFullLayoutHeight": null,
+            "plotlyFullLayoutWidth": null,
+            "right": 357,
+            "scrollWidth": 840,
+            "tag": "div",
+            "width": 324
+          },
+          "table": {
+            "className": "",
+            "clientWidth": 840,
+            "id": "scenario-table",
+            "left": 33,
+            "minWidth": "0px",
+            "overflowX": "visible",
+            "plotlyFullLayoutHeight": null,
+            "plotlyFullLayoutWidth": null,
+            "right": 872.95,
+            "scrollWidth": 840,
+            "tag": "table",
+            "width": 839.95
+          }
+        }
+      ],
+      "uncontainedOffenders": []
+    },
+    "wald-likelihood-support": {
+      "bodyScrollWidth": 390,
+      "consoleErrors": [],
+      "documentClientWidth": 390,
+      "documentScrollWidth": 390,
+      "innerWidth": 390,
+      "keyboard": {
+        "focus_path": [
+          "{\"id\": \"ci-lower\", \"tag\": \"input\", \"text\": \"\", \"type\": \"text\"}",
+          "{\"id\": \"ci-upper\", \"tag\": \"input\", \"text\": \"\", \"type\": \"text\"}",
+          "{\"id\": \"null-value\", \"tag\": \"input\", \"text\": \"\", \"type\": \"text\"}",
+          "{\"id\": \"thresholds\", \"tag\": \"textarea\", \"text\": \"\", \"type\": null}",
+          "{\"id\": \"support-criterion\", \"tag\": \"select\", \"text\": \"S\\u22122 / exp(2):1 (about 7.4:1)\\n              2:1\\n              4:1\\n              8\", \"type\": null}",
+          "{\"id\": \"\", \"tag\": \"summary\", \"text\": \"Optional candidate A versus candidate B\", \"type\": null}",
+          "{\"id\": \"display-range-lower\", \"tag\": \"input\", \"text\": \"\", \"type\": \"text\"}",
+          "{\"id\": \"display-range-upper\", \"tag\": \"input\", \"text\": \"\", \"type\": \"text\"}",
+          "{\"id\": \"\", \"tag\": \"summary\", \"text\": \"Advanced display controls\", \"type\": null}",
+          "{\"id\": \"calculate\", \"tag\": \"button\", \"text\": \"Update support curve\", \"type\": \"submit\"}"
+        ],
+        "reached": true
+      },
+      "pageErrors": [],
+      "pass": true,
+      "plotScreenshot": "/private/tmp/cc-mig-11-final-browser-artifacts/wald-likelihood-support-corrected-mobile-plot.png",
+      "plotSvgs": [
+        {
+          "className": "main-svg",
+          "clientWidth": 324,
+          "id": "",
+          "left": 33,
+          "minWidth": "0px",
+          "overflowX": "hidden",
+          "plotlyFullLayoutHeight": null,
+          "plotlyFullLayoutWidth": null,
+          "right": 357,
+          "scrollWidth": 324,
+          "tag": "svg",
+          "width": 324
+        },
+        {
+          "className": "main-svg",
+          "clientWidth": 324,
+          "id": "",
+          "left": 33,
+          "minWidth": "0px",
+          "overflowX": "hidden",
+          "plotlyFullLayoutHeight": null,
+          "plotlyFullLayoutWidth": null,
+          "right": 357,
+          "scrollWidth": 324,
+          "tag": "svg",
+          "width": 324
+        },
+        {
+          "className": "main-svg",
+          "clientWidth": 324,
+          "id": "",
+          "left": 33,
+          "minWidth": "0px",
+          "overflowX": "hidden",
+          "plotlyFullLayoutHeight": null,
+          "plotlyFullLayoutWidth": null,
+          "right": 357,
+          "scrollWidth": 324,
+          "tag": "svg",
+          "width": 324
+        }
+      ],
+      "plots": [
+        {
+          "className": "plot js-plotly-plot",
+          "clientWidth": 324,
+          "id": "plot",
+          "left": 33,
+          "minWidth": "0px",
+          "overflowX": "visible",
+          "plotlyFullLayoutHeight": 512,
+          "plotlyFullLayoutWidth": 324,
+          "right": 357,
+          "scrollWidth": 324,
+          "tag": "div",
+          "width": 324
+        }
+      ],
+      "rawOffenderCount": 20,
+      "screenshot": "/private/tmp/cc-mig-11-final-browser-artifacts/wald-likelihood-support-corrected-mobile-viewport.png",
+      "tables": [
+        {
+          "boundedByScroller": true,
+          "scrollAncestor": {
+            "className": "table-wrap",
+            "clientWidth": 324,
+            "id": "",
+            "left": 33,
+            "minWidth": "0px",
+            "overflowX": "auto",
+            "plotlyFullLayoutHeight": null,
+            "plotlyFullLayoutWidth": null,
+            "right": 357,
+            "scrollWidth": 840,
+            "tag": "div",
+            "width": 324
+          },
+          "table": {
+            "className": "",
+            "clientWidth": 840,
+            "id": "reference-table",
+            "left": 33,
+            "minWidth": "0px",
+            "overflowX": "visible",
+            "plotlyFullLayoutHeight": null,
+            "plotlyFullLayoutWidth": null,
+            "right": 872.58,
+            "scrollWidth": 840,
+            "tag": "table",
+            "width": 839.58
+          }
+        }
+      ],
+      "uncontainedOffenders": []
+    }
+  },
+  "source_driver_sha256": "67490befd6a85c2147d93e6057edf0632f25f953a09ade21b77c570cfaff0377",
+  "started_at": "2026-07-30T18:35:02Z"
+}

@@ -10,9 +10,15 @@ that condition on assumed true effects and repeated-study selection behavior.
 
 ## Current status
 
-Version `0.1.1` records the corrective Core and app release set. Entries marked
-`release-candidate` in [`data/tools.json`](data/tools.json) must not be described as
-portfolio-validated until the independent validation report is complete.
+Version `0.2.0` is the stable, validation-bearing catalog release. The portfolio verdict is
+**Validated for release.** The exact audited tags, commits, commands, numerical differences,
+browser observations, release checksums, limitations, and project-standard scores are recorded in
+[`docs/PORTFOLIO_VALIDATION_REPORT.md`](docs/PORTFOLIO_VALIDATION_REPORT.md),
+[`data/validation_status.json`](data/validation_status.json), and the checksum-addressed
+[`validation-evidence/index.json`](validation-evidence/index.json).
+
+The catalog's own audited predecessor is v0.1.1. Version 0.2.0 carries the resulting report and
+does not treat its own publication as evidence for the verdict.
 
 Maintenance owner: Brian Locke. See [`docs/MAINTENANCE.md`](docs/MAINTENANCE.md) for the release and
 metadata-update policy.
@@ -24,6 +30,9 @@ metadata-update policy.
 - `scripts/validate_tools_manifest.py` enforces the local schema and semantic invariants.
 - `scripts/check_links.py` validates local references and can verify public annotated releases,
   exact deployed source commits, hosted manifests, and URLs with `--live`.
+- `data/validation_status.json` binds the independent verdict to the exact report digest and
+  release inventory.
+- `validation-evidence/index.json` hashes every preserved audit ledger and machine-readable result.
 - `scripts/build_site.py` creates the exact Pages artifact.
 
 The catalog has no Pyodide, scientific Python, telemetry, cookies, storage, saved state, or shared
@@ -62,7 +71,8 @@ make live-check
 5. Run `make verify` and `make live-check`.
 6. Confirm the catalog CI and Pages workflows both passed their live-metadata gate before merging
    or deploying.
-7. Update the validation report/status file when independent review changes the portfolio verdict.
+7. Update the validation report, status, and evidence index only from a completed independent
+   review; never infer validation from a successful release workflow.
 
 To add a tool, supply every schema field, a unique slug, repository and hosted URLs, a manifest
 probe, accurate non-goals, and an adjacent-tool slug. The site renders directly from the manifest;

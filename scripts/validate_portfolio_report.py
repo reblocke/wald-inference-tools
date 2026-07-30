@@ -78,17 +78,29 @@ WEIGHTS_TENTHS = {
     "G": 75,
     "H": 75,
 }
+DOMAIN_DEFINITIONS = {
+    "A": "Scientific design/statistical validity",
+    "B": "Data provenance/rights/security",
+    "C": "Computational reproducibility",
+    "D": "Verification/testing/independent review",
+    "E": "Readability/maintainability",
+    "F": "Documentation/replicator usability",
+    "G": "Version control/change management",
+    "H": "Output traceability/dissemination/preservation",
+}
 VALIDATED_MIN_NUMERATOR = 2550
 CONDITIONAL_MIN_NUMERATOR = 2250
 SCORE_TOP_LEVEL_FIELDS = {
     "schema_version",
+    "domain_definitions",
     "weights_tenths",
     "validated_min_numerator",
     "conditional_min_numerator",
     "scores",
 }
-SCORE_FIELDS = {"name", "domains", "weighted_numerator"}
+SCORE_FIELDS = {"name", "domains", "weighted_numerator", "evidence", "gaps"}
 ORIGINAL_BLOCKERS = ("A-01", "A-02", "A-03", "EF-01", "EF-02")
+REQUIRED_BLOCKER_CLOSURES = (*ORIGINAL_BLOCKERS, "F-03", "F-04", "F-05")
 
 
 class PortfolioReportError(ValueError):
@@ -141,6 +153,10 @@ def validate_score_inventory(scores: dict[str, Any]) -> dict[str, dict[str, Any]
     _exact_fields(scores, SCORE_TOP_LEVEL_FIELDS, "report score inventory")
     if type(scores["schema_version"]) is not int or scores["schema_version"] != 1:
         raise PortfolioReportError("score inventory schema_version must equal 1")
+    if scores["domain_definitions"] != DOMAIN_DEFINITIONS:
+        raise PortfolioReportError(
+            "score inventory domain definitions differ from the predeclared rubric"
+        )
     if scores["weights_tenths"] != WEIGHTS_TENTHS:
         raise PortfolioReportError("score inventory weights differ from the predeclared rubric")
     if scores["validated_min_numerator"] != VALIDATED_MIN_NUMERATOR:
@@ -178,6 +194,18 @@ def validate_score_inventory(scores: dict[str, Any]) -> dict[str, dict[str, Any]
             raise PortfolioReportError(
                 f"{location}.weighted_numerator must equal the exact unrounded score numerator"
             )
+        for field in ("evidence", "gaps"):
+            values = record[field]
+            if (
+                not isinstance(values, list)
+                or not values
+                or not all(
+                    isinstance(value, str) and value and value == value.strip() for value in values
+                )
+            ):
+                raise PortfolioReportError(
+                    f"{location}.{field} must be a non-empty array of trimmed strings"
+                )
         by_name[name] = record
 
     if names != list(SCORE_ORDER):
@@ -194,14 +222,75 @@ def _section(report: str, heading: str) -> str:
     return report[start:end]
 
 
-def _expected_verdict(portfolio_score: dict[str, Any], blocking_count: int) -> str:
-    domains = portfolio_score["domains"]
-    numerator = portfolio_score["weighted_numerator"]
-    if blocking_count or any(domains[domain] < 2 for domain in DOMAINS):
+def _markdown_table_cells(line: str) -> tuple[str, ...] | None:
+    stripped = line.strip()
+    if not stripped.startswith("|") or not stripped.endswith("|"):
+        return None
+    return tuple(cell.strip() for cell in stripped[1:-1].split("|"))
+
+
+def _release_blocker_statuses(section: str) -> dict[str, str]:
+    lines = section.splitlines()
+    headers = [
+        (index, cells, identifier)
+        for index, line in enumerate(lines)
+        if (cells := _markdown_table_cells(line)) and cells.count("Status") == 1
+        for identifier in ("ID", "Finding")
+        if cells.count(identifier) == 1
+    ]
+    if len(headers) != 1:
+        raise PortfolioReportError(
+            "release-blocker section must contain exactly one table with "
+            "Finding/ID and Status columns"
+        )
+
+    header_index, header, identifier = headers[0]
+    if header_index + 1 >= len(lines):
+        raise PortfolioReportError("release-blocker table is missing its separator row")
+    separator = _markdown_table_cells(lines[header_index + 1])
+    if (
+        separator is None
+        or len(separator) != len(header)
+        or not all(re.fullmatch(r":?-{3,}:?", cell) for cell in separator)
+    ):
+        raise PortfolioReportError("release-blocker table has an invalid separator row")
+
+    id_index = header.index(identifier)
+    status_index = header.index("Status")
+    statuses: dict[str, str] = {}
+    for line in lines[header_index + 2 :]:
+        if not line.strip():
+            if statuses:
+                break
+            continue
+        cells = _markdown_table_cells(line)
+        if cells is None:
+            if statuses:
+                break
+            continue
+        if len(cells) != len(header):
+            raise PortfolioReportError("release-blocker table contains a malformed row")
+        blocker_id = cells[id_index].partition(":")[0].strip()
+        if blocker_id not in REQUIRED_BLOCKER_CLOSURES:
+            continue
+        if blocker_id in statuses:
+            raise PortfolioReportError(f"release-blocker table contains duplicate ID {blocker_id}")
+        statuses[blocker_id] = cells[status_index]
+    return statuses
+
+
+def _expected_verdict(
+    score_inventory: dict[str, dict[str, Any]],
+    blocking_count: int,
+) -> str:
+    records = list(score_inventory.values())
+    if blocking_count or any(
+        record["domains"][domain] < 2 for record in records for domain in DOMAINS
+    ):
         return "Not validated; release blockers remain."
-    if numerator < CONDITIONAL_MIN_NUMERATOR:
+    if any(record["weighted_numerator"] < CONDITIONAL_MIN_NUMERATOR for record in records):
         return "Not validated; release blockers remain."
-    if numerator >= VALIDATED_MIN_NUMERATOR:
+    if all(record["weighted_numerator"] >= VALIDATED_MIN_NUMERATOR for record in records):
         return "Validated for release."
     return "Validated with nonblocking limitations."
 
@@ -212,6 +301,7 @@ def validate_portfolio_report(
     verdict: str,
     blocking_count: int,
     catalog_version: str,
+    validated_at: str,
     evidence_root: Path = EVIDENCE_ROOT,
     evidence_index_path: Path = INDEX_PATH,
 ) -> None:
@@ -234,7 +324,7 @@ def validate_portfolio_report(
         raise PortfolioReportError("executive verdict must contain exactly the status verdict")
 
     score_inventory = validate_score_inventory(load_score_inventory(report))
-    rubric_verdict = _expected_verdict(score_inventory["portfolio"], blocking_count)
+    rubric_verdict = _expected_verdict(score_inventory, blocking_count)
     if verdict != rubric_verdict:
         raise PortfolioReportError(
             f"verdict {verdict!r} contradicts the predeclared scoring rubric ({rubric_verdict!r})"
@@ -250,22 +340,20 @@ def validate_portfolio_report(
             "conditional verdict requires a documented nonblocking limitation"
         )
 
-    blocker_section = _section(report, "## Release blockers")
-    missing_blockers = [blocker for blocker in ORIGINAL_BLOCKERS if blocker not in blocker_section]
+    blocker_statuses = _release_blocker_statuses(_section(report, "## Release blockers"))
+    missing_blockers = [
+        blocker for blocker in REQUIRED_BLOCKER_CLOSURES if blocker not in blocker_statuses
+    ]
     if missing_blockers:
         raise PortfolioReportError(f"release-blocker closure table is missing {missing_blockers}")
     if verdict != "Not validated; release blockers remain.":
-        for blocker in ORIGINAL_BLOCKERS:
-            row = next(
-                (
-                    line
-                    for line in blocker_section.splitlines()
-                    if line.lstrip().startswith("|") and blocker in line
-                ),
-                "",
-            )
-            if "closed" not in row.lower():
-                raise PortfolioReportError(f"release blocker {blocker} is not explicitly closed")
+        for blocker in REQUIRED_BLOCKER_CLOSURES:
+            status = blocker_statuses[blocker]
+            if status != "closed":
+                raise PortfolioReportError(
+                    f"release blocker {blocker} Status must be exactly 'closed'; "
+                    f"observed {status!r}"
+                )
 
     if "validation-evidence/index.json" not in report:
         raise PortfolioReportError("final report must reference the preserved evidence index")
@@ -282,11 +370,22 @@ def validate_portfolio_report(
         evidence_root=evidence_root,
         expected_catalog_version=catalog_version,
     )
+    if evidence_index["validated_at"] != validated_at:
+        raise PortfolioReportError("evidence-index validated_at does not match validation status")
     observed_index_sha = evidence_index_sha256(evidence_index_path)
     if matches[0] != observed_index_sha:
         raise PortfolioReportError(
             f"evidence-index SHA-256 mismatch: recorded {matches[0]}, observed {observed_index_sha}"
         )
+    indexed_evidence = {f"validation-evidence/{entry['path']}" for entry in evidence_index["files"]}
+    for name, record in score_inventory.items():
+        missing_score_evidence = [
+            path for path in record["evidence"] if path not in indexed_evidence
+        ]
+        if missing_score_evidence:
+            raise PortfolioReportError(
+                f"{name} score cites unindexed evidence: {missing_score_evidence}"
+            )
 
 
 def main() -> int:

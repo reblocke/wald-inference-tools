@@ -1,0 +1,3932 @@
+{
+  "artifact_directory": "/private/tmp/cc-mig-11-final-browser-artifacts",
+  "completed_at": "2026-07-30T18:34:34Z",
+  "driver": {
+    "path": "validation-evidence/drivers/live_browser_audit.py",
+    "sha256": "67490befd6a85c2147d93e6057edf0632f25f953a09ade21b77c570cfaff0377"
+  },
+  "environment": {
+    "chromium_version": "149.0.7827.55",
+    "playwright": "1.61.0",
+    "webkit_version": "26.5"
+  },
+  "schema_version": 1,
+  "sites": {
+    "compatibility-curve": {
+      "chromium_desktop": {
+        "ok": true,
+        "result": {
+          "console_errors": [],
+          "copies": [
+            {
+              "clipboard_length": 522,
+              "clipboard_sha256": "c817fc412e3f87c3acfb4afa5afba8b1192684e380e855356c363155b29aeea2",
+              "enabled": true,
+              "nonempty": true,
+              "present": true,
+              "selector": "#copy-caption",
+              "visible": true
+            }
+          ],
+          "downloads": [
+            {
+              "bytes": 59899,
+              "enabled": true,
+              "filename": "wald-compatibility-curve.csv",
+              "path": "/private/tmp/cc-mig-11-final-browser-artifacts/compatibility-curve-export-csv-wald-compatibility-curve.csv",
+              "png_signature": false,
+              "present": true,
+              "selector": "#export-csv",
+              "sha256": "648d1aeab51a5d08838b2d1014f8671e7eab712dae5603910ecd5fd6f8e39a46",
+              "signature_hex": "6566666563745f64"
+            },
+            {
+              "bytes": 296424,
+              "enabled": true,
+              "filename": "wald-compatibility-curve-manuscript.png",
+              "path": "/private/tmp/cc-mig-11-final-browser-artifacts/compatibility-curve-export-manuscript-wald-compatibility-curve-manuscript.png",
+              "png_signature": true,
+              "present": true,
+              "selector": "#export-manuscript",
+              "sha256": "a37a89e55ba0230b60b477f97c92fd6fa8d5a943f85b568fdd8f7d79bd9d9815",
+              "signature_hex": "89504e470d0a1a0a"
+            },
+            {
+              "bytes": 158684,
+              "enabled": true,
+              "filename": "wald-compatibility-curve-dashboard.png",
+              "path": "/private/tmp/cc-mig-11-final-browser-artifacts/compatibility-curve-export-dashboard-wald-compatibility-curve-dashboard.png",
+              "png_signature": true,
+              "present": true,
+              "selector": "#export-dashboard",
+              "sha256": "000cbd3b5786f19ca6d55947e4a57a531005c082c0fd3c3ff10926e95b29d254",
+              "signature_hex": "89504e470d0a1a0a"
+            }
+          ],
+          "error_and_recovery": {
+            "error_attributes": {
+              "ariaAtomic": null,
+              "ariaLive": null,
+              "dataState": null,
+              "role": "alert"
+            },
+            "error_link": {
+              "focuses_control": null,
+              "href": null,
+              "present": false
+            },
+            "error_text": "Check the inputs\nOdds ratio inputs must be strictly positive on the natural scale.",
+            "invalid_control_aria_invalid": null,
+            "recovered": true,
+            "recovery_status": "Compatibility curve updated.",
+            "safe_no_traceback_or_local_path": true
+          },
+          "final_url": "https://reblocke.github.io/compatibility-curve/",
+          "initial_url": "https://reblocke.github.io/compatibility-curve/",
+          "labels_and_text": {
+            "announcement_regions": [
+              {
+                "ariaAtomic": null,
+                "ariaLive": "polite",
+                "hidden": false,
+                "id": "runtime-status",
+                "role": "status",
+                "text": "Compatibility curve updated."
+              },
+              {
+                "ariaAtomic": null,
+                "ariaLive": null,
+                "hidden": true,
+                "id": "error-summary",
+                "role": "alert",
+                "text": "Check the inputs"
+              },
+              {
+                "ariaAtomic": null,
+                "ariaLive": "polite",
+                "hidden": false,
+                "id": "result-summary",
+                "role": null,
+                "text": "The null value 1 has compatibility 0.00256532 under the reconstructed Wald model. The curve peaks at the CI-implied estimate 1.8257419."
+              }
+            ],
+            "controls": [
+              {
+                "accessibleName": "Effect measure",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "effect-type",
+                "name": "effect_type",
+                "tag": "select",
+                "type": null
+              },
+              {
+                "accessibleName": "Point estimate (optional)",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "estimate",
+                "name": "estimate",
+                "tag": "input",
+                "type": "text"
+              },
+              {
+                "accessibleName": "Lower 95% CI",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "ci-lower",
+                "name": "lower",
+                "tag": "input",
+                "type": "text"
+              },
+              {
+                "accessibleName": "Upper 95% CI",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "ci-upper",
+                "name": "upper",
+                "tag": "input",
+                "type": "text"
+              },
+              {
+                "accessibleName": "Null value (optional)",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "null-value",
+                "name": "null_value",
+                "tag": "input",
+                "type": "text"
+              },
+              {
+                "accessibleName": "Reference thresholds or MCIDs (optional)",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "thresholds",
+                "name": "thresholds",
+                "tag": "textarea",
+                "type": null
+              },
+              {
+                "accessibleName": "Display lower (optional)",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "display-range-lower",
+                "name": "display_range_lower",
+                "tag": "input",
+                "type": "text"
+              },
+              {
+                "accessibleName": "Display upper (optional)",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "display-range-upper",
+                "name": "display_range_upper",
+                "tag": "input",
+                "type": "text"
+              },
+              {
+                "accessibleName": "Ratio-axis spacing",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "axis-spacing",
+                "name": "axis_spacing",
+                "tag": "select",
+                "type": null
+              },
+              {
+                "accessibleName": "Grid points",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "grid-points",
+                "name": "grid_points",
+                "tag": "select",
+                "type": null
+              },
+              {
+                "accessibleName": "Show 90%, 95%, and 99% compatibility guides",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "show-guides",
+                "name": "show_guides",
+                "tag": "input",
+                "type": "checkbox"
+              },
+              {
+                "accessibleName": "Update curve",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "calculate",
+                "name": null,
+                "tag": "button",
+                "type": "submit"
+              },
+              {
+                "accessibleName": "Reset",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "",
+                "name": null,
+                "tag": "button",
+                "type": "reset"
+              }
+            ],
+            "text_alternatives": [
+              {
+                "count": 1,
+                "selector": "#result-summary",
+                "text_length": 135,
+                "visible": true
+              },
+              {
+                "count": 1,
+                "selector": "#reconstruction-summary",
+                "text_length": 209,
+                "visible": true
+              },
+              {
+                "count": 1,
+                "selector": "#threshold-table",
+                "text_length": 0,
+                "visible": false
+              },
+              {
+                "count": 1,
+                "selector": "#figure-caption",
+                "text_length": 534,
+                "visible": true
+              }
+            ],
+            "unlabelled_enabled_controls": [],
+            "visible_images_missing_alt": []
+          },
+          "network": {
+            "after_input_request_count": 2,
+            "external_requests": [
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "script",
+                "url": "https://cdn.plot.ly/plotly-3.1.0.min.js"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "other",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide.js"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide-lock.json"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/python_stdlib.zip"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide.asm.wasm"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "other",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide.asm.js"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/numpy-2.2.5-cp313-cp313-pyodide_2025_0_wasm32.whl"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/scipy-1.14.1-cp313-cp313-pyodide_2025_0_wasm32.whl"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/libopenblas-0.3.26.zip"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "image",
+                "url": "blob:https://reblocke.github.io/ae602125-0267-4d9f-84c8-41ec0052ecb7"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "image",
+                "url": "blob:https://reblocke.github.io/f546dad1-d7d8-42e7-bd30-d377873c3926"
+              }
+            ],
+            "hosts": {
+              "": 2,
+              "cdn.jsdelivr.net": 8,
+              "cdn.plot.ly": 1,
+              "reblocke.github.io": 30
+            },
+            "methods": {
+              "GET": 41
+            },
+            "non_get_requests": [],
+            "request_count": 41,
+            "resource_types": {
+              "document": 1,
+              "fetch": 26,
+              "image": 2,
+              "other": 2,
+              "script": 9,
+              "stylesheet": 1
+            },
+            "sentinel_in_any_request_or_websocket": false,
+            "sentinel_in_post_input_request": false,
+            "telemetry_matches": [],
+            "websockets": []
+          },
+          "page_errors": [],
+          "related_links": [
+            "https://github.com/reblocke/compatibility-curve",
+            "https://github.com/reblocke/compatibility-curve/blob/main/docs/PRIVACY.md",
+            "https://github.com/reblocke/compatibility-curve/blob/main/docs/SCIENTIFIC_SCOPE.md",
+            "https://github.com/reblocke/compatibility-curve/blob/main/llms.txt",
+            "https://github.com/reblocke/wald-inference-core",
+            "https://github.com/reblocke/wald-inference-core/releases/tag/v0.4.1",
+            "https://reblocke.github.io/compatibility-curve/#main-content",
+            "https://reblocke.github.io/conf_curve_likelihood/",
+            "https://reblocke.github.io/wald-inference-tools/",
+            "https://reblocke.github.io/wald-likelihood-support/"
+          ],
+          "script_sources": [
+            "https://cdn.plot.ly/plotly-3.1.0.min.js",
+            "https://reblocke.github.io/compatibility-curve/app.js"
+          ],
+          "storage": {
+            "cacheStorage": [],
+            "contextCookies": [],
+            "documentCookie": "",
+            "indexedDB": [],
+            "localStorage": [],
+            "serviceWorkerController": false,
+            "serviceWorkers": [],
+            "sessionStorage": []
+          },
+          "success_status": "Caption copied.",
+          "title": "Wald Compatibility Curve",
+          "url_unchanged": true
+        }
+      },
+      "chromium_mobile_390": {
+        "ok": true,
+        "result": {
+          "controls_visible": true,
+          "keyboard": {
+            "focus_path": [
+              "{\"id\": \"ci-lower\", \"tag\": \"input\", \"text\": \"\", \"type\": \"text\"}",
+              "{\"id\": \"ci-upper\", \"tag\": \"input\", \"text\": \"\", \"type\": \"text\"}",
+              "{\"id\": \"null-value\", \"tag\": \"input\", \"text\": \"\", \"type\": \"text\"}",
+              "{\"id\": \"thresholds\", \"tag\": \"textarea\", \"text\": \"\", \"type\": null}",
+              "{\"id\": \"display-range-lower\", \"tag\": \"input\", \"text\": \"\", \"type\": \"text\"}",
+              "{\"id\": \"display-range-upper\", \"tag\": \"input\", \"text\": \"\", \"type\": \"text\"}",
+              "{\"id\": \"\", \"tag\": \"summary\", \"text\": \"Advanced display controls\", \"type\": null}",
+              "{\"id\": \"calculate\", \"tag\": \"button\", \"text\": \"Update curve\", \"type\": \"submit\"}"
+            ],
+            "reached": true
+          },
+          "network": {
+            "after_input_request_count": 0,
+            "external_requests": [
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "script",
+                "url": "https://cdn.plot.ly/plotly-3.1.0.min.js"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "other",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide.js"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide-lock.json"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/python_stdlib.zip"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide.asm.wasm"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "other",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide.asm.js"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/numpy-2.2.5-cp313-cp313-pyodide_2025_0_wasm32.whl"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/scipy-1.14.1-cp313-cp313-pyodide_2025_0_wasm32.whl"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/libopenblas-0.3.26.zip"
+              }
+            ],
+            "hosts": {
+              "cdn.jsdelivr.net": 8,
+              "cdn.plot.ly": 1,
+              "reblocke.github.io": 30
+            },
+            "methods": {
+              "GET": 39
+            },
+            "non_get_requests": [],
+            "request_count": 39,
+            "resource_types": {
+              "document": 1,
+              "fetch": 26,
+              "other": 2,
+              "script": 9,
+              "stylesheet": 1
+            },
+            "sentinel_in_any_request_or_websocket": false,
+            "sentinel_in_post_input_request": false,
+            "telemetry_matches": [],
+            "websockets": []
+          },
+          "no_horizontal_overflow": true,
+          "results_visible": true,
+          "storage": {
+            "cacheStorage": [],
+            "contextCookies": [],
+            "documentCookie": "",
+            "indexedDB": [],
+            "localStorage": [],
+            "serviceWorkerController": false,
+            "serviceWorkers": [],
+            "sessionStorage": []
+          },
+          "url_unchanged": true,
+          "viewport": {
+            "bodyScrollWidth": 390,
+            "documentClientWidth": 390,
+            "documentScrollWidth": 390,
+            "innerWidth": 390
+          }
+        }
+      },
+      "url": "https://reblocke.github.io/compatibility-curve/",
+      "webkit_smoke": {
+        "ok": true,
+        "result": {
+          "console_errors": [],
+          "page_errors": [],
+          "smoke_status": "Compatibility curve updated.",
+          "storage": {
+            "cacheStorage": [],
+            "contextCookies": [],
+            "documentCookie": "",
+            "indexedDB": [],
+            "localStorage": [],
+            "serviceWorkerController": false,
+            "serviceWorkers": [],
+            "sessionStorage": []
+          },
+          "title": "Wald Compatibility Curve",
+          "url": "https://reblocke.github.io/compatibility-curve/"
+        }
+      }
+    },
+    "conf_curve_likelihood": {
+      "chromium_desktop": {
+        "ok": true,
+        "result": {
+          "console_errors": [],
+          "copies": [
+            {
+              "clipboard_length": 907,
+              "clipboard_sha256": "fc4891bcf8b1790152c5296a2bfd32e0c3d35d176bb303b49a18eef40e03ccb7",
+              "enabled": true,
+              "nonempty": true,
+              "present": true,
+              "selector": "#copy-caption",
+              "visible": true
+            },
+            {
+              "clipboard_length": 500,
+              "clipboard_sha256": "fdf36b8396b20c0daee2a29bdf25bf0526771ee6e60656a83b52da4c090b3184",
+              "enabled": true,
+              "nonempty": true,
+              "present": true,
+              "selector": "#copy-reviewer-text",
+              "visible": true
+            }
+          ],
+          "downloads": [
+            {
+              "bytes": 217762,
+              "enabled": true,
+              "filename": "wald-confidence-curves.csv",
+              "path": "/private/tmp/cc-mig-11-final-browser-artifacts/conf_curve_likelihood-export-csv-wald-confidence-curves.csv",
+              "png_signature": false,
+              "present": true,
+              "selector": "#export-csv",
+              "sha256": "73fc24efcac0e6b59167d8f36850075165bb236ad0124b9a60e248491caea9e4",
+              "signature_hex": "6566666563745f64"
+            },
+            {
+              "bytes": 634270,
+              "enabled": true,
+              "filename": "wald-confidence-curves.png",
+              "path": "/private/tmp/cc-mig-11-final-browser-artifacts/conf_curve_likelihood-export-png-wald-confidence-curves.png",
+              "png_signature": true,
+              "present": true,
+              "selector": "#export-png",
+              "sha256": "9db1651c71334cb136b21bc6b6c11d81a5ca4a27982bd516910a2384afb7f34d",
+              "signature_hex": "89504e470d0a1a0a"
+            },
+            {
+              "bytes": 583629,
+              "enabled": true,
+              "filename": "wald-confidence-curves-manuscript.png",
+              "path": "/private/tmp/cc-mig-11-final-browser-artifacts/conf_curve_likelihood-export-manuscript-png-wald-confidence-curves-manuscript.png",
+              "png_signature": true,
+              "present": true,
+              "selector": "#export-manuscript-png",
+              "sha256": "67df447128c5f7a7da6c3f6b930e80f61e9cb71fdc290bb428691502ac33fa8a",
+              "signature_hex": "89504e470d0a1a0a"
+            }
+          ],
+          "error_and_recovery": {
+            "error_attributes": {
+              "ariaAtomic": null,
+              "ariaLive": "polite",
+              "dataState": "error",
+              "role": null
+            },
+            "error_link": {
+              "focuses_control": null,
+              "href": null,
+              "present": false
+            },
+            "error_text": "The calculation could not be completed. wald_inference.errors.ValidationError: Odds ratio inputs must be strictly positive on the natural scale.",
+            "invalid_control_aria_invalid": null,
+            "recovered": true,
+            "recovery_status": "Curves updated.",
+            "safe_no_traceback_or_local_path": true
+          },
+          "final_url": "https://reblocke.github.io/conf_curve_likelihood/",
+          "initial_url": "https://reblocke.github.io/conf_curve_likelihood/",
+          "labels_and_text": {
+            "announcement_regions": [
+              {
+                "ariaAtomic": null,
+                "ariaLive": "polite",
+                "hidden": false,
+                "id": "status-card",
+                "role": null,
+                "text": "Curves updated."
+              },
+              {
+                "ariaAtomic": null,
+                "ariaLive": "polite",
+                "hidden": false,
+                "id": "technical-version",
+                "role": null,
+                "text": "confcurve app 0.2.5 \u00b7 wald-inference core 0.4.1"
+              }
+            ],
+            "controls": [
+              {
+                "accessibleName": "Effect measure",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "effect-type",
+                "name": "effect_type",
+                "tag": "select",
+                "type": null
+              },
+              {
+                "accessibleName": "Point Estimate (optional)",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "estimate",
+                "name": "estimate",
+                "tag": "input",
+                "type": "number"
+              },
+              {
+                "accessibleName": "95% CI lower",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "ci-lower",
+                "name": "lower",
+                "tag": "input",
+                "type": "number"
+              },
+              {
+                "accessibleName": "95% CI upper",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "ci-upper",
+                "name": "upper",
+                "tag": "input",
+                "type": "number"
+              },
+              {
+                "accessibleName": "Null value",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "null-value",
+                "name": "null_value",
+                "tag": "input",
+                "type": "number"
+              },
+              {
+                "accessibleName": "Reference thresholds / MCIDs",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "thresholds",
+                "name": "thresholds",
+                "tag": "input",
+                "type": "text"
+              },
+              {
+                "accessibleName": "Enable design calibration: Type S / Type M risk",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "design-enabled",
+                "name": "design_enabled",
+                "tag": "input",
+                "type": "checkbox"
+              },
+              {
+                "accessibleName": "Axis spacing",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "axis-spacing",
+                "name": "axis_spacing",
+                "tag": "select",
+                "type": null
+              },
+              {
+                "accessibleName": "Lower",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "display-range-lower",
+                "name": "display_range_lower",
+                "tag": "input",
+                "type": "number"
+              },
+              {
+                "accessibleName": "Upper",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "display-range-upper",
+                "name": "display_range_upper",
+                "tag": "input",
+                "type": "number"
+              },
+              {
+                "accessibleName": "Grid points",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "grid-points",
+                "name": "grid_points",
+                "tag": "input",
+                "type": "range"
+              },
+              {
+                "accessibleName": "Show 90%, 95%, and 99% compatibility guide lines",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "show-cutoffs",
+                "name": "show_cutoffs",
+                "tag": "input",
+                "type": "checkbox"
+              },
+              {
+                "accessibleName": "Export PNG",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "export-png",
+                "name": null,
+                "tag": "button",
+                "type": "button"
+              },
+              {
+                "accessibleName": "Export manuscript PNG",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "export-manuscript-png",
+                "name": null,
+                "tag": "button",
+                "type": "button"
+              },
+              {
+                "accessibleName": "Export CSV",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "export-csv",
+                "name": null,
+                "tag": "button",
+                "type": "button"
+              },
+              {
+                "accessibleName": "Both panels",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "view-mode-both",
+                "name": "view_mode",
+                "tag": "input",
+                "type": "radio"
+              },
+              {
+                "accessibleName": "Relative likelihood only",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "view-mode-likelihood",
+                "name": "view_mode",
+                "tag": "input",
+                "type": "radio"
+              },
+              {
+                "accessibleName": "Compatibility only",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "view-mode-compatibility",
+                "name": "view_mode",
+                "tag": "input",
+                "type": "radio"
+              }
+            ],
+            "text_alternatives": [
+              {
+                "count": 1,
+                "selector": "#summary-grid",
+                "text_length": 389,
+                "visible": true
+              },
+              {
+                "count": 1,
+                "selector": "#comparison-takeaway",
+                "text_length": 175,
+                "visible": true
+              },
+              {
+                "count": 1,
+                "selector": "#commentary-text",
+                "text_length": 775,
+                "visible": true
+              },
+              {
+                "count": 1,
+                "selector": "#figure-caption",
+                "text_length": 698,
+                "visible": true
+              }
+            ],
+            "unlabelled_enabled_controls": [],
+            "visible_images_missing_alt": []
+          },
+          "network": {
+            "after_input_request_count": 2,
+            "external_requests": [
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "script",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide.js"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "script",
+                "url": "https://cdn.plot.ly/plotly-3.1.0.min.js"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide-lock.json"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/python_stdlib.zip"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide.asm.wasm"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "script",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide.asm.js"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/numpy-2.2.5-cp313-cp313-pyodide_2025_0_wasm32.whl"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/scipy-1.14.1-cp313-cp313-pyodide_2025_0_wasm32.whl"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/libopenblas-0.3.26.zip"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "image",
+                "url": "blob:https://reblocke.github.io/5ead2cee-ec51-488a-85b9-fcf46013e1f5"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "image",
+                "url": "blob:https://reblocke.github.io/5a7f0436-739e-4ce5-8132-78fc90c75755"
+              }
+            ],
+            "hosts": {
+              "": 2,
+              "cdn.jsdelivr.net": 8,
+              "cdn.plot.ly": 1,
+              "reblocke.github.io": 31
+            },
+            "methods": {
+              "GET": 42
+            },
+            "non_get_requests": [],
+            "request_count": 42,
+            "resource_types": {
+              "document": 1,
+              "fetch": 28,
+              "image": 2,
+              "script": 10,
+              "stylesheet": 1
+            },
+            "sentinel_in_any_request_or_websocket": false,
+            "sentinel_in_post_input_request": false,
+            "telemetry_matches": [],
+            "websockets": []
+          },
+          "page_errors": [],
+          "related_links": [
+            "https://github.com/reblocke/conf_curve_likelihood",
+            "https://github.com/reblocke/conf_curve_likelihood/blob/main/docs/PRIVACY.md",
+            "https://github.com/reblocke/wald-inference-core/releases/tag/v0.4.1",
+            "https://reblocke.github.io/compatibility-curve/",
+            "https://reblocke.github.io/conf_curve_likelihood/",
+            "https://reblocke.github.io/critical-effect-size/",
+            "https://reblocke.github.io/precision-guardrail-planner/",
+            "https://reblocke.github.io/type-s-m-calibrator/",
+            "https://reblocke.github.io/wald-inference-tools/",
+            "https://reblocke.github.io/wald-likelihood-support/"
+          ],
+          "script_sources": [
+            "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide.js",
+            "https://cdn.plot.ly/plotly-3.1.0.min.js",
+            "https://reblocke.github.io/conf_curve_likelihood/assets/app.js"
+          ],
+          "storage": {
+            "cacheStorage": [],
+            "contextCookies": [],
+            "documentCookie": "",
+            "indexedDB": [],
+            "localStorage": [],
+            "serviceWorkerController": false,
+            "serviceWorkers": [],
+            "sessionStorage": []
+          },
+          "success_status": "Curves updated.",
+          "title": "Integrated Wald Inference Workbench",
+          "url_unchanged": true
+        }
+      },
+      "chromium_mobile_390": {
+        "ok": true,
+        "result": {
+          "controls_visible": true,
+          "keyboard": {
+            "active_after_tab": "design-enabled",
+            "automatic_workflow_completed": true,
+            "sentinel_field": "#thresholds"
+          },
+          "network": {
+            "after_input_request_count": 0,
+            "external_requests": [
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "script",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide.js"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "script",
+                "url": "https://cdn.plot.ly/plotly-3.1.0.min.js"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide-lock.json"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/python_stdlib.zip"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide.asm.wasm"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "script",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide.asm.js"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/numpy-2.2.5-cp313-cp313-pyodide_2025_0_wasm32.whl"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/scipy-1.14.1-cp313-cp313-pyodide_2025_0_wasm32.whl"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/libopenblas-0.3.26.zip"
+              }
+            ],
+            "hosts": {
+              "cdn.jsdelivr.net": 8,
+              "cdn.plot.ly": 1,
+              "reblocke.github.io": 31
+            },
+            "methods": {
+              "GET": 40
+            },
+            "non_get_requests": [],
+            "request_count": 40,
+            "resource_types": {
+              "document": 1,
+              "fetch": 28,
+              "script": 10,
+              "stylesheet": 1
+            },
+            "sentinel_in_any_request_or_websocket": false,
+            "sentinel_in_post_input_request": false,
+            "telemetry_matches": [],
+            "websockets": []
+          },
+          "no_horizontal_overflow": true,
+          "results_visible": true,
+          "storage": {
+            "cacheStorage": [],
+            "contextCookies": [],
+            "documentCookie": "",
+            "indexedDB": [],
+            "localStorage": [],
+            "serviceWorkerController": false,
+            "serviceWorkers": [],
+            "sessionStorage": []
+          },
+          "url_unchanged": true,
+          "viewport": {
+            "bodyScrollWidth": 390,
+            "documentClientWidth": 390,
+            "documentScrollWidth": 390,
+            "innerWidth": 390
+          }
+        }
+      },
+      "url": "https://reblocke.github.io/conf_curve_likelihood/",
+      "webkit_smoke": {
+        "ok": true,
+        "result": {
+          "console_errors": [],
+          "page_errors": [],
+          "smoke_status": "Curves updated.",
+          "storage": {
+            "cacheStorage": [],
+            "contextCookies": [],
+            "documentCookie": "",
+            "indexedDB": [],
+            "localStorage": [],
+            "serviceWorkerController": false,
+            "serviceWorkers": [],
+            "sessionStorage": []
+          },
+          "title": "Integrated Wald Inference Workbench",
+          "url": "https://reblocke.github.io/conf_curve_likelihood/"
+        }
+      }
+    },
+    "critical-effect-size": {
+      "chromium_desktop": {
+        "ok": true,
+        "result": {
+          "console_errors": [],
+          "copies": [
+            {
+              "clipboard_length": 681,
+              "clipboard_sha256": "c82dd8239cedb9d9157f18bcba945057437f244a1a81a87c6c83f4a056555064",
+              "enabled": true,
+              "nonempty": true,
+              "present": true,
+              "selector": "#copy-caption",
+              "visible": true
+            }
+          ],
+          "downloads": [
+            {
+              "bytes": 24251,
+              "enabled": true,
+              "filename": "wald-critical-effect-size-probability-curve.csv",
+              "path": "/private/tmp/cc-mig-11-final-browser-artifacts/critical-effect-size-export-csv-wald-critical-effect-size-probability-curve.csv",
+              "png_signature": false,
+              "present": true,
+              "selector": "#export-csv",
+              "sha256": "b921f42d457b701e30db51f3fab45d38366ed9f80700f39bc5b77d105c6a6aa1",
+              "signature_hex": "747275655f656666"
+            },
+            {
+              "bytes": 150809,
+              "enabled": true,
+              "filename": "wald-critical-effect-size-figure.png",
+              "path": "/private/tmp/cc-mig-11-final-browser-artifacts/critical-effect-size-export-figure-wald-critical-effect-size-figure.png",
+              "png_signature": true,
+              "present": true,
+              "selector": "#export-figure",
+              "sha256": "8c194b755050c8b90aa682330530d976500ff2b1fc7c5a7c77593cc26af61d93",
+              "signature_hex": "89504e470d0a1a0a"
+            },
+            {
+              "bytes": 175269,
+              "enabled": true,
+              "filename": "wald-critical-effect-size-dashboard.png",
+              "path": "/private/tmp/cc-mig-11-final-browser-artifacts/critical-effect-size-export-dashboard-wald-critical-effect-size-dashboard.png",
+              "png_signature": true,
+              "present": true,
+              "selector": "#export-dashboard",
+              "sha256": "23c73ceda2eaee0e63a8418cb57941071873a7d03f2c71d5207b9df64bc1617e",
+              "signature_hex": "89504e470d0a1a0a"
+            }
+          ],
+          "error_and_recovery": {
+            "error_attributes": {
+              "ariaAtomic": null,
+              "ariaLive": null,
+              "dataState": null,
+              "role": "alert"
+            },
+            "error_link": {
+              "focuses_control": null,
+              "href": null,
+              "present": false
+            },
+            "error_text": "Check the inputs\nAlpha must be between 0 and 1.",
+            "invalid_control_aria_invalid": null,
+            "recovered": true,
+            "recovery_status": "Calculation complete.",
+            "safe_no_traceback_or_local_path": true
+          },
+          "final_url": "https://reblocke.github.io/critical-effect-size/",
+          "initial_url": "https://reblocke.github.io/critical-effect-size/",
+          "labels_and_text": {
+            "announcement_regions": [
+              {
+                "ariaAtomic": null,
+                "ariaLive": "polite",
+                "hidden": false,
+                "id": "runtime-status",
+                "role": "status",
+                "text": "Calculation complete."
+              },
+              {
+                "ariaAtomic": null,
+                "ariaLive": null,
+                "hidden": true,
+                "id": "error-summary",
+                "role": "alert",
+                "text": "Check the inputs"
+              },
+              {
+                "ariaAtomic": null,
+                "ariaLive": "polite",
+                "hidden": false,
+                "id": "result-summary",
+                "role": null,
+                "text": "At current SE 0.1588115, the exact 80% critical effect(s) are negative: 0.6408734 (delta -2.801582, achieved 80%); positive: 1.560371 (delta 2.801582, achieved 80%)."
+              }
+            ],
+            "controls": [
+              {
+                "accessibleName": "Effect measure",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "effect-type",
+                "name": "effect_type",
+                "tag": "select",
+                "type": null
+              },
+              {
+                "accessibleName": "Precision input",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "precision-mode",
+                "name": "precision_mode",
+                "tag": "select",
+                "type": null
+              },
+              {
+                "accessibleName": "95% CI lower",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "ci-lower",
+                "name": "ci_lower",
+                "tag": "input",
+                "type": "text"
+              },
+              {
+                "accessibleName": "95% CI upper",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "ci-upper",
+                "name": "ci_upper",
+                "tag": "input",
+                "type": "text"
+              },
+              {
+                "accessibleName": "Observed estimate (optional display marker)",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "observed-estimate",
+                "name": "observed_estimate",
+                "tag": "input",
+                "type": "text"
+              },
+              {
+                "accessibleName": "Null value",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "null-value",
+                "name": "null_value",
+                "tag": "input",
+                "type": "text"
+              },
+              {
+                "accessibleName": "Alpha",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "alpha",
+                "name": "alpha",
+                "tag": "input",
+                "type": "text"
+              },
+              {
+                "accessibleName": "Target probability",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "target-probability",
+                "name": "target_probability",
+                "tag": "input",
+                "type": "text"
+              },
+              {
+                "accessibleName": "Selected-claim rule",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "selection-rule",
+                "name": "selection_rule",
+                "tag": "select",
+                "type": null
+              },
+              {
+                "accessibleName": "User-defined meaningful effect (optional scenario)",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "meaningful-effect",
+                "name": "meaningful_effect",
+                "tag": "input",
+                "type": "text"
+              },
+              {
+                "accessibleName": "Information multiplier",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "information-multiplier",
+                "name": "information_multiplier",
+                "tag": "input",
+                "type": "text"
+              },
+              {
+                "accessibleName": "Display minimum",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "display-min",
+                "name": "display_min",
+                "tag": "input",
+                "type": "text"
+              },
+              {
+                "accessibleName": "Display maximum",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "display-max",
+                "name": "display_max",
+                "tag": "input",
+                "type": "text"
+              },
+              {
+                "accessibleName": "Calculate exact critical effect",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "calculate",
+                "name": null,
+                "tag": "button",
+                "type": "submit"
+              },
+              {
+                "accessibleName": "Reset",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "",
+                "name": null,
+                "tag": "button",
+                "type": "reset"
+              }
+            ],
+            "text_alternatives": [
+              {
+                "count": 1,
+                "selector": "#result-summary",
+                "text_length": 165,
+                "visible": true
+              },
+              {
+                "count": 1,
+                "selector": "#current-critical-summary",
+                "text_length": 102,
+                "visible": true
+              },
+              {
+                "count": 1,
+                "selector": "#reference-table",
+                "text_length": 715,
+                "visible": true
+              },
+              {
+                "count": 1,
+                "selector": "#figure-caption",
+                "text_length": 681,
+                "visible": true
+              }
+            ],
+            "unlabelled_enabled_controls": [],
+            "visible_images_missing_alt": []
+          },
+          "network": {
+            "after_input_request_count": 2,
+            "external_requests": [
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "script",
+                "url": "https://cdn.plot.ly/plotly-3.1.0.min.js"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "other",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide.js"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide-lock.json"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/python_stdlib.zip"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide.asm.wasm"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "other",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide.asm.js"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/numpy-2.2.5-cp313-cp313-pyodide_2025_0_wasm32.whl"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/scipy-1.14.1-cp313-cp313-pyodide_2025_0_wasm32.whl"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/libopenblas-0.3.26.zip"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "image",
+                "url": "blob:https://reblocke.github.io/c4887ce0-e764-49ee-aa81-d1f52c057e1d"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "image",
+                "url": "blob:https://reblocke.github.io/a17d31a7-0043-4564-8535-9570f107bf95"
+              }
+            ],
+            "hosts": {
+              "": 2,
+              "cdn.jsdelivr.net": 8,
+              "cdn.plot.ly": 1,
+              "reblocke.github.io": 30
+            },
+            "methods": {
+              "GET": 41
+            },
+            "non_get_requests": [],
+            "request_count": 41,
+            "resource_types": {
+              "document": 1,
+              "fetch": 26,
+              "image": 2,
+              "other": 2,
+              "script": 9,
+              "stylesheet": 1
+            },
+            "sentinel_in_any_request_or_websocket": false,
+            "sentinel_in_post_input_request": false,
+            "telemetry_matches": [],
+            "websockets": []
+          },
+          "page_errors": [],
+          "related_links": [
+            "https://github.com/reblocke/critical-effect-size",
+            "https://github.com/reblocke/critical-effect-size/blob/main/docs/PRIVACY.md",
+            "https://github.com/reblocke/critical-effect-size/blob/main/docs/SCIENTIFIC_SCOPE.md",
+            "https://github.com/reblocke/wald-inference-core/releases/tag/v0.4.1",
+            "https://reblocke.github.io/conf_curve_likelihood/",
+            "https://reblocke.github.io/critical-effect-size/#main-content",
+            "https://reblocke.github.io/precision-guardrail-planner/",
+            "https://reblocke.github.io/wald-inference-tools/"
+          ],
+          "script_sources": [
+            "https://cdn.plot.ly/plotly-3.1.0.min.js",
+            "https://reblocke.github.io/critical-effect-size/app.js"
+          ],
+          "storage": {
+            "cacheStorage": [],
+            "contextCookies": [],
+            "documentCookie": "",
+            "indexedDB": [],
+            "localStorage": [],
+            "serviceWorkerController": false,
+            "serviceWorkers": [],
+            "sessionStorage": []
+          },
+          "success_status": "Caption copied.",
+          "title": "Wald Critical Effect Size",
+          "url_unchanged": true
+        }
+      },
+      "chromium_mobile_390": {
+        "ok": true,
+        "result": {
+          "controls_visible": true,
+          "keyboard": {
+            "focus_path": [
+              "{\"id\": \"meaningful-effect\", \"tag\": \"input\", \"text\": \"\", \"type\": \"text\"}",
+              "{\"id\": \"information-multiplier\", \"tag\": \"input\", \"text\": \"\", \"type\": \"text\"}",
+              "{\"id\": \"\", \"tag\": \"summary\", \"text\": \"Optional display range\", \"type\": null}",
+              "{\"id\": \"calculate\", \"tag\": \"button\", \"text\": \"Calculate exact critical effect\", \"type\": \"submit\"}"
+            ],
+            "reached": true
+          },
+          "network": {
+            "after_input_request_count": 0,
+            "external_requests": [
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "script",
+                "url": "https://cdn.plot.ly/plotly-3.1.0.min.js"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "other",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide.js"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide-lock.json"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/python_stdlib.zip"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide.asm.wasm"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "other",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide.asm.js"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/numpy-2.2.5-cp313-cp313-pyodide_2025_0_wasm32.whl"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/scipy-1.14.1-cp313-cp313-pyodide_2025_0_wasm32.whl"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/libopenblas-0.3.26.zip"
+              }
+            ],
+            "hosts": {
+              "cdn.jsdelivr.net": 8,
+              "cdn.plot.ly": 1,
+              "reblocke.github.io": 30
+            },
+            "methods": {
+              "GET": 39
+            },
+            "non_get_requests": [],
+            "request_count": 39,
+            "resource_types": {
+              "document": 1,
+              "fetch": 26,
+              "other": 2,
+              "script": 9,
+              "stylesheet": 1
+            },
+            "sentinel_in_any_request_or_websocket": false,
+            "sentinel_in_post_input_request": false,
+            "telemetry_matches": [],
+            "websockets": []
+          },
+          "no_horizontal_overflow": true,
+          "results_visible": true,
+          "storage": {
+            "cacheStorage": [],
+            "contextCookies": [],
+            "documentCookie": "",
+            "indexedDB": [],
+            "localStorage": [],
+            "serviceWorkerController": false,
+            "serviceWorkers": [],
+            "sessionStorage": []
+          },
+          "url_unchanged": true,
+          "viewport": {
+            "bodyScrollWidth": 390,
+            "documentClientWidth": 390,
+            "documentScrollWidth": 390,
+            "innerWidth": 390
+          }
+        }
+      },
+      "url": "https://reblocke.github.io/critical-effect-size/",
+      "webkit_smoke": {
+        "ok": true,
+        "result": {
+          "console_errors": [],
+          "page_errors": [],
+          "smoke_status": "Calculation complete.",
+          "storage": {
+            "cacheStorage": [],
+            "contextCookies": [],
+            "documentCookie": "",
+            "indexedDB": [],
+            "localStorage": [],
+            "serviceWorkerController": false,
+            "serviceWorkers": [],
+            "sessionStorage": []
+          },
+          "title": "Wald Critical Effect Size",
+          "url": "https://reblocke.github.io/critical-effect-size/"
+        }
+      }
+    },
+    "precision-guardrail-planner": {
+      "chromium_desktop": {
+        "ok": true,
+        "result": {
+          "console_errors": [],
+          "copies": [
+            {
+              "clipboard_length": 338,
+              "clipboard_sha256": "c6992809a44d2dcd0264ebb60c2a4a29a8067b8a69be9d4b37434216c9d58bcd",
+              "enabled": true,
+              "nonempty": true,
+              "present": true,
+              "selector": "#copy-caption",
+              "visible": true
+            },
+            {
+              "clipboard_length": 728,
+              "clipboard_sha256": "cecdc9c00efc615103fffae7c8fa91f3960d533d3066afc6c8588f1acb271c9d",
+              "enabled": true,
+              "nonempty": true,
+              "present": true,
+              "selector": "#copy-reviewer",
+              "visible": true
+            }
+          ],
+          "downloads": [
+            {
+              "bytes": 1758,
+              "enabled": true,
+              "filename": "precision-guardrail-planner-scenario-targets.csv",
+              "path": "/private/tmp/cc-mig-11-final-browser-artifacts/precision-guardrail-planner-export-scenario-csv-precision-guardrail-planner-scenario-targets.csv",
+              "png_signature": false,
+              "present": true,
+              "selector": "#export-scenario-csv",
+              "sha256": "9ae39d9212d5d5f9966893699b49260470962471366b6d2b8c1b1f3c09f375e8",
+              "signature_hex": "726f775f6b696e64"
+            },
+            {
+              "bytes": 4095,
+              "enabled": true,
+              "filename": "precision-guardrail-planner-sensitivity.csv",
+              "path": "/private/tmp/cc-mig-11-final-browser-artifacts/precision-guardrail-planner-export-sensitivity-csv-precision-guardrail-planner-sensitivity.csv",
+              "png_signature": false,
+              "present": true,
+              "selector": "#export-sensitivity-csv",
+              "sha256": "1f585dd9bd1619e3e9d623268039beac42cd07bbba5260839e75b159866e95e6",
+              "signature_hex": "726f775f6b696e64"
+            },
+            {
+              "bytes": 98964,
+              "enabled": true,
+              "filename": "precision-guardrail-planner-figure.png",
+              "path": "/private/tmp/cc-mig-11-final-browser-artifacts/precision-guardrail-planner-export-figure-precision-guardrail-planner-figure.png",
+              "png_signature": true,
+              "present": true,
+              "selector": "#export-figure",
+              "sha256": "b15e2ba8c0dcef6d17bf8e8747e05147914a7f625ead10517b2cd6561bc65800",
+              "signature_hex": "89504e470d0a1a0a"
+            },
+            {
+              "bytes": 140527,
+              "enabled": true,
+              "filename": "precision-guardrail-planner-summary.png",
+              "path": "/private/tmp/cc-mig-11-final-browser-artifacts/precision-guardrail-planner-export-dashboard-precision-guardrail-planner-summary.png",
+              "png_signature": true,
+              "present": true,
+              "selector": "#export-dashboard",
+              "sha256": "ce72c6351663d7f931c79a72a4a174c2bb49da5971df55326a49c37a2ba04bdb",
+              "signature_hex": "89504e470d0a1a0a"
+            }
+          ],
+          "error_and_recovery": {
+            "error_attributes": {
+              "ariaAtomic": null,
+              "ariaLive": null,
+              "dataState": null,
+              "role": "alert"
+            },
+            "error_link": {
+              "focuses_control": null,
+              "href": null,
+              "present": false
+            },
+            "error_text": "Check the inputs\nAlpha must be between 0 and 1.",
+            "invalid_control_aria_invalid": null,
+            "recovered": true,
+            "recovery_status": "Calculation complete.",
+            "safe_no_traceback_or_local_path": true
+          },
+          "final_url": "https://reblocke.github.io/precision-guardrail-planner/",
+          "initial_url": "https://reblocke.github.io/precision-guardrail-planner/",
+          "labels_and_text": {
+            "announcement_regions": [
+              {
+                "ariaAtomic": null,
+                "ariaLive": "polite",
+                "hidden": false,
+                "id": "runtime-status",
+                "role": "status",
+                "text": "Calculation complete."
+              },
+              {
+                "ariaAtomic": null,
+                "ariaLive": null,
+                "hidden": true,
+                "id": "error-summary",
+                "role": "alert",
+                "text": "Check the inputs"
+              },
+              {
+                "ariaAtomic": null,
+                "ariaLive": "polite",
+                "hidden": false,
+                "id": "result-summary",
+                "role": null,
+                "text": "Joint requirement: 3.5685903x current information."
+              }
+            ],
+            "controls": [
+              {
+                "accessibleName": "Effect measure",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "effect-type",
+                "name": "effect_type",
+                "tag": "select",
+                "type": null
+              },
+              {
+                "accessibleName": "Direct working-scale SE",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "",
+                "name": "precision_mode",
+                "tag": "input",
+                "type": "radio"
+              },
+              {
+                "accessibleName": "Reported 95% CI reconstruction",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "",
+                "name": "precision_mode",
+                "tag": "input",
+                "type": "radio"
+              },
+              {
+                "accessibleName": "Working-scale standard error",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "standard-error",
+                "name": "standard_error",
+                "tag": "input",
+                "type": "text"
+              },
+              {
+                "accessibleName": "Lower 95% confidence limit",
+                "ariaInvalid": null,
+                "disabled": true,
+                "id": "ci-lower",
+                "name": "ci_lower",
+                "tag": "input",
+                "type": "text"
+              },
+              {
+                "accessibleName": "Upper 95% confidence limit",
+                "ariaInvalid": null,
+                "disabled": true,
+                "id": "ci-upper",
+                "name": "ci_upper",
+                "tag": "input",
+                "type": "text"
+              },
+              {
+                "accessibleName": "Null value",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "null-value",
+                "name": "null_value",
+                "tag": "input",
+                "type": "text"
+              },
+              {
+                "accessibleName": "Assumed true effect",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "target-true-effect",
+                "name": "target_true_effect",
+                "tag": "input",
+                "type": "text"
+              },
+              {
+                "accessibleName": "Alpha",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "alpha",
+                "name": "alpha",
+                "tag": "input",
+                "type": "text"
+              },
+              {
+                "accessibleName": "Selected-claim rule",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "selection-rule",
+                "name": "selection_rule",
+                "tag": "select",
+                "type": null
+              },
+              {
+                "accessibleName": "Claim direction",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "claim-direction",
+                "name": "claim_direction",
+                "tag": "select",
+                "type": null
+              },
+              {
+                "accessibleName": "Claim threshold",
+                "ariaInvalid": null,
+                "disabled": true,
+                "id": "claim-threshold",
+                "name": "claim_threshold",
+                "tag": "input",
+                "type": "text"
+              },
+              {
+                "accessibleName": "Minimum selected-claim probability",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "target-probability-enabled",
+                "name": "target_probability_enabled",
+                "tag": "input",
+                "type": "checkbox"
+              },
+              {
+                "accessibleName": "Minimum selected-claim probability value",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "minimum-selected-claim-probability",
+                "name": "minimum_selected_claim_probability",
+                "tag": "input",
+                "type": "text"
+              },
+              {
+                "accessibleName": "Maximum Type S",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "maximum-type-s-enabled",
+                "name": "maximum_type_s_enabled",
+                "tag": "input",
+                "type": "checkbox"
+              },
+              {
+                "accessibleName": "Maximum Type S value",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "maximum-type-s",
+                "name": "maximum_type_s",
+                "tag": "input",
+                "type": "text"
+              },
+              {
+                "accessibleName": "Maximum Type M",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "maximum-type-m-enabled",
+                "name": "maximum_type_m_enabled",
+                "tag": "input",
+                "type": "checkbox"
+              },
+              {
+                "accessibleName": "Maximum Type M value",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "maximum-type-m",
+                "name": "maximum_type_m",
+                "tag": "input",
+                "type": "text"
+              },
+              {
+                "accessibleName": "Evaluate a user-specified plausible range",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "sensitivity-enabled",
+                "name": "sensitivity_enabled",
+                "tag": "input",
+                "type": "checkbox"
+              },
+              {
+                "accessibleName": "Range minimum",
+                "ariaInvalid": null,
+                "disabled": true,
+                "id": "sensitivity-min",
+                "name": "sensitivity_min",
+                "tag": "input",
+                "type": "text"
+              },
+              {
+                "accessibleName": "Range maximum",
+                "ariaInvalid": null,
+                "disabled": true,
+                "id": "sensitivity-max",
+                "name": "sensitivity_max",
+                "tag": "input",
+                "type": "text"
+              },
+              {
+                "accessibleName": "Grid points (3\u2013101)",
+                "ariaInvalid": null,
+                "disabled": true,
+                "id": "sensitivity-points",
+                "name": "sensitivity_points",
+                "tag": "input",
+                "type": "number"
+              },
+              {
+                "accessibleName": "Assume information is proportional to sample size and all other design features\n              remain unchanged.",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "sample-size-projection-enabled",
+                "name": "sample_size_projection_enabled",
+                "tag": "input",
+                "type": "checkbox"
+              },
+              {
+                "accessibleName": "Current effective sample size",
+                "ariaInvalid": null,
+                "disabled": true,
+                "id": "current-effective-n",
+                "name": "current_effective_n",
+                "tag": "input",
+                "type": "text"
+              },
+              {
+                "accessibleName": "Plan precision",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "calculate",
+                "name": null,
+                "tag": "button",
+                "type": "submit"
+              },
+              {
+                "accessibleName": "Reset",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "",
+                "name": null,
+                "tag": "button",
+                "type": "reset"
+              }
+            ],
+            "text_alternatives": [
+              {
+                "count": 1,
+                "selector": "#result-summary",
+                "text_length": 50,
+                "visible": true
+              },
+              {
+                "count": 1,
+                "selector": "#joint-status",
+                "text_length": 50,
+                "visible": true
+              },
+              {
+                "count": 1,
+                "selector": "#target-table",
+                "text_length": 654,
+                "visible": true
+              },
+              {
+                "count": 1,
+                "selector": "#figure-caption",
+                "text_length": 179,
+                "visible": true
+              },
+              {
+                "count": 1,
+                "selector": "#reviewer-text",
+                "text_length": 0,
+                "visible": true
+              }
+            ],
+            "unlabelled_enabled_controls": [],
+            "visible_images_missing_alt": []
+          },
+          "network": {
+            "after_input_request_count": 2,
+            "external_requests": [
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "script",
+                "url": "https://cdn.plot.ly/plotly-3.1.0.min.js"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "other",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide.js"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide-lock.json"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/python_stdlib.zip"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide.asm.wasm"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "other",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide.asm.js"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/numpy-2.2.5-cp313-cp313-pyodide_2025_0_wasm32.whl"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/scipy-1.14.1-cp313-cp313-pyodide_2025_0_wasm32.whl"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/libopenblas-0.3.26.zip"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "image",
+                "url": "blob:https://reblocke.github.io/5b8168b7-0c4a-4d96-b095-98aba79d1070"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "image",
+                "url": "blob:https://reblocke.github.io/1e7add05-f47c-4777-9b5e-18e1322dcbe5"
+              }
+            ],
+            "hosts": {
+              "": 2,
+              "cdn.jsdelivr.net": 8,
+              "cdn.plot.ly": 1,
+              "reblocke.github.io": 29
+            },
+            "methods": {
+              "GET": 40
+            },
+            "non_get_requests": [],
+            "request_count": 40,
+            "resource_types": {
+              "document": 1,
+              "fetch": 25,
+              "image": 2,
+              "other": 2,
+              "script": 9,
+              "stylesheet": 1
+            },
+            "sentinel_in_any_request_or_websocket": false,
+            "sentinel_in_post_input_request": false,
+            "telemetry_matches": [],
+            "websockets": []
+          },
+          "page_errors": [],
+          "related_links": [
+            "https://github.com/reblocke/precision-guardrail-planner",
+            "https://github.com/reblocke/precision-guardrail-planner/blob/main/docs/PRIVACY.md",
+            "https://github.com/reblocke/precision-guardrail-planner/blob/main/docs/SCIENTIFIC_SCOPE.md",
+            "https://github.com/reblocke/precision-guardrail-planner/blob/main/docs/VALIDATION.md",
+            "https://github.com/reblocke/wald-inference-core/releases/tag/v0.4.1",
+            "https://reblocke.github.io/conf_curve_likelihood/",
+            "https://reblocke.github.io/precision-guardrail-planner/#main-content",
+            "https://reblocke.github.io/type-s-m-calibrator/",
+            "https://reblocke.github.io/wald-inference-tools/"
+          ],
+          "script_sources": [
+            "https://cdn.plot.ly/plotly-3.1.0.min.js",
+            "https://reblocke.github.io/precision-guardrail-planner/app.js"
+          ],
+          "storage": {
+            "cacheStorage": [],
+            "contextCookies": [],
+            "documentCookie": "",
+            "indexedDB": [],
+            "localStorage": [],
+            "serviceWorkerController": false,
+            "serviceWorkers": [],
+            "sessionStorage": []
+          },
+          "success_status": "Reviewer text copied.",
+          "title": "Precision Guardrail Planner",
+          "url_unchanged": true
+        }
+      },
+      "chromium_mobile_390": {
+        "ok": true,
+        "result": {
+          "controls_visible": true,
+          "keyboard": {
+            "focus_path": [
+              "{\"id\": \"target-true-effect\", \"tag\": \"input\", \"text\": \"\", \"type\": \"text\"}",
+              "{\"id\": \"alpha\", \"tag\": \"input\", \"text\": \"\", \"type\": \"text\"}",
+              "{\"id\": \"selection-rule\", \"tag\": \"select\", \"text\": \"Two-sided p < alpha against the null\\n                \\n                \\n         \", \"type\": null}",
+              "{\"id\": \"claim-direction\", \"tag\": \"select\", \"text\": \"Positive\\n                Negative\", \"type\": null}",
+              "{\"id\": \"target-probability-enabled\", \"tag\": \"input\", \"text\": \"\", \"type\": \"checkbox\"}",
+              "{\"id\": \"minimum-selected-claim-probability\", \"tag\": \"input\", \"text\": \"\", \"type\": \"text\"}",
+              "{\"id\": \"maximum-type-s-enabled\", \"tag\": \"input\", \"text\": \"\", \"type\": \"checkbox\"}",
+              "{\"id\": \"maximum-type-s\", \"tag\": \"input\", \"text\": \"\", \"type\": \"text\"}",
+              "{\"id\": \"maximum-type-m-enabled\", \"tag\": \"input\", \"text\": \"\", \"type\": \"checkbox\"}",
+              "{\"id\": \"maximum-type-m\", \"tag\": \"input\", \"text\": \"\", \"type\": \"text\"}",
+              "{\"id\": \"\", \"tag\": \"summary\", \"text\": \"Sensitivity across assumed true effects\", \"type\": null}",
+              "{\"id\": \"\", \"tag\": \"summary\", \"text\": \"Optional approximate sample-size projection\", \"type\": null}",
+              "{\"id\": \"calculate\", \"tag\": \"button\", \"text\": \"Plan precision\", \"type\": \"submit\"}"
+            ],
+            "reached": true
+          },
+          "network": {
+            "after_input_request_count": 0,
+            "external_requests": [
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "script",
+                "url": "https://cdn.plot.ly/plotly-3.1.0.min.js"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "other",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide.js"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide-lock.json"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/python_stdlib.zip"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide.asm.wasm"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "other",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide.asm.js"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/numpy-2.2.5-cp313-cp313-pyodide_2025_0_wasm32.whl"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/scipy-1.14.1-cp313-cp313-pyodide_2025_0_wasm32.whl"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/libopenblas-0.3.26.zip"
+              }
+            ],
+            "hosts": {
+              "cdn.jsdelivr.net": 8,
+              "cdn.plot.ly": 1,
+              "reblocke.github.io": 29
+            },
+            "methods": {
+              "GET": 38
+            },
+            "non_get_requests": [],
+            "request_count": 38,
+            "resource_types": {
+              "document": 1,
+              "fetch": 25,
+              "other": 2,
+              "script": 9,
+              "stylesheet": 1
+            },
+            "sentinel_in_any_request_or_websocket": false,
+            "sentinel_in_post_input_request": false,
+            "telemetry_matches": [],
+            "websockets": []
+          },
+          "no_horizontal_overflow": true,
+          "results_visible": true,
+          "storage": {
+            "cacheStorage": [],
+            "contextCookies": [],
+            "documentCookie": "",
+            "indexedDB": [],
+            "localStorage": [],
+            "serviceWorkerController": false,
+            "serviceWorkers": [],
+            "sessionStorage": []
+          },
+          "url_unchanged": true,
+          "viewport": {
+            "bodyScrollWidth": 390,
+            "documentClientWidth": 390,
+            "documentScrollWidth": 390,
+            "innerWidth": 390
+          }
+        }
+      },
+      "url": "https://reblocke.github.io/precision-guardrail-planner/",
+      "webkit_smoke": {
+        "ok": true,
+        "result": {
+          "console_errors": [],
+          "page_errors": [],
+          "smoke_status": "Calculation complete.",
+          "storage": {
+            "cacheStorage": [],
+            "contextCookies": [],
+            "documentCookie": "",
+            "indexedDB": [],
+            "localStorage": [],
+            "serviceWorkerController": false,
+            "serviceWorkers": [],
+            "sessionStorage": []
+          },
+          "title": "Precision Guardrail Planner",
+          "url": "https://reblocke.github.io/precision-guardrail-planner/"
+        }
+      }
+    },
+    "scientific-applet-template": {
+      "chromium_desktop": {
+        "ok": true,
+        "result": {
+          "console_errors": [],
+          "copies": [
+            {
+              "clipboard_length": 125,
+              "clipboard_sha256": "79c79f663a789bca666662985f28f15f85e2958f6cb1cdc3e931f81aa56165b8",
+              "enabled": true,
+              "nonempty": true,
+              "present": true,
+              "selector": "#copy-caption",
+              "visible": true
+            }
+          ],
+          "downloads": [
+            {
+              "bytes": 67,
+              "enabled": true,
+              "filename": "scientific-applet-template-results.csv",
+              "path": "/private/tmp/cc-mig-11-final-browser-artifacts/scientific-applet-template-export-csv-scientific-applet-template-results.csv",
+              "png_signature": false,
+              "present": true,
+              "selector": "#export-csv",
+              "sha256": "c3c877d313b7daf03891504894a9b909a0e25fb5fd47be312c72f148d1ccff19",
+              "signature_hex": "4c6162656c2c5661"
+            },
+            {
+              "bytes": 57481,
+              "enabled": true,
+              "filename": "scientific-applet-template-figure.png",
+              "path": "/private/tmp/cc-mig-11-final-browser-artifacts/scientific-applet-template-export-figure-scientific-applet-template-figure.png",
+              "png_signature": true,
+              "present": true,
+              "selector": "#export-figure",
+              "sha256": "cfe03788e4ceda7edf273b45e71c47fa4b8101c62c92ec48af6b3e1780d3a06a",
+              "signature_hex": "89504e470d0a1a0a"
+            },
+            {
+              "bytes": 66592,
+              "enabled": true,
+              "filename": "scientific-applet-template-dashboard.png",
+              "path": "/private/tmp/cc-mig-11-final-browser-artifacts/scientific-applet-template-export-dashboard-scientific-applet-template-dashboard.png",
+              "png_signature": true,
+              "present": true,
+              "selector": "#export-dashboard",
+              "sha256": "ad9525ffb3348760579f0196ca273a3067ed73b7225258afe64e934d7b47527b",
+              "signature_hex": "89504e470d0a1a0a"
+            }
+          ],
+          "error_and_recovery": {
+            "error_attributes": {
+              "ariaAtomic": null,
+              "ariaLive": null,
+              "dataState": null,
+              "role": "alert"
+            },
+            "error_link": {
+              "focuses_control": true,
+              "href": "#first-value",
+              "present": true
+            },
+            "error_text": "Check the inputs\nFirst value is required.",
+            "invalid_control_aria_invalid": "true",
+            "recovered": true,
+            "recovery_status": "Calculation complete.",
+            "safe_no_traceback_or_local_path": true
+          },
+          "final_url": "https://reblocke.github.io/scientific-applet-template/#first-value",
+          "initial_url": "https://reblocke.github.io/scientific-applet-template/",
+          "labels_and_text": {
+            "announcement_regions": [
+              {
+                "ariaAtomic": null,
+                "ariaLive": "polite",
+                "hidden": false,
+                "id": "runtime-status",
+                "role": "status",
+                "text": "Calculation complete."
+              },
+              {
+                "ariaAtomic": null,
+                "ariaLive": null,
+                "hidden": true,
+                "id": "error-summary",
+                "role": "alert",
+                "text": "Check the inputs"
+              },
+              {
+                "ariaAtomic": null,
+                "ariaLive": "polite",
+                "hidden": false,
+                "id": "result-summary",
+                "role": null,
+                "text": "Demonstration only: 12345.7 + 3 = 12348.7."
+              }
+            ],
+            "controls": [
+              {
+                "accessibleName": "First value",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "first-value",
+                "name": "first_value",
+                "tag": "input",
+                "type": "text"
+              },
+              {
+                "accessibleName": "Second value",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "second-value",
+                "name": "second_value",
+                "tag": "input",
+                "type": "text"
+              },
+              {
+                "accessibleName": "Run demonstration",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "calculate",
+                "name": null,
+                "tag": "button",
+                "type": "submit"
+              },
+              {
+                "accessibleName": "Reset",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "",
+                "name": null,
+                "tag": "button",
+                "type": "reset"
+              }
+            ],
+            "text_alternatives": [
+              {
+                "count": 1,
+                "selector": "#result-summary",
+                "text_length": 42,
+                "visible": true
+              },
+              {
+                "count": 1,
+                "selector": "#result-table",
+                "text_length": 105,
+                "visible": true
+              },
+              {
+                "count": 0,
+                "selector": "#caption",
+                "text_length": 0,
+                "visible": false
+              }
+            ],
+            "unlabelled_enabled_controls": [],
+            "visible_images_missing_alt": []
+          },
+          "network": {
+            "after_input_request_count": 2,
+            "external_requests": [
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "script",
+                "url": "https://cdn.plot.ly/plotly-3.1.0.min.js"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "other",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide.js"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide-lock.json"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/python_stdlib.zip"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide.asm.wasm"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "other",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide.asm.js"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "image",
+                "url": "blob:https://reblocke.github.io/83ac876c-9f58-40f8-acfe-9bc2f10bd951"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "image",
+                "url": "blob:https://reblocke.github.io/5f92aef0-1d37-43f4-a9dc-75da18038a3d"
+              }
+            ],
+            "hosts": {
+              "": 2,
+              "cdn.jsdelivr.net": 5,
+              "cdn.plot.ly": 1,
+              "reblocke.github.io": 15
+            },
+            "methods": {
+              "GET": 23
+            },
+            "non_get_requests": [],
+            "request_count": 23,
+            "resource_types": {
+              "document": 1,
+              "fetch": 8,
+              "image": 2,
+              "other": 2,
+              "script": 9,
+              "stylesheet": 1
+            },
+            "sentinel_in_any_request_or_websocket": false,
+            "sentinel_in_post_input_request": false,
+            "telemetry_matches": [],
+            "websockets": []
+          },
+          "page_errors": [],
+          "related_links": [
+            "https://github.com/reblocke",
+            "https://github.com/reblocke/scientific-applet-template",
+            "https://github.com/reblocke/scientific-applet-template/blob/main/docs/PRIVACY.md",
+            "https://github.com/reblocke/scientific-applet-template/blob/main/docs/SCIENTIFIC_SCOPE.md",
+            "https://reblocke.github.io/scientific-applet-template/#main-content"
+          ],
+          "script_sources": [
+            "https://cdn.plot.ly/plotly-3.1.0.min.js",
+            "https://reblocke.github.io/scientific-applet-template/app.js"
+          ],
+          "storage": {
+            "cacheStorage": [],
+            "contextCookies": [],
+            "documentCookie": "",
+            "indexedDB": [],
+            "localStorage": [],
+            "serviceWorkerController": false,
+            "serviceWorkers": [],
+            "sessionStorage": []
+          },
+          "success_status": "Caption copied.",
+          "title": "Scientific Applet Template",
+          "url_unchanged": false
+        }
+      },
+      "chromium_mobile_390": {
+        "ok": true,
+        "result": {
+          "controls_visible": true,
+          "keyboard": {
+            "focus_path": [
+              "{\"id\": \"first-value\", \"tag\": \"input\", \"text\": \"\", \"type\": \"text\"}",
+              "{\"id\": \"second-value\", \"tag\": \"input\", \"text\": \"\", \"type\": \"text\"}",
+              "{\"id\": \"\", \"tag\": \"summary\", \"text\": \"Advanced controls pattern\", \"type\": null}",
+              "{\"id\": \"calculate\", \"tag\": \"button\", \"text\": \"Run demonstration\", \"type\": \"submit\"}"
+            ],
+            "reached": true
+          },
+          "network": {
+            "after_input_request_count": 0,
+            "external_requests": [
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "script",
+                "url": "https://cdn.plot.ly/plotly-3.1.0.min.js"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "other",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide.js"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide-lock.json"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/python_stdlib.zip"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide.asm.wasm"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "other",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide.asm.js"
+              }
+            ],
+            "hosts": {
+              "cdn.jsdelivr.net": 5,
+              "cdn.plot.ly": 1,
+              "reblocke.github.io": 15
+            },
+            "methods": {
+              "GET": 21
+            },
+            "non_get_requests": [],
+            "request_count": 21,
+            "resource_types": {
+              "document": 1,
+              "fetch": 8,
+              "other": 2,
+              "script": 9,
+              "stylesheet": 1
+            },
+            "sentinel_in_any_request_or_websocket": false,
+            "sentinel_in_post_input_request": false,
+            "telemetry_matches": [],
+            "websockets": []
+          },
+          "no_horizontal_overflow": true,
+          "results_visible": true,
+          "storage": {
+            "cacheStorage": [],
+            "contextCookies": [],
+            "documentCookie": "",
+            "indexedDB": [],
+            "localStorage": [],
+            "serviceWorkerController": false,
+            "serviceWorkers": [],
+            "sessionStorage": []
+          },
+          "url_unchanged": true,
+          "viewport": {
+            "bodyScrollWidth": 390,
+            "documentClientWidth": 390,
+            "documentScrollWidth": 390,
+            "innerWidth": 390
+          }
+        }
+      },
+      "url": "https://reblocke.github.io/scientific-applet-template/",
+      "webkit_smoke": {
+        "ok": true,
+        "result": {
+          "console_errors": [],
+          "page_errors": [],
+          "smoke_status": "Calculation complete.",
+          "storage": {
+            "cacheStorage": [],
+            "contextCookies": [],
+            "documentCookie": "",
+            "indexedDB": [],
+            "localStorage": [],
+            "serviceWorkerController": false,
+            "serviceWorkers": [],
+            "sessionStorage": []
+          },
+          "title": "Scientific Applet Template",
+          "url": "https://reblocke.github.io/scientific-applet-template/"
+        }
+      }
+    },
+    "type-s-m-calibrator": {
+      "chromium_desktop": {
+        "ok": true,
+        "result": {
+          "console_errors": [],
+          "copies": [
+            {
+              "clipboard_length": 562,
+              "clipboard_sha256": "1ef4f61bd8b45b92f09cb6a19dfbf9eb3e67543ff4cb78c3c8cae29948b064bd",
+              "enabled": true,
+              "nonempty": true,
+              "present": true,
+              "selector": "#copy-caption",
+              "visible": true
+            },
+            {
+              "clipboard_length": 476,
+              "clipboard_sha256": "aacf90c539fa5b9a14637321052c7dd9016db74ec4cc279f1f5110c55ec0f833",
+              "enabled": true,
+              "nonempty": true,
+              "present": true,
+              "selector": "#copy-reviewer",
+              "visible": true
+            }
+          ],
+          "downloads": [
+            {
+              "bytes": 56992,
+              "enabled": true,
+              "filename": "type-s-m-calibrator-curves.csv",
+              "path": "/private/tmp/cc-mig-11-final-browser-artifacts/type-s-m-calibrator-export-csv-type-s-m-calibrator-curves.csv",
+              "png_signature": false,
+              "present": true,
+              "selector": "#export-csv",
+              "sha256": "01f70f41c8d914fe532d25817f2548b36c18c752757ba21baf1dab814103e010",
+              "signature_hex": "747275655f656666"
+            },
+            {
+              "bytes": 191131,
+              "enabled": true,
+              "filename": "type-s-m-calibrator-figure.png",
+              "path": "/private/tmp/cc-mig-11-final-browser-artifacts/type-s-m-calibrator-export-figure-type-s-m-calibrator-figure.png",
+              "png_signature": true,
+              "present": true,
+              "selector": "#export-figure",
+              "sha256": "465b58267dada71298b6f0e108ac0bde518b43b2219ba20e98ac4869eb3c3e30",
+              "signature_hex": "89504e470d0a1a0a"
+            },
+            {
+              "bytes": 211666,
+              "enabled": true,
+              "filename": "type-s-m-calibrator-dashboard.png",
+              "path": "/private/tmp/cc-mig-11-final-browser-artifacts/type-s-m-calibrator-export-dashboard-type-s-m-calibrator-dashboard.png",
+              "png_signature": true,
+              "present": true,
+              "selector": "#export-dashboard",
+              "sha256": "1bf04b7316eb5d45f04548aa362fc6629b8f412042dd86507c12b54c6d23b3d6",
+              "signature_hex": "89504e470d0a1a0a"
+            }
+          ],
+          "error_and_recovery": {
+            "error_attributes": {
+              "ariaAtomic": null,
+              "ariaLive": null,
+              "dataState": null,
+              "role": "alert"
+            },
+            "error_link": {
+              "focuses_control": null,
+              "href": null,
+              "present": false
+            },
+            "error_text": "Check the inputs\nWorking-scale standard error must be positive.",
+            "invalid_control_aria_invalid": null,
+            "recovered": true,
+            "recovery_status": "Calculation complete.",
+            "safe_no_traceback_or_local_path": true
+          },
+          "final_url": "https://reblocke.github.io/type-s-m-calibrator/",
+          "initial_url": "https://reblocke.github.io/type-s-m-calibrator/",
+          "labels_and_text": {
+            "announcement_regions": [
+              {
+                "ariaAtomic": null,
+                "ariaLive": "polite",
+                "hidden": false,
+                "id": "runtime-status",
+                "role": "status",
+                "text": "Calculation complete."
+              },
+              {
+                "ariaAtomic": null,
+                "ariaLive": null,
+                "hidden": true,
+                "id": "error-summary",
+                "role": "alert",
+                "text": "Check the inputs"
+              },
+              {
+                "ariaAtomic": null,
+                "ariaLive": "polite",
+                "hidden": false,
+                "id": "result-summary",
+                "role": null,
+                "text": "4 assumed-true-effect scenarios at 1x information; Two-sided p < alpha against the null."
+              }
+            ],
+            "controls": [
+              {
+                "accessibleName": "Effect measure",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "effect-type",
+                "name": "effect_type",
+                "tag": "select",
+                "type": null
+              },
+              {
+                "accessibleName": "Precision input",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "precision-mode",
+                "name": "precision_mode",
+                "tag": "select",
+                "type": null
+              },
+              {
+                "accessibleName": "Current working-scale SE",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "standard-error",
+                "name": "standard_error",
+                "tag": "input",
+                "type": "text"
+              },
+              {
+                "accessibleName": "Null value",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "null-value",
+                "name": "null_value",
+                "tag": "input",
+                "type": "text"
+              },
+              {
+                "accessibleName": "Information multiplier",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "information-multiplier",
+                "name": "information_multiplier",
+                "tag": "input",
+                "type": "text"
+              },
+              {
+                "accessibleName": "Rule",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "selection-rule",
+                "name": "selection_rule",
+                "tag": "select",
+                "type": null
+              },
+              {
+                "accessibleName": "Alpha",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "alpha",
+                "name": "alpha",
+                "tag": "input",
+                "type": "text"
+              },
+              {
+                "accessibleName": "Scenario values",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "true-effect-scenarios",
+                "name": "true_effect_scenarios",
+                "tag": "input",
+                "type": "text"
+              },
+              {
+                "accessibleName": "Observed estimate (optional)",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "observed-estimate",
+                "name": "observed_estimate",
+                "tag": "input",
+                "type": "text"
+              },
+              {
+                "accessibleName": "Reference thresholds (optional)",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "reference-thresholds",
+                "name": "reference_thresholds",
+                "tag": "input",
+                "type": "text"
+              },
+              {
+                "accessibleName": "Plausible true-effect minimum",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "plausible-min",
+                "name": "plausible_true_effect_min",
+                "tag": "input",
+                "type": "text"
+              },
+              {
+                "accessibleName": "Plausible true-effect maximum",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "plausible-max",
+                "name": "plausible_true_effect_max",
+                "tag": "input",
+                "type": "text"
+              },
+              {
+                "accessibleName": "Grid points",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "grid-points",
+                "name": "grid_points",
+                "tag": "input",
+                "type": "number"
+              },
+              {
+                "accessibleName": "Calibrate design",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "calculate",
+                "name": null,
+                "tag": "button",
+                "type": "submit"
+              },
+              {
+                "accessibleName": "Reset",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "",
+                "name": null,
+                "tag": "button",
+                "type": "reset"
+              }
+            ],
+            "text_alternatives": [
+              {
+                "count": 1,
+                "selector": "#result-summary",
+                "text_length": 88,
+                "visible": true
+              },
+              {
+                "count": 1,
+                "selector": "#scenario-table",
+                "text_length": 836,
+                "visible": true
+              },
+              {
+                "count": 1,
+                "selector": "#figure-caption",
+                "text_length": 562,
+                "visible": true
+              },
+              {
+                "count": 1,
+                "selector": "#reviewer-text",
+                "text_length": 0,
+                "visible": true
+              }
+            ],
+            "unlabelled_enabled_controls": [],
+            "visible_images_missing_alt": []
+          },
+          "network": {
+            "after_input_request_count": 2,
+            "external_requests": [
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "script",
+                "url": "https://cdn.plot.ly/plotly-3.1.0.min.js"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "other",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide.js"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide-lock.json"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/python_stdlib.zip"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide.asm.wasm"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "other",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide.asm.js"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/numpy-2.2.5-cp313-cp313-pyodide_2025_0_wasm32.whl"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/scipy-1.14.1-cp313-cp313-pyodide_2025_0_wasm32.whl"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/libopenblas-0.3.26.zip"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "image",
+                "url": "blob:https://reblocke.github.io/b356b1d4-75db-41d4-9a95-7ab2aefb10da"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "image",
+                "url": "blob:https://reblocke.github.io/51ad1f21-ddfa-48a9-8bbb-c9363f4a0f0e"
+              }
+            ],
+            "hosts": {
+              "": 2,
+              "cdn.jsdelivr.net": 8,
+              "cdn.plot.ly": 1,
+              "reblocke.github.io": 30
+            },
+            "methods": {
+              "GET": 41
+            },
+            "non_get_requests": [],
+            "request_count": 41,
+            "resource_types": {
+              "document": 1,
+              "fetch": 26,
+              "image": 2,
+              "other": 2,
+              "script": 9,
+              "stylesheet": 1
+            },
+            "sentinel_in_any_request_or_websocket": false,
+            "sentinel_in_post_input_request": false,
+            "telemetry_matches": [],
+            "websockets": []
+          },
+          "page_errors": [],
+          "related_links": [
+            "https://github.com/reblocke/type-s-m-calibrator",
+            "https://github.com/reblocke/type-s-m-calibrator/blob/main/docs/PRIVACY.md",
+            "https://github.com/reblocke/type-s-m-calibrator/blob/main/docs/SCIENTIFIC_SCOPE.md",
+            "https://github.com/reblocke/wald-inference-core/releases/tag/v0.4.1",
+            "https://reblocke.github.io/conf_curve_likelihood/",
+            "https://reblocke.github.io/precision-guardrail-planner/",
+            "https://reblocke.github.io/type-s-m-calibrator/#main-content",
+            "https://reblocke.github.io/wald-inference-tools/"
+          ],
+          "script_sources": [
+            "https://cdn.plot.ly/plotly-3.1.0.min.js",
+            "https://reblocke.github.io/type-s-m-calibrator/app.js"
+          ],
+          "storage": {
+            "cacheStorage": [],
+            "contextCookies": [],
+            "documentCookie": "",
+            "indexedDB": [],
+            "localStorage": [],
+            "serviceWorkerController": false,
+            "serviceWorkers": [],
+            "sessionStorage": []
+          },
+          "success_status": "Reviewer text copied.",
+          "title": "Type S/M Calibrator",
+          "url_unchanged": true
+        }
+      },
+      "chromium_mobile_390": {
+        "ok": true,
+        "result": {
+          "controls_visible": true,
+          "keyboard": {
+            "focus_path": [
+              "{\"id\": \"observed-estimate\", \"tag\": \"input\", \"text\": \"\", \"type\": \"text\"}",
+              "{\"id\": \"reference-thresholds\", \"tag\": \"input\", \"text\": \"\", \"type\": \"text\"}",
+              "{\"id\": \"\", \"tag\": \"summary\", \"text\": \"Advanced display controls\", \"type\": null}",
+              "{\"id\": \"calculate\", \"tag\": \"button\", \"text\": \"Calibrate design\", \"type\": \"submit\"}"
+            ],
+            "reached": true
+          },
+          "network": {
+            "after_input_request_count": 0,
+            "external_requests": [
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "script",
+                "url": "https://cdn.plot.ly/plotly-3.1.0.min.js"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "other",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide.js"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide-lock.json"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/python_stdlib.zip"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide.asm.wasm"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "other",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide.asm.js"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/numpy-2.2.5-cp313-cp313-pyodide_2025_0_wasm32.whl"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/scipy-1.14.1-cp313-cp313-pyodide_2025_0_wasm32.whl"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/libopenblas-0.3.26.zip"
+              }
+            ],
+            "hosts": {
+              "cdn.jsdelivr.net": 8,
+              "cdn.plot.ly": 1,
+              "reblocke.github.io": 30
+            },
+            "methods": {
+              "GET": 39
+            },
+            "non_get_requests": [],
+            "request_count": 39,
+            "resource_types": {
+              "document": 1,
+              "fetch": 26,
+              "other": 2,
+              "script": 9,
+              "stylesheet": 1
+            },
+            "sentinel_in_any_request_or_websocket": false,
+            "sentinel_in_post_input_request": false,
+            "telemetry_matches": [],
+            "websockets": []
+          },
+          "no_horizontal_overflow": true,
+          "results_visible": true,
+          "storage": {
+            "cacheStorage": [],
+            "contextCookies": [],
+            "documentCookie": "",
+            "indexedDB": [],
+            "localStorage": [],
+            "serviceWorkerController": false,
+            "serviceWorkers": [],
+            "sessionStorage": []
+          },
+          "url_unchanged": true,
+          "viewport": {
+            "bodyScrollWidth": 390,
+            "documentClientWidth": 390,
+            "documentScrollWidth": 390,
+            "innerWidth": 390
+          }
+        }
+      },
+      "url": "https://reblocke.github.io/type-s-m-calibrator/",
+      "webkit_smoke": {
+        "ok": true,
+        "result": {
+          "console_errors": [],
+          "page_errors": [],
+          "smoke_status": "Calculation complete.",
+          "storage": {
+            "cacheStorage": [],
+            "contextCookies": [],
+            "documentCookie": "",
+            "indexedDB": [],
+            "localStorage": [],
+            "serviceWorkerController": false,
+            "serviceWorkers": [],
+            "sessionStorage": []
+          },
+          "title": "Type S/M Calibrator",
+          "url": "https://reblocke.github.io/type-s-m-calibrator/"
+        }
+      }
+    },
+    "wald-inference-tools": {
+      "chromium_desktop": {
+        "ok": true,
+        "result": {
+          "comparison_row_count": 6,
+          "console_errors": [],
+          "labels_and_text": {
+            "announcement_regions": [
+              {
+                "ariaAtomic": null,
+                "ariaLive": "polite",
+                "hidden": false,
+                "id": "catalog-status",
+                "role": "status",
+                "text": "6 tools shown."
+              }
+            ],
+            "controls": [
+              {
+                "accessibleName": "All",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "",
+                "name": "conditioning",
+                "tag": "input",
+                "type": "radio"
+              },
+              {
+                "accessibleName": "Observed data",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "",
+                "name": "conditioning",
+                "tag": "input",
+                "type": "radio"
+              },
+              {
+                "accessibleName": "Design",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "",
+                "name": "conditioning",
+                "tag": "input",
+                "type": "radio"
+              }
+            ],
+            "text_alternatives": [
+              {
+                "count": 1,
+                "selector": ".tool-grid",
+                "text_length": 4346,
+                "visible": true
+              },
+              {
+                "count": 0,
+                "selector": "#comparison-table",
+                "text_length": 0,
+                "visible": false
+              },
+              {
+                "count": 1,
+                "selector": "#catalog-status",
+                "text_length": 14,
+                "visible": true
+              }
+            ],
+            "unlabelled_enabled_controls": [],
+            "visible_images_missing_alt": []
+          },
+          "network": {
+            "after_input_request_count": 0,
+            "external_requests": [],
+            "hosts": {
+              "reblocke.github.io": 4
+            },
+            "methods": {
+              "GET": 4
+            },
+            "non_get_requests": [],
+            "request_count": 4,
+            "resource_types": {
+              "document": 1,
+              "fetch": 1,
+              "script": 1,
+              "stylesheet": 1
+            },
+            "sentinel_in_any_request_or_websocket": false,
+            "sentinel_in_post_input_request": false,
+            "telemetry_matches": [],
+            "websockets": []
+          },
+          "related_links": [
+            "https://github.com/reblocke/compatibility-curve",
+            "https://github.com/reblocke/conf_curve_likelihood",
+            "https://github.com/reblocke/critical-effect-size",
+            "https://github.com/reblocke/precision-guardrail-planner",
+            "https://github.com/reblocke/type-s-m-calibrator",
+            "https://github.com/reblocke/wald-inference-core",
+            "https://github.com/reblocke/wald-inference-tools",
+            "https://github.com/reblocke/wald-likelihood-support",
+            "https://reblocke.github.io/compatibility-curve/",
+            "https://reblocke.github.io/conf_curve_likelihood/",
+            "https://reblocke.github.io/critical-effect-size/",
+            "https://reblocke.github.io/precision-guardrail-planner/",
+            "https://reblocke.github.io/type-s-m-calibrator/",
+            "https://reblocke.github.io/wald-inference-tools/#main-content",
+            "https://reblocke.github.io/wald-inference-tools/data/tools.json",
+            "https://reblocke.github.io/wald-inference-tools/docs/PRIVACY.md",
+            "https://reblocke.github.io/wald-likelihood-support/"
+          ],
+          "script_sources": [
+            "https://reblocke.github.io/wald-inference-tools/app.js"
+          ],
+          "storage": {
+            "cacheStorage": [],
+            "contextCookies": [],
+            "documentCookie": "",
+            "indexedDB": [],
+            "localStorage": [],
+            "serviceWorkerController": false,
+            "serviceWorkers": [],
+            "sessionStorage": []
+          },
+          "title": "Wald inference tools",
+          "tool_card_count": 6,
+          "url": "https://reblocke.github.io/wald-inference-tools/"
+        }
+      },
+      "chromium_mobile_390": {
+        "ok": true,
+        "result": {
+          "controls_visible": true,
+          "keyboard": {
+            "design_checked": true,
+            "skip_target": "main-content",
+            "visible_cards": 4
+          },
+          "network": {
+            "after_input_request_count": 0,
+            "external_requests": [],
+            "hosts": {
+              "reblocke.github.io": 4
+            },
+            "methods": {
+              "GET": 4
+            },
+            "non_get_requests": [],
+            "request_count": 4,
+            "resource_types": {
+              "document": 1,
+              "fetch": 1,
+              "script": 1,
+              "stylesheet": 1
+            },
+            "sentinel_in_any_request_or_websocket": false,
+            "sentinel_in_post_input_request": false,
+            "telemetry_matches": [],
+            "websockets": []
+          },
+          "no_horizontal_overflow": true,
+          "results_visible": true,
+          "storage": {
+            "cacheStorage": [],
+            "contextCookies": [],
+            "documentCookie": "",
+            "indexedDB": [],
+            "localStorage": [],
+            "serviceWorkerController": false,
+            "serviceWorkers": [],
+            "sessionStorage": []
+          },
+          "url_unchanged": false,
+          "viewport": {
+            "bodyScrollWidth": 390,
+            "documentClientWidth": 390,
+            "documentScrollWidth": 390,
+            "innerWidth": 390
+          }
+        }
+      },
+      "url": "https://reblocke.github.io/wald-inference-tools/",
+      "webkit_smoke": {
+        "ok": true,
+        "result": {
+          "console_errors": [],
+          "page_errors": [],
+          "smoke_status": "6 tools shown.",
+          "storage": {
+            "cacheStorage": [],
+            "contextCookies": [],
+            "documentCookie": "",
+            "indexedDB": [],
+            "localStorage": [],
+            "serviceWorkerController": false,
+            "serviceWorkers": [],
+            "sessionStorage": []
+          },
+          "title": "Wald inference tools",
+          "url": "https://reblocke.github.io/wald-inference-tools/"
+        }
+      }
+    },
+    "wald-likelihood-support": {
+      "chromium_desktop": {
+        "ok": true,
+        "result": {
+          "console_errors": [],
+          "copies": [
+            {
+              "clipboard_length": 775,
+              "clipboard_sha256": "18382546fc4cdd0f0c1d705568d1c3236e6acb1733826882f31f3035723c2ae0",
+              "enabled": true,
+              "nonempty": true,
+              "present": true,
+              "selector": "#copy-caption",
+              "visible": true
+            }
+          ],
+          "downloads": [
+            {
+              "bytes": 74308,
+              "enabled": true,
+              "filename": "wald-likelihood-support.csv",
+              "path": "/private/tmp/cc-mig-11-final-browser-artifacts/wald-likelihood-support-export-csv-wald-likelihood-support.csv",
+              "png_signature": false,
+              "present": true,
+              "selector": "#export-csv",
+              "sha256": "c080eef43c10739d6eece0240eae6f57f93c6e4f5349bb3ba618ef3ba1c02eb4",
+              "signature_hex": "6566666563745f64"
+            },
+            {
+              "bytes": 286843,
+              "enabled": true,
+              "filename": "wald-likelihood-support-manuscript.png",
+              "path": "/private/tmp/cc-mig-11-final-browser-artifacts/wald-likelihood-support-export-manuscript-wald-likelihood-support-manuscript.png",
+              "png_signature": true,
+              "present": true,
+              "selector": "#export-manuscript",
+              "sha256": "743a25f7a955b10235620fd24f42718e89b0a579e0d9f9aab12dab5afcb566d5",
+              "signature_hex": "89504e470d0a1a0a"
+            },
+            {
+              "bytes": 177592,
+              "enabled": true,
+              "filename": "wald-likelihood-support-dashboard.png",
+              "path": "/private/tmp/cc-mig-11-final-browser-artifacts/wald-likelihood-support-export-dashboard-wald-likelihood-support-dashboard.png",
+              "png_signature": true,
+              "present": true,
+              "selector": "#export-dashboard",
+              "sha256": "2b954051f07b6cc63f7f5eb668b8fd20de9e61847252b40dc8971cb6bf1ac400",
+              "signature_hex": "89504e470d0a1a0a"
+            }
+          ],
+          "error_and_recovery": {
+            "error_attributes": {
+              "ariaAtomic": null,
+              "ariaLive": null,
+              "dataState": null,
+              "role": "alert"
+            },
+            "error_link": {
+              "focuses_control": null,
+              "href": null,
+              "present": false
+            },
+            "error_text": "Check the inputs\nOdds ratio inputs must be strictly positive on the natural scale.",
+            "invalid_control_aria_invalid": null,
+            "recovered": true,
+            "recovery_status": "Likelihood-support curve updated.",
+            "safe_no_traceback_or_local_path": true
+          },
+          "final_url": "https://reblocke.github.io/wald-likelihood-support/",
+          "initial_url": "https://reblocke.github.io/wald-likelihood-support/",
+          "labels_and_text": {
+            "announcement_regions": [
+              {
+                "ariaAtomic": null,
+                "ariaLive": "polite",
+                "hidden": false,
+                "id": "runtime-status",
+                "role": "status",
+                "text": "Likelihood-support curve updated."
+              },
+              {
+                "ariaAtomic": null,
+                "ariaLive": null,
+                "hidden": true,
+                "id": "error-summary",
+                "role": "alert",
+                "text": "Check the inputs"
+              },
+              {
+                "ariaAtomic": null,
+                "ariaLive": "polite",
+                "hidden": false,
+                "id": "result-summary",
+                "role": null,
+                "text": "The null value 1 has normalized relative likelihood 0.01060209; the CI-implied estimate is 94.321043 times as supported when the ordinary ratio is representable. The selected S\u22122 / exp(2):1 support interval is 1.2247401 to 2.7216658."
+              }
+            ],
+            "controls": [
+              {
+                "accessibleName": "Effect measure",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "effect-type",
+                "name": "effect_type",
+                "tag": "select",
+                "type": null
+              },
+              {
+                "accessibleName": "Point estimate (optional)",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "estimate",
+                "name": "estimate",
+                "tag": "input",
+                "type": "text"
+              },
+              {
+                "accessibleName": "Lower 95% CI",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "ci-lower",
+                "name": "lower",
+                "tag": "input",
+                "type": "text"
+              },
+              {
+                "accessibleName": "Upper 95% CI",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "ci-upper",
+                "name": "upper",
+                "tag": "input",
+                "type": "text"
+              },
+              {
+                "accessibleName": "Null value (optional)",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "null-value",
+                "name": "null_value",
+                "tag": "input",
+                "type": "text"
+              },
+              {
+                "accessibleName": "Reference thresholds (optional)",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "thresholds",
+                "name": "thresholds",
+                "tag": "textarea",
+                "type": null
+              },
+              {
+                "accessibleName": "Support-interval criterion",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "support-criterion",
+                "name": "support_criterion",
+                "tag": "select",
+                "type": null
+              },
+              {
+                "accessibleName": "Custom estimate-to-bound support ratio",
+                "ariaInvalid": null,
+                "disabled": true,
+                "id": "custom-support-ratio",
+                "name": "custom_support_ratio",
+                "tag": "input",
+                "type": "text"
+              },
+              {
+                "accessibleName": "Candidate A",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "candidate-a",
+                "name": "candidate_a",
+                "tag": "input",
+                "type": "text"
+              },
+              {
+                "accessibleName": "Candidate B",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "candidate-b",
+                "name": "candidate_b",
+                "tag": "input",
+                "type": "text"
+              },
+              {
+                "accessibleName": "Display lower (optional)",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "display-range-lower",
+                "name": "display_range_lower",
+                "tag": "input",
+                "type": "text"
+              },
+              {
+                "accessibleName": "Display upper (optional)",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "display-range-upper",
+                "name": "display_range_upper",
+                "tag": "input",
+                "type": "text"
+              },
+              {
+                "accessibleName": "Ratio-axis spacing",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "axis-spacing",
+                "name": "axis_spacing",
+                "tag": "select",
+                "type": null
+              },
+              {
+                "accessibleName": "Curve view",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "view-mode",
+                "name": "view_mode",
+                "tag": "select",
+                "type": null
+              },
+              {
+                "accessibleName": "Grid points",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "grid-points",
+                "name": "grid_points",
+                "tag": "select",
+                "type": null
+              },
+              {
+                "accessibleName": "Update support curve",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "calculate",
+                "name": null,
+                "tag": "button",
+                "type": "submit"
+              },
+              {
+                "accessibleName": "Reset",
+                "ariaInvalid": null,
+                "disabled": false,
+                "id": "",
+                "name": null,
+                "tag": "button",
+                "type": "reset"
+              }
+            ],
+            "text_alternatives": [
+              {
+                "count": 1,
+                "selector": "#result-summary",
+                "text_length": 233,
+                "visible": true
+              },
+              {
+                "count": 1,
+                "selector": "#reconstruction-summary",
+                "text_length": 167,
+                "visible": true
+              },
+              {
+                "count": 1,
+                "selector": "#support-interval-summary",
+                "text_length": 224,
+                "visible": true
+              },
+              {
+                "count": 1,
+                "selector": "#reference-table",
+                "text_length": 318,
+                "visible": true
+              },
+              {
+                "count": 1,
+                "selector": "#figure-caption",
+                "text_length": 787,
+                "visible": true
+              }
+            ],
+            "unlabelled_enabled_controls": [],
+            "visible_images_missing_alt": []
+          },
+          "network": {
+            "after_input_request_count": 2,
+            "external_requests": [
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "script",
+                "url": "https://cdn.plot.ly/plotly-3.1.0.min.js"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "other",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide.js"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide-lock.json"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/python_stdlib.zip"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide.asm.wasm"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "other",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide.asm.js"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/numpy-2.2.5-cp313-cp313-pyodide_2025_0_wasm32.whl"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/scipy-1.14.1-cp313-cp313-pyodide_2025_0_wasm32.whl"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/libopenblas-0.3.26.zip"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "image",
+                "url": "blob:https://reblocke.github.io/42675091-14dd-489e-ba4a-a3c95363680d"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "image",
+                "url": "blob:https://reblocke.github.io/ce808598-0d0f-44da-a7d6-5348fd7fbdf2"
+              }
+            ],
+            "hosts": {
+              "": 2,
+              "cdn.jsdelivr.net": 8,
+              "cdn.plot.ly": 1,
+              "reblocke.github.io": 30
+            },
+            "methods": {
+              "GET": 41
+            },
+            "non_get_requests": [],
+            "request_count": 41,
+            "resource_types": {
+              "document": 1,
+              "fetch": 26,
+              "image": 2,
+              "other": 2,
+              "script": 9,
+              "stylesheet": 1
+            },
+            "sentinel_in_any_request_or_websocket": false,
+            "sentinel_in_post_input_request": false,
+            "telemetry_matches": [],
+            "websockets": []
+          },
+          "page_errors": [],
+          "related_links": [
+            "https://github.com/reblocke/wald-inference-core",
+            "https://github.com/reblocke/wald-inference-core/releases/tag/v0.4.1",
+            "https://github.com/reblocke/wald-likelihood-support",
+            "https://github.com/reblocke/wald-likelihood-support/blob/main/docs/PRIVACY.md",
+            "https://github.com/reblocke/wald-likelihood-support/blob/main/docs/SCIENTIFIC_SCOPE.md",
+            "https://github.com/reblocke/wald-likelihood-support/blob/main/llms.txt",
+            "https://reblocke.github.io/compatibility-curve/",
+            "https://reblocke.github.io/conf_curve_likelihood/",
+            "https://reblocke.github.io/wald-inference-tools/",
+            "https://reblocke.github.io/wald-likelihood-support/#main-content"
+          ],
+          "script_sources": [
+            "https://cdn.plot.ly/plotly-3.1.0.min.js",
+            "https://reblocke.github.io/wald-likelihood-support/app.js"
+          ],
+          "storage": {
+            "cacheStorage": [],
+            "contextCookies": [],
+            "documentCookie": "",
+            "indexedDB": [],
+            "localStorage": [],
+            "serviceWorkerController": false,
+            "serviceWorkers": [],
+            "sessionStorage": []
+          },
+          "success_status": "Caption copied.",
+          "title": "Wald Likelihood Support",
+          "url_unchanged": true
+        }
+      },
+      "chromium_mobile_390": {
+        "ok": true,
+        "result": {
+          "controls_visible": true,
+          "keyboard": {
+            "focus_path": [
+              "{\"id\": \"ci-lower\", \"tag\": \"input\", \"text\": \"\", \"type\": \"text\"}",
+              "{\"id\": \"ci-upper\", \"tag\": \"input\", \"text\": \"\", \"type\": \"text\"}",
+              "{\"id\": \"null-value\", \"tag\": \"input\", \"text\": \"\", \"type\": \"text\"}",
+              "{\"id\": \"thresholds\", \"tag\": \"textarea\", \"text\": \"\", \"type\": null}",
+              "{\"id\": \"support-criterion\", \"tag\": \"select\", \"text\": \"S\\u22122 / exp(2):1 (about 7.4:1)\\n              2:1\\n              4:1\\n              8\", \"type\": null}",
+              "{\"id\": \"\", \"tag\": \"summary\", \"text\": \"Optional candidate A versus candidate B\", \"type\": null}",
+              "{\"id\": \"display-range-lower\", \"tag\": \"input\", \"text\": \"\", \"type\": \"text\"}",
+              "{\"id\": \"display-range-upper\", \"tag\": \"input\", \"text\": \"\", \"type\": \"text\"}",
+              "{\"id\": \"\", \"tag\": \"summary\", \"text\": \"Advanced display controls\", \"type\": null}",
+              "{\"id\": \"calculate\", \"tag\": \"button\", \"text\": \"Update support curve\", \"type\": \"submit\"}"
+            ],
+            "reached": true
+          },
+          "network": {
+            "after_input_request_count": 0,
+            "external_requests": [
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "script",
+                "url": "https://cdn.plot.ly/plotly-3.1.0.min.js"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "other",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide.js"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide-lock.json"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/python_stdlib.zip"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide.asm.wasm"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "other",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide.asm.js"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/numpy-2.2.5-cp313-cp313-pyodide_2025_0_wasm32.whl"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/scipy-1.14.1-cp313-cp313-pyodide_2025_0_wasm32.whl"
+              },
+              {
+                "method": "GET",
+                "post_data": null,
+                "resource_type": "fetch",
+                "url": "https://cdn.jsdelivr.net/pyodide/v0.29.3/full/libopenblas-0.3.26.zip"
+              }
+            ],
+            "hosts": {
+              "cdn.jsdelivr.net": 8,
+              "cdn.plot.ly": 1,
+              "reblocke.github.io": 30
+            },
+            "methods": {
+              "GET": 39
+            },
+            "non_get_requests": [],
+            "request_count": 39,
+            "resource_types": {
+              "document": 1,
+              "fetch": 26,
+              "other": 2,
+              "script": 9,
+              "stylesheet": 1
+            },
+            "sentinel_in_any_request_or_websocket": false,
+            "sentinel_in_post_input_request": false,
+            "telemetry_matches": [],
+            "websockets": []
+          },
+          "no_horizontal_overflow": true,
+          "results_visible": true,
+          "storage": {
+            "cacheStorage": [],
+            "contextCookies": [],
+            "documentCookie": "",
+            "indexedDB": [],
+            "localStorage": [],
+            "serviceWorkerController": false,
+            "serviceWorkers": [],
+            "sessionStorage": []
+          },
+          "url_unchanged": true,
+          "viewport": {
+            "bodyScrollWidth": 390,
+            "documentClientWidth": 390,
+            "documentScrollWidth": 390,
+            "innerWidth": 390
+          }
+        }
+      },
+      "url": "https://reblocke.github.io/wald-likelihood-support/",
+      "webkit_smoke": {
+        "ok": true,
+        "result": {
+          "console_errors": [],
+          "page_errors": [],
+          "smoke_status": "Likelihood-support curve updated.",
+          "storage": {
+            "cacheStorage": [],
+            "contextCookies": [],
+            "documentCookie": "",
+            "indexedDB": [],
+            "localStorage": [],
+            "serviceWorkerController": false,
+            "serviceWorkers": [],
+            "sessionStorage": []
+          },
+          "title": "Wald Likelihood Support",
+          "url": "https://reblocke.github.io/wald-likelihood-support/"
+        }
+      }
+    }
+  },
+  "started_at": "2026-07-30T18:29:54Z"
+}

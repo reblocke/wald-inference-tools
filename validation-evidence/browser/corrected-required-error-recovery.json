@@ -1,0 +1,90 @@
+{
+  "completed_at": "2026-07-30T18:37:31Z",
+  "driver": {
+    "path": "validation-evidence/drivers/required_error_recovery_audit.py",
+    "sha256": "1f8e1436528e7f5553fd090874440ca6056e403c2ab4ce2c66d5fd4bc271169a"
+  },
+  "schema_version": 1,
+  "sites": {
+    "compatibility-curve": {
+      "ariaInvalid": "true",
+      "consoleErrors": [],
+      "errorAriaLive": null,
+      "errorRole": "alert",
+      "errorText": "Check the inputs\nLower 95% CI is required.",
+      "linkHref": "#ci-lower",
+      "linkKeyboardFocusesTarget": true,
+      "linkPresent": true,
+      "pageErrors": [],
+      "pass": true,
+      "recovered": true
+    },
+    "critical-effect-size": {
+      "ariaInvalid": "true",
+      "consoleErrors": [],
+      "errorAriaLive": null,
+      "errorRole": "alert",
+      "errorText": "Check the inputs\nTarget selected-claim probability is required.",
+      "linkHref": "#target-probability",
+      "linkKeyboardFocusesTarget": true,
+      "linkPresent": true,
+      "pageErrors": [],
+      "pass": true,
+      "recovered": true
+    },
+    "precision-guardrail-planner": {
+      "ariaInvalid": "true",
+      "consoleErrors": [],
+      "errorAriaLive": null,
+      "errorRole": "alert",
+      "errorText": "Check the inputs\nAssumed true effect is required.",
+      "linkHref": "#target-true-effect",
+      "linkKeyboardFocusesTarget": true,
+      "linkPresent": true,
+      "pageErrors": [],
+      "pass": true,
+      "recovered": true
+    },
+    "scientific-applet-template": {
+      "ariaInvalid": "true",
+      "consoleErrors": [],
+      "errorAriaLive": null,
+      "errorRole": "alert",
+      "errorText": "Check the inputs\nFirst value is required.",
+      "linkHref": "#first-value",
+      "linkKeyboardFocusesTarget": true,
+      "linkPresent": true,
+      "pageErrors": [],
+      "pass": true,
+      "recovered": true
+    },
+    "type-s-m-calibrator": {
+      "ariaInvalid": "true",
+      "consoleErrors": [],
+      "errorAriaLive": null,
+      "errorRole": "alert",
+      "errorText": "Check the inputs\nNull value is required.",
+      "linkHref": "#null-value",
+      "linkKeyboardFocusesTarget": true,
+      "linkPresent": true,
+      "pageErrors": [],
+      "pass": true,
+      "recovered": true
+    },
+    "wald-likelihood-support": {
+      "ariaInvalid": "true",
+      "consoleErrors": [],
+      "errorAriaLive": null,
+      "errorRole": "alert",
+      "errorText": "Check the inputs\nLower 95% CI is required.",
+      "linkHref": "#ci-lower",
+      "linkKeyboardFocusesTarget": true,
+      "linkPresent": true,
+      "pageErrors": [],
+      "pass": true,
+      "recovered": true
+    }
+  },
+  "source_driver_sha256": "67490befd6a85c2147d93e6057edf0632f25f953a09ade21b77c570cfaff0377",
+  "started_at": "2026-07-30T18:36:28Z"
+}

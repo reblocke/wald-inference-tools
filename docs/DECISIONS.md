@@ -1,6 +1,22 @@
 # Catalog decisions
 
-## 2026-07-30 — Corrective release metadata remains evidence-limited
+## 2026-07-30 — Validation-bearing v0.2.0 is stable
+
+Independent CC-MIG-11 review resolved content-addressed annotated-tag objects, peeled commits, and
+deployed commits for all nine repositories, reran the six review lanes, closed the five original
+release blockers, and recorded no remaining blocker. The catalog may therefore change its manifest
+from `release-candidate` to `validated` only in the same commit that adds the digest-bound report,
+machine-readable status, and checksum-addressed evidence.
+
+The report audits catalog v0.1.1 as the released predecessor. Catalog v0.2.0 is the evidence
+carrier, so its successful publication is verified after the verdict but is not circularly used
+to establish that verdict. Validation-bearing catalog tags publish directly as stable releases.
+
+## 2026-07-30 — Corrective release metadata remains evidence-limited (historical)
+
+**Status:** Superseded on 2026-07-30 by the validation-bearing v0.2.0 decision above. The versions
+and `release-candidate` state below record the earlier checkpoint and are not current catalog
+policy.
 
 The catalog records Core v0.4.1; compatibility, likelihood, critical-effect, and Type S/M
 v0.1.2; precision v0.1.1; and integrated workbench v0.2.2 only after their exact tags and hosted

@@ -16,4 +16,5 @@ This repository is a static, calculation-free catalog for choosing among Wald in
 - The integrated workbench spans both paradigms and is intended for advanced comparison.
 - The catalog performs no calculations and is not clinical decision support.
 
-Never infer that `release-candidate` means independently validated.
+Never infer validation from a release label. Use `data/validation_status.json`, its bound report
+digest, and the checksum-addressed evidence index.

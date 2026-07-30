@@ -282,6 +282,7 @@ ul {
 }
 
 .boundary p,
+.boundary ul,
 .limitation,
 .versions {
   margin: 0.35rem 0 0;
