@@ -96,6 +96,9 @@ async function initializeCatalog() {
     });
     document.querySelector("#catalog-version").textContent =
       `Catalog ${manifest.catalog_version} · ${manifest.portfolio_status.replaceAll("-", " ")}`;
+    const coreRepositoryLink = document.querySelector("#core-repository-link");
+    coreRepositoryLink.href = manifest.core.repository;
+    coreRepositoryLink.removeAttribute("aria-disabled");
     applyFilter("all");
   } catch (error) {
     status.classList.add("error-panel");

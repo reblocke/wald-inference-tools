@@ -47,6 +47,30 @@ class _ReferenceParser(HTMLParser):
             self.references.append(str(attributes[field]))
 
 
+class _FooterParser(HTMLParser):
+    def __init__(self) -> None:
+        super().__init__()
+        self.in_footer = False
+        self.links: list[str] = []
+        self.text: list[str] = []
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        if tag == "footer":
+            self.in_footer = True
+        elif self.in_footer and tag == "a":
+            href = dict(attrs).get("href")
+            if href:
+                self.links.append(href)
+
+    def handle_endtag(self, tag: str) -> None:
+        if tag == "footer":
+            self.in_footer = False
+
+    def handle_data(self, data: str) -> None:
+        if self.in_footer:
+            self.text.append(data)
+
+
 def check_local_links(root: Path = PROJECT_ROOT) -> list[str]:
     parser = _ReferenceParser()
     parser.feed((root / "index.html").read_text(encoding="utf-8"))
@@ -142,6 +166,39 @@ def validate_related_tools_readme(
         )
 
 
+def validate_related_tools_footer(
+    hosted_html: str,
+    *,
+    tool: dict[str, Any],
+    adjacent_tool: dict[str, Any],
+    integrated_tool: dict[str, Any],
+    core_repository: str,
+) -> None:
+    """Verify that the deployed app footer exposes the compact portfolio navigation."""
+
+    parser = _FooterParser()
+    parser.feed(hosted_html)
+    if not parser.links:
+        raise LinkError(f"{tool['slug']}: hosted HTML has no linked footer")
+
+    core_release = f"{core_repository}/releases/tag/v{tool['core_version']}"
+    required_links = {
+        "catalog URL": CATALOG_URL,
+        "adjacent hosted URL": adjacent_tool["hosted_url"],
+        "integrated-workbench hosted URL": integrated_tool["hosted_url"],
+        "app repository URL": tool["repository_url"],
+        "pinned Core release": core_release,
+    }
+    missing = [label for label, value in required_links.items() if value not in parser.links]
+    footer_text = " ".join(parser.text)
+    if f"wald-inference Core v{tool['core_version']}" not in footer_text:
+        missing.append("pinned Core version marker")
+    if "privacy" not in footer_text.lower():
+        missing.append("privacy note")
+    if missing:
+        raise LinkError(f"{tool['slug']}: hosted footer is missing {', '.join(missing)}")
+
+
 def check_live_metadata(manifest: dict[str, Any]) -> list[str]:
     checked: list[str] = []
     repositories = [manifest["core"]["repository"]]
@@ -167,7 +224,18 @@ def check_live_metadata(manifest: dict[str, Any]) -> list[str]:
     integrated_tool = tools_by_slug["conf_curve_likelihood"]
     for tool in manifest["tools"]:
         releases.append((tool["repository_url"], tool["app_version"]))
-        _request(tool["hosted_url"])
+        hosted_payload = _request(tool["hosted_url"])
+        try:
+            hosted_html = hosted_payload.decode("utf-8")
+        except (AttributeError, UnicodeDecodeError) as exc:
+            raise LinkError(f"{tool['slug']}: hosted HTML is not valid UTF-8") from exc
+        validate_related_tools_footer(
+            hosted_html,
+            tool=tool,
+            adjacent_tool=tools_by_slug[tool["adjacent_slug"]],
+            integrated_tool=integrated_tool,
+            core_repository=manifest["core"]["repository"],
+        )
         checked.append(tool["hosted_url"])
         _request(tool["citation_url"])
         checked.append(tool["citation_url"])

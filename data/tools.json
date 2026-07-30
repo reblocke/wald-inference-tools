@@ -98,7 +98,7 @@
         "CSV, PNG, and caption"
       ],
       "non_goals": [
-        "Clinically validated MCID",
+        "You need an MCID, or would interpret the critical effect as one",
         "Observed evidence",
         "Study-specific sample-size calculation"
       ],

@@ -46,6 +46,16 @@ def test_manifest_urls_are_plain_and_input_free() -> None:
             assert "#" not in tool[field]
 
 
+def test_core_repository_link_is_rendered_from_manifest() -> None:
+    index = (PROJECT_ROOT / "index.html").read_text(encoding="utf-8")
+    app = (PROJECT_ROOT / "app.js").read_text(encoding="utf-8")
+    core_repository = load_manifest()["core"]["repository"]
+    assert core_repository not in index
+    assert '<a id="core-repository-link" aria-disabled="true">' in index
+    assert "coreRepositoryLink.href = manifest.core.repository" in app
+    assert 'coreRepositoryLink.removeAttribute("aria-disabled")' in app
+
+
 def test_site_build_is_exact_allowlist(tmp_path: Path) -> None:
     output = PROJECT_ROOT / "site-test-output"
     try:

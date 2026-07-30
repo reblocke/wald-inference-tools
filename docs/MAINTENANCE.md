@@ -18,7 +18,8 @@
 5. Review the rendered card and comparison row at mobile and desktop widths.
 6. Confirm the app's public `## Related Wald tools` README block names the same pinned Core release
    and links the catalog, adjacent tool, integrated workbench, app repository, and privacy note.
-7. Open a narrow catalog PR. If related-tool links changed, use separate narrow PRs in affected
+7. Confirm the deployed app footer contains the same compact block.
+8. Open a narrow catalog PR. If related-tool links changed, use separate narrow PRs in affected
    apps.
 
 ## Adding an app
@@ -36,7 +37,8 @@ all local browser gates, repeats the live metadata check, and publishes determin
 artifacts with checksums.
 
 CI and Pages also run the live check. This prevents a manifest whose public release, hosted stage,
-or README block is stale from reaching the catalog site before the release workflow runs.
+README block, or deployed footer is stale from reaching the catalog site before the release
+workflow runs.
 
 If a deployed app becomes inconsistent, correct the app or catalog in an isolated PR and mark its
 validation status conservatively until verification is rerun. Never silently point a released

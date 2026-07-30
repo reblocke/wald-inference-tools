@@ -5,7 +5,11 @@ from copy import deepcopy
 from pathlib import Path
 
 import pytest
-from scripts.check_links import LinkError, validate_related_tools_readme
+from scripts.check_links import (
+    LinkError,
+    validate_related_tools_footer,
+    validate_related_tools_readme,
+)
 from scripts.validate_tools_manifest import ManifestError, load_manifest, validate_manifest
 
 
@@ -78,12 +82,43 @@ def _related_tools_block(tool: dict, adjacent: dict, integrated: dict) -> str:
 """
 
 
+def _related_tools_footer(tool: dict, adjacent: dict, integrated: dict) -> str:
+    core_repository = "https://github.com/reblocke/wald-inference-core"
+    return f"""<!doctype html>
+<footer>
+  <p>Related Wald tools · wald-inference Core v{tool["core_version"]} · Privacy: browser-only.</p>
+  <a href="https://reblocke.github.io/wald-inference-tools/">Choose a tool</a>
+  <a href="{adjacent["hosted_url"]}">Adjacent</a>
+  <a href="{integrated["hosted_url"]}">Integrated workbench</a>
+  <a href="{tool["repository_url"]}">App repository</a>
+  <a href="{core_repository}/releases/tag/v{tool["core_version"]}">Core release</a>
+</footer>
+"""
+
+
 def test_readme_portfolio_block_matches_manifest() -> None:
     manifest = load_manifest()
     tools = {tool["slug"]: tool for tool in manifest["tools"]}
     tool = tools["critical-effect-size"]
     validate_related_tools_readme(
         _related_tools_block(
+            tool,
+            tools[tool["adjacent_slug"]],
+            tools["conf_curve_likelihood"],
+        ),
+        tool=tool,
+        adjacent_tool=tools[tool["adjacent_slug"]],
+        integrated_tool=tools["conf_curve_likelihood"],
+        core_repository=manifest["core"]["repository"],
+    )
+
+
+def test_hosted_footer_matches_manifest() -> None:
+    manifest = load_manifest()
+    tools = {tool["slug"]: tool for tool in manifest["tools"]}
+    tool = tools["critical-effect-size"]
+    validate_related_tools_footer(
+        _related_tools_footer(
             tool,
             tools[tool["adjacent_slug"]],
             tools["conf_curve_likelihood"],
@@ -116,6 +151,34 @@ def test_readme_portfolio_block_rejects_missing_metadata(removed: str, message: 
     with pytest.raises(LinkError, match=message):
         validate_related_tools_readme(
             readme,
+            tool=tool,
+            adjacent_tool=tools[tool["adjacent_slug"]],
+            integrated_tool=tools["conf_curve_likelihood"],
+            core_repository=manifest["core"]["repository"],
+        )
+
+
+@pytest.mark.parametrize(
+    ("removed", "message"),
+    [
+        ("<footer>", "linked footer"),
+        ("https://reblocke.github.io/wald-inference-tools/", "catalog URL"),
+        ("wald-inference Core v0.3.0", "pinned Core version"),
+        ("Privacy", "privacy note"),
+    ],
+)
+def test_hosted_footer_rejects_missing_metadata(removed: str, message: str) -> None:
+    manifest = load_manifest()
+    tools = {tool["slug"]: tool for tool in manifest["tools"]}
+    tool = tools["critical-effect-size"]
+    hosted_html = _related_tools_footer(
+        tool,
+        tools[tool["adjacent_slug"]],
+        tools["conf_curve_likelihood"],
+    ).replace(removed, "")
+    with pytest.raises(LinkError, match=message):
+        validate_related_tools_footer(
+            hosted_html,
             tool=tool,
             adjacent_tool=tools[tool["adjacent_slug"]],
             integrated_tool=tools["conf_curve_likelihood"],
