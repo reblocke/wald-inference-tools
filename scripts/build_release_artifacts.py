@@ -4,6 +4,7 @@ import argparse
 import gzip
 import hashlib
 import io
+import subprocess
 import tarfile
 import zipfile
 from pathlib import Path
@@ -15,28 +16,20 @@ else:
     from build_site import build_site  # type: ignore[import-not-found]
     from validate_tools_manifest import PROJECT_ROOT  # type: ignore[import-not-found]
 
-EXCLUDED_PARTS = {
-    ".git",
-    ".DS_Store",
-    ".pytest_cache",
-    ".ruff_cache",
-    ".venv",
-    "__pycache__",
-    "release",
-    "site",
-    "test-results",
-    "test-results-webkit",
-}
-
 
 def _source_files() -> list[Path]:
-    def included(path: Path) -> bool:
-        parts = path.relative_to(PROJECT_ROOT).parts
-        if any(part in EXCLUDED_PARTS for part in parts):
-            return False
-        return not parts[0].startswith(("release-test-", "site-test-"))
-
-    return sorted(path for path in PROJECT_ROOT.rglob("*") if path.is_file() and included(path))
+    result = subprocess.run(
+        ["git", "ls-files", "-z"],
+        cwd=PROJECT_ROOT,
+        check=True,
+        capture_output=True,
+    )
+    relatives = [Path(item.decode()) for item in result.stdout.split(b"\0") if item]
+    paths = [PROJECT_ROOT / relative for relative in relatives]
+    missing = [path for path in paths if not path.is_file()]
+    if missing:
+        raise FileNotFoundError(f"tracked release source is missing: {missing[0]}")
+    return paths
 
 
 def _tar_bytes(version: str) -> bytes:
