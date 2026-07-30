@@ -31,10 +31,12 @@ status from the existence of a release.
 
 ## Release policy
 
-Catalog releases are stable only when all listed release tags and hosted app/Core manifests agree.
-The tag must match `catalog_version`, `CITATION.cff`, and `CHANGELOG.md`. The release workflow runs
-all local browser gates, repeats the live metadata check, and publishes deterministic source/site
-artifacts with checksums.
+Catalog tags are first published as prerelease candidates. They become stable only when all listed
+release tags and hosted app/Core manifests agree and the independent portfolio-validation
+milestone has no unresolved release-blocking finding. The tag must match `catalog_version`,
+`CITATION.cff`, and `CHANGELOG.md`. The release workflow runs all local browser gates, repeats the
+live metadata check, and publishes deterministic source/site artifacts with checksums. Stable
+promotion is an explicit post-validation action; it does not move or recreate the annotated tag.
 
 CI and Pages also run the live check. This prevents a manifest whose public release, hosted stage,
 README block, or deployed footer is stale from reaching the catalog site before the release
