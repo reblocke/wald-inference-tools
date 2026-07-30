@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Choose the Wald inference applet that matches your observed-data or design question."
+    />
+    <title>Wald inference tools</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="app.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to tool choices</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <p class="eyebrow">Wald inference applet portfolio</p>
+        <h1>What question are you trying to answer?</h1>
+        <p class="lede">
+          Choose by inferential question. Observed-data tools evaluate candidate effects against a
+          reported estimate and confidence interval; design tools evaluate repeated-study behavior
+          under assumed true effects.
+        </p>
+        <p class="scope-note">
+          All calculations happen in the linked client-side apps. This catalog performs no
+          statistical calculation and sends no user values anywhere.
+        </p>
+      </div>
+    </header>
+
+    <main id="main-content" tabindex="-1">
+      <section class="chooser" aria-labelledby="chooser-heading">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Choose a path</p>
+            <h2 id="chooser-heading">Match the tool to the question</h2>
+          </div>
+          <fieldset class="filters">
+            <legend>Show tools</legend>
+            <label><input type="radio" name="conditioning" value="all" checked /> All</label>
+            <label><input type="radio" name="conditioning" value="observed-data" /> Observed data</label>
+            <label><input type="radio" name="conditioning" value="design" /> Design</label>
+          </fieldset>
+        </div>
+        <p id="catalog-status" class="status" role="status" aria-live="polite">
+          Loading the checked-in tool manifest…
+        </p>
+        <div id="tool-cards" class="tool-grid" aria-describedby="catalog-status"></div>
+        <noscript>
+          <p class="error-panel">
+            JavaScript is required only to render the checked-in catalog manifest. No calculations
+            or user data are involved. The same metadata is available in
+            <a href="data/tools.json">data/tools.json</a>.
+          </p>
+        </noscript>
+      </section>
+
+      <section class="comparison" aria-labelledby="comparison-heading">
+        <p class="eyebrow">Keep the conditioning straight</p>
+        <h2 id="comparison-heading">Tool comparison</h2>
+        <div class="table-wrap" tabindex="0" aria-label="Scrollable tool comparison table">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Tool</th>
+                <th scope="col">Question</th>
+                <th scope="col">Conditions on</th>
+                <th scope="col">X-axis means</th>
+                <th scope="col">Core outputs</th>
+                <th scope="col">Assumed truth?</th>
+                <th scope="col">Selection rule?</th>
+                <th scope="col">Primary limitation</th>
+              </tr>
+            </thead>
+            <tbody id="comparison-body"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="interpretation" aria-labelledby="interpretation-heading">
+        <p class="eyebrow">One distinction prevents many errors</p>
+        <h2 id="interpretation-heading">Observed reconstruction is not assumed truth</h2>
+        <div class="interpretation-grid">
+          <article>
+            <h3>Observed-data conditioning</h3>
+            <p>
+              Compatibility and relative-likelihood displays ask how candidate effect values relate
+              to one reported estimate and confidence interval under a Wald reconstruction.
+            </p>
+          </article>
+          <article>
+            <h3>Design conditioning</h3>
+            <p>
+              Detectability, Type S/M, and precision planning ask what repeated future statistics
+              would do if specified effects were true under a chosen claim rule.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div>
+        <strong>Wald inference tools</strong>
+        <span id="catalog-version">Catalog version loading…</span>
+      </div>
+      <nav aria-label="Catalog resources">
+        <a href="https://github.com/reblocke/wald-inference-tools">Repository</a>
+        <a href="https://github.com/reblocke/wald-inference-core">Shared core</a>
+        <a href="docs/PRIVACY.md">Privacy</a>
+        <a href="data/tools.json">Tool manifest</a>
+      </nav>
+    </footer>
+
+    <template id="tool-card-template">
+      <article class="tool-card">
+        <div class="card-topline">
+          <span class="conditioning-badge"></span>
+          <span class="validation-badge"></span>
+        </div>
+        <h3></h3>
+        <p class="question"></p>
+        <dl class="card-facts">
+          <div><dt>X-axis</dt><dd class="x-axis"></dd></div>
+          <div><dt>Required inputs</dt><dd><ul class="inputs"></ul></dd></div>
+          <div><dt>Main outputs</dt><dd><ul class="outputs"></ul></dd></div>
+        </dl>
+        <div class="boundary">
+          <strong>Do not use this tool when…</strong>
+          <p class="non-goal"></p>
+        </div>
+        <p class="limitation"></p>
+        <p class="versions"></p>
+        <div class="card-actions">
+          <a class="primary-action">Open app</a>
+          <a class="secondary-action">View repository</a>
+        </div>
+      </article>
+    </template>
+  </body>
+</html>

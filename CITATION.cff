@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If this catalog supports your work, cite the specific calculation app and its scientific sources."
+title: "Wald inference tools"
+type: software
+authors:
+  - family-names: "Locke"
+    given-names: "Brian"
+version: 0.1.0
+date-released: 2026-07-30
+license: MIT
+repository-code: "https://github.com/reblocke/wald-inference-tools"
+url: "https://reblocke.github.io/wald-inference-tools/"

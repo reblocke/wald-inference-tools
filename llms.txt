@@ -1,0 +1,19 @@
+# Wald inference tools
+
+This repository is a static, calculation-free catalog for choosing among Wald inference applets.
+
+## Authority
+
+- `data/tools.json` owns tool questions, scope, versions, validation status, and links.
+- `docs/DECISIONS.md` owns catalog architecture decisions.
+- Each linked app and `wald-inference-core` own their calculations and scientific definitions.
+
+## Important distinctions
+
+- Compatibility and relative-likelihood tools condition on an observed estimate/CI reconstruction.
+- Critical-effect, Type S/M, and precision tools condition on assumed true effects and
+  repeated-study behavior.
+- The integrated workbench spans both paradigms and is intended for advanced comparison.
+- The catalog performs no calculations and is not clinical decision support.
+
+Never infer that `release-candidate` means independently validated.

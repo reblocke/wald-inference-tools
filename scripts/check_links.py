@@ -1,0 +1,171 @@
+from __future__ import annotations
+
+import argparse
+import json
+import os
+import time
+import urllib.error
+import urllib.request
+from html.parser import HTMLParser
+from pathlib import Path
+from typing import Any
+from urllib.parse import urlsplit
+
+if __package__:
+    from scripts.validate_tools_manifest import (
+        DEFAULT_MANIFEST,
+        PROJECT_ROOT,
+        load_manifest,
+        validate_manifest,
+    )
+else:
+    from validate_tools_manifest import (  # type: ignore[import-not-found]
+        DEFAULT_MANIFEST,
+        PROJECT_ROOT,
+        load_manifest,
+        validate_manifest,
+    )
+
+
+class LinkError(RuntimeError):
+    """Raised when a local or public catalog target is inconsistent."""
+
+
+class _ReferenceParser(HTMLParser):
+    def __init__(self) -> None:
+        super().__init__()
+        self.references: list[str] = []
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        attributes = dict(attrs)
+        field = "href" if tag in {"a", "link"} else "src" if tag in {"img", "script"} else None
+        if field and attributes.get(field):
+            self.references.append(str(attributes[field]))
+
+
+def check_local_links(root: Path = PROJECT_ROOT) -> list[str]:
+    parser = _ReferenceParser()
+    parser.feed((root / "index.html").read_text(encoding="utf-8"))
+    checked: list[str] = []
+    for reference in parser.references:
+        parsed = urlsplit(reference)
+        if parsed.scheme in {"http", "https"}:
+            checked.append(reference)
+            continue
+        if parsed.scheme or reference.startswith("//"):
+            raise LinkError(f"unsupported reference in index.html: {reference}")
+        target = root / parsed.path
+        if parsed.path and not target.is_file():
+            raise LinkError(f"missing local target in index.html: {reference}")
+        checked.append(reference)
+    return checked
+
+
+def _request(url: str, *, expect_json: bool = False, attempts: int = 3) -> Any:
+    headers = {
+        "Accept": "application/vnd.github+json" if "api.github.com" in url else "*/*",
+        "User-Agent": "wald-inference-tools-catalog-validator/0.1.0",
+    }
+    token = os.environ.get("GITHUB_TOKEN")
+    if token and "api.github.com" in url:
+        headers["Authorization"] = f"Bearer {token}"
+    last_error: Exception | None = None
+    for attempt in range(attempts):
+        try:
+            request = urllib.request.Request(url, headers=headers)
+            with urllib.request.urlopen(request, timeout=20) as response:
+                if response.status != 200:
+                    raise LinkError(f"{url} returned HTTP {response.status}")
+                payload = response.read()
+            return json.loads(payload) if expect_json else payload
+        except (OSError, json.JSONDecodeError, urllib.error.HTTPError) as exc:
+            last_error = exc
+            if attempt + 1 < attempts:
+                time.sleep(0.5 * (attempt + 1))
+    raise LinkError(f"could not fetch {url}: {last_error}") from last_error
+
+
+def _github_coordinates(repository_url: str) -> tuple[str, str]:
+    parsed = urlsplit(repository_url)
+    parts = parsed.path.strip("/").split("/")
+    if parsed.netloc != "github.com" or len(parts) != 2:
+        raise LinkError(f"unsupported GitHub repository URL: {repository_url}")
+    return parts[0], parts[1]
+
+
+def _package_version(hosted_manifest: dict[str, Any], distribution: str) -> str:
+    versions = [
+        package.get("version")
+        for package in hosted_manifest.get("packages", [])
+        if package.get("distribution") == distribution
+    ]
+    if len(versions) != 1 or not isinstance(versions[0], str):
+        raise LinkError(f"hosted manifest has no unique {distribution!r} package")
+    return versions[0]
+
+
+def check_live_metadata(manifest: dict[str, Any]) -> list[str]:
+    checked: list[str] = []
+    repositories = [manifest["core"]["repository"]]
+    releases = [(manifest["core"]["repository"], manifest["core"]["latest_validated_release"])]
+    for tool in manifest["tools"]:
+        repositories.append(tool["repository_url"])
+        releases.append((tool["repository_url"], tool["app_version"]))
+        _request(tool["hosted_url"])
+        checked.append(tool["hosted_url"])
+        _request(tool["citation_url"])
+        checked.append(tool["citation_url"])
+        hosted_manifest = _request(tool["manifest_url"], expect_json=True)
+        if not isinstance(hosted_manifest, dict):
+            raise LinkError(f"{tool['manifest_url']} did not return a JSON object")
+        app_version = _package_version(hosted_manifest, tool["app_distribution"])
+        core_version = _package_version(hosted_manifest, "wald-inference")
+        if app_version != tool["app_version"]:
+            raise LinkError(
+                f"{tool['slug']}: hosted app {app_version} != catalog {tool['app_version']}"
+            )
+        if core_version != tool["core_version"]:
+            raise LinkError(
+                f"{tool['slug']}: hosted Core {core_version} != catalog {tool['core_version']}"
+            )
+        checked.append(tool["manifest_url"])
+
+    for repository in repositories:
+        owner, name = _github_coordinates(repository)
+        metadata = _request(
+            f"https://api.github.com/repos/{owner}/{name}",
+            expect_json=True,
+        )
+        if not isinstance(metadata, dict) or metadata.get("archived") is True:
+            raise LinkError(f"repository is unavailable or archived: {repository}")
+        checked.append(repository)
+    for repository, version in releases:
+        owner, name = _github_coordinates(repository)
+        release = _request(
+            f"https://api.github.com/repos/{owner}/{name}/releases/tags/v{version}",
+            expect_json=True,
+        )
+        if not isinstance(release, dict) or release.get("draft") is True:
+            raise LinkError(f"missing public non-draft release: {repository} v{version}")
+        checked.append(f"{repository}/releases/tag/v{version}")
+    return checked
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--live", action="store_true", help="also query public release/Pages URLs")
+    parser.add_argument("--manifest", type=Path, default=DEFAULT_MANIFEST)
+    args = parser.parse_args()
+
+    manifest = load_manifest(args.manifest)
+    validate_manifest(manifest)
+    local = check_local_links()
+    print(f"Validated {len(local)} references in index.html.")
+    if args.live:
+        public = check_live_metadata(manifest)
+        print(f"Validated {len(public)} public release, repository, citation, and Pages targets.")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

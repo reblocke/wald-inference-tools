@@ -1,0 +1,226 @@
+{
+  "schema_version": 1,
+  "catalog_version": "0.1.0",
+  "portfolio_status": "release-candidate",
+  "core": {
+    "repository": "https://github.com/reblocke/wald-inference-core",
+    "latest_validated_release": "0.4.0",
+    "release_url": "https://github.com/reblocke/wald-inference-core/releases/tag/v0.4.0",
+    "validation_status": "release-candidate"
+  },
+  "tools": [
+    {
+      "slug": "compatibility-curve",
+      "name": "Compatibility curve",
+      "question": "Which effect sizes are more or less compatible with the observed estimate and confidence interval?",
+      "conditioning": "observed-data",
+      "x_axis": "Candidate effect values evaluated against the observed Wald reconstruction.",
+      "inputs": [
+        "Effect measure",
+        "Reported estimate (optional)",
+        "Reported 95% confidence interval",
+        "Null and display range"
+      ],
+      "outputs": [
+        "Compatibility curve",
+        "Candidate-value summaries",
+        "CSV, PNG, and caption"
+      ],
+      "non_goals": [
+        "Required sample size or information",
+        "Posterior probability",
+        "Clinical decision support"
+      ],
+      "primary_limitation": "Uses a one-parameter Wald reconstruction rather than an exact profile likelihood.",
+      "requires_assumed_truth": "no",
+      "requires_selection_rule": "no",
+      "repository_url": "https://github.com/reblocke/compatibility-curve",
+      "hosted_url": "https://reblocke.github.io/compatibility-curve/",
+      "app_version": "0.1.0",
+      "core_version": "0.1.1",
+      "validation_status": "release-candidate",
+      "citation_url": "https://github.com/reblocke/compatibility-curve/blob/main/CITATION.cff",
+      "manifest_url": "https://reblocke.github.io/compatibility-curve/assets/py/manifest.json",
+      "app_distribution": "compatibility-curve",
+      "adjacent_slug": "wald-likelihood-support"
+    },
+    {
+      "slug": "wald-likelihood-support",
+      "name": "Wald likelihood support",
+      "question": "How much relative support does the reconstructed Wald result provide for candidate effect sizes?",
+      "conditioning": "observed-data",
+      "x_axis": "Candidate effect values compared with the observed Wald maximum-likelihood estimate.",
+      "inputs": [
+        "Effect measure",
+        "Reported estimate (optional)",
+        "Reported 95% confidence interval",
+        "Support ratio and display range"
+      ],
+      "outputs": [
+        "Normalized relative-likelihood curve",
+        "Pairwise and S-minus-2 support",
+        "CSV, PNG, and caption"
+      ],
+      "non_goals": [
+        "Posterior probability",
+        "Exact likelihood from raw data",
+        "Repeated-study power"
+      ],
+      "primary_limitation": "Relative support is reconstructed from a Wald approximation and is not a posterior probability.",
+      "requires_assumed_truth": "no",
+      "requires_selection_rule": "no",
+      "repository_url": "https://github.com/reblocke/wald-likelihood-support",
+      "hosted_url": "https://reblocke.github.io/wald-likelihood-support/",
+      "app_version": "0.1.0",
+      "core_version": "0.2.1",
+      "validation_status": "release-candidate",
+      "citation_url": "https://github.com/reblocke/wald-likelihood-support/blob/main/CITATION.cff",
+      "manifest_url": "https://reblocke.github.io/wald-likelihood-support/assets/py/manifest.json",
+      "app_distribution": "wald-likelihood-support",
+      "adjacent_slug": "compatibility-curve"
+    },
+    {
+      "slug": "critical-effect-size",
+      "name": "Critical effect size",
+      "question": "How large must a true effect be for this precision and claim rule to detect it with a chosen probability?",
+      "conditioning": "design",
+      "x_axis": "Assumed candidate true effects under repeated future Wald statistics.",
+      "inputs": [
+        "Reported 95% confidence interval or direct working-scale SE",
+        "Null, alpha, rule, and direction",
+        "Target selected-claim probability",
+        "Meaningful effect (optional)"
+      ],
+      "outputs": [
+        "Exact critical effect",
+        "Selected-claim probability curve",
+        "Legacy closed-form benchmark",
+        "CSV, PNG, and caption"
+      ],
+      "non_goals": [
+        "Clinically validated MCID",
+        "Observed evidence",
+        "Study-specific sample-size calculation"
+      ],
+      "primary_limitation": "The critical effect is a fixed-SE Wald detectability threshold, not a meaningful-effect standard.",
+      "requires_assumed_truth": "yes",
+      "requires_selection_rule": "yes",
+      "repository_url": "https://github.com/reblocke/critical-effect-size",
+      "hosted_url": "https://reblocke.github.io/critical-effect-size/",
+      "app_version": "0.1.0",
+      "core_version": "0.3.0",
+      "validation_status": "release-candidate",
+      "citation_url": "https://github.com/reblocke/critical-effect-size/blob/main/CITATION.cff",
+      "manifest_url": "https://reblocke.github.io/critical-effect-size/assets/py/manifest.json",
+      "app_distribution": "critical-effect-size",
+      "adjacent_slug": "precision-guardrail-planner"
+    },
+    {
+      "slug": "type-s-m-calibrator",
+      "name": "Type S/M calibrator",
+      "question": "If an effect were true, how often would selected claims have the wrong sign or exaggerate magnitude?",
+      "conditioning": "design",
+      "x_axis": "Assumed true effects under the selected repeated-study claim rule.",
+      "inputs": [
+        "Reported 95% confidence interval or direct working-scale SE",
+        "Null, alpha, rule, direction, and threshold when required",
+        "Assumed true-effect range",
+        "Reference effects (optional)"
+      ],
+      "outputs": [
+        "Selected-claim probability",
+        "Type S and Type M",
+        "Reference-effect table",
+        "CSV, PNG, and caption"
+      ],
+      "non_goals": [
+        "Probability the observed sign is wrong",
+        "Posterior inference",
+        "Observed compatibility or likelihood"
+      ],
+      "primary_limitation": "Type S/M are repeated-study quantities conditional on assumed truths and a selection rule.",
+      "requires_assumed_truth": "yes",
+      "requires_selection_rule": "yes",
+      "repository_url": "https://github.com/reblocke/type-s-m-calibrator",
+      "hosted_url": "https://reblocke.github.io/type-s-m-calibrator/",
+      "app_version": "0.1.0",
+      "core_version": "0.3.0",
+      "validation_status": "release-candidate",
+      "citation_url": "https://github.com/reblocke/type-s-m-calibrator/blob/main/CITATION.cff",
+      "manifest_url": "https://reblocke.github.io/type-s-m-calibrator/assets/py/manifest.json",
+      "app_distribution": "type-s-m-calibrator",
+      "adjacent_slug": "precision-guardrail-planner"
+    },
+    {
+      "slug": "precision-guardrail-planner",
+      "name": "Precision guardrail planner",
+      "question": "How much precision or information is required to meet selected-claim probability, Type S, and Type M targets?",
+      "conditioning": "design",
+      "x_axis": "Assumed true effects used for precision-sensitivity scenarios.",
+      "inputs": [
+        "Reported 95% confidence interval or direct working-scale SE",
+        "Assumed true effect",
+        "Rule, alpha, direction, and threshold when required",
+        "One or more editable guardrails"
+      ],
+      "outputs": [
+        "Per-target and joint required SE",
+        "Information multiplier and binding constraint",
+        "Sensitivity and feasibility",
+        "CSV, PNG, and reviewer text"
+      ],
+      "non_goals": [
+        "Exact sample-size calculation",
+        "Automatic scientific targets",
+        "Observed evidence"
+      ],
+      "primary_limitation": "An information multiplier is not an exact sample-size multiplier without design assumptions.",
+      "requires_assumed_truth": "yes",
+      "requires_selection_rule": "yes",
+      "repository_url": "https://github.com/reblocke/precision-guardrail-planner",
+      "hosted_url": "https://reblocke.github.io/precision-guardrail-planner/",
+      "app_version": "0.1.0",
+      "core_version": "0.4.0",
+      "validation_status": "release-candidate",
+      "citation_url": "https://github.com/reblocke/precision-guardrail-planner/blob/main/CITATION.cff",
+      "manifest_url": "https://reblocke.github.io/precision-guardrail-planner/assets/py/manifest.json",
+      "app_distribution": "precision-guardrail-planner",
+      "adjacent_slug": "type-s-m-calibrator"
+    },
+    {
+      "slug": "conf_curve_likelihood",
+      "name": "Integrated Wald inference workbench",
+      "question": "Do you intentionally need to compare observed-evidence and repeated-study design paradigms in one advanced interface?",
+      "conditioning": "mixed",
+      "x_axis": "Candidate effects in observed panels and assumed true effects in design panels.",
+      "inputs": [
+        "Effect measure and reported 95% confidence interval",
+        "Observed reference values",
+        "Design rules, assumed truths, and precision scenarios",
+        "Display and export options"
+      ],
+      "outputs": [
+        "Compatibility and normalized likelihood",
+        "Support and design calibration",
+        "Integrated exports and reviewer text"
+      ],
+      "non_goals": [
+        "Default entry point for one focused question",
+        "Exact profile likelihood or posterior inference",
+        "Clinical decision support"
+      ],
+      "primary_limitation": "The advanced interface spans different conditioning paradigms and requires deliberate interpretation.",
+      "requires_assumed_truth": "for-design-views",
+      "requires_selection_rule": "for-design-views",
+      "repository_url": "https://github.com/reblocke/conf_curve_likelihood",
+      "hosted_url": "https://reblocke.github.io/conf_curve_likelihood/",
+      "app_version": "0.1.1",
+      "core_version": "0.1.1",
+      "validation_status": "release-candidate",
+      "citation_url": "https://github.com/reblocke/conf_curve_likelihood/blob/main/CITATION.cff",
+      "manifest_url": "https://reblocke.github.io/conf_curve_likelihood/assets/py/manifest.json",
+      "app_distribution": "confcurve",
+      "adjacent_slug": "compatibility-curve"
+    }
+  ]
+}
