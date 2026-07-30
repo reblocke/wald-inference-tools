@@ -33,6 +33,24 @@ def test_duplicate_json_key_is_rejected(tmp_path: Path) -> None:
         load_manifest(path)
 
 
+@pytest.mark.parametrize("schema_version", [True, 1.0, "1"])
+def test_manifest_rejects_non_integer_schema_version(schema_version) -> None:
+    manifest = load_manifest()
+    manifest["schema_version"] = schema_version
+
+    with pytest.raises(ManifestError, match="schema_version must equal 1"):
+        validate_manifest(manifest)
+
+
+@pytest.mark.parametrize("catalog_version", ["01.2.3", "1.02.3", "1.2.03"])
+def test_manifest_rejects_semver_leading_zero(catalog_version: str) -> None:
+    manifest = load_manifest()
+    manifest["catalog_version"] = catalog_version
+
+    with pytest.raises(ManifestError, match="exact X.Y.Z"):
+        validate_manifest(manifest)
+
+
 @pytest.mark.parametrize(
     ("mutation", "message"),
     [

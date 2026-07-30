@@ -76,9 +76,10 @@ def test_site_build_is_exact_allowlist(tmp_path: Path) -> None:
 def test_release_artifacts_are_byte_reproducible() -> None:
     first = PROJECT_ROOT / "release-test-one"
     second = PROJECT_ROOT / "release-test-two"
+    version = load_manifest()["catalog_version"]
     try:
-        first_artifacts = build_release("0.1.0", first)
-        second_artifacts = build_release("0.1.0", second)
+        first_artifacts = build_release(version, first)
+        second_artifacts = build_release(version, second)
         first_hashes = {
             path.name: hashlib.sha256(path.read_bytes()).hexdigest() for path in first_artifacts
         }

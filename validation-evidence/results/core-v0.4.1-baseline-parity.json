@@ -1,0 +1,218 @@
+{
+  "app_only_path_prefixes": [
+    "$.status",
+    "$.response.meta.display_axis_scale",
+    "$.response.meta.grid_points",
+    "$.response.meta.show_cutoffs",
+    "$.response.meta.thresholds_display",
+    "$.response.meta.display_range_active",
+    "$.response.meta.display_range_display",
+    "$.response.meta.display_range_working",
+    "$.response.meta.threshold_support_summaries[*].threshold_display",
+    "$.response.meta.threshold_support_summaries[*].direction_from_estimate",
+    "$.response.meta.threshold_support_summaries[*].direction_from_null",
+    "$.response.meta.s_minus_2_interval.range_display",
+    "$.response.summary.critical_effect_markers_display",
+    "$.response.warnings",
+    "$.response.grid.effect_display",
+    "$.response.design.config.enabled",
+    "$.response.design.config.claim_threshold_display",
+    "$.response.design.config.type_m_scale_note",
+    "$.response.design.config.plausible_range_display",
+    "$.response.design.config.plausible_range_working",
+    "$.response.design.grid.true_effect_display",
+    "$.response.design.scenarios[*].label",
+    "$.response.design.scenarios[*].source",
+    "$.response.design.scenarios[*].note",
+    "$.response.design.scenarios[*].true_effect_display",
+    "$.response.design.precision_targets[*].target_effect_display",
+    "$.response.design.warnings"
+  ],
+  "baseline_tag": "pre-split-baseline-2026-07-29",
+  "baseline_tag_target": "5fd501dd947d9b951d736014cfc2b310efa5e7b0",
+  "behavior_source": "830756ecb11b4e8161f8dfe1fc75afc346ef4467",
+  "cases": [
+    {
+      "app_leaf_patterns_excluded": 16,
+      "case_id": "B01",
+      "compared_values": 2046,
+      "core_leaf_patterns": 42,
+      "max_absolute_difference": 5.329070518200751e-15,
+      "max_relative_difference": 1.1151625424818218e-15,
+      "status": "matched/core-values"
+    },
+    {
+      "app_leaf_patterns_excluded": 16,
+      "case_id": "B02",
+      "compared_values": 2046,
+      "core_leaf_patterns": 42,
+      "max_absolute_difference": 5.329070518200751e-15,
+      "max_relative_difference": 1.2666327757958904e-15,
+      "status": "matched/core-values"
+    },
+    {
+      "app_leaf_patterns_excluded": 17,
+      "case_id": "B03",
+      "compared_values": 1645,
+      "core_leaf_patterns": 41,
+      "max_absolute_difference": 5.329070518200751e-15,
+      "max_relative_difference": 6.519898307628875e-16,
+      "status": "matched/core-values"
+    },
+    {
+      "app_leaf_patterns_excluded": 27,
+      "case_id": "B04",
+      "compared_values": 4897,
+      "core_leaf_patterns": 69,
+      "max_absolute_difference": 2.842170943040401e-14,
+      "max_relative_difference": 1.1151625424818218e-15,
+      "status": "matched/core-values"
+    },
+    {
+      "app_leaf_patterns_excluded": 25,
+      "case_id": "B05",
+      "compared_values": 4889,
+      "core_leaf_patterns": 62,
+      "max_absolute_difference": 2.842170943040401e-14,
+      "max_relative_difference": 1.3881501524486269e-15,
+      "status": "matched/core-values"
+    },
+    {
+      "app_leaf_patterns_excluded": 25,
+      "case_id": "B06",
+      "compared_values": 4901,
+      "core_leaf_patterns": 72,
+      "max_absolute_difference": 2.842170943040401e-14,
+      "max_relative_difference": 1.1151625424818218e-15,
+      "status": "matched/core-values"
+    },
+    {
+      "app_leaf_patterns_excluded": 33,
+      "case_id": "B07a-null",
+      "compared_values": 129,
+      "core_leaf_patterns": 120,
+      "max_absolute_difference": 6.938893903907228e-18,
+      "max_relative_difference": 4.3168105628096536e-16,
+      "status": "matched/core-values"
+    },
+    {
+      "app_leaf_patterns_excluded": 33,
+      "case_id": "B07b-near-null",
+      "compared_values": 135,
+      "core_leaf_patterns": 120,
+      "max_absolute_difference": 2.7755575615628914e-17,
+      "max_relative_difference": 4.3168105628096536e-16,
+      "status": "matched/core-values"
+    },
+    {
+      "app_leaf_patterns_excluded": 33,
+      "case_id": "B07c-threshold-infeasible",
+      "compared_values": 129,
+      "core_leaf_patterns": 120,
+      "max_absolute_difference": 1.734723475976807e-18,
+      "max_relative_difference": 4.3168105628096536e-16,
+      "status": "matched/core-values"
+    },
+    {
+      "case_id": "B07d-alpha-zero",
+      "message": "Design alpha must be finite and between 0 and 1.",
+      "status": "matched/core-error"
+    },
+    {
+      "case_id": "B07e-alpha-one",
+      "message": "Design alpha must be finite and between 0 and 1.",
+      "status": "matched/core-error"
+    },
+    {
+      "case_id": "B07f-alpha-nonnumeric",
+      "message": "Design alpha must be finite.",
+      "status": "matched/core-error"
+    },
+    {
+      "case_id": "B07g-alpha-underflow",
+      "message": "Design alpha is too small to evaluate with finite floating-point precision.",
+      "status": "matched/core-error"
+    },
+    {
+      "case_id": "B07h-display-range-pair",
+      "reason": "paired display-window validation",
+      "status": "excluded/app-owned"
+    },
+    {
+      "case_id": "B07i-design-range-pair",
+      "reason": "paired design-shading-range validation",
+      "status": "excluded/app-owned"
+    },
+    {
+      "case_id": "B07j-ratio-positive",
+      "message": "Odds ratio inputs must be strictly positive on the natural scale.",
+      "status": "matched/core-error"
+    },
+    {
+      "app_leaf_patterns_excluded": 16,
+      "case_id": "B07k-disabled-design-ignored",
+      "compared_values": 2046,
+      "core_leaf_patterns": 42,
+      "max_absolute_difference": 5.329070518200751e-15,
+      "max_relative_difference": 1.1151625424818218e-15,
+      "status": "matched/core-values"
+    },
+    {
+      "app_leaf_patterns_excluded": 18,
+      "case_id": "B08a-additive-midpoint",
+      "compared_values": 58,
+      "core_leaf_patterns": 55,
+      "max_absolute_difference": 0.0,
+      "max_relative_difference": 0.0,
+      "status": "matched/core-values"
+    },
+    {
+      "app_leaf_patterns_excluded": 18,
+      "case_id": "B08b-s-minus-2-clipping",
+      "compared_values": 58,
+      "core_leaf_patterns": 55,
+      "max_absolute_difference": 1.3877787807814457e-17,
+      "max_relative_difference": 3.0365934843317404e-16,
+      "status": "matched/core-values"
+    },
+    {
+      "app_leaf_patterns_excluded": 18,
+      "case_id": "B08c-log-likelihood-fallback",
+      "compared_values": 58,
+      "core_leaf_patterns": 55,
+      "max_absolute_difference": 0.0,
+      "max_relative_difference": 0.0,
+      "status": "matched/core-values"
+    },
+    {
+      "app_leaf_patterns_excluded": 18,
+      "case_id": "B08d-ratio-natural-clipping",
+      "compared_values": 58,
+      "core_leaf_patterns": 55,
+      "max_absolute_difference": 6.938893903907228e-18,
+      "max_relative_difference": 1.3877787807814457e-16,
+      "status": "matched/core-values"
+    },
+    {
+      "case_id": "B08e-unrepresentable-design-distance",
+      "message": "Design standardized distance exceeds the finite floating-point range.",
+      "status": "matched/core-error"
+    }
+  ],
+  "fixture_set_sha256": "81c341b39e711caffc85a444f0c1e4bc1e2d00633474c82e720afeb60def3c4d",
+  "manifest_sha256": "f54bb2d8311788c07adcf23fc9f038e35702449e4a77a474abea9411246cabcc",
+  "schema_version": 1,
+  "summary": {
+    "app_only_error_exclusions": 2,
+    "compared_values": 23095,
+    "matched_core_error_cases": 6,
+    "max_absolute_difference": 2.842170943040401e-14,
+    "max_relative_difference": 1.3881501524486269e-15,
+    "successful_cases": 14
+  },
+  "tolerance": {
+    "atol": 1e-14,
+    "rtol": 1e-12
+  },
+  "verdict": "pass"
+}

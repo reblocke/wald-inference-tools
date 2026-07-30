@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "audited_at": "2026-07-30T18:58:05Z",
+  "environment": {
+    "playwright": "1.61.0",
+    "chromium": "149.0.7827.55",
+    "webkit": "26.5"
+  },
+  "coverage": {
+    "released_pages_sites": 7,
+    "chromium_desktop_passes": 7,
+    "chromium_390px_passes": 7,
+    "webkit_smoke_passes": 7,
+    "explicit_error_recovery_passes": 7
+  },
+  "responsive_layout": {
+    "viewport_width_px": 390,
+    "sites_with_document_width_exactly_matching_viewport": 7,
+    "uncontained_visible_elements": 0
+  },
+  "privacy": {
+    "non_get_requests": 0,
+    "websockets": 0,
+    "telemetry_matches": 0,
+    "sentinel_input_observed_in_any_request": false,
+    "cookies": 0,
+    "local_storage_entries": 0,
+    "session_storage_entries": 0,
+    "indexed_db_databases": 0,
+    "cache_storage_entries": 0,
+    "service_workers": 0,
+    "service_worker_controllers": 0,
+    "post_input_network_observation": "Two local blob-image GET observations per calculation site; no HTTP request followed user input."
+  },
+  "accessibility_and_recovery": {
+    "keyboard_focus_paths_checked": 7,
+    "input_label_sets_checked": 7,
+    "error_messages_exposed_to_assistive_technology": true,
+    "explicit_error_link_focus_passes": 6,
+    "integrated_error_surface": "aria-live polite status with successful recovery",
+    "valid_input_recovers_after_error": true,
+    "automated_only": true
+  },
+  "source_files": [
+    "browser/corrected-live-browser-results.json",
+    "browser/corrected-mobile-containment.json",
+    "browser/corrected-required-error-recovery.json"
+  ]
+}

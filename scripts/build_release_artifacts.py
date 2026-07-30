@@ -11,10 +11,33 @@ from pathlib import Path
 
 if __package__:
     from scripts.build_site import build_site
-    from scripts.validate_tools_manifest import PROJECT_ROOT
+    from scripts.validate_tools_manifest import (
+        PROJECT_ROOT,
+        load_manifest,
+        validate_manifest,
+    )
+    from scripts.validate_validation_evidence import (
+        EVIDENCE_ROOT,
+        load_evidence_index,
+        validate_evidence_index,
+    )
+    from scripts.validate_validation_status import load_status, validate_status
 else:
     from build_site import build_site  # type: ignore[import-not-found]
-    from validate_tools_manifest import PROJECT_ROOT  # type: ignore[import-not-found]
+    from validate_tools_manifest import (  # type: ignore[import-not-found]
+        PROJECT_ROOT,
+        load_manifest,
+        validate_manifest,
+    )
+    from validate_validation_evidence import (  # type: ignore[import-not-found]
+        EVIDENCE_ROOT,
+        load_evidence_index,
+        validate_evidence_index,
+    )
+    from validate_validation_status import (  # type: ignore[import-not-found]
+        load_status,
+        validate_status,
+    )
 
 
 def _source_files() -> list[Path]:
@@ -69,10 +92,61 @@ def _site_zip_bytes(site: Path) -> bytes:
     return output.getvalue()
 
 
+def _evidence_tar_bytes(version: str, evidence_root: Path = EVIDENCE_ROOT) -> bytes:
+    raw = io.BytesIO()
+    prefix = f"portfolio-validation-evidence-v{version}"
+    paths = sorted(path for path in evidence_root.rglob("*") if path.is_file())
+    with tarfile.open(fileobj=raw, mode="w", format=tarfile.PAX_FORMAT) as archive:
+        for path in paths:
+            relative = path.relative_to(evidence_root)
+            data = path.read_bytes()
+            info = tarfile.TarInfo(f"{prefix}/{relative.as_posix()}")
+            info.size = len(data)
+            info.mode = 0o644
+            info.mtime = 0
+            info.uid = 0
+            info.gid = 0
+            info.uname = ""
+            info.gname = ""
+            archive.addfile(info, io.BytesIO(data))
+    compressed = io.BytesIO()
+    with gzip.GzipFile(filename="", mode="wb", fileobj=compressed, mtime=0) as stream:
+        stream.write(raw.getvalue())
+    return compressed.getvalue()
+
+
 def build_release(version: str, output: Path) -> list[Path]:
+    manifest_path = PROJECT_ROOT / "data" / "tools.json"
+    manifest = load_manifest(manifest_path)
+    validate_manifest(manifest)
+    if version != manifest["catalog_version"]:
+        raise ValueError(
+            f"release version {version} != catalog version {manifest['catalog_version']}"
+        )
+
     output = output.resolve()
     if output == PROJECT_ROOT or PROJECT_ROOT not in output.parents:
         raise ValueError("release output must be a dedicated directory inside the repository")
+    report_source = PROJECT_ROOT / "docs" / "PORTFOLIO_VALIDATION_REPORT.md"
+    status_source = PROJECT_ROOT / "data" / "validation_status.json"
+    evidence_root = PROJECT_ROOT / "validation-evidence"
+    evidence_index_source = evidence_root / "index.json"
+    missing_evidence = [
+        path for path in (report_source, status_source, evidence_index_source) if not path.is_file()
+    ]
+    if missing_evidence:
+        raise FileNotFoundError(f"validation release evidence is missing: {missing_evidence[0]}")
+    validate_status(
+        load_status(status_source),
+        report_path=report_source,
+        manifest_path=manifest_path,
+    )
+    validate_evidence_index(
+        load_evidence_index(evidence_index_source),
+        evidence_root=evidence_root,
+        expected_catalog_version=version,
+    )
+
     output.mkdir(parents=True, exist_ok=True)
     for path in output.iterdir():
         if path.is_file():
@@ -83,10 +157,27 @@ def build_release(version: str, output: Path) -> list[Path]:
         output / f"wald-inference-tools-v{version}.tar.gz",
         output / f"wald-inference-tools-site-v{version}.zip",
         output / f"tools-v{version}.json",
+        output / f"portfolio-validation-evidence-v{version}.tar.gz",
+        output / f"validation-evidence-index-v{version}.json",
     ]
     artifacts[0].write_bytes(_tar_bytes(version))
     artifacts[1].write_bytes(_site_zip_bytes(site))
-    artifacts[2].write_bytes((PROJECT_ROOT / "data" / "tools.json").read_bytes())
+    artifacts[2].write_bytes(manifest_path.read_bytes())
+    artifacts[3].write_bytes(_evidence_tar_bytes(version, evidence_root))
+    artifacts[4].write_bytes(evidence_index_source.read_bytes())
+    validation_sources = [
+        (
+            report_source,
+            output / f"PORTFOLIO_VALIDATION_REPORT-v{version}.md",
+        ),
+        (
+            status_source,
+            output / f"validation_status-v{version}.json",
+        ),
+    ]
+    for source, destination in validation_sources:
+        destination.write_bytes(source.read_bytes())
+        artifacts.append(destination)
     checksum_lines = [
         f"{hashlib.sha256(path.read_bytes()).hexdigest()}  {path.name}\n" for path in artifacts
     ]

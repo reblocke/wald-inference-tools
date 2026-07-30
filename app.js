@@ -9,6 +9,10 @@ const labels = {
   "for-design-views": "For design views",
 };
 
+function validationLabel(status) {
+  return status === "validated" ? "Software validated" : status.replaceAll("-", " ");
+}
+
 function appendListItems(list, values) {
   values.forEach((value) => {
     const item = document.createElement("li");
@@ -22,12 +26,12 @@ function renderCard(tool, template) {
   card.dataset.conditioning = tool.conditioning;
   card.querySelector("h3").textContent = tool.name;
   card.querySelector(".conditioning-badge").textContent = labels[tool.conditioning];
-  card.querySelector(".validation-badge").textContent = tool.validation_status.replaceAll("-", " ");
+  card.querySelector(".validation-badge").textContent = validationLabel(tool.validation_status);
   card.querySelector(".question").textContent = tool.question;
   card.querySelector(".x-axis").textContent = tool.x_axis;
   appendListItems(card.querySelector(".inputs"), tool.inputs);
   appendListItems(card.querySelector(".outputs"), tool.outputs);
-  card.querySelector(".non-goal").textContent = tool.non_goals[0];
+  appendListItems(card.querySelector(".non-goals"), tool.non_goals);
   card.querySelector(".limitation").textContent = tool.primary_limitation;
   card.querySelector(".versions").textContent =
     `App ${tool.app_version} · Core ${tool.core_version}`;
@@ -95,7 +99,7 @@ async function initializeCatalog() {
       table.append(renderTableRow(tool));
     });
     document.querySelector("#catalog-version").textContent =
-      `Catalog ${manifest.catalog_version} · ${manifest.portfolio_status.replaceAll("-", " ")}`;
+      `Catalog ${manifest.catalog_version} · ${validationLabel(manifest.portfolio_status)}`;
     const coreRepositoryLink = document.querySelector("#core-repository-link");
     coreRepositoryLink.href = manifest.core.repository;
     coreRepositoryLink.removeAttribute("aria-disabled");

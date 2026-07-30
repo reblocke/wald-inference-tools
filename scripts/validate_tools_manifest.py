@@ -57,7 +57,7 @@ VALID_STATUSES = {
     "not-validated",
     "validation-failed",
 }
-SEMVER_RE = re.compile(r"^[0-9]+\.[0-9]+\.[0-9]+$")
+SEMVER_RE = re.compile(r"^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)$")
 SLUG_RE = re.compile(r"^[a-z0-9][a-z0-9_-]*$")
 
 
@@ -129,7 +129,7 @@ def _https_url(value: Any, location: str, *, input_free: bool = False) -> str:
 
 def validate_manifest(manifest: dict[str, Any]) -> None:
     _exact_fields(manifest, TOP_LEVEL_FIELDS, "manifest")
-    if manifest["schema_version"] != 1:
+    if type(manifest["schema_version"]) is not int or manifest["schema_version"] != 1:
         raise ManifestError("schema_version must equal 1")
     _semver(manifest["catalog_version"], "catalog_version")
     if manifest["portfolio_status"] not in VALID_STATUSES:

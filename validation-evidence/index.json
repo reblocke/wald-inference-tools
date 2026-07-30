@@ -1,0 +1,211 @@
+{
+  "schema_version": 1,
+  "catalog_version": "0.2.0",
+  "validated_at": "2026-07-30T18:58:05Z",
+  "files": [
+    {
+      "path": "browser/browser-summary.json",
+      "sha256": "55b700131bb4f26b92581a817e89276e10b552703b8dbc4e8661b3764b129d5d",
+      "kind": "browser-result",
+      "description": "Preserved CC-MIG-11 evidence: browser summary."
+    },
+    {
+      "path": "browser/corrected-live-browser-results.json",
+      "sha256": "d317e76bd22d2a54db621ea04f9825a7b168683755fb0d891b002f05195bfd22",
+      "kind": "lane-e-browser-privacy-accessibility",
+      "description": "Preserved CC-MIG-11 evidence: corrected live browser results."
+    },
+    {
+      "path": "browser/corrected-mobile-containment.json",
+      "sha256": "8ed877b55eb11aa282fc2a737137c29a498db67b1379e750829a5f95e90e8e46",
+      "kind": "lane-e-browser-privacy-accessibility",
+      "description": "Preserved CC-MIG-11 evidence: corrected mobile containment."
+    },
+    {
+      "path": "browser/corrected-required-error-recovery.json",
+      "sha256": "c341e9c9545afbe97587fe186aca51380ef176d24bae7f8819367dbaa6105240",
+      "kind": "lane-e-browser-privacy-accessibility",
+      "description": "Preserved CC-MIG-11 evidence: corrected required error recovery."
+    },
+    {
+      "path": "commands/README_COMMANDS.md",
+      "sha256": "ecc71d2195c195bd9eab02ffc839eaabc792d7c2aec596789b33abd95b9d4673",
+      "kind": "command-ledger",
+      "description": "Preserved CC-MIG-11 evidence: README COMMANDS."
+    },
+    {
+      "path": "drivers/audit_focused_diffs.py",
+      "sha256": "ebe8c988047e91e2fee375da35fcbbfb34f427b858af60753e1413ca3b8476a4",
+      "kind": "audit-driver",
+      "description": "Preserved CC-MIG-11 evidence: audit focused diffs."
+    },
+    {
+      "path": "drivers/audit_integrated_diff.py",
+      "sha256": "921a7b44dc9f5604001b5e68ec4b2493db899ac6af388acde71213fb7be218e7",
+      "kind": "audit-driver",
+      "description": "Preserved CC-MIG-11 evidence: audit integrated diff."
+    },
+    {
+      "path": "drivers/audit_precision_app_repairs.py",
+      "sha256": "c08c0243c3c66a30133d2337aeba3b546783db62d82c656a79b9b43244c0f2e9",
+      "kind": "audit-driver",
+      "description": "Preserved CC-MIG-11 evidence: audit precision app repairs."
+    },
+    {
+      "path": "drivers/build_evidence_index.mjs",
+      "sha256": "1bd44d6b9473fbb5a3773edfdc303b5c6f3ad5ea3566bd8ff5148313b6dc421c",
+      "kind": "audit-driver",
+      "description": "Preserved CC-MIG-11 evidence: build evidence index."
+    },
+    {
+      "path": "drivers/collect_release_inventory.mjs",
+      "sha256": "4c2c82dbcd084b3356c1f16c72785f4a9ff0bb8c19e1e10817c4afe3c69184e7",
+      "kind": "audit-driver",
+      "description": "Preserved CC-MIG-11 evidence: collect release inventory."
+    },
+    {
+      "path": "drivers/focused_error_links_audit.py",
+      "sha256": "690cb7e02faa310cf37801619117e67f9d658fb6eb103d456180c9cfdc806868",
+      "kind": "audit-driver",
+      "description": "Preserved CC-MIG-11 evidence: focused error links audit."
+    },
+    {
+      "path": "drivers/live_browser_audit.py",
+      "sha256": "67490befd6a85c2147d93e6057edf0632f25f953a09ade21b77c570cfaff0377",
+      "kind": "audit-driver",
+      "description": "Preserved CC-MIG-11 evidence: live browser audit."
+    },
+    {
+      "path": "drivers/mobile_containment_audit.py",
+      "sha256": "378c99d04ac37fde5c15405ba681539d96be54f04bcd03aee2cc1045224f0683",
+      "kind": "audit-driver",
+      "description": "Preserved CC-MIG-11 evidence: mobile containment audit."
+    },
+    {
+      "path": "drivers/required_error_recovery_audit.py",
+      "sha256": "1f8e1436528e7f5553fd090874440ca6056e403c2ab4ce2c66d5fd4bc271169a",
+      "kind": "audit-driver",
+      "description": "Preserved CC-MIG-11 evidence: required error recovery audit."
+    },
+    {
+      "path": "inventory/release-inventory.json",
+      "sha256": "1ea8e3c75957c1ab40e9edadd18373ab6d44aa2866579b219d2f57fcd542af49",
+      "kind": "release-inventory",
+      "description": "Preserved CC-MIG-11 evidence: release inventory."
+    },
+    {
+      "path": "lanes/all-ticket-acceptance-final.md",
+      "sha256": "7c118a7865191627056414ab1a98580dcbc33614fe6e222569f8d3459c147844",
+      "kind": "lane-f-docs-rights",
+      "description": "Preserved CC-MIG-11 evidence: all ticket acceptance final."
+    },
+    {
+      "path": "lanes/catalog-template-v0.1.1-cdef.md",
+      "sha256": "efac804a7e3da81a0675dad5418b8494814e526f43721c2370ded1910674148d",
+      "kind": "lane-c-cold-start",
+      "description": "Preserved CC-MIG-11 evidence: catalog template v0.1.1 cdef."
+    },
+    {
+      "path": "lanes/compatibility-v0.1.2-cdef.md",
+      "sha256": "543e5a121b2213c286fdf5d83caa17396cd65e64d638288d5370ac346c9968e1",
+      "kind": "lane-c-cold-start",
+      "description": "Preserved CC-MIG-11 evidence: compatibility v0.1.2 cdef."
+    },
+    {
+      "path": "lanes/core-likelihood-final-ab.md",
+      "sha256": "3f86062bf1754bb5aa6ff416e9b95b5f48cef379b77041b6b96270a76b8e5d45",
+      "kind": "lane-b-parity",
+      "description": "Preserved CC-MIG-11 evidence: core likelihood final ab."
+    },
+    {
+      "path": "lanes/corrected-release-set-lane-ab.md",
+      "sha256": "e0011e26acbfde5771b898b0151a00fb21937aa38b6874dafc654ff3cf7f0c49",
+      "kind": "lane-b-parity",
+      "description": "Preserved CC-MIG-11 evidence: corrected release set lane ab."
+    },
+    {
+      "path": "lanes/corrected-release-set-lane-cd.md",
+      "sha256": "c1eb951b6a3e441e6adefa0fd8e28ccd79e6a83274b0472928d4fae65d143ddc",
+      "kind": "lane-d-provenance",
+      "description": "Preserved CC-MIG-11 evidence: corrected release set lane cd."
+    },
+    {
+      "path": "lanes/critical-v0.1.2-cdef.md",
+      "sha256": "a92b9fa212dd021858bfac07cbbe4258a80e2dbcd5911f014fd8da5913d57ddb",
+      "kind": "lane-c-cold-start",
+      "description": "Preserved CC-MIG-11 evidence: critical v0.1.2 cdef."
+    },
+    {
+      "path": "lanes/focused-docs-only-final-release-supplement.md",
+      "sha256": "aa90ae1c0688f45fe465377aac3fbfd00c5f7edcda2ac90603016e469843fb46",
+      "kind": "lane-f-docs-rights",
+      "description": "Preserved CC-MIG-11 evidence: focused docs only final release supplement."
+    },
+    {
+      "path": "lanes/integrated-v0.2.2-blocker-audit.md",
+      "sha256": "a1df4673d60ab707bc2798e79ea7d2d10846858a8658c1d78aedc7bcaf6e10ce",
+      "kind": "lane-f-docs-rights",
+      "description": "Preserved CC-MIG-11 evidence: integrated v0.2.2 blocker audit."
+    },
+    {
+      "path": "lanes/integrated-v0.2.5-cdef.md",
+      "sha256": "60236623ac5def0732271a7b7f844c4c9afa6d0599c3c5457d6d10b347a3a323",
+      "kind": "lane-c-cold-start",
+      "description": "Preserved CC-MIG-11 evidence: integrated v0.2.5 cdef."
+    },
+    {
+      "path": "lanes/likelihood-v0.1.2-cdef.md",
+      "sha256": "301102630970ed959b5071e9617b7a4895216ba37a5a2ae3e097f3143896de5e",
+      "kind": "lane-c-cold-start",
+      "description": "Preserved CC-MIG-11 evidence: likelihood v0.1.2 cdef."
+    },
+    {
+      "path": "lanes/original-release-set-lane-ab.md",
+      "sha256": "53b97dc12f52a1c520f8e1273606ee68b3ed7159a507c6b2430829abd044b55c",
+      "kind": "lane-a-numerical",
+      "description": "Preserved CC-MIG-11 evidence: original release set lane ab."
+    },
+    {
+      "path": "lanes/original-release-set-lane-cd.md",
+      "sha256": "33ecb7a1b8e528264c7a8a22abf281a4ff6105682239fde1a94463b5c48dad79",
+      "kind": "lane-d-provenance",
+      "description": "Preserved CC-MIG-11 evidence: original release set lane cd."
+    },
+    {
+      "path": "lanes/original-release-set-lane-ef.md",
+      "sha256": "2c2f03f8ceddde922ce4fede2a393d4e4285d244a22d1e1f8ce31ff7ee6ec449",
+      "kind": "lane-e-browser-privacy-accessibility",
+      "description": "Preserved CC-MIG-11 evidence: original release set lane ef."
+    },
+    {
+      "path": "lanes/type-s-m-v0.1.2-cdef.md",
+      "sha256": "4c8a2f91fbcbe45b447ce4524cd83b9a42093ba82b3d2b6a07493f8eef65ebe0",
+      "kind": "lane-c-cold-start",
+      "description": "Preserved CC-MIG-11 evidence: type s m v0.1.2 cdef."
+    },
+    {
+      "path": "results/core-likelihood-final-ab.json",
+      "sha256": "dcad835aaa92b866ac996145ca55536b6026fe72ce4b0bfb899d97ce50d0f74e",
+      "kind": "lane-b-parity",
+      "description": "Preserved CC-MIG-11 evidence: core likelihood final ab."
+    },
+    {
+      "path": "results/core-precision-boundary-audit.txt",
+      "sha256": "72a60a55f476799179c996a0158010a569f558564b8dcfcca352809060637cdc",
+      "kind": "lane-a-numerical",
+      "description": "Preserved CC-MIG-11 evidence: core precision boundary audit."
+    },
+    {
+      "path": "results/core-v0.4.1-baseline-parity.json",
+      "sha256": "18d020e6a00746646ffed913eb88f1e4b148aa2725872db647823019f1e65dba",
+      "kind": "lane-a-numerical",
+      "description": "Preserved CC-MIG-11 evidence: core v0.4.1 baseline parity."
+    },
+    {
+      "path": "results/focused-docs-only-final-release-supplement.json",
+      "sha256": "80493c7fa43cd677d733f97507a7910b25bab5310fb4045689f38c4a36d09c0f",
+      "kind": "lane-f-docs-rights",
+      "description": "Preserved CC-MIG-11 evidence: focused docs only final release supplement."
+    }
+  ]
+}
