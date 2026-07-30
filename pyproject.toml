@@ -1,0 +1,39 @@
+[project]
+name = "wald-inference-tools-catalog"
+version = "0.1.0"
+description = "Question-based static catalog for the Wald inference applet portfolio"
+readme = "README.md"
+requires-python = ">=3.12"
+license = { file = "LICENSE" }
+authors = [
+  { name = "Brian Locke" },
+]
+dependencies = []
+
+[dependency-groups]
+dev = [
+  "playwright>=1.55,<2",
+  "pytest>=8.2,<9",
+  "pytest-playwright>=0.7,<1",
+  "ruff>=0.15.1,<1",
+]
+
+[tool.uv]
+package = false
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+addopts = ["-q"]
+testpaths = ["tests"]
+pythonpath = ["."]
+markers = [
+  "e2e: browser end-to-end tests",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+src = ["scripts", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]

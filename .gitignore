@@ -1,0 +1,12 @@
+.DS_Store
+.pytest_cache/
+.ruff_cache/
+.venv/
+__pycache__/
+site/
+release/
+site-test-output/
+release-test-one/
+release-test-two/
+test-results/
+test-results-webkit/
