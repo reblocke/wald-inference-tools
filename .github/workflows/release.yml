@@ -24,6 +24,8 @@ jobs:
       - run: uv run playwright install --with-deps chromium webkit
       - run: make verify
       - run: make live-check
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
       - name: Verify annotated tag and release metadata
         shell: bash
         run: |

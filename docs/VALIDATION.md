@@ -9,7 +9,8 @@ catalog release, the following mechanical gates are required:
 - complete schema, unique slugs, valid adjacency, and exact six-tool coverage;
 - semantic conditioning and no-input-bearing-link checks;
 - local HTML asset/link checks;
-- public GitHub release, hosted URL, and hosted app/Core manifest agreement;
+- public GitHub release, hosted URL, hosted app/Core manifest, and public README portfolio-block
+  agreement;
 - deterministic Pages and release artifacts;
 - Chromium and WebKit rendering, filter, keyboard, mobile, and privacy checks;
 - formatting, lint, tests, and clean-diff checks.
@@ -26,3 +27,7 @@ make live-check
 The independent cross-repository audit will write `docs/PORTFOLIO_VALIDATION_REPORT.md` and
 `data/validation_status.json`. Until that audit is complete, a `release-candidate` label means only
 that the implementation is awaiting the portfolio-wide verdict.
+
+The live check is a required CI and Pages build gate. A stale release, staged package, Core version,
+README cross-link, or pinned Core release therefore blocks deployment rather than first failing
+after the site is already public.

@@ -45,7 +45,8 @@ make serve
 
 Then open <http://127.0.0.1:8000/>.
 
-To validate public release and hosted metadata after all sites are live:
+To validate public releases, hosted manifests, and the compact portfolio block in every public
+README after all sites and cross-link PRs are live:
 
 ```bash
 make live-check
@@ -58,7 +59,9 @@ make live-check
 3. Confirm `app_version` and `core_version` against the hosted staged-package manifest.
 4. Set `validation_status` only from recorded evidence.
 5. Run `make verify` and `make live-check`.
-6. Update the validation report/status file when independent review changes the portfolio verdict.
+6. Confirm the catalog CI and Pages workflows both passed their live-metadata gate before merging
+   or deploying.
+7. Update the validation report/status file when independent review changes the portfolio verdict.
 
 To add a tool, supply every schema field, a unique slug, repository and hosted URLs, a manifest
 probe, accurate non-goals, and an adjacent-tool slug. The site renders directly from the manifest;

@@ -5,6 +5,7 @@ from copy import deepcopy
 from pathlib import Path
 
 import pytest
+from scripts.check_links import LinkError, validate_related_tools_readme
 from scripts.validate_tools_manifest import ManifestError, load_manifest, validate_manifest
 
 
@@ -57,3 +58,66 @@ def test_manifest_serialization_has_no_nonstandard_numbers() -> None:
     raw = json.dumps(load_manifest(), allow_nan=False, sort_keys=True)
     assert "NaN" not in raw
     assert "Infinity" not in raw
+
+
+def _related_tools_block(tool: dict, adjacent: dict, integrated: dict) -> str:
+    core_repository = "https://github.com/reblocke/wald-inference-core"
+    return f"""# Example
+
+## Related Wald tools
+
+- Choose a tool: https://reblocke.github.io/wald-inference-tools/
+- Closest adjacent tool: {adjacent["hosted_url"]}
+- Integrated workbench: {integrated["hosted_url"]}
+- App repository: {tool["repository_url"]}
+- Numerical dependency: wald-inference Core v{tool["core_version"]}
+  ({core_repository}/releases/tag/v{tool["core_version"]})
+- Privacy: calculations stay in this browser.
+
+## Next section
+"""
+
+
+def test_readme_portfolio_block_matches_manifest() -> None:
+    manifest = load_manifest()
+    tools = {tool["slug"]: tool for tool in manifest["tools"]}
+    tool = tools["critical-effect-size"]
+    validate_related_tools_readme(
+        _related_tools_block(
+            tool,
+            tools[tool["adjacent_slug"]],
+            tools["conf_curve_likelihood"],
+        ),
+        tool=tool,
+        adjacent_tool=tools[tool["adjacent_slug"]],
+        integrated_tool=tools["conf_curve_likelihood"],
+        core_repository=manifest["core"]["repository"],
+    )
+
+
+@pytest.mark.parametrize(
+    ("removed", "message"),
+    [
+        ("## Related Wald tools", "missing"),
+        ("https://reblocke.github.io/wald-inference-tools/", "catalog URL"),
+        ("wald-inference Core v0.3.0", "pinned Core version"),
+        ("Privacy", "privacy note"),
+    ],
+)
+def test_readme_portfolio_block_rejects_missing_metadata(removed: str, message: str) -> None:
+    manifest = load_manifest()
+    tools = {tool["slug"]: tool for tool in manifest["tools"]}
+    tool = tools["critical-effect-size"]
+    readme = _related_tools_block(
+        tool,
+        tools[tool["adjacent_slug"]],
+        tools["conf_curve_likelihood"],
+    ).replace(removed, "")
+    with pytest.raises(LinkError, match=message):
+        validate_related_tools_readme(
+            readme,
+            tool=tool,
+            adjacent_tool=tools[tool["adjacent_slug"]],
+            integrated_tool=tools["conf_curve_likelihood"],
+            core_repository=manifest["core"]["repository"],
+        )

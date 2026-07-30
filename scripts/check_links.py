@@ -9,7 +9,7 @@ import urllib.request
 from html.parser import HTMLParser
 from pathlib import Path
 from typing import Any
-from urllib.parse import urlsplit
+from urllib.parse import quote, urlsplit
 
 if __package__:
     from scripts.validate_tools_manifest import (
@@ -29,6 +29,10 @@ else:
 
 class LinkError(RuntimeError):
     """Raised when a local or public catalog target is inconsistent."""
+
+
+CATALOG_URL = "https://reblocke.github.io/wald-inference-tools/"
+RELATED_TOOLS_HEADING = "## Related Wald tools"
 
 
 class _ReferenceParser(HTMLParser):
@@ -104,12 +108,64 @@ def _package_version(hosted_manifest: dict[str, Any], distribution: str) -> str:
     return versions[0]
 
 
+def validate_related_tools_readme(
+    readme: str,
+    *,
+    tool: dict[str, Any],
+    adjacent_tool: dict[str, Any],
+    integrated_tool: dict[str, Any],
+    core_repository: str,
+) -> None:
+    """Verify the public README's compact portfolio block against catalog metadata."""
+
+    section_start = readme.find(RELATED_TOOLS_HEADING)
+    if section_start < 0:
+        raise LinkError(f"{tool['slug']}: README is missing {RELATED_TOOLS_HEADING!r}")
+    section_end = readme.find("\n## ", section_start + len(RELATED_TOOLS_HEADING))
+    section = readme[section_start : section_end if section_end >= 0 else None]
+
+    core_marker = f"wald-inference Core v{tool['core_version']}"
+    required_text = {
+        "catalog URL": CATALOG_URL,
+        "adjacent hosted URL": adjacent_tool["hosted_url"],
+        "integrated-workbench hosted URL": integrated_tool["hosted_url"],
+        "app repository URL": tool["repository_url"],
+        "pinned Core release": f"{core_repository}/releases/tag/v{tool['core_version']}",
+        "pinned Core version marker": core_marker,
+    }
+    missing = [label for label, value in required_text.items() if value not in section]
+    if "privacy" not in section.lower():
+        missing.append("privacy note")
+    if missing:
+        raise LinkError(
+            f"{tool['slug']}: README related-tools block is missing {', '.join(missing)}"
+        )
+
+
 def check_live_metadata(manifest: dict[str, Any]) -> list[str]:
     checked: list[str] = []
     repositories = [manifest["core"]["repository"]]
     releases = [(manifest["core"]["repository"], manifest["core"]["latest_validated_release"])]
+    repository_metadata: dict[str, dict[str, Any]] = {}
+
+    for repository in repositories + [tool["repository_url"] for tool in manifest["tools"]]:
+        owner, name = _github_coordinates(repository)
+        metadata = _request(
+            f"https://api.github.com/repos/{owner}/{name}",
+            expect_json=True,
+        )
+        if (
+            not isinstance(metadata, dict)
+            or metadata.get("archived") is True
+            or not isinstance(metadata.get("default_branch"), str)
+        ):
+            raise LinkError(f"repository is unavailable, archived, or malformed: {repository}")
+        repository_metadata[repository] = metadata
+        checked.append(repository)
+
+    tools_by_slug = {tool["slug"]: tool for tool in manifest["tools"]}
+    integrated_tool = tools_by_slug["conf_curve_likelihood"]
     for tool in manifest["tools"]:
-        repositories.append(tool["repository_url"])
         releases.append((tool["repository_url"], tool["app_version"]))
         _request(tool["hosted_url"])
         checked.append(tool["hosted_url"])
@@ -130,15 +186,26 @@ def check_live_metadata(manifest: dict[str, Any]) -> list[str]:
             )
         checked.append(tool["manifest_url"])
 
-    for repository in repositories:
-        owner, name = _github_coordinates(repository)
-        metadata = _request(
-            f"https://api.github.com/repos/{owner}/{name}",
-            expect_json=True,
+        owner, name = _github_coordinates(tool["repository_url"])
+        default_branch = repository_metadata[tool["repository_url"]]["default_branch"]
+        readme_url = (
+            f"https://raw.githubusercontent.com/{owner}/{name}/"
+            f"{quote(default_branch, safe='')}/README.md"
         )
-        if not isinstance(metadata, dict) or metadata.get("archived") is True:
-            raise LinkError(f"repository is unavailable or archived: {repository}")
-        checked.append(repository)
+        readme_payload = _request(readme_url)
+        try:
+            readme = readme_payload.decode("utf-8")
+        except (AttributeError, UnicodeDecodeError) as exc:
+            raise LinkError(f"{tool['slug']}: public README is not valid UTF-8") from exc
+        validate_related_tools_readme(
+            readme,
+            tool=tool,
+            adjacent_tool=tools_by_slug[tool["adjacent_slug"]],
+            integrated_tool=integrated_tool,
+            core_repository=manifest["core"]["repository"],
+        )
+        checked.append(readme_url)
+
     for repository, version in releases:
         owner, name = _github_coordinates(repository)
         release = _request(
@@ -163,7 +230,10 @@ def main() -> int:
     print(f"Validated {len(local)} references in index.html.")
     if args.live:
         public = check_live_metadata(manifest)
-        print(f"Validated {len(public)} public release, repository, citation, and Pages targets.")
+        print(
+            f"Validated {len(public)} public release, repository, README, citation, "
+            "and Pages targets."
+        )
     return 0
 
 
