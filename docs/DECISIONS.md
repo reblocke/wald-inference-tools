@@ -1,5 +1,17 @@
 # Catalog decisions
 
+## 2026-07-30 — Corrective release metadata remains evidence-limited
+
+The catalog records Core v0.4.1; compatibility, likelihood, critical-effect, and Type S/M
+v0.1.2; precision v0.1.1; and integrated workbench v0.2.2 only after their exact tags and hosted
+manifests agree. Metadata synchronization does not itself establish portfolio validation: all
+entries remain `release-candidate` until the independent audit is rerun and its report and
+machine-readable status are committed.
+
+The live metadata gate resolves every app's annotated tag to its peeled commit and requires the
+deployed staged-package manifest to name that exact `source_commit`. Matching version strings alone
+is insufficient because a Pages deployment can otherwise drift ahead of its release.
+
 ## D001: Keep the catalog a separate static product
 
 **Status:** Accepted, 2026-07-30.
