@@ -11,7 +11,8 @@
 
 1. Wait for the app release and Pages deployment.
 2. Record the exact app version, Core version, repository, hosted URL, citation file, app
-   distribution, and hosted manifest URL in `data/tools.json`.
+   distribution, and hosted manifest URL in `data/tools.json`; the deployed manifest's
+   `source_commit` must equal the annotated app tag's peeled commit.
 3. Keep `release-candidate` or another evidence-limited status until the validation record supports
    a stronger label.
 4. Run `make verify` and `make live-check`.
@@ -38,9 +39,9 @@ milestone has no unresolved release-blocking finding. The tag must match `catalo
 live metadata check, and publishes deterministic source/site artifacts with checksums. Stable
 promotion is an explicit post-validation action; it does not move or recreate the annotated tag.
 
-CI and Pages also run the live check. This prevents a manifest whose public release, hosted stage,
-README block, or deployed footer is stale from reaching the catalog site before the release
-workflow runs.
+CI and Pages also run the live check. This prevents a manifest whose public release, exact deployed
+commit, hosted stage, README block, or deployed footer is stale from reaching the catalog site
+before the release workflow runs.
 
 If a deployed app becomes inconsistent, correct the app or catalog in an isolated PR and mark its
 validation status conservatively until verification is rerun. Never silently point a released

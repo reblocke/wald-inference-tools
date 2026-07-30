@@ -8,8 +8,9 @@ All notable changes to this project are documented here.
 
 ### Changed
 
-- Record the corrective `wald-inference` Core v0.4.1 release and the exact v0.1.1 focused-app and
-  v0.2.1 integrated-workbench releases.
+- Record the corrective `wald-inference` Core v0.4.1 release, the exact v0.1.2 compatibility,
+  likelihood, critical-effect, and Type S/M releases, the v0.1.1 precision release, and the
+  v0.2.2 integrated-workbench release.
 - Keep every entry at `release-candidate` until the independent portfolio audit is rerun against
   the tagged and deployed corrective set.
 

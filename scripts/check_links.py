@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 import time
 import urllib.error
 import urllib.request
@@ -33,6 +34,7 @@ class LinkError(RuntimeError):
 
 CATALOG_URL = "https://reblocke.github.io/wald-inference-tools/"
 RELATED_TOOLS_HEADING = "## Related Wald tools"
+COMMIT_PATTERN = re.compile(r"[0-9a-f]{40}")
 
 
 class _ReferenceParser(HTMLParser):
@@ -130,6 +132,59 @@ def _package_version(hosted_manifest: dict[str, Any], distribution: str) -> str:
     if len(versions) != 1 or not isinstance(versions[0], str):
         raise LinkError(f"hosted manifest has no unique {distribution!r} package")
     return versions[0]
+
+
+def _annotated_tag_commit(repository_url: str, version: str) -> str:
+    """Resolve a public annotated release tag to its exact peeled commit."""
+
+    owner, name = _github_coordinates(repository_url)
+    tag_ref = _request(
+        f"https://api.github.com/repos/{owner}/{name}/git/ref/tags/v{quote(version, safe='')}",
+        expect_json=True,
+    )
+    tag_object = tag_ref.get("object") if isinstance(tag_ref, dict) else None
+    if (
+        not isinstance(tag_object, dict)
+        or tag_object.get("type") != "tag"
+        or not isinstance(tag_object.get("sha"), str)
+        or COMMIT_PATTERN.fullmatch(tag_object["sha"]) is None
+    ):
+        raise LinkError(f"{repository_url} v{version} is not an annotated release tag")
+
+    annotated_tag = _request(
+        f"https://api.github.com/repos/{owner}/{name}/git/tags/{tag_object['sha']}",
+        expect_json=True,
+    )
+    peeled_object = annotated_tag.get("object") if isinstance(annotated_tag, dict) else None
+    if (
+        not isinstance(peeled_object, dict)
+        or peeled_object.get("type") != "commit"
+        or not isinstance(peeled_object.get("sha"), str)
+        or COMMIT_PATTERN.fullmatch(peeled_object["sha"]) is None
+    ):
+        raise LinkError(f"{repository_url} v{version} annotated tag does not peel to one commit")
+    return peeled_object["sha"]
+
+
+def _validate_hosted_release_commit(
+    tool: dict[str, Any],
+    hosted_manifest: dict[str, Any],
+) -> str:
+    """Require the deployed manifest to identify the cataloged release commit."""
+
+    hosted_commit = hosted_manifest.get("source_commit")
+    release_commit = _annotated_tag_commit(
+        tool["repository_url"],
+        tool["app_version"],
+    )
+    if not isinstance(hosted_commit, str) or COMMIT_PATTERN.fullmatch(hosted_commit) is None:
+        raise LinkError(f"{tool['slug']}: hosted manifest source_commit is invalid")
+    if hosted_commit != release_commit:
+        raise LinkError(
+            f"{tool['slug']}: hosted commit {hosted_commit} != "
+            f"v{tool['app_version']} commit {release_commit}"
+        )
+    return hosted_commit
 
 
 def validate_related_tools_readme(
@@ -252,6 +307,7 @@ def check_live_metadata(manifest: dict[str, Any]) -> list[str]:
             raise LinkError(
                 f"{tool['slug']}: hosted Core {core_version} != catalog {tool['core_version']}"
             )
+        _validate_hosted_release_commit(tool, hosted_manifest)
         checked.append(tool["manifest_url"])
 
         owner, name = _github_coordinates(tool["repository_url"])
