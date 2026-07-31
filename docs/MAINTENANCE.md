@@ -57,10 +57,9 @@ persisted, and write permissions exist only in the Pages deploy job and the rele
 Dependabot proposes grouped weekly lockfile and Actions updates only after a seven-day cooldown;
 there is no automatic merge path.
 
-A new version tag must be signed and annotated, equal the catalog version, identify the exact tag
-event commit, and target a commit already contained in protected `main`. Remote tag-object
-verification and protected-main containment occur before project metadata is read or repository
-code executes.
+A new version tag must be annotated, equal the catalog version, identify the exact tag event
+commit, and target a commit already contained in protected `main`. Remote tag-object binding and
+protected-main containment occur before project metadata is read or repository code executes.
 
 The read-only release job runs the status validator with `--require-releasable`, repeats
 `make verify` and `make live-check`, then builds exactly:
@@ -75,10 +74,10 @@ The read-only release job runs the status validator with `--require-releasable`,
 - `SHA256SUMS` covering the seven substantive assets.
 
 The publishing job receives only that bundle and the matching current-version changelog section.
-It requires immutable releases to be enabled through the administration-read
-`RELEASE_SETTINGS_READ_TOKEN`, creates a draft stable release, verifies the exact body and asset
-inventory, redownloads and byte-compares every asset, checks the downloaded checksums, and only
-then publishes once and verifies immutable provenance.
+Release immutability must be enabled before a tag is created; no account-level token is stored in
+Actions. The job creates a draft stable release, verifies the exact body and asset inventory,
+redownloads and byte-compares every asset, checks the downloaded checksums, and only then publishes
+once and requires the resulting release to report immutable provenance.
 
 The regular status validator accepts all three CC-MIG-11 verdicts so a failed audit can be recorded
 coherently. Release-only mode additionally rejects `Not validated; release blockers remain.` before

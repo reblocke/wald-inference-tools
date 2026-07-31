@@ -67,7 +67,7 @@ git diff --check
 git status --short
 ```
 
-The release policy tests enforce signed annotated remote-tag verification, exact event binding,
+The release policy tests enforce annotated remote-tag binding, exact event binding,
 protected-`main` containment before project code, current-version changelog extraction, the exact
 eight-asset catalog/evidence inventory, a release-only releasable-verdict guard, checksummed GitHub
 CLI installation, immutable draft-first stable publication, exact body and asset redownload, and

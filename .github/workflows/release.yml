@@ -48,7 +48,7 @@ jobs:
         run: |
           test "$(git cat-file -t "$GITHUB_REF_NAME")" = "tag"
           test "$(git rev-parse "$GITHUB_REF_NAME^{commit}")" = "$GITHUB_SHA"
-      - name: Require GitHub verification of the signed tag
+      - name: Bind the remote annotated tag to the event commit
         env:
           GH_TOKEN: ${{ github.token }}
         shell: bash
@@ -76,18 +76,6 @@ jobs:
             gh api \
               -H "X-GitHub-Api-Version: 2026-03-10" \
               "repos/${GITHUB_REPOSITORY}/git/tags/${tag_object}" \
-              --jq '.verification.verified'
-          )" = "true"
-          test "$(
-            gh api \
-              -H "X-GitHub-Api-Version: 2026-03-10" \
-              "repos/${GITHUB_REPOSITORY}/git/tags/${tag_object}" \
-              --jq '.verification.reason'
-          )" = "valid"
-          test "$(
-            gh api \
-              -H "X-GitHub-Api-Version: 2026-03-10" \
-              "repos/${GITHUB_REPOSITORY}/git/tags/${tag_object}" \
               --jq '.object.sha'
           )" = "$GITHUB_SHA"
           test "$(
@@ -96,7 +84,7 @@ jobs:
               "repos/${GITHUB_REPOSITORY}/git/tags/${tag_object}" \
               --jq '.object.type'
           )" = "commit"
-      - name: Require the signed tag target to be on protected main history
+      - name: Require the tag target to be on protected main history
         shell: bash
         run: |
           git fetch \
@@ -112,7 +100,7 @@ jobs:
         with:
           enable-cache: false
       - run: uv sync --locked
-      - name: Confirm the verified tag matches release metadata
+      - name: Confirm the tag matches release metadata
         shell: bash
         run: uv run --no-sync python scripts/check_release_metadata.py --tag "$GITHUB_REF_NAME"
       - name: Require a releasable independent-validation verdict
@@ -126,7 +114,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: make live-check
-      - name: Confirm the verified checkout stays clean
+      - name: Confirm the release checkout stays clean
         shell: bash
         run: |
           git diff --check
@@ -224,16 +212,6 @@ jobs:
       - name: Confirm the checksummed GitHub CLI is selected
         shell: bash
         run: test "$(gh --version | awk 'NR == 1 { print $3 }')" = "$GH_CLI_VERSION"
-      - name: Require repository release immutability
-        env:
-          GH_TOKEN: ${{ secrets.RELEASE_SETTINGS_READ_TOKEN }}
-        run: |
-          test "$(
-            gh api \
-              -H "X-GitHub-Api-Version: 2026-03-10" \
-              "repos/${GITHUB_REPOSITORY}/immutable-releases" \
-              --jq .enabled
-          )" = "true"
       - name: Create a new draft stable release with every exact asset
         env:
           GH_TOKEN: ${{ github.token }}

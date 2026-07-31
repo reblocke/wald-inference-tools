@@ -58,13 +58,13 @@ Document every skipped check, warning, or unavailable public source.
 
 ## Release changes
 
-A new release requires a reviewed pull request and a signed, annotated version tag pointing to the
+A new release requires a reviewed pull request and an annotated version tag pointing to the
 exact reviewed merge commit. The tag must equal `v` plus the authoritative catalog version, and
 that version needs exactly one nonempty changelog section. The tag workflow:
 
 1. installs an exact checksummed GitHub CLI;
-2. cryptographically verifies the remote GitHub tag object and binds it to the event commit;
-3. requires the verified tag target to be contained in protected `main` history before reading
+2. binds the remote GitHub tag object to the event commit;
+3. requires the tag target to be contained in protected `main` history before reading
    project metadata or executing repository code;
 4. runs the status validator in release-only mode and rejects a verdict that still reports release
    blockers;
@@ -73,15 +73,15 @@ that version needs exactly one nonempty changelog section. The tag workflow:
 6. builds the exact source, site, manifest, report, status, evidence archive, evidence index, and
    checksum assets;
 7. transfers and rechecks the complete eight-file asset bundle in a narrowly write-enabled job;
-8. requires repository release immutability through an administration-read token;
+8. relies on the operator-confirmed immutable-release repository setting without storing an
+   account-level token in Actions;
 9. creates a draft stable release using only the matching version's changelog section;
 10. downloads and compares the exact release body, asset names, bytes, and checksums; and
 11. publishes the verified draft once as stable and confirms immutable provenance.
 
-Before creating a new tag, enable immutable releases and configure a fine-grained
-repository-administration read token as the `RELEASE_SETTINGS_READ_TOKEN` Actions secret. The
-publishing job uses that secret only for the fail-closed settings query; release creation uses the
-job-scoped GitHub token.
+Before creating a new tag, confirm immutable releases are enabled. The workflow uses only the
+job-scoped GitHub token, publishes after verifying the draft, and fails unless the resulting
+release reports immutable status.
 
 The existing v0.2.0 stable release predates this hardened workflow. Preserve its tag, body, and
 assets as historical records; do not rebuild, replace, or retroactively relabel them. New releases

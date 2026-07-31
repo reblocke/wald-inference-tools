@@ -192,7 +192,7 @@ def test_workflow_permissions_credentials_concurrency_and_release_cache_are_fail
     assert workflow_text.count("persist-credentials: false") == checkout_count
 
 
-def test_release_verifies_signed_remote_tag_and_protected_main_before_repository_code() -> None:
+def test_release_binds_annotated_remote_tag_and_protected_main_before_repository_code() -> None:
     release = _workflow("release.yml")
 
     assert 'git cat-file -t "$GITHUB_REF_NAME"' in release
@@ -200,9 +200,8 @@ def test_release_verifies_signed_remote_tag_and_protected_main_before_repository
     assert "/git/ref/tags/${GITHUB_REF_NAME}" in release
     assert 'git rev-parse "refs/tags/$GITHUB_REF_NAME"' in release
     assert "--jq '.tag'" in release
-    assert ".verification.verified" in release
-    assert ".verification.reason" in release
-    assert ')" = "valid"' in release
+    assert ".verification.verified" not in release
+    assert ".verification.reason" not in release
     assert "--jq '.object.sha'" in release
     assert "--jq '.object.type'" in release
     assert ')" = "commit"' in release
@@ -211,7 +210,9 @@ def test_release_verifies_signed_remote_tag_and_protected_main_before_repository
     containment = 'git merge-base --is-ancestor "$GITHUB_SHA" refs/remotes/origin/main'
     assert containment in release
 
-    assert release.index(".verification.verified") < release.index("git fetch")
+    assert release.index("Bind the remote annotated tag to the event commit") < release.index(
+        "git fetch"
+    )
     assert release.index(containment) < release.index("actions/setup-python@")
     assert release.index(containment) < release.index("scripts/check_release_metadata.py")
     assert release.index(containment) < release.index("uv sync --locked")
@@ -283,9 +284,8 @@ def test_release_rejects_whitespace_only_notes_before_transfer_and_publish() -> 
 def test_release_is_new_draft_first_stable_exact_and_immutable() -> None:
     release = _workflow("release.yml")
 
-    assert '"repos/${GITHUB_REPOSITORY}/immutable-releases"' in release
-    assert "GH_TOKEN: ${{ secrets.RELEASE_SETTINGS_READ_TOKEN }}" in release
-    assert ')" = "true"' in release
+    assert '"repos/${GITHUB_REPOSITORY}/immutable-releases"' not in release
+    assert "RELEASE_SETTINGS_READ_TOKEN" not in release
     assert "A release already exists" in release
     assert "--draft" in release
     assert "--verify-tag" in release
@@ -316,12 +316,10 @@ def test_release_installs_checksummed_github_cli_before_credentialed_commands() 
     assert release.count("sha256sum --check --strict -") == 2
     assert release.count("Confirm the checksummed GitHub CLI is selected") == 2
     assert release.index("Install checksummed GitHub CLI") < release.index(
-        "Require GitHub verification of the signed tag"
+        "Bind the remote annotated tag to the event commit"
     )
     publish = release[release.index("\n  publish:") :]
-    assert publish.index("Install checksummed GitHub CLI") < publish.index(
-        "Require repository release immutability"
-    )
+    assert publish.index("Install checksummed GitHub CLI") < publish.index("gh release create")
     assert publish.index("Confirm the checksummed GitHub CLI is selected") < publish.index(
         "gh release create"
     )
@@ -368,7 +366,8 @@ def test_public_coordination_preserves_private_reporting_and_catalog_scope() -> 
     assert "does not own any wald formula" in normalized_contributing
     assert "`data/tools.json` metadata contract" in contributing
     assert "successful ci, pages, or release automation" in normalized_contributing
-    assert "release_settings_read_token" in normalized_contributing
+    assert "without storing an account-level token in actions" in normalized_contributing
+    assert "release_settings_read_token" not in normalized_contributing
     assert "blank_issues_enabled: false" in issue_config
     assert "/security/advisories/new" in issue_config
     assert "protected health information" in engineering_issue.lower()

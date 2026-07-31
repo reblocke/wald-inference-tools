@@ -1,5 +1,20 @@
 # Catalog decisions
 
+## 2026-07-31 — Release integrity does not require account-level credentials
+
+At the repository owner's direction, new releases no longer require GitHub's verified-signature
+status for tag objects or a fine-grained Administration-read token stored as an Actions secret.
+Those gates required account reauthentication and persistent release credentials without changing
+the catalog's scientific evidence or release contents.
+
+Version tags remain annotated and must resolve through the exact remote tag object to the event
+commit already contained in protected `main`. The workflow still verifies the version, releasable
+validation verdict, deterministic asset set, release body, checksums, and downloaded bytes before
+publishing a draft once. Repository release immutability is enabled as an operator precondition,
+and the workflow fails unless the published release reports immutable status. The signed-tag and
+settings-token portions of the 2026-07-30 governance decision are superseded; its remaining
+integrity controls continue unchanged.
+
 ## 2026-07-30 — Governance hardening does not change portfolio evidence
 
 Repository automation now pins reviewed GitHub Actions by full commit, retains the required

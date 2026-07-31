@@ -4,6 +4,12 @@ All notable changes to this project are documented here.
 
 ## [Unreleased]
 
+### Changed
+
+- Remove the account-level signing-key and Administration-read secret prerequisites while
+  retaining annotated-tag binding, protected-`main` containment, draft verification, exact asset
+  comparison, and post-publication immutable-release verification.
+
 ## [0.2.0] - 2026-07-30
 
 ### Added
