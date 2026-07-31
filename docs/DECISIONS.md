@@ -1,5 +1,25 @@
 # Catalog decisions
 
+## 2026-07-30 — Governance hardening does not change portfolio evidence
+
+Repository automation now pins reviewed GitHub Actions by full commit, retains the required
+`test`, `live-metadata`, `browsers (chromium)`, and `browsers (webkit)` contexts, and applies
+least-privilege permissions and concurrency controls. Future release workflows fail closed on a
+signed annotated remote tag, exact event-commit binding, and protected-`main` containment before
+project metadata is read or repository code executes.
+
+The release path independently rejects a validation verdict that still reports release blockers,
+then builds the existing deterministic source, site, manifest, report, status, evidence archive,
+evidence index, and checksum assets; transfers the complete bundle; requires immutable-release
+configuration; creates a stable draft; then redownloads and compares the exact body, names, bytes,
+and checksums before one-time publication. These are repository-integrity controls, not
+independent scientific validation.
+
+This change deliberately leaves catalog version 0.2.0, `data/tools.json`, the portfolio report,
+machine-readable validation status, evidence files and hashes, public site behavior, and existing
+v0.2.0 tag/release assets unchanged. A future evidence or metadata change still requires the
+independent review defined below and must continue to pass `make live-check`.
+
 ## 2026-07-30 — Validation-bearing v0.2.0 is stable
 
 Independent CC-MIG-11 review resolved content-addressed annotated-tag objects, peeled commits, and

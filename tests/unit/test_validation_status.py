@@ -10,6 +10,7 @@ from scripts.validate_validation_status import (
     ValidationStatusError,
     load_report_inventory,
     load_status,
+    main,
     validate_release_inventory,
     validate_status,
 )
@@ -424,6 +425,78 @@ def test_all_three_cc_mig_11_verdict_paths(
     )
 
     validate_status(value, report_path=report)
+
+
+@pytest.mark.parametrize(
+    ("verdict", "repository_status", "blocking", "releasable"),
+    [
+        ("Validated for release.", "validated", False, True),
+        (
+            "Validated with nonblocking limitations.",
+            "conditionally-validated",
+            False,
+            True,
+        ),
+        ("Not validated; release blockers remain.", "validation-failed", True, False),
+    ],
+)
+def test_release_mode_accepts_only_releasable_verdicts(
+    tmp_path: Path,
+    monkeypatch,
+    verdict: str,
+    repository_status: str,
+    blocking: bool,
+    releasable: bool,
+) -> None:
+    value, report = _complete_status(
+        tmp_path,
+        _status(verdict, repository_status, blocking=blocking),
+    )
+    monkeypatch.setattr(
+        "scripts.validate_validation_status.load_manifest",
+        lambda _path=None: _manifest(repository_status),
+    )
+
+    if releasable:
+        validate_status(value, report_path=report, require_releasable=True)
+    else:
+        with pytest.raises(
+            ValidationStatusError,
+            match="release requires a validated or conditionally validated",
+        ):
+            validate_status(value, report_path=report, require_releasable=True)
+
+
+@pytest.mark.parametrize(
+    ("argv", "expected"),
+    [
+        ([], False),
+        (["--require-releasable"], True),
+    ],
+)
+def test_cli_passes_release_mode_to_the_status_validator(
+    monkeypatch,
+    argv: list[str],
+    expected: bool,
+) -> None:
+    status = {"repositories": []}
+    observed: list[bool] = []
+    monkeypatch.setattr(
+        "scripts.validate_validation_status.load_status",
+        lambda: status,
+    )
+
+    def capture_mode(value: dict, *, require_releasable: bool = False) -> None:
+        assert value is status
+        observed.append(require_releasable)
+
+    monkeypatch.setattr(
+        "scripts.validate_validation_status.validate_status",
+        capture_mode,
+    )
+
+    assert main(argv) == 0
+    assert observed == [expected]
 
 
 @pytest.mark.parametrize(

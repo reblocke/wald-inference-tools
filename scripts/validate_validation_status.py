@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import argparse
 import hashlib
 import json
 import re
@@ -756,6 +757,7 @@ def validate_status(
     report_path: Path = REPORT_PATH,
     manifest_path: Path | None = None,
     release_inventory_path: Path = RELEASE_INVENTORY_PATH,
+    require_releasable: bool = False,
 ) -> None:
     _exact_fields(status, TOP_LEVEL_FIELDS, "validation status")
     if type(status["schema_version"]) is not int or status["schema_version"] != 1:
@@ -907,11 +909,24 @@ def validate_status(
         catalog_version=manifest["catalog_version"],
         validated_at=status["validated_at"],
     )
+    if require_releasable and expected_status == "validation-failed":
+        raise ValidationStatusError(
+            "release requires a validated or conditionally validated portfolio verdict"
+        )
 
 
-def main() -> int:
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(
+        description="Validate the portfolio status and its evidence bindings."
+    )
+    parser.add_argument(
+        "--require-releasable",
+        action="store_true",
+        help="reject a coherent status whose verdict still reports release blockers",
+    )
+    args = parser.parse_args(argv)
     status = load_status()
-    validate_status(status)
+    validate_status(status, require_releasable=args.require_releasable)
     print(f"Validated portfolio status for {len(status['repositories'])} repositories.")
     return 0
 

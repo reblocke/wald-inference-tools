@@ -39,7 +39,38 @@ The completed cross-repository audit is recorded in
 [`../validation-evidence/index.json`](../validation-evidence/index.json). The status validator
 rejects missing repositories, release drift, status/verdict disagreement, report digest drift,
 incomplete evidence, placeholder text, rubric mismatch, or an unclosed original blocker.
+Its normal mode accepts any internally coherent CC-MIG-11 verdict so failed audits remain
+recordable. The release workflow adds `--require-releasable`, which permits validated and
+conditionally validated portfolios but rejects a verdict that still reports release blockers.
 
 The live check is a required CI and Pages build gate. A stale release, deployed source commit,
 staged package, Core version, README or deployed-footer cross-link, or pinned Core release
 therefore blocks deployment rather than first failing after the site is already public.
+
+## Repository-policy verification
+
+Governance regression tests additionally require the exact branch-check names, full-SHA Action
+pins and retained major families, least-privilege permissions, disabled checkout credential
+persistence, release cache isolation, seven-day Dependabot cooldowns, private vulnerability
+reporting, catalog-specific contribution boundaries, and the complete fail-closed release
+sequence.
+
+For workflow or release-policy changes, run:
+
+```bash
+uv sync --locked
+uv run playwright install chromium webkit
+make verify
+make live-check
+uvx --from zizmor==1.28.0 zizmor --pedantic --strict-collection .
+git diff --check
+git status --short
+```
+
+The release policy tests enforce signed annotated remote-tag verification, exact event binding,
+protected-`main` containment before project code, current-version changelog extraction, the exact
+eight-asset catalog/evidence inventory, a release-only releasable-verdict guard, checksummed GitHub
+CLI installation, immutable draft-first stable publication, exact body and asset redownload, and
+post-publication verification. These checks establish repository and release integrity; they do
+not alter the validation verdict, expand any scientific claim, or replace independent evidence
+review.

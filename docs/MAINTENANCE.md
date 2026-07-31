@@ -47,3 +47,45 @@ before the release workflow runs.
 If a deployed app becomes inconsistent, correct the app or catalog in an isolated PR and mark its
 validation status conservatively until verification is rerun. Never silently point a released
 catalog tag at unreleased behavior.
+
+## Repository governance and release integrity
+
+Required branch checks remain `test`, `live-metadata`, `browsers (chromium)`, and
+`browsers (webkit)`. CI and Pages retain the public live-metadata gate. Every third-party Action is
+pinned to a reviewed full commit SHA with a version comment, checkout credentials are not
+persisted, and write permissions exist only in the Pages deploy job and the release publish job.
+Dependabot proposes grouped weekly lockfile and Actions updates only after a seven-day cooldown;
+there is no automatic merge path.
+
+A new version tag must be signed and annotated, equal the catalog version, identify the exact tag
+event commit, and target a commit already contained in protected `main`. Remote tag-object
+verification and protected-main containment occur before project metadata is read or repository
+code executes.
+
+The read-only release job runs the status validator with `--require-releasable`, repeats
+`make verify` and `make live-check`, then builds exactly:
+
+- the deterministic tracked-source archive;
+- the deterministic static-site archive;
+- the public tool manifest;
+- the portfolio validation report;
+- the machine-readable validation status;
+- the complete validation-evidence archive;
+- the checksum-addressed evidence index; and
+- `SHA256SUMS` covering the seven substantive assets.
+
+The publishing job receives only that bundle and the matching current-version changelog section.
+It requires immutable releases to be enabled through the administration-read
+`RELEASE_SETTINGS_READ_TOKEN`, creates a draft stable release, verifies the exact body and asset
+inventory, redownloads and byte-compares every asset, checks the downloaded checksums, and only
+then publishes once and verifies immutable provenance.
+
+The regular status validator accepts all three CC-MIG-11 verdicts so a failed audit can be recorded
+coherently. Release-only mode additionally rejects `Not validated; release blockers remain.` before
+any release bundle is created or transferred. A conditionally validated verdict remains
+releasable only when its limitations are nonblocking and the report/status/rubric checks agree.
+
+Version 0.2.0 predates this hardened release path. Its existing tag, body, and assets remain
+historical evidence and must not be moved, rebuilt, replaced, or retroactively relabeled. A failed
+future publication leaves its candidate as a draft for inspection; it does not authorize asset
+replacement or tag movement.

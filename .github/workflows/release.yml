@@ -4,41 +4,282 @@ on:
   push:
     tags: ["v*"]
 
-permissions:
-  contents: write
+permissions: {}
+
+env:
+  GH_CLI_VERSION: "2.93.0"
+  GH_CLI_LINUX_AMD64_SHA256: "02d1290eba130e0b896f3709ffff22e1c75a51475ddb70476a85abc6b5807af0"
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
-  verify-and-release:
+  verify-and-build:
+    name: verify-and-build
+    permissions:
+      contents: read
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           fetch-depth: 0
-      - uses: actions/setup-python@v7
-        with:
-          python-version-file: .python-version
-      - uses: astral-sh/setup-uv@v9.0.0
-        with:
-          enable-cache: true
-      - run: uv sync --locked
-      - run: uv run playwright install --with-deps chromium webkit
-      - run: make verify
-      - run: make live-check
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
-      - name: Verify annotated tag and release metadata
+          persist-credentials: false
+      - name: Install checksummed GitHub CLI
         shell: bash
         run: |
-          test "$(git cat-file -t "refs/tags/$GITHUB_REF_NAME")" = tag
-          test "$(git rev-parse "refs/tags/$GITHUB_REF_NAME^{commit}")" = "$(git rev-parse HEAD)"
-          uv run python scripts/check_release_metadata.py --tag "$GITHUB_REF_NAME"
-          test -z "$(git status --porcelain --untracked-files=all)"
-      - run: uv run python scripts/build_release_artifacts.py --version "${GITHUB_REF_NAME#v}"
-      - name: Publish independently validated stable release
+          gh_archive="$RUNNER_TEMP/gh_${GH_CLI_VERSION}_linux_amd64.tar.gz"
+          curl --fail --location --silent --show-error \
+            "https://github.com/cli/cli/releases/download/v${GH_CLI_VERSION}/gh_${GH_CLI_VERSION}_linux_amd64.tar.gz" \
+            --output "$gh_archive"
+          printf '%s  %s\n' \
+            "$GH_CLI_LINUX_AMD64_SHA256" \
+            "$gh_archive" \
+            | sha256sum --check --strict -
+          tar --extract --gzip --file "$gh_archive" --directory "$RUNNER_TEMP"
+          gh_bin_dir="$RUNNER_TEMP/gh_${GH_CLI_VERSION}_linux_amd64/bin"
+          test "$("$gh_bin_dir/gh" --version | awk 'NR == 1 { print $3 }')" = "$GH_CLI_VERSION"
+          printf '%s\n' "$gh_bin_dir" >> "$GITHUB_PATH"
+      - name: Confirm the checksummed GitHub CLI is selected
+        shell: bash
+        run: test "$(gh --version | awk 'NR == 1 { print $3 }')" = "$GH_CLI_VERSION"
+      - name: Confirm the annotated tag points to the event commit
+        shell: bash
+        run: |
+          test "$(git cat-file -t "$GITHUB_REF_NAME")" = "tag"
+          test "$(git rev-parse "$GITHUB_REF_NAME^{commit}")" = "$GITHUB_SHA"
+      - name: Require GitHub verification of the signed tag
         env:
           GH_TOKEN: ${{ github.token }}
+        shell: bash
         run: |
-          gh release create "$GITHUB_REF_NAME" release/* \
+          test "$(
+            gh api \
+              -H "X-GitHub-Api-Version: 2026-03-10" \
+              "repos/${GITHUB_REPOSITORY}/git/ref/tags/${GITHUB_REF_NAME}" \
+              --jq '.object.type'
+          )" = "tag"
+          tag_object="$(
+            gh api \
+              -H "X-GitHub-Api-Version: 2026-03-10" \
+              "repos/${GITHUB_REPOSITORY}/git/ref/tags/${GITHUB_REF_NAME}" \
+              --jq '.object.sha'
+          )"
+          test "$(git rev-parse "refs/tags/$GITHUB_REF_NAME")" = "$tag_object"
+          test "$(
+            gh api \
+              -H "X-GitHub-Api-Version: 2026-03-10" \
+              "repos/${GITHUB_REPOSITORY}/git/tags/${tag_object}" \
+              --jq '.tag'
+          )" = "$GITHUB_REF_NAME"
+          test "$(
+            gh api \
+              -H "X-GitHub-Api-Version: 2026-03-10" \
+              "repos/${GITHUB_REPOSITORY}/git/tags/${tag_object}" \
+              --jq '.verification.verified'
+          )" = "true"
+          test "$(
+            gh api \
+              -H "X-GitHub-Api-Version: 2026-03-10" \
+              "repos/${GITHUB_REPOSITORY}/git/tags/${tag_object}" \
+              --jq '.verification.reason'
+          )" = "valid"
+          test "$(
+            gh api \
+              -H "X-GitHub-Api-Version: 2026-03-10" \
+              "repos/${GITHUB_REPOSITORY}/git/tags/${tag_object}" \
+              --jq '.object.sha'
+          )" = "$GITHUB_SHA"
+          test "$(
+            gh api \
+              -H "X-GitHub-Api-Version: 2026-03-10" \
+              "repos/${GITHUB_REPOSITORY}/git/tags/${tag_object}" \
+              --jq '.object.type'
+          )" = "commit"
+      - name: Require the signed tag target to be on protected main history
+        shell: bash
+        run: |
+          git fetch \
+            --force \
+            --no-tags \
+            "https://github.com/${GITHUB_REPOSITORY}.git" \
+            "+refs/heads/main:refs/remotes/origin/main"
+          git merge-base --is-ancestor "$GITHUB_SHA" refs/remotes/origin/main
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version-file: .python-version
+      - uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9 # v9.0.0
+        with:
+          enable-cache: false
+      - run: uv sync --locked
+      - name: Confirm the verified tag matches release metadata
+        shell: bash
+        run: uv run --no-sync python scripts/check_release_metadata.py --tag "$GITHUB_REF_NAME"
+      - name: Require a releasable independent-validation verdict
+        shell: bash
+        run: >-
+          uv run --no-sync python scripts/validate_validation_status.py
+          --require-releasable
+      - run: uv run playwright install --with-deps chromium webkit
+      - run: make verify
+      - name: Repeat the public metadata gate
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: make live-check
+      - name: Confirm the verified checkout stays clean
+        shell: bash
+        run: |
+          git diff --check
+          test -z "$(git status --porcelain --untracked-files=all)"
+      - name: Build the exact deterministic release and evidence assets
+        shell: bash
+        run: |
+          version="${GITHUB_REF_NAME#v}"
+          bundle=dist
+          assets="$bundle/assets"
+          mkdir -p "$assets"
+          uv run python scripts/build_release_artifacts.py \
+            --version "$version" \
+            --output "$assets"
+          printf '%s\n' \
+            "PORTFOLIO_VALIDATION_REPORT-v${version}.md" \
+            "SHA256SUMS" \
+            "portfolio-validation-evidence-v${version}.tar.gz" \
+            "tools-v${version}.json" \
+            "validation-evidence-index-v${version}.json" \
+            "validation_status-v${version}.json" \
+            "wald-inference-tools-site-v${version}.zip" \
+            "wald-inference-tools-v${version}.tar.gz" \
+            | sort > "$bundle/expected-assets.txt"
+          find "$assets" -maxdepth 1 -type f -exec basename {} \; \
+            | sort > "$bundle/actual-assets.txt"
+          cmp --silent "$bundle/expected-assets.txt" "$bundle/actual-assets.txt"
+          rm "$bundle/actual-assets.txt"
+          test "$(find "$assets" -maxdepth 1 -type f | wc -l)" -eq 8
+          test "$(wc -l < "$assets/SHA256SUMS")" -eq 7
+          (
+            cd "$assets"
+            sha256sum --check SHA256SUMS
+          )
+          test "$(grep -Ec "^## \\[$version\\] - " CHANGELOG.md)" -eq 1
+          awk -v version="$version" '
+            index($0, "## [" version "] - ") == 1 { capture = 1; next }
+            capture && /^## \[/ { exit }
+            capture && /^\[[^]]+\]:/ { exit }
+            capture { print }
+          ' CHANGELOG.md > "$bundle/release-notes.md"
+          grep --quiet '[^[:space:]]' "$bundle/release-notes.md"
+      - name: Transfer the complete release bundle
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: release-bundle-${{ github.ref_name }}
+          path: dist/
+          if-no-files-found: error
+          retention-days: 1
+
+  publish:
+    name: publish
+    needs: verify-and-build
+    permissions:
+      attestations: read # Required only to verify immutable release attestations.
+      contents: write # Required only to create and publish this repository's release.
+    runs-on: ubuntu-latest
+    env:
+      GH_REPO: ${{ github.repository }}
+    steps:
+      - name: Retrieve the verified release bundle
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          name: release-bundle-${{ github.ref_name }}
+          path: dist
+      - name: Recheck the transferred release bundle
+        shell: bash
+        run: |
+          grep --quiet '[^[:space:]]' dist/release-notes.md
+          test -s dist/expected-assets.txt
+          find dist/assets -maxdepth 1 -type f -exec basename {} \; \
+            | sort > "$RUNNER_TEMP/actual-assets.txt"
+          cmp --silent dist/expected-assets.txt "$RUNNER_TEMP/actual-assets.txt"
+          test "$(find dist/assets -maxdepth 1 -type f | wc -l)" -eq 8
+          test "$(wc -l < dist/assets/SHA256SUMS)" -eq 7
+          (
+            cd dist/assets
+            sha256sum --check SHA256SUMS
+          )
+      - name: Install checksummed GitHub CLI
+        shell: bash
+        run: |
+          gh_archive="$RUNNER_TEMP/gh_${GH_CLI_VERSION}_linux_amd64.tar.gz"
+          curl --fail --location --silent --show-error \
+            "https://github.com/cli/cli/releases/download/v${GH_CLI_VERSION}/gh_${GH_CLI_VERSION}_linux_amd64.tar.gz" \
+            --output "$gh_archive"
+          printf '%s  %s\n' \
+            "$GH_CLI_LINUX_AMD64_SHA256" \
+            "$gh_archive" \
+            | sha256sum --check --strict -
+          tar --extract --gzip --file "$gh_archive" --directory "$RUNNER_TEMP"
+          gh_bin_dir="$RUNNER_TEMP/gh_${GH_CLI_VERSION}_linux_amd64/bin"
+          test "$("$gh_bin_dir/gh" --version | awk 'NR == 1 { print $3 }')" = "$GH_CLI_VERSION"
+          printf '%s\n' "$gh_bin_dir" >> "$GITHUB_PATH"
+      - name: Confirm the checksummed GitHub CLI is selected
+        shell: bash
+        run: test "$(gh --version | awk 'NR == 1 { print $3 }')" = "$GH_CLI_VERSION"
+      - name: Require repository release immutability
+        env:
+          GH_TOKEN: ${{ secrets.RELEASE_SETTINGS_READ_TOKEN }}
+        run: |
+          test "$(
+            gh api \
+              -H "X-GitHub-Api-Version: 2026-03-10" \
+              "repos/${GITHUB_REPOSITORY}/immutable-releases" \
+              --jq .enabled
+          )" = "true"
+      - name: Create a new draft stable release with every exact asset
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          if gh release view "$GITHUB_REF_NAME" >/dev/null 2>&1; then
+            echo "A release already exists for $GITHUB_REF_NAME; refusing to alter it." >&2
+            exit 1
+          fi
+          gh release create "$GITHUB_REF_NAME" dist/assets/* \
+            --draft \
             --verify-tag \
             --title "$GITHUB_REF_NAME" \
-            --notes-file CHANGELOG.md
+            --notes-file dist/release-notes.md
+      - name: Verify the draft body and redownloaded assets before publication
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          test "$(gh release view "$GITHUB_REF_NAME" --json isDraft --jq .isDraft)" = "true"
+          test "$(gh release view "$GITHUB_REF_NAME" --json isPrerelease --jq .isPrerelease)" = "false"
+          gh release view "$GITHUB_REF_NAME" --json body > "$RUNNER_TEMP/release-body.json"
+          jq --exit-status --join-output '.body' \
+            "$RUNNER_TEMP/release-body.json" \
+            > "$RUNNER_TEMP/release-body.md"
+          cmp --silent dist/release-notes.md "$RUNNER_TEMP/release-body.md"
+          gh release view "$GITHUB_REF_NAME" --json assets --jq '.assets[].name' \
+            | sort > "$RUNNER_TEMP/remote-assets.txt"
+          cmp --silent dist/expected-assets.txt "$RUNNER_TEMP/remote-assets.txt"
+          mkdir remote-dist
+          gh release download "$GITHUB_REF_NAME" --dir remote-dist
+          diff --recursive --brief dist/assets remote-dist
+          (
+            cd remote-dist
+            sha256sum --check SHA256SUMS
+          )
+      - name: Publish the verified draft once as stable and immutable
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          gh release edit "$GITHUB_REF_NAME" --draft=false
+          test "$(gh release view "$GITHUB_REF_NAME" --json isDraft --jq .isDraft)" = "false"
+          test "$(gh release view "$GITHUB_REF_NAME" --json isImmutable --jq .isImmutable)" = "true"
+          test "$(gh release view "$GITHUB_REF_NAME" --json isPrerelease --jq .isPrerelease)" = "false"
+          gh release verify "$GITHUB_REF_NAME"
+          for asset in remote-dist/*; do
+            gh release verify-asset "$GITHUB_REF_NAME" "$asset"
+          done
