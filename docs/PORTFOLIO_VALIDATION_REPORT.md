@@ -391,7 +391,7 @@ The final governance/adoption sequence was isolated by repository:
 | Type S/M | type-s-m-calibrator 11 and 12 |
 | Precision | precision-guardrail-planner 12 and 13 |
 | Integrated | conf_curve_likelihood 34 and 35 |
-| Catalog | this v0.2.1 carrier branch and its reviewed merge |
+| Catalog | [wald-inference-tools #6](https://github.com/reblocke/wald-inference-tools/pull/6) |
 
 Earlier numerical, responsive, lifecycle, and documentation corrections remain
 preserved in each repository's history and earlier evidence records.
