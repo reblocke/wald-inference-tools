@@ -73,6 +73,12 @@ const EVIDENCE_KINDS = new Map([
     "lanes/focused-docs-only-final-release-supplement.md",
     "lane-f-docs-rights",
   ],
+  ["lanes/final-release-set-v0.4.2-lane-ab.md", "lane-b-parity"],
+  ["lanes/final-release-set-v0.4.2-lane-cd.md", "lane-d-provenance"],
+  [
+    "lanes/final-release-set-v0.4.2-lane-ef.md",
+    "lane-e-browser-privacy-accessibility",
+  ],
   ["lanes/integrated-v0.2.2-blocker-audit.md", "lane-f-docs-rights"],
   ["lanes/integrated-v0.2.5-cdef.md", "lane-c-cold-start"],
   ["lanes/likelihood-v0.1.2-cdef.md", "lane-c-cold-start"],
@@ -86,6 +92,15 @@ const EVIDENCE_KINDS = new Map([
   ["results/core-likelihood-final-ab.json", "lane-b-parity"],
   ["results/core-precision-boundary-audit.txt", "lane-a-numerical"],
   ["results/core-v0.4.1-baseline-parity.json", "lane-a-numerical"],
+  ["results/core-v0.4.2-baseline-parity.json", "lane-a-numerical"],
+  [
+    "results/core-v0.4.2-independent-recomputation.json",
+    "lane-a-numerical",
+  ],
+  [
+    "results/final-release-set-v0.4.2-cold-start.json",
+    "lane-c-cold-start",
+  ],
   [
     "results/focused-docs-only-final-release-supplement.json",
     "lane-f-docs-rights",

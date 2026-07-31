@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import argparse
 import hashlib
 import json
 import re
@@ -32,8 +33,8 @@ RELEASE_INVENTORY_PATH = (
 
 EXPECTED_REPOSITORIES = set(REPOSITORY_ORDER)
 NON_MANIFEST_RELEASES = {
-    "reblocke/scientific-applet-template": "v0.1.1",
-    "reblocke/wald-inference-tools": "v0.1.1",
+    "reblocke/scientific-applet-template": "v0.1.2",
+    "reblocke/wald-inference-tools": "v0.2.0",
 }
 TOP_LEVEL_FIELDS = {
     "schema_version",
@@ -100,6 +101,7 @@ RELEASE_RECORD_FIELDS = {
     "published_at",
     "is_draft",
     "is_prerelease",
+    "is_immutable",
     "assets",
 }
 ASSET_FIELDS = {"name", "size", "digest", "url"}
@@ -157,7 +159,7 @@ CATALOG_NAME = "reblocke/wald-inference-tools"
 CORE_NAME = "reblocke/wald-inference-core"
 TEMPLATE_NAME = "reblocke/scientific-applet-template"
 INTEGRATED_NAME = "reblocke/conf_curve_likelihood"
-STABLE_AUDITED_RELEASES = {CORE_NAME, TEMPLATE_NAME}
+STABLE_AUDITED_RELEASES = EXPECTED_REPOSITORIES
 TEMPLATE_LIVE_URL = "https://reblocke.github.io/scientific-applet-template/assets/py/manifest.json"
 TEMPLATE_DISTRIBUTION = "scientific-applet-template-package"
 CATALOG_LIVE_URL = "https://reblocke.github.io/wald-inference-tools/data/tools.json"
@@ -165,7 +167,7 @@ EXPECTED_TAGGER_NAME = "Brian Locke"
 CORE_DISTRIBUTION = "wald-inference"
 CORE_ARTIFACT_URL = (
     "https://github.com/reblocke/wald-inference-core/releases/download/"
-    "v0.4.1/wald_inference-0.4.1-py3-none-any.whl"
+    "v0.4.2/wald_inference-0.4.2-py3-none-any.whl"
 )
 
 
@@ -345,6 +347,10 @@ def _expected_release_assets(name: str, release: str) -> tuple[set[str], str | N
             {
                 "SHA256SUMS",
                 live_asset,
+                f"PORTFOLIO_VALIDATION_REPORT-{release}.md",
+                f"validation_status-{release}.json",
+                f"validation-evidence-index-{release}.json",
+                f"portfolio-validation-evidence-{release}.tar.gz",
                 f"{repository}-site-{release}.zip",
                 f"{repository}-{release}.tar.gz",
             },
@@ -544,6 +550,11 @@ def validate_release_inventory(
         if release_record["is_prerelease"] is not expected_prerelease:
             raise ValidationStatusError(
                 f"{location}.release_record prerelease state contradicts the report"
+            )
+        expected_immutable = name != CATALOG_NAME
+        if release_record["is_immutable"] is not expected_immutable:
+            raise ValidationStatusError(
+                f"{location}.release_record immutable state contradicts the audited release"
             )
         _nonempty_string(release_record["name"], f"{location}.release_record.name")
         _nonempty_string(
@@ -756,6 +767,7 @@ def validate_status(
     report_path: Path = REPORT_PATH,
     manifest_path: Path | None = None,
     release_inventory_path: Path = RELEASE_INVENTORY_PATH,
+    require_releasable: bool = False,
 ) -> None:
     _exact_fields(status, TOP_LEVEL_FIELDS, "validation status")
     if type(status["schema_version"]) is not int or status["schema_version"] != 1:
@@ -907,11 +919,24 @@ def validate_status(
         catalog_version=manifest["catalog_version"],
         validated_at=status["validated_at"],
     )
+    if require_releasable and expected_status == "validation-failed":
+        raise ValidationStatusError(
+            "release requires a validated or conditionally validated portfolio verdict"
+        )
 
 
-def main() -> int:
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(
+        description="Validate the portfolio status and its evidence bindings."
+    )
+    parser.add_argument(
+        "--require-releasable",
+        action="store_true",
+        help="reject a coherent status whose verdict still reports release blockers",
+    )
+    args = parser.parse_args(argv)
     status = load_status()
-    validate_status(status)
+    validate_status(status, require_releasable=args.require_releasable)
     print(f"Validated portfolio status for {len(status['repositories'])} repositories.")
     return 0
 

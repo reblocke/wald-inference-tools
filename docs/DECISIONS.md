@@ -1,5 +1,53 @@
 # Catalog decisions
 
+## 2026-07-31 — Validation carrier updates use a released catalog predecessor
+
+Catalog v0.2.1 refreshes the independent portfolio evidence for Core v0.4.2 and the corresponding
+template, focused-app, and integrated-workbench releases. Its checked-in catalog row audits the
+already published v0.2.0 predecessor. The v0.2.1 tag object, stable immutable release, exact eight
+assets, successful workflows, and Pages bytes are the terminal external reconciliation after
+publication.
+
+This boundary is intentional: a commit cannot contain the digest and publication identity of its
+own immutable release assets. Publishing v0.2.2 solely to describe v0.2.1 would move, not solve,
+that self-reference. The external reconciliation therefore closes v0.2.1 without being used as
+evidence for the scientific verdict carried inside v0.2.1.
+
+## 2026-07-31 — Release integrity does not require account-level credentials
+
+At the repository owner's direction, new releases no longer require GitHub's verified-signature
+status for tag objects or a fine-grained Administration-read token stored as an Actions secret.
+Those gates required account reauthentication and persistent release credentials without changing
+the catalog's scientific evidence or release contents.
+
+Version tags remain annotated and must resolve through the exact remote tag object to the event
+commit already contained in protected `main`. The workflow still verifies the version, releasable
+validation verdict, deterministic asset set, release body, checksums, and downloaded bytes before
+publishing a draft once. Repository release immutability is enabled as an operator precondition,
+and the workflow fails unless the published release reports immutable status. The signed-tag and
+settings-token portions of the 2026-07-30 governance decision are superseded; its remaining
+integrity controls continue unchanged.
+
+## 2026-07-30 — Governance hardening does not change portfolio evidence
+
+Repository automation now pins reviewed GitHub Actions by full commit, retains the required
+`test`, `live-metadata`, `browsers (chromium)`, and `browsers (webkit)` contexts, and applies
+least-privilege permissions and concurrency controls. Future release workflows fail closed on a
+signed annotated remote tag, exact event-commit binding, and protected-`main` containment before
+project metadata is read or repository code executes.
+
+The release path independently rejects a validation verdict that still reports release blockers,
+then builds the existing deterministic source, site, manifest, report, status, evidence archive,
+evidence index, and checksum assets; transfers the complete bundle; requires immutable-release
+configuration; creates a stable draft; then redownloads and compares the exact body, names, bytes,
+and checksums before one-time publication. These are repository-integrity controls, not
+independent scientific validation.
+
+This change deliberately leaves catalog version 0.2.0, `data/tools.json`, the portfolio report,
+machine-readable validation status, evidence files and hashes, public site behavior, and existing
+v0.2.0 tag/release assets unchanged. A future evidence or metadata change still requires the
+independent review defined below and must continue to pass `make live-check`.
+
 ## 2026-07-30 — Validation-bearing v0.2.0 is stable
 
 Independent CC-MIG-11 review resolved content-addressed annotated-tag objects, peeled commits, and

@@ -5,10 +5,7 @@ on:
     branches: [main]
   workflow_dispatch:
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+permissions: {}
 
 concurrency:
   group: pages
@@ -16,13 +13,18 @@ concurrency:
 
 jobs:
   build:
+    name: build
+    permissions:
+      contents: read
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7
-      - uses: actions/setup-python@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
         with:
           python-version-file: .python-version
-      - uses: astral-sh/setup-uv@v9.0.0
+      - uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9 # v9.0.0
         with:
           enable-cache: true
       - run: uv sync --locked
@@ -32,19 +34,28 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
       - run: make test
       - run: make build-site
-      - uses: actions/configure-pages@v6
-        with:
-          enablement: true
-      - uses: actions/upload-pages-artifact@v5
+      - name: Generated outputs stay ignored and tracked files stay clean
+        shell: bash
+        run: |
+          git diff --check
+          test -z "$(git status --porcelain --untracked-files=all)"
+      - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
         with:
           path: site
 
   deploy:
     needs: build
+    name: deploy
+    permissions:
+      pages: write # Required to publish the Pages deployment.
+      id-token: write # Required for GitHub Pages OIDC deployment.
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      - uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
+        with:
+          enablement: true
       - id: deployment
-        uses: actions/deploy-pages@v5
+        uses: actions/deploy-pages@cd2ce8fcbc39b97be8ca5fce6e763baed58fa128 # v5.0.0

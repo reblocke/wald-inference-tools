@@ -4,6 +4,25 @@ All notable changes to this project are documented here.
 
 ## [Unreleased]
 
+## [0.2.1] - 2026-07-31
+
+### Added
+
+- Refresh the independent CC-MIG-11 portfolio validation report, machine-readable status,
+  release inventory, browser/privacy/accessibility evidence, and checksum-addressed evidence
+  index for the final Core v0.4.2 release set.
+
+### Changed
+
+- Record Core v0.4.2; template v0.1.2; compatibility v0.1.4; likelihood v0.1.3;
+  critical effect v0.1.4; Type S/M v0.1.4; precision v0.1.3; integrated workbench v0.2.6;
+  and the independently audited catalog predecessor v0.2.0.
+- Remove the account-level signing-key and Administration-read secret prerequisites while
+  retaining annotated-tag binding, protected-`main` containment, draft verification, exact asset
+  comparison, and post-publication immutable-release verification.
+- Publish the refreshed catalog carrier as a stable, immutable release after its external
+  tag, workflow, Pages, and eight-asset reconciliation succeeds.
+
 ## [0.2.0] - 2026-07-30
 
 ### Added
@@ -42,7 +61,8 @@ All notable changes to this project are documented here.
 - Added local/live metadata validation, static Pages build, accessibility/privacy browser tests,
   and maintenance documentation.
 
-[Unreleased]: https://github.com/reblocke/wald-inference-tools/compare/v0.2.0...HEAD
+[Unreleased]: https://github.com/reblocke/wald-inference-tools/compare/v0.2.1...HEAD
+[0.2.1]: https://github.com/reblocke/wald-inference-tools/compare/v0.2.0...v0.2.1
 [0.2.0]: https://github.com/reblocke/wald-inference-tools/compare/v0.1.1...v0.2.0
 [0.1.1]: https://github.com/reblocke/wald-inference-tools/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/reblocke/wald-inference-tools/releases/tag/v0.1.0

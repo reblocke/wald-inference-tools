@@ -1,72 +1,72 @@
 {
   "schema_version": 1,
-  "validated_at": "2026-07-30T18:58:05Z",
+  "validated_at": "2026-07-31T13:45:28Z",
   "verdict": "Validated for release.",
-  "core_version": "0.4.1",
+  "core_version": "0.4.2",
   "repositories": [
     {
       "name": "reblocke/wald-inference-core",
-      "commit": "f4613177b6dc81d194aa70762152de2bfa86663b",
-      "release": "v0.4.1",
+      "commit": "8afd0a463cc1d2586b8ce5cf92f40900647c3190",
+      "release": "v0.4.2",
       "status": "validated",
       "blocking_findings": []
     },
     {
       "name": "reblocke/scientific-applet-template",
-      "commit": "c13d27de9fa456075cb9e52d897a5e9f866d8f32",
-      "release": "v0.1.1",
+      "commit": "04353d7bb07ee74ae0585107431563db89387f05",
+      "release": "v0.1.2",
       "status": "validated",
       "blocking_findings": []
     },
     {
       "name": "reblocke/compatibility-curve",
-      "commit": "0abf653cb455885b07765d4b9fe1af4cc38cf3b2",
-      "release": "v0.1.3",
+      "commit": "eeaff9a374bc022c2d5ca16fdb3c59fbdfcd90f4",
+      "release": "v0.1.4",
       "status": "validated",
       "blocking_findings": []
     },
     {
       "name": "reblocke/wald-likelihood-support",
-      "commit": "7f5557d2a93235e25215261ef5890868b3fb07bb",
-      "release": "v0.1.2",
+      "commit": "beb18d87939f3ba9738b97e1c2e10724e31c5945",
+      "release": "v0.1.3",
       "status": "validated",
       "blocking_findings": []
     },
     {
       "name": "reblocke/critical-effect-size",
-      "commit": "a10482c73cdb89d37814bf1b8c955166957ecd6b",
-      "release": "v0.1.3",
+      "commit": "1c451fe9ed7d7d21fe732ec5da178248053fe912",
+      "release": "v0.1.4",
       "status": "validated",
       "blocking_findings": []
     },
     {
       "name": "reblocke/type-s-m-calibrator",
-      "commit": "ed8881d13eea8ecffa77304555d251296d63f058",
-      "release": "v0.1.3",
+      "commit": "bb4372c55a2e839b9f57d8424f797c944f5b4eb0",
+      "release": "v0.1.4",
       "status": "validated",
       "blocking_findings": []
     },
     {
       "name": "reblocke/precision-guardrail-planner",
-      "commit": "ec47753aa1119b802e12856c4bc18feefa1ad6d5",
-      "release": "v0.1.2",
+      "commit": "a88926b966766a94b00a61799539351cce44581a",
+      "release": "v0.1.3",
       "status": "validated",
       "blocking_findings": []
     },
     {
       "name": "reblocke/wald-inference-tools",
-      "commit": "6fffdd51dbf5c53beeb6146f9deb10daeb194760",
-      "release": "v0.1.1",
+      "commit": "ae76d86f731239e7fe2e902d6813093b35e4e69b",
+      "release": "v0.2.0",
       "status": "validated",
       "blocking_findings": []
     },
     {
       "name": "reblocke/conf_curve_likelihood",
-      "commit": "1c283a5e1774b371b658469156fa24b9a397b8e6",
-      "release": "v0.2.5",
+      "commit": "60ca0e3f5d6f05bb943cb4b7b7d02ed5a1d5714a",
+      "release": "v0.2.6",
       "status": "validated",
       "blocking_findings": []
     }
   ],
-  "report_sha256": "f41b5982247824a19d07dd599551517a86a9ba9cc327283374e5f3262389eb97"
+  "report_sha256": "b64d1d5a25e23881610b064c7f6c7e504cfa91ec90b22a9b47db4a448a7656e9"
 }

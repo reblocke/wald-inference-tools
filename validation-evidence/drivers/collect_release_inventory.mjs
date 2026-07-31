@@ -7,50 +7,50 @@ import { writeFileSync } from "node:fs";
 const RELEASES = [
   {
     name: "reblocke/wald-inference-core",
-    tag: "v0.4.1",
+    tag: "v0.4.2",
     liveUrl: null,
   },
   {
     name: "reblocke/scientific-applet-template",
-    tag: "v0.1.1",
+    tag: "v0.1.2",
     liveUrl:
       "https://reblocke.github.io/scientific-applet-template/assets/py/manifest.json",
   },
   {
     name: "reblocke/compatibility-curve",
-    tag: "v0.1.3",
+    tag: "v0.1.4",
     liveUrl: "https://reblocke.github.io/compatibility-curve/assets/py/manifest.json",
   },
   {
     name: "reblocke/wald-likelihood-support",
-    tag: "v0.1.2",
+    tag: "v0.1.3",
     liveUrl:
       "https://reblocke.github.io/wald-likelihood-support/assets/py/manifest.json",
   },
   {
     name: "reblocke/critical-effect-size",
-    tag: "v0.1.3",
+    tag: "v0.1.4",
     liveUrl: "https://reblocke.github.io/critical-effect-size/assets/py/manifest.json",
   },
   {
     name: "reblocke/type-s-m-calibrator",
-    tag: "v0.1.3",
+    tag: "v0.1.4",
     liveUrl: "https://reblocke.github.io/type-s-m-calibrator/assets/py/manifest.json",
   },
   {
     name: "reblocke/precision-guardrail-planner",
-    tag: "v0.1.2",
+    tag: "v0.1.3",
     liveUrl:
       "https://reblocke.github.io/precision-guardrail-planner/assets/py/manifest.json",
   },
   {
     name: "reblocke/wald-inference-tools",
-    tag: "v0.1.1",
+    tag: "v0.2.0",
     liveUrl: "https://reblocke.github.io/wald-inference-tools/data/tools.json",
   },
   {
     name: "reblocke/conf_curve_likelihood",
-    tag: "v0.2.5",
+    tag: "v0.2.6",
     liveUrl:
       "https://reblocke.github.io/conf_curve_likelihood/assets/py/manifest.json",
   },
@@ -201,6 +201,13 @@ async function collect(entry) {
     "--json",
     "tagName,isPrerelease,isDraft,publishedAt,url,assets,name,targetCommitish",
   ]);
+  const releaseApi = ghJson([
+    "api",
+    `repos/${entry.name}/releases/tags/${entry.tag}`,
+  ]);
+  if (releaseApi.tag_name !== entry.tag || typeof releaseApi.immutable !== "boolean") {
+    throw new Error(`${entry.name}@${entry.tag} release API identity is inconsistent`);
+  }
   const runs = ghJson([
     "run",
     "list",
@@ -311,6 +318,7 @@ async function collect(entry) {
       published_at: release.publishedAt,
       is_draft: release.isDraft,
       is_prerelease: release.isPrerelease,
+      is_immutable: releaseApi.immutable,
       assets: release.assets.map((asset) => ({
         name: asset.name,
         size: asset.size,
@@ -334,9 +342,9 @@ const inventory = {
   schema_version: 1,
   audited_at: args["validated-at"],
   catalog_evidence_carrier: {
-    release: "v0.2.0",
+    release: "v0.2.1",
     note:
-      "The audited catalog predecessor is v0.1.1; v0.2.0 carries this inventory and is verified after publication without circularly establishing the verdict.",
+      "The independently audited catalog predecessor is v0.2.0; v0.2.1 carries this inventory and is reconciled after publication without circularly establishing its own verdict.",
   },
   repositories,
 };

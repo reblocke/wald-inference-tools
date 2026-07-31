@@ -5,8 +5,8 @@ type: software
 authors:
   - family-names: "Locke"
     given-names: "Brian"
-version: 0.2.0
-date-released: 2026-07-30
+version: 0.2.1
+date-released: 2026-07-31
 license: MIT
 repository-code: "https://github.com/reblocke/wald-inference-tools"
 url: "https://reblocke.github.io/wald-inference-tools/"

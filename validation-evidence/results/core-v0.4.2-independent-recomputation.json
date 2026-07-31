@@ -1,0 +1,9 @@
+{
+  "verdict": "pass",
+  "independent_scalar_comparisons": 40,
+  "max_absolute_difference": 7.993605777301127e-15,
+  "max_relative_difference": 1.5399215851702873e-14,
+  "selection_rules_checked": 6,
+  "strict_json": true,
+  "extreme_finite_guards": true
+}

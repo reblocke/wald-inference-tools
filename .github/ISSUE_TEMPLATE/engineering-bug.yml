@@ -1,0 +1,73 @@
+name: Catalog engineering or metadata bug
+description: Report a reproducible defect in the catalog, validators, metadata, or automation.
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Report only behavior owned by this catalog. Numerical behavior belongs to
+        `wald-inference-core`; app-specific behavior belongs to the affected app repository.
+        Use public metadata or synthetic examples only. Never include protected health
+        information, credentials, unpublished restricted data, or other sensitive material.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Affected area
+      options:
+        - Tool manifest or catalog rendering
+        - Local or live metadata validation
+        - Validation status, report, or evidence integrity
+        - Static site accessibility or navigation
+        - CI, Pages, release, or repository policy
+        - Documentation
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Exact version or commit
+      description: Provide the catalog release tag or full commit SHA where the problem occurs.
+      placeholder: v0.2.0 or a 40-character commit SHA
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal public or synthetic reproduction
+      description: List exact commands and safe inputs needed to reproduce the problem.
+      placeholder: |
+        1. uv sync --locked
+        2. ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: Redact local paths, tokens, user values, and sensitive logs.
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: Operating system, Python, uv, and browser versions when relevant.
+    validations:
+      required: true
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: Public-report safety
+      options:
+        - label: I used only public metadata or synthetic examples and removed credentials, sensitive data, and protected health information.
+          required: true
+        - label: This report concerns catalog-owned behavior or identifies the authoritative Core or app owner.
+          required: true

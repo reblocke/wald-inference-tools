@@ -1,341 +1,249 @@
 # Wald inference portfolio validation report
 
-<!-- validation-evidence-index-sha256:07dfb86fccc3ffdb8782fafd6b51b604add61c979dbd8bfca90dcb87decac9eb -->
+<!-- validation-evidence-index-sha256:e27565387d560209834eb55455bf7eb2540182a2126811cc9b85ccd1cbe08f25 -->
 
-Validation date: 2026-07-30 UTC
-Catalog evidence carrier: `wald-inference-tools` v0.2.0
+Validation timestamp: 2026-07-31T13:45:28Z
+Catalog evidence carrier: wald-inference-tools v0.2.1
 
 ## Executive verdict
 
 **Validated for release.**
 
-Independent review resolved every repository to a content-addressed annotated-tag
-object and peeled commit, reproduced the locked builds from cold clones, independently
-checked the numerical contracts and B01-B08 baseline, inspected released Pages
-sites in Chromium and WebKit, and verified release assets, documentation,
-privacy, accessibility automation, licensing, and citation metadata. All five
-original release blockers and the later lifecycle-documentation findings are
-closed. There are no unresolved release-blocking findings.
+Independent fresh-context reviews resolved the eight final published targets to
+annotated tag objects and exact main commits, reproduced locked cold starts,
+rechecked numerical contracts and B01-B08 parity, inspected live sites in
+Chromium and WebKit, and verified release assets, documentation, privacy,
+accessibility automation, licensing, and provenance. All prior blockers are
+closed.
 
-This is a software and scientific-implementation validation decision, not
-clinical validation or evidence that any result is appropriate for a particular
-patient or decision. The checksum-addressed source record is
-`validation-evidence/index.json`; exact commands are preserved in
-`validation-evidence/commands/README_COMMANDS.md`.
+The catalog carrier audits its already-published v0.2.0 predecessor. Version
+v0.2.1's own immutable release, eight assets, Pages bytes, and exact tag identity
+are terminal external reconciliation gates because a release cannot contain its
+own publication identity. They are not used as scientific evidence inside the
+carrier.
+
+This is software and scientific-implementation validation, not clinical
+validation, causal validation, or evidence of patient-level suitability. The
+checksum-addressed record is validation-evidence/index.json; literal commands
+are preserved in validation-evidence/commands/README_COMMANDS.md.
 
 <!-- validation-inventory:start -->
 {
-  "core_version": "0.4.1",
+  "validated_at": "2026-07-31T13:45:28Z",
+  "verdict": "Validated for release.",
+  "core_version": "0.4.2",
   "repositories": [
     {
-      "blocking_findings": [],
-      "commit": "f4613177b6dc81d194aa70762152de2bfa86663b",
       "name": "reblocke/wald-inference-core",
-      "release": "v0.4.1",
-      "status": "validated"
+      "commit": "8afd0a463cc1d2586b8ce5cf92f40900647c3190",
+      "release": "v0.4.2",
+      "status": "validated",
+      "blocking_findings": []
     },
     {
-      "blocking_findings": [],
-      "commit": "c13d27de9fa456075cb9e52d897a5e9f866d8f32",
       "name": "reblocke/scientific-applet-template",
-      "release": "v0.1.1",
-      "status": "validated"
+      "commit": "04353d7bb07ee74ae0585107431563db89387f05",
+      "release": "v0.1.2",
+      "status": "validated",
+      "blocking_findings": []
     },
     {
-      "blocking_findings": [],
-      "commit": "0abf653cb455885b07765d4b9fe1af4cc38cf3b2",
       "name": "reblocke/compatibility-curve",
-      "release": "v0.1.3",
-      "status": "validated"
+      "commit": "eeaff9a374bc022c2d5ca16fdb3c59fbdfcd90f4",
+      "release": "v0.1.4",
+      "status": "validated",
+      "blocking_findings": []
     },
     {
-      "blocking_findings": [],
-      "commit": "7f5557d2a93235e25215261ef5890868b3fb07bb",
       "name": "reblocke/wald-likelihood-support",
-      "release": "v0.1.2",
-      "status": "validated"
+      "commit": "beb18d87939f3ba9738b97e1c2e10724e31c5945",
+      "release": "v0.1.3",
+      "status": "validated",
+      "blocking_findings": []
     },
     {
-      "blocking_findings": [],
-      "commit": "a10482c73cdb89d37814bf1b8c955166957ecd6b",
       "name": "reblocke/critical-effect-size",
-      "release": "v0.1.3",
-      "status": "validated"
+      "commit": "1c451fe9ed7d7d21fe732ec5da178248053fe912",
+      "release": "v0.1.4",
+      "status": "validated",
+      "blocking_findings": []
     },
     {
-      "blocking_findings": [],
-      "commit": "ed8881d13eea8ecffa77304555d251296d63f058",
       "name": "reblocke/type-s-m-calibrator",
-      "release": "v0.1.3",
-      "status": "validated"
+      "commit": "bb4372c55a2e839b9f57d8424f797c944f5b4eb0",
+      "release": "v0.1.4",
+      "status": "validated",
+      "blocking_findings": []
     },
     {
-      "blocking_findings": [],
-      "commit": "ec47753aa1119b802e12856c4bc18feefa1ad6d5",
       "name": "reblocke/precision-guardrail-planner",
-      "release": "v0.1.2",
-      "status": "validated"
+      "commit": "a88926b966766a94b00a61799539351cce44581a",
+      "release": "v0.1.3",
+      "status": "validated",
+      "blocking_findings": []
     },
     {
-      "blocking_findings": [],
-      "commit": "6fffdd51dbf5c53beeb6146f9deb10daeb194760",
       "name": "reblocke/wald-inference-tools",
-      "release": "v0.1.1",
-      "status": "validated"
+      "commit": "ae76d86f731239e7fe2e902d6813093b35e4e69b",
+      "release": "v0.2.0",
+      "status": "validated",
+      "blocking_findings": []
     },
     {
-      "blocking_findings": [],
-      "commit": "1c283a5e1774b371b658469156fa24b9a397b8e6",
       "name": "reblocke/conf_curve_likelihood",
-      "release": "v0.2.5",
-      "status": "validated"
+      "commit": "60ca0e3f5d6f05bb943cb4b7b7d02ed5a1d5714a",
+      "release": "v0.2.6",
+      "status": "validated",
+      "blocking_findings": []
     }
-  ],
-  "validated_at": "2026-07-30T18:58:05Z",
-  "verdict": "Validated for release."
+  ]
 }
 <!-- validation-inventory:end -->
 
 ## Portfolio inventory and tested versions
 
-The catalog v0.2.0 is the evidence carrier. To avoid circular validation, its
-own row below is the independently audited v0.1.1 predecessor; publication of
-v0.2.0 is checked afterward as a release-reconciliation step.
-
-| Repository | Release | Peeled commit | Role |
+| Repository | Release | Exact commit | Role |
 |---|---|---|---|
-| `wald-inference-core` | v0.4.1 | `f4613177b6dc81d194aa70762152de2bfa86663b` | sole shared formula owner |
-| `scientific-applet-template` | v0.1.1 | `c13d27de9fa456075cb9e52d897a5e9f866d8f32` | reusable non-formula scaffold |
-| `compatibility-curve` | v0.1.3 | `0abf653cb455885b07765d4b9fe1af4cc38cf3b2` | observed compatibility |
-| `wald-likelihood-support` | v0.1.2 | `7f5557d2a93235e25215261ef5890868b3fb07bb` | observed likelihood/support |
-| `critical-effect-size` | v0.1.3 | `a10482c73cdb89d37814bf1b8c955166957ecd6b` | detectability/critical effects |
-| `type-s-m-calibrator` | v0.1.3 | `ed8881d13eea8ecffa77304555d251296d63f058` | selection-conditioned Type S/M |
-| `precision-guardrail-planner` | v0.1.2 | `ec47753aa1119b802e12856c4bc18feefa1ad6d5` | inverse precision planning |
-| `wald-inference-tools` | v0.1.1 | `6fffdd51dbf5c53beeb6146f9deb10daeb194760` | audited catalog predecessor |
-| `conf_curve_likelihood` | v0.2.5 | `1c283a5e1774b371b658469156fa24b9a397b8e6` | backward-compatible integrated workbench |
+| wald-inference-core | v0.4.2 | 8afd0a463cc1d2586b8ce5cf92f40900647c3190 | numerical authority |
+| scientific-applet-template | v0.1.2 | 04353d7bb07ee74ae0585107431563db89387f05 | formula-free scaffold |
+| compatibility-curve | v0.1.4 | eeaff9a374bc022c2d5ca16fdb3c59fbdfcd90f4 | focused app |
+| wald-likelihood-support | v0.1.3 | beb18d87939f3ba9738b97e1c2e10724e31c5945 | focused app |
+| critical-effect-size | v0.1.4 | 1c451fe9ed7d7d21fe732ec5da178248053fe912 | focused app |
+| type-s-m-calibrator | v0.1.4 | bb4372c55a2e839b9f57d8424f797c944f5b4eb0 | focused app |
+| precision-guardrail-planner | v0.1.3 | a88926b966766a94b00a61799539351cce44581a | focused app |
+| wald-inference-tools predecessor | v0.2.0 | ae76d86f731239e7fe2e902d6813093b35e4e69b | calculation-free catalog |
+| conf_curve_likelihood | v0.2.6 | 60ca0e3f5d6f05bb943cb4b7b7d02ed5a1d5714a | backward-compatible workbench |
 
-The machine-collected GitHub, tag, release, workflow, Pages deployment, live
-manifest, license, and asset inventory is
-`validation-evidence/inventory/release-inventory.json`.
+All six scientific consumers use Core 0.4.2. The official wheel URL and SHA-256
+are exact; all six staged copies of the 14-file Core package were byte-identical.
+The full machine inventory is
+validation-evidence/inventory/release-inventory.json.
 
 ## Methods/environment
 
-Review was split across independent numerical/parity, cold-start/provenance,
-browser/privacy/accessibility, and documentation/rights lanes. Candidate fixes
-were never accepted as evidence: every closure was rerun against a fresh
-detached checkout of the final annotated tag.
+The three independent lanes began from supplied exact release identities, used
+fresh clones or release snapshots, and did not modify production state.
 
-The principal cold environment was macOS 26.5.2 (build 25F84), arm64, Python
-3.12.13, uv 0.11.11, and Node 25.9.0. The detached integrated v0.2.5 lane used
-Playwright 1.58.0, Chromium 145.0.7632.6, and WebKit 26.0. The final retained
-post-release cross-site browser run used Playwright 1.61.0, Chromium
-149.0.7827.55, and WebKit 26.5. GitHub Actions repeated applicable gates on
-Ubuntu. Dependencies were restored from each repository's checked-in
-`uv.lock`; no sibling checkout, editable cross-repository install, or manual
-source substitution was used.
+- Lane A/B: macOS 26.5.2 arm64; uv 0.11.11; Python 3.11.10 or
+  3.12.13; SciPy 1.14.1.
+- Lane C/D: macOS 26.5.2 arm64; Git 2.50.1; GitHub CLI 2.92.0;
+  isolated clone parents, uv caches, and browser caches.
+- Lane E/F: Python 3.12.13; Playwright 1.61.0; Chromium
+  149.0.7827.55; WebKit 26.5.
 
-Comparison rules remained frozen: exact equality for schemas, strings,
-booleans, nulls, ordering, and required warnings; `rtol=1e-12`,
-`atol=1e-14` for same-stack migration; and `rtol=1e-10`, `atol=1e-12` for
-browser-engine comparisons. Browser payloads were serialized with strict JSON;
-no tolerance was widened during review.
+Implementation changes and review evidence were separated. Fresh checks were
+performed only after the final release set was live. Generated browser Python
+was reproduced and remained ignored. Restricted or patient data were neither
+required nor used.
 
 ## Numerical findings
 
-Core v0.4.1 owns effect transforms, CI/SE reconstruction, compatibility,
-relative likelihood/log support, S-2 and generic support intervals, pairwise
-support, legacy and exact detectability, six selection rules, selected-claim
-probability, Type S, Type M, observed exaggeration, information scaling, and
-per-target/joint precision solvers. Source and staged-package diff audits found
-no second production formula implementation in any app.
+Core remained the sole owner of effect transforms, CI reconstruction,
+compatibility, likelihood/support, detectability, selection, Type S/M, and
+precision calculations. Production-source and AST scans found no protected
+formula copy in consumers.
 
-Independent scalar, vector, property, frozen-reference, exact-fraction, and
-extreme-finite checks passed. The corrected Core baseline compared 23,095
-published values with maximum absolute difference `2.842e-14` and maximum
-relative difference `1.388e-15`; the fresh macOS recomputation had maxima
-`5.329e-15` and `4.449e-16`. These are below the applicable combined
-absolute/relative tolerances.
+Core frozen parity passed 14 numeric cases, six matched errors, and two declared
+app-owned exclusions across 23,095 values at rtol 1e-12 and atol 1e-14.
+Maximum absolute and relative differences were 5.329070518200751e-15 and
+4.449372536648163e-16.
 
-The post-repair precision scan traversed 9,072 solver paths with zero missed
-finite feasible bands. It retained eight explicit regression cases discovered
-by the independent audit. Pairwise support delegates to the canonical
-log-support implementation, and finite-but-unrepresentable ratio results now
-fail explicitly instead of silently becoming invalid zero.
+Independent normal/SciPy identities passed 40 scalar comparisons, all six
+selection rules, strict JSON checks, and extreme finite guards. The largest
+independent absolute and relative differences were 7.993605777301127e-15 and
+1.5399215851702873e-14.
 
 ## Baseline/cross-app parity
 
-All 22 frozen B01-B08 cases passed. Recursive comparison of 27,268 integrated
-response values had maximum absolute difference `5.329e-15` and maximum
-relative difference `4.449e-16`.
+The integrated B01-B08 comparison passed 22 cases and 27,268 floating-point
+comparisons with maximum absolute and relative differences
+5.329070518200751e-15 and 4.449372536648163e-16.
 
-| Case | Contract covered | Result |
-|---|---|---|
-| B01 | additive reconstruction, compatibility, likelihood, support, strict JSON | pass |
-| B02 | ratio/log reconstruction, natural display, S-2 | pass |
-| B03 | presentation-only display window and marker warnings | pass |
-| B04 | two-sided forward calibration, null undefined values, symmetry | pass |
-| B05 | directional ratio threshold and fourfold-information scaling | pass |
-| B06 | ordered inverse-precision targets, solutions, information, CI width | pass |
-| B07 | undefined, invalid, disabled-design, and infeasible cases | pass |
-| B08 | extreme finite values, clipping, warnings, strict JSON | pass |
+Focused comparisons passed: compatibility 35 values exactly; likelihood 33
+values; critical effect 4 values; Type S/M 49 values; and precision 22 values
+exactly. No protected formula drift was observed.
 
-Focused-contract audits found exact exclusion of out-of-scope fields.
-Compatibility reproduced the legacy compatibility subset; likelihood reproduced
-likelihood, S-2, generic support, and pairwise support; critical effect
-preserved the legacy benchmark while labeling exact detectability separately;
-Type S/M reproduced the design subset; and precision reproduced per-target
-legacy outputs while documenting joint/binding extensions.
+Core retains two documented binary64 paths for selected-claim probability: the
+conservative detectability/inversion kernel and the frozen direct interval
+probability used by Type S/M and inverse precision. They share the six-rule
+interval authority; adapters fail closed on material drift. This is a
+backward-compatibility exception, not observed disagreement.
 
 ## Cold-start results
 
-Every release was cloned into a new temporary parent, checked out by exact tag,
-restored with `uv sync --locked`, and run through its documented commands.
-Build/stage commands left no unexplained tracked diff.
-
-| Repository | Non-E2E tests | Chromium | WebKit | Result |
+| Target | Non-browser tests | Chromium | WebKit | Result |
 |---|---:|---:|---:|---|
-| Core v0.4.1 | 380 | not applicable | not applicable | pass |
-| Template v0.1.1 | 30 plus 22 scaffold self-tests | 5 plus 1 self-test | 1 | pass |
-| Compatibility v0.1.3 | 57 | 7 | 1 | pass |
-| Likelihood v0.1.2 | 73 | 11 | 1 | pass |
-| Critical effect v0.1.3 | 60 | 12 | 1 | pass |
-| Type S/M v0.1.3 | 74 | 21 | 1 | pass |
-| Precision v0.1.2 | 51 | 6 | 1 | pass |
-| Catalog predecessor v0.1.1 | 29 | 4 | 4 | pass |
-| Integrated v0.2.5 | 208 | 49 | 1 | pass |
+| Core | 396 | not applicable | not applicable | pass |
+| Template | 38 | 5 | 1 | pass |
+| Compatibility | 64 | 7 | 1 | pass |
+| Likelihood | 80 | 11 | 1 | pass |
+| Critical effect | 67 | 12 | 1 | pass |
+| Type S/M | 84 | 21 | 1 | pass |
+| Precision | 60 | 6 | 1 | pass |
+| Integrated | 219 | 50 | independent smoke supplied in Lane E | pass |
 
-Core built wheel and sdist artifacts. Each scientific calculation app staged
-its exact locked Core wheel into the Pages artifact, served locally, and passed
-browser smoke and contract checks. The template instead staged and tested its
-formula-free demonstration package through the disposable-app self-test. Exact
-environment and command detail is retained in `validation-evidence/lanes/` and
-the command ledger.
+Core's wheel and sdist rebuilt byte-for-byte and the official wheel passed a
+cold installed-public-API smoke. All app archives reproduced byte-identical
+decompressed tar streams. The compressed gzip bytes differed between macOS and
+Ubuntu DEFLATE implementations; no content difference was observed.
 
 ## Release artifact provenance
 
-All nine audited tags are annotated, peel to one commit, and have a non-draft
-GitHub release. Every applicable Release workflow completed successfully at
-that peeled commit. Each staged-package Pages application has a successful
-deployment for the same commit, and its live manifest's `source_commit` equals
-that commit. The catalog predecessor's manifest intentionally has no
-`source_commit`; it is instead bound to the audited release by the successful
-Pages deployment SHA, exact `catalog_version`, and byte comparison of the live
-static files.
+All eight published final releases were stable, non-draft, non-prerelease, and
+immutable. Every annotated tag object peeled to the recorded commit, each
+commit equaled main, and every hosted asset passed its SHA256SUMS file.
 
-The independently downloaded Core wheel
-`wald_inference-0.4.1-py3-none-any.whl` is 37,939 bytes with SHA-256
-`d7272023f65088729d3ff997cab7cac57b84f22ac6108244ec2170434557d99b`.
-Its release checksum, downloaded bytes, installed package version, file set,
-and scientific smoke results agree. Focused and integrated source archives,
-site/package manifests, and `SHA256SUMS` files likewise passed local checks and
-the GitHub asset-digest comparison.
+Core wheel SHA-256:
+225331d7b9d7b70e2508eecb92851a92a8c4e245baf412a1eb0f464d85da1349.
+Core sdist SHA-256:
+86808922f5ab9164523380e0838b324e24bed6a7228deb37ce2ca4cc19f06fe3.
+SLSA attestations verified both against the v0.4.2 release workflow, exact tag
+and commit, and run 30629025349.
 
-The exact tag objects, peeled commits, Release/CI/Pages workflow URLs,
-deployment identifiers, asset sizes/digests, and live-manifest hashes are in
-`validation-evidence/inventory/release-inventory.json`. No staged Python file
-was accepted when it differed from the source package or lockfile.
+Each regenerated browser manifest was byte-identical to both the release asset
+and live Pages manifest. Catalog predecessor v0.2.0 is stable but predates the
+immutable-release setting; it is historical evidence, not the new carrier.
 
 ## Browser/privacy/accessibility
 
-The six calculation sites plus the scientific-applet template scaffold passed
-full Chromium desktop, Chromium 390-pixel, and WebKit smoke checks. At 390
-pixels, every document and body matched the viewport and no visible descendant
-escaped containment. Keyboard focus order, labels, result text, applicable
-CSV/PNG/caption/reviewer exports, invalid-input announcement, and recovery were
-exercised. The five focused apps plus the template scaffold additionally passed
-explicit error-link-to-invalid-control focus tests; the integrated app
-announces its recoverable error through an `aria-live="polite"` status.
+All seven scientific/template sites passed Chromium desktop, exact 390-pixel
+containment and keyboard flow, and WebKit initial-load/default-calculation
+smoke. Every advertised export/copy path produced nonempty output with the
+expected schema, dimensions, and signature.
 
-Network inspection observed only GET requests. Startup fetched same-origin
-static files plus versioned Plotly/Pyodide/package resources. After numerical
-input, the only two observations per calculation site were local `blob:`
-image GETs; no HTTP request, WebSocket, beacon, telemetry match, or sentinel
-input transmission occurred. User values did not enter the URL. Cookies,
-local/session storage, IndexedDB, Cache Storage, service workers, and service
-worker controllers were all empty. The catalog made four same-origin static
-GETs and contains no calculation or tracking code.
+No console/page errors, non-GET requests, WebSockets, telemetry matches, user
+sentinels in requests, cookies, local/session storage, IndexedDB, Cache Storage,
+or service workers were observed. The only post-input observations were local
+blob-image GETs. Invalid inputs produced bounded assistive-technology-visible
+messages and valid input recovered.
 
-Raw results and their consolidated counts are preserved under
-`validation-evidence/browser/`.
+The catalog predecessor passed skip-link/filter keyboard behavior, 390-pixel
+containment, WebKit smoke, and 18 of 18 rendered links at HTTP 200.
 
 ## Documentation/license/citation
 
-Every repository contains the required README, MIT `LICENSE`, `CITATION.cff`,
-`AGENTS.md`, changelog, scientific scope, validation, privacy, decision,
-maintenance, and `llms.txt` surfaces appropriate to its role. README setup and
-verification commands were executed literally. Public task questions,
-non-goals, formula assumptions, observed-versus-design boundaries, hosted and
-repository links, pinned Core version, limitations, privacy posture, and
-related-tool navigation agree with code and catalog metadata.
+All exact release snapshots had the required README, limitations, privacy,
+security, maintenance, release, and citation materials for their roles.
+Package/CFF/changelog versions agreed. All repositories use MIT licensing and
+Brian Locke authorship; historical identity is retained only as explicit
+provenance.
 
-Authorship and maintenance metadata consistently use the user-approved
-identity **Brian Locke**. License metadata consistently identifies MIT.
-Tracked repository assets, source, and public copy contained no copied
-publisher figure, table, dataset, or substantial third-party prose. Direct
-automated retrieval of the publisher full texts returned HTTP 403, so a
-forensic full-text comparison was not possible; the bounded rights finding
-therefore rests on the inspected repository content and recorded provenance.
-Application references support the formulas they describe. No repository
-claims clinical validation.
-
-The independent rerun identified and then closed traceability-only release
-gaps: focused-app README/citation version drift was corrected in final patch
-releases, integrated v0.2.3's prospective lifecycle text was reconciled in
-v0.2.4, and stale stable-Core wording was corrected in v0.2.5. The repairs did
-not alter formulas, defaults, browser contracts, exports, or golden outputs.
+Public copy is educational/research-facing and one-parameter Wald-specific. It
+does not claim clinical, causal, regulatory, posterior, or patient-level
+validity. User-supplied thresholds and assumed truths are labeled accordingly.
+No tracked publisher-style image, PDF, font, dataset, table, or substantial
+copied text was found.
 
 ## Project-standard scores
 
-Weights were frozen as A 20%, B 10%, C 15%, D 20%, E 10%, F 10%, G 7.5%,
-and H 7.5%. A validated result requires a weighted numerator of at least 2550
-(85/100), every domain at least 2, and no blocker. A score of 2 indicates a
-documented nonblocking limitation, not a failed gate.
+Weights are A 20%, B 10%, C 15%, D 20%, E 10%, F 10%, G 7.5%, and
+H 7.5%. A validated result requires a weighted numerator of at least 2550,
+every domain at least 2, and no blocker. Score 2 identifies a bounded gap.
 
-| Domain | Definition |
-|---|---|
-| A | Scientific design/statistical validity |
-| B | Data provenance, rights, and security |
-| C | Computational reproducibility |
-| D | Verification, testing, and independent review |
-| E | Readability and maintainability |
-| F | Documentation and replicator usability |
-| G | Version control and change management |
-| H | Output traceability, dissemination, and preservation |
-
-| Repository | A | B | C | D | E | F | G | H | Weighted /100 |
-|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| Core | 3 | 3 | 3 | 3 | 3 | 3 | 2 | 3 | 97.5 |
-| Template | 2 | 3 | 3 | 3 | 3 | 3 | 2 | 3 | 90.8 |
-| Compatibility | 3 | 3 | 3 | 3 | 3 | 3 | 2 | 3 | 97.5 |
-| Likelihood | 3 | 3 | 3 | 3 | 3 | 3 | 2 | 3 | 97.5 |
-| Critical effect | 3 | 3 | 3 | 2 | 3 | 3 | 2 | 3 | 90.8 |
-| Type S/M | 3 | 3 | 3 | 2 | 3 | 3 | 2 | 3 | 90.8 |
-| Precision | 3 | 3 | 3 | 3 | 3 | 3 | 2 | 3 | 97.5 |
-| Catalog | 2 | 3 | 3 | 3 | 3 | 3 | 2 | 3 | 90.8 |
-| Integrated | 3 | 3 | 3 | 3 | 3 | 3 | 2 | 3 | 97.5 |
-| Portfolio | 3 | 3 | 3 | 3 | 3 | 3 | 2 | 3 | 97.5 |
-
-| Repository | Evidence basis | Bounded gap represented by score 2 |
-|---|---|---|
-| Core | Core A/B and C/D ledgers; frozen parity JSON; clean wheel/asset checks | unsigned annotated tag |
-| Template | template C/D/E/F ledger; disposable-app self-test; live browser evidence | formula-free routing scope (A); unsigned tag (G) |
-| Compatibility | focused A/B anchors; final-tag supplement; browser/network records | unsigned tag (G) |
-| Likelihood | final A/B ledger; generic/pairwise support tests; C/D/E/F audit | unsigned tag (G) |
-| Critical effect | exact/legacy anchor tests; final-tag supplement; browser audit | no external empirical benchmark (D); unsigned tag (G) |
-| Type S/M | six-rule anchors; final-tag supplement; browser audit | no external empirical benchmark (D); unsigned tag (G) |
-| Precision | boundary scan and app-repair driver; final-tag supplement; browser audit | unsigned tag (G) |
-| Catalog | predecessor C/D/E/F audit; strict manifest/link/browser tests | routing rather than formula ownership (A); unsigned tag (G) |
-| Integrated | B01-B08 recursive parity; v0.2.5 C/D/E/F audit; live browser evidence | unsigned tag (G) |
-| Portfolio | all-ticket acceptance matrix; release inventory; evidence index | unsigned release chain (G) |
-
-Template and catalog receive A=2 because they route rather than own scientific
-formula behavior. Critical-effect and Type S/M receive D=2 because their
-detectability and selection-conditioned model outputs were independently
-validated numerically but not against an external empirical benchmark. Every
-repository and the portfolio receive G=2 because annotated tags are not
-cryptographically signed. The evidence for every score is spread across the six
-lane records indexed by the evidence manifest; the corresponding gaps are
-listed under nonblocking limitations.
+Template and catalog receive A=2 because they route rather than own formulas.
+Critical effect and Type S/M receive D=2 because no external empirical
+benchmark was evaluated. Every record receives G=2 because the owner-approved
+annotated tags are unsigned.
 
 <!-- validation-scores:start -->
 {
@@ -367,63 +275,63 @@ listed under nonblocking limitations.
       "name": "reblocke/wald-inference-core",
       "domains": {"A": 3, "B": 3, "C": 3, "D": 3, "E": 3, "F": 3, "G": 2, "H": 3},
       "weighted_numerator": 2925,
-      "evidence": ["validation-evidence/lanes/core-likelihood-final-ab.md", "validation-evidence/results/core-v0.4.1-baseline-parity.json", "validation-evidence/lanes/corrected-release-set-lane-cd.md"],
+      "evidence": ["validation-evidence/lanes/final-release-set-v0.4.2-lane-ab.md", "validation-evidence/results/core-v0.4.2-baseline-parity.json", "validation-evidence/lanes/final-release-set-v0.4.2-lane-cd.md"],
       "gaps": ["The annotated release tag is not cryptographically signed."]
     },
     {
       "name": "reblocke/scientific-applet-template",
       "domains": {"A": 2, "B": 3, "C": 3, "D": 3, "E": 3, "F": 3, "G": 2, "H": 3},
       "weighted_numerator": 2725,
-      "evidence": ["validation-evidence/lanes/catalog-template-v0.1.1-cdef.md", "validation-evidence/browser/browser-summary.json"],
+      "evidence": ["validation-evidence/lanes/final-release-set-v0.4.2-lane-cd.md", "validation-evidence/lanes/final-release-set-v0.4.2-lane-ef.md", "validation-evidence/browser/browser-summary.json"],
       "gaps": ["The scaffold routes rather than owns formulas.", "The annotated tag is unsigned."]
     },
     {
       "name": "reblocke/compatibility-curve",
       "domains": {"A": 3, "B": 3, "C": 3, "D": 3, "E": 3, "F": 3, "G": 2, "H": 3},
       "weighted_numerator": 2925,
-      "evidence": ["validation-evidence/lanes/corrected-release-set-lane-ab.md", "validation-evidence/lanes/focused-docs-only-final-release-supplement.md", "validation-evidence/browser/browser-summary.json"],
+      "evidence": ["validation-evidence/lanes/final-release-set-v0.4.2-lane-ab.md", "validation-evidence/lanes/final-release-set-v0.4.2-lane-cd.md", "validation-evidence/browser/browser-summary.json"],
       "gaps": ["The annotated tag is unsigned."]
     },
     {
       "name": "reblocke/wald-likelihood-support",
       "domains": {"A": 3, "B": 3, "C": 3, "D": 3, "E": 3, "F": 3, "G": 2, "H": 3},
       "weighted_numerator": 2925,
-      "evidence": ["validation-evidence/lanes/core-likelihood-final-ab.md", "validation-evidence/lanes/likelihood-v0.1.2-cdef.md", "validation-evidence/browser/browser-summary.json"],
+      "evidence": ["validation-evidence/lanes/final-release-set-v0.4.2-lane-ab.md", "validation-evidence/lanes/final-release-set-v0.4.2-lane-cd.md", "validation-evidence/browser/browser-summary.json"],
       "gaps": ["The annotated tag is unsigned."]
     },
     {
       "name": "reblocke/critical-effect-size",
       "domains": {"A": 3, "B": 3, "C": 3, "D": 2, "E": 3, "F": 3, "G": 2, "H": 3},
       "weighted_numerator": 2725,
-      "evidence": ["validation-evidence/lanes/critical-v0.1.2-cdef.md", "validation-evidence/lanes/focused-docs-only-final-release-supplement.md", "validation-evidence/browser/browser-summary.json"],
+      "evidence": ["validation-evidence/lanes/final-release-set-v0.4.2-lane-ab.md", "validation-evidence/lanes/final-release-set-v0.4.2-lane-cd.md", "validation-evidence/browser/browser-summary.json"],
       "gaps": ["No external empirical benchmark was evaluated.", "The annotated tag is unsigned."]
     },
     {
       "name": "reblocke/type-s-m-calibrator",
       "domains": {"A": 3, "B": 3, "C": 3, "D": 2, "E": 3, "F": 3, "G": 2, "H": 3},
       "weighted_numerator": 2725,
-      "evidence": ["validation-evidence/lanes/type-s-m-v0.1.2-cdef.md", "validation-evidence/lanes/focused-docs-only-final-release-supplement.md", "validation-evidence/browser/browser-summary.json"],
+      "evidence": ["validation-evidence/lanes/final-release-set-v0.4.2-lane-ab.md", "validation-evidence/lanes/final-release-set-v0.4.2-lane-cd.md", "validation-evidence/browser/browser-summary.json"],
       "gaps": ["No external empirical benchmark was evaluated.", "The annotated tag is unsigned."]
     },
     {
       "name": "reblocke/precision-guardrail-planner",
       "domains": {"A": 3, "B": 3, "C": 3, "D": 3, "E": 3, "F": 3, "G": 2, "H": 3},
       "weighted_numerator": 2925,
-      "evidence": ["validation-evidence/results/core-precision-boundary-audit.txt", "validation-evidence/drivers/audit_precision_app_repairs.py", "validation-evidence/lanes/focused-docs-only-final-release-supplement.md", "validation-evidence/browser/browser-summary.json"],
+      "evidence": ["validation-evidence/lanes/final-release-set-v0.4.2-lane-ab.md", "validation-evidence/lanes/final-release-set-v0.4.2-lane-cd.md", "validation-evidence/browser/browser-summary.json"],
       "gaps": ["The annotated tag is unsigned."]
     },
     {
       "name": "reblocke/wald-inference-tools",
       "domains": {"A": 2, "B": 3, "C": 3, "D": 3, "E": 3, "F": 3, "G": 2, "H": 3},
       "weighted_numerator": 2725,
-      "evidence": ["validation-evidence/lanes/catalog-template-v0.1.1-cdef.md", "validation-evidence/browser/browser-summary.json", "validation-evidence/inventory/release-inventory.json"],
+      "evidence": ["validation-evidence/lanes/final-release-set-v0.4.2-lane-ef.md", "validation-evidence/browser/browser-summary.json", "validation-evidence/inventory/release-inventory.json"],
       "gaps": ["The catalog routes rather than owns formulas.", "The annotated predecessor tag is unsigned."]
     },
     {
       "name": "reblocke/conf_curve_likelihood",
       "domains": {"A": 3, "B": 3, "C": 3, "D": 3, "E": 3, "F": 3, "G": 2, "H": 3},
       "weighted_numerator": 2925,
-      "evidence": ["validation-evidence/drivers/audit_integrated_diff.py", "validation-evidence/lanes/integrated-v0.2.5-cdef.md", "validation-evidence/browser/browser-summary.json"],
+      "evidence": ["validation-evidence/lanes/final-release-set-v0.4.2-lane-ab.md", "validation-evidence/lanes/final-release-set-v0.4.2-lane-cd.md", "validation-evidence/browser/browser-summary.json"],
       "gaps": ["The annotated tag is unsigned."]
     },
     {
@@ -441,113 +349,89 @@ listed under nonblocking limitations.
 
 | Finding | Original evidence | Closure evidence | Status |
 |---|---|---|---|
-| A-01: inverse-precision solver skipped finite feasible bands | 9,072-path adversarial scan found 8 misses | Core v0.4.1 solver repair, eight regressions, 9,072-path zero-miss rerun, precision v0.1.2 | closed |
-| A-02: `support_comparison` contradicted canonical pairwise support | exact-fraction and adjacent-float reproducers | Core v0.4.1 canonical delegation and independent exact-fraction/frozen rerun | closed |
-| A-03: finite log-ratio silently underflowed to zero | all five ratio families reproduced the defect | Core v0.4.1 representability guard with scalar/vector/wheel reruns | closed |
-| EF-01: five focused Pages sites were ahead of releases | tag, Pages, manifest, and source-archive comparison | exact final patch tags, matching deployments/live manifests, release assets, independent detached-tag audits | closed |
-| EF-02: five sites overflowed at 390 pixels | DOM width and visible-descendant measurements | responsive repair plus all-seven-site 390-pixel rerun with zero uncontained elements | closed |
-| F-03: integrated lifecycle text remained prospective after v0.2.3 | independent detached-tag documentation audit | v0.2.4 exact release facts plus stale-lifecycle regression and independent tag rerun | closed |
-| F-04: focused README/citation versions lagged final releases | independent final-tag documentation audits | docs-only patch releases and detached-tag documentation/provenance rerun | closed |
-| F-05: integrated v0.2.4 described stable Core v0.4.1 as a prerelease | independent post-release lifecycle audit | v0.2.5 metadata-only correction, stable-Core wording regression, and independent exact-tag rerun | closed |
+| A-01: inverse-precision solver skipped finite feasible bands | adversarial solver scan | repaired Core plus zero-miss rerun and released precision adoption | closed |
+| A-02: support comparison contradicted canonical pairwise support | exact-fraction and adjacent-float reproducers | canonical Core delegation and independent rerun | closed |
+| A-03: finite log-ratio silently underflowed | five ratio families | representability guard and scalar/vector/wheel reruns | closed |
+| EF-01: focused Pages exceeded released source | tag/Pages/manifest comparison | exact immutable releases and matching deployments/manifests | closed |
+| EF-02: five sites overflowed at 390 pixels | DOM geometry | responsive repair and zero-offender seven-site rerun | closed |
+| F-03: integrated lifecycle copy was stale | detached documentation audit | exact release facts and regression coverage | closed |
+| F-04: focused README/citation versions lagged | final-tag documentation audits | synchronized stable patch releases and rerun | closed |
+| F-05: integrated copy mislabeled stable Core | lifecycle audit | v0.2.6 wording/metadata and exact-tag rerun | closed |
 
 No release blocker remains.
 
 ## Nonblocking limitations
 
-- Annotated-tag objects and peeled commits are content-addressed and were
-  independently resolved, but every tag is unsigned. Tag refs and GitHub
-  release records are mutable administrative objects that a privileged
-  maintainer can move, edit, or delete.
-- The five focused apps and integrated workbench retain explicit experimental
-  pre-1.0/GitHub-prerelease labeling; stable Core, template, and catalog
-  releases provide the supported foundation and navigation.
-- Packages are distributed as GitHub release assets and staged Pages content,
-  not through PyPI.
-- Versioned CDN URLs are static and the staged Python wheels are hashed, but
-  browser responses for upstream CDN JavaScript are not independently
-  content-addressed by this portfolio.
-- Archive contents and declared checksums reproduced exactly; compression bytes
-  can vary across external platform tooling when an archive is regenerated
-  outside the deterministic project builders.
-- Accessibility evidence is automated keyboard, labeling, live-region,
-  focus, text-alternative, and two-engine browser testing; no manual
-  screen-reader or other assistive-technology study was performed.
-- The review establishes numerical/software conformance to declared formulas,
-  not clinical validity, empirical transportability, causal validity, or
-  suitability for patient-level decisions.
-- Live verification depends on GitHub, GitHub Pages, and the versioned CDNs
-  being reachable.
+- Tags are annotated and content-addressed but intentionally unsigned; signer
+  identity is not cryptographically proven.
+- The catalog predecessor predates immutable release enforcement. Every newly
+  published final target is immutable; carrier v0.2.1 must be immutable at the
+  terminal external gate.
+- App tar contents reproduced exactly, but gzip compressed bytes can differ
+  across macOS and Ubuntu DEFLATE implementations.
+- GitHub release assets and Pages, rather than PyPI, distribute the packages.
+- Automated accessibility checks do not replace manual screen-reader, contrast,
+  or broader zoom/reflow studies.
+- WebKit coverage is smoke-level; Chromium covers complete workflows.
+- Focused/template Plotly lacks SRI; versions are pinned and no input egress was
+  observed. Integrated Plotly uses SRI.
+- Live checks depend on GitHub, Pages, and pinned CDNs remaining reachable.
 
 ## Issues/PRs opened
 
-Each corrective change was isolated from the review evidence and merged only
-after exact-head tests, then independently rerun from its resolved annotated-tag
-object and peeled commit:
+The final governance/adoption sequence was isolated by repository:
 
-| Repository/work | Pull request |
+| Repository | Pull requests |
 |---|---|
-| Core numerical repairs and v0.4.1 | [wald-inference-core#7](https://github.com/reblocke/wald-inference-core/pull/7) |
-| Template responsive/release reconciliation | [scientific-applet-template#2](https://github.com/reblocke/scientific-applet-template/pull/2) |
-| Compatibility Core/release traceability | [compatibility-curve#3](https://github.com/reblocke/compatibility-curve/pull/3) |
-| Compatibility mobile plot readability | [compatibility-curve#4](https://github.com/reblocke/compatibility-curve/pull/4) |
-| Compatibility final reconciliation | [compatibility-curve#5](https://github.com/reblocke/compatibility-curve/pull/5) |
-| Likelihood Core/release traceability | [wald-likelihood-support#3](https://github.com/reblocke/wald-likelihood-support/pull/3) |
-| Likelihood final release | [wald-likelihood-support#4](https://github.com/reblocke/wald-likelihood-support/pull/4) |
-| Critical-effect Core/release traceability | [critical-effect-size#3](https://github.com/reblocke/critical-effect-size/pull/3) |
-| Critical-effect mobile plot readability | [critical-effect-size#4](https://github.com/reblocke/critical-effect-size/pull/4) |
-| Critical-effect final reconciliation | [critical-effect-size#5](https://github.com/reblocke/critical-effect-size/pull/5) |
-| Type S/M Core/release traceability | [type-s-m-calibrator#3](https://github.com/reblocke/type-s-m-calibrator/pull/3) |
-| Type S/M mobile plot readability | [type-s-m-calibrator#4](https://github.com/reblocke/type-s-m-calibrator/pull/4) |
-| Type S/M final reconciliation | [type-s-m-calibrator#5](https://github.com/reblocke/type-s-m-calibrator/pull/5) |
-| Precision Core/release traceability | [precision-guardrail-planner#5](https://github.com/reblocke/precision-guardrail-planner/pull/5) |
-| Precision final reconciliation | [precision-guardrail-planner#6](https://github.com/reblocke/precision-guardrail-planner/pull/6) |
-| Catalog/cross-links predecessor | [wald-inference-tools#3](https://github.com/reblocke/wald-inference-tools/pull/3) |
-| Integrated Core/release traceability | [conf_curve_likelihood#21](https://github.com/reblocke/conf_curve_likelihood/pull/21) |
-| Integrated mobile plot readability | [conf_curve_likelihood#22](https://github.com/reblocke/conf_curve_likelihood/pull/22) |
-| Integrated scientific/release closeout | [conf_curve_likelihood#23](https://github.com/reblocke/conf_curve_likelihood/pull/23) |
-| Integrated lifecycle-evidence reconciliation | [conf_curve_likelihood#24](https://github.com/reblocke/conf_curve_likelihood/pull/24) |
-| Integrated stable-Core lifecycle correction | [conf_curve_likelihood#25](https://github.com/reblocke/conf_curve_likelihood/pull/25) |
+| Core | wald-inference-core 16 |
+| Template | scientific-applet-template 10 |
+| Compatibility | compatibility-curve 12 and 13 |
+| Likelihood | wald-likelihood-support 10 and 11 |
+| Critical effect | critical-effect-size 11 and 12 |
+| Type S/M | type-s-m-calibrator 11 and 12 |
+| Precision | precision-guardrail-planner 12 and 13 |
+| Integrated | conf_curve_likelihood 34 and 35 |
+| Catalog | [wald-inference-tools #6](https://github.com/reblocke/wald-inference-tools/pull/6) |
+
+Earlier numerical, responsive, lifecycle, and documentation corrections remain
+preserved in each repository's history and earlier evidence records.
 
 ## Exact commands
 
 The literal executable ledger is
-`validation-evidence/commands/README_COMMANDS.md`. Core commands included
-`make verify` and `uv build`; app commands included `uv sync --locked`,
-`make verify`, browser installation, local serve, and exact-tag
-stage/manifest comparison; catalog commands included `make verify` and
-`make live-check`.
+validation-evidence/commands/README_COMMANDS.md. It records fresh clone/tag
+resolution, locked environment restoration, tests, browser installation,
+release downloads, SHA256SUMS, SLSA checks, live-manifest byte comparison,
+evidence-index generation, deterministic carrier builds, make verify, and
+make live-check.
 
-Release identity used GitHub's tag-object, release, workflow, deployment, and
-asset APIs rather than branch names. Asset verification used downloaded
-`SHA256SUMS` files and local SHA-256. Evidence creation used the preserved
-Python and Node drivers named in the command ledger. Each command's resolved
-repository/tag/commit and result appears in the indexed lane or machine result.
+Release identity was established from Git tag-object, release, workflow,
+deployment, and asset APIs rather than a branch name or notification. The
+repository-owner-approved unsigned control model is explicitly recorded.
 
 ## Appendix: numerical difference table
 
 | Target | Values/cases | Maximum absolute difference | Maximum relative difference | Result |
 |---|---:|---:|---:|---|
-| Core published baseline | 23,095 values | `2.842e-14` | `1.388e-15` | pass |
-| Core fresh macOS recomputation | 23,095 values | `5.329e-15` | `4.449e-16` | pass |
-| Integrated B01-B08 recursive parity | 27,268 values / 22 cases | `5.329e-15` | `4.449e-16` | pass |
-| Compatibility anchors | 35 | `0` | `0` | pass |
-| Likelihood/support anchors | 21 | `1.421e-14` | `4.449e-16` | pass |
-| Critical-effect anchors | 4 | `2.331e-14` | `4.034e-14` | pass |
-| Type S/M anchors | 49 | `3.997e-15` | `1.103e-14` | pass |
-| Precision anchors | 22 | `0` | `0` | pass |
-| Precision adversarial solver scan | 9,072 paths | zero missed feasible bands | not applicable | pass |
+| Core frozen parity | 23,095 | 5.329070518200751e-15 | 4.449372536648163e-16 | pass |
+| Independent scalar recomputation | 40 | 7.993605777301127e-15 | 1.5399215851702873e-14 | pass |
+| Integrated B01-B08 | 27,268 / 22 | 5.329070518200751e-15 | 4.449372536648163e-16 | pass |
+| Compatibility | 35 | 0 | 0 | pass |
+| Likelihood | 33 | 5.329070518200751e-15 | 4.449372536648163e-16 | pass |
+| Critical effect | 4 | 2.3314683517128287e-14 | 4.0338449175803973e-14 | pass |
+| Type S/M | 49 | 3.9968028886505635e-15 | 1.1027325787414086e-14 | pass |
+| Precision | 22 | 0 | 0 | pass |
 
-Absolute and relative maxima can occur at different values. Acceptance used
-the frozen combined `atol + rtol * |expected|` rule, not either displayed
-maximum in isolation.
+Acceptance used the combined absolute-plus-relative tolerance, not either
+displayed maximum in isolation.
 
 ## Appendix: network/storage observations
 
-| Site class | Requests after numerical input | User-input transmission | Persistent/browser storage | Result |
+| Site class | Post-input requests | User-input transmission | Storage | Result |
 |---|---|---|---|---|
-| Six calculation sites plus template scaffold | two local `blob:` image GET observations per site; no HTTP request | none; sentinel absent from requests and WebSockets | no cookies, local/session storage, IndexedDB, Cache Storage, or service worker | pass |
-| Catalog | four same-origin static GETs | no calculation inputs exist | no cookies or browser storage; no tracking code | pass |
+| Template and six calculation sites | two local blob-image GET observations per site | none; sentinel absent from HTTP and WebSocket traffic | empty cookies, local/session storage, IndexedDB, Cache Storage, service workers | pass |
+| Catalog predecessor | four same-origin static GETs | no calculation input | empty | pass |
 
-Startup requests were GET-only and limited to same-origin application assets
-and versioned Plotly, Pyodide, NumPy, SciPy, and OpenBLAS resources. There were
-no POST requests, WebSockets, analytics endpoints, or telemetry matches.
+Startup requests were GET-only and limited to same-origin assets and pinned
+Plotly, Pyodide, NumPy, SciPy, and OpenBLAS resources. No POST, WebSocket,
+analytics, or telemetry endpoint was observed.

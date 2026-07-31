@@ -5,15 +5,25 @@ on:
     branches: ["**"]
   pull_request:
 
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   test:
+    name: test
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7
-      - uses: actions/setup-python@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
         with:
           python-version-file: .python-version
-      - uses: astral-sh/setup-uv@v9.0.0
+      - uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9 # v9.0.0
         with:
           enable-cache: true
       - run: uv sync --locked
@@ -22,17 +32,24 @@ jobs:
       - run: make validate
       - run: make test
       - run: make build-site
-      - run: git diff --check
+      - name: Generated outputs stay ignored and tracked files stay clean
+        shell: bash
+        run: |
+          git diff --check
+          test -z "$(git status --porcelain --untracked-files=all)"
 
   live-metadata:
+    name: live-metadata
     needs: test
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7
-      - uses: actions/setup-python@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
         with:
           python-version-file: .python-version
-      - uses: astral-sh/setup-uv@v9.0.0
+      - uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9 # v9.0.0
         with:
           enable-cache: true
       - run: uv sync --locked
@@ -41,6 +58,7 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
 
   browsers:
+    name: browsers (${{ matrix.browser }})
     needs: test
     strategy:
       fail-fast: false
@@ -48,18 +66,26 @@ jobs:
         browser: [chromium, webkit]
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7
-      - uses: actions/setup-python@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
         with:
           python-version-file: .python-version
-      - uses: astral-sh/setup-uv@v9.0.0
+      - uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9 # v9.0.0
         with:
           enable-cache: true
       - run: uv sync --locked
-      - run: uv run playwright install --with-deps ${{ matrix.browser }}
-      - run: make ${{ matrix.browser == 'chromium' && 'e2e' || 'e2e-webkit' }}
+      - name: Install the matrix browser
+        env:
+          BROWSER: ${{ matrix.browser }}
+        run: uv run playwright install --with-deps "$BROWSER"
+      - if: matrix.browser == 'chromium'
+        run: make e2e
+      - if: matrix.browser == 'webkit'
+        run: make e2e-webkit
       - if: failure()
-        uses: actions/upload-artifact@v7
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: playwright-${{ matrix.browser }}
           path: test-results*

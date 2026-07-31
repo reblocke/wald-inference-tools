@@ -1,35 +1,35 @@
 {
   "schema_version": 1,
-  "catalog_version": "0.2.0",
-  "validated_at": "2026-07-30T18:58:05Z",
+  "catalog_version": "0.2.1",
+  "validated_at": "2026-07-31T13:45:28Z",
   "files": [
     {
       "path": "browser/browser-summary.json",
-      "sha256": "55b700131bb4f26b92581a817e89276e10b552703b8dbc4e8661b3764b129d5d",
+      "sha256": "b3e213e65ba1bb571bcc744d40a91222306e6713083a1ed6a7ed8d6d638b152a",
       "kind": "browser-result",
       "description": "Preserved CC-MIG-11 evidence: browser summary."
     },
     {
       "path": "browser/corrected-live-browser-results.json",
-      "sha256": "d317e76bd22d2a54db621ea04f9825a7b168683755fb0d891b002f05195bfd22",
+      "sha256": "e9d5599c5b740fde6ebc3d00d1fc722637e119a80fd8291b0eef13bcd0c68814",
       "kind": "lane-e-browser-privacy-accessibility",
       "description": "Preserved CC-MIG-11 evidence: corrected live browser results."
     },
     {
       "path": "browser/corrected-mobile-containment.json",
-      "sha256": "8ed877b55eb11aa282fc2a737137c29a498db67b1379e750829a5f95e90e8e46",
+      "sha256": "d2084eb97a480d13e979a687b346fcf644369ed367c24b23e66e22cf39c2fdb8",
       "kind": "lane-e-browser-privacy-accessibility",
       "description": "Preserved CC-MIG-11 evidence: corrected mobile containment."
     },
     {
       "path": "browser/corrected-required-error-recovery.json",
-      "sha256": "c341e9c9545afbe97587fe186aca51380ef176d24bae7f8819367dbaa6105240",
+      "sha256": "8d8846394d8458be3a1a67fcbe277140551c85efe6b7ed94b51a132a0ef39307",
       "kind": "lane-e-browser-privacy-accessibility",
       "description": "Preserved CC-MIG-11 evidence: corrected required error recovery."
     },
     {
       "path": "commands/README_COMMANDS.md",
-      "sha256": "ecc71d2195c195bd9eab02ffc839eaabc792d7c2aec596789b33abd95b9d4673",
+      "sha256": "96767077bbdafaa2f81060bbbbd7561e1f302039b2d40d2fa78e70d77df3f90f",
       "kind": "command-ledger",
       "description": "Preserved CC-MIG-11 evidence: README COMMANDS."
     },
@@ -53,13 +53,13 @@
     },
     {
       "path": "drivers/build_evidence_index.mjs",
-      "sha256": "1bd44d6b9473fbb5a3773edfdc303b5c6f3ad5ea3566bd8ff5148313b6dc421c",
+      "sha256": "68cfb862bc395c70f8b737960353cc06213f062e7272393384fff8eea965505f",
       "kind": "audit-driver",
       "description": "Preserved CC-MIG-11 evidence: build evidence index."
     },
     {
       "path": "drivers/collect_release_inventory.mjs",
-      "sha256": "4c2c82dbcd084b3356c1f16c72785f4a9ff0bb8c19e1e10817c4afe3c69184e7",
+      "sha256": "f5592b366945b727adc917ff6685f8d0e5774bc47248adde4dc2f4ce33ff5b9e",
       "kind": "audit-driver",
       "description": "Preserved CC-MIG-11 evidence: collect release inventory."
     },
@@ -89,13 +89,13 @@
     },
     {
       "path": "inventory/release-inventory.json",
-      "sha256": "1ea8e3c75957c1ab40e9edadd18373ab6d44aa2866579b219d2f57fcd542af49",
+      "sha256": "ce35d202b3072b746ad65cfe1c2c9ca683d290a8c75ef19fec81dcfa6c0ab0bb",
       "kind": "release-inventory",
       "description": "Preserved CC-MIG-11 evidence: release inventory."
     },
     {
       "path": "lanes/all-ticket-acceptance-final.md",
-      "sha256": "7c118a7865191627056414ab1a98580dcbc33614fe6e222569f8d3459c147844",
+      "sha256": "7a00c1c28874c36157cd3b063d25f218b6c1db3ac2893443fa32b7ba7acbe6f7",
       "kind": "lane-f-docs-rights",
       "description": "Preserved CC-MIG-11 evidence: all ticket acceptance final."
     },
@@ -134,6 +134,24 @@
       "sha256": "a92b9fa212dd021858bfac07cbbe4258a80e2dbcd5911f014fd8da5913d57ddb",
       "kind": "lane-c-cold-start",
       "description": "Preserved CC-MIG-11 evidence: critical v0.1.2 cdef."
+    },
+    {
+      "path": "lanes/final-release-set-v0.4.2-lane-ab.md",
+      "sha256": "4ad7c361fefb5ea61787edbbc58694cf43fbbe650cd7c549911288820c32ea48",
+      "kind": "lane-b-parity",
+      "description": "Preserved CC-MIG-11 evidence: final release set v0.4.2 lane ab."
+    },
+    {
+      "path": "lanes/final-release-set-v0.4.2-lane-cd.md",
+      "sha256": "d095e614f072ce26c84c9f92967010459b28cd0024ffdd6fb4a12c9c5bbe1c0e",
+      "kind": "lane-d-provenance",
+      "description": "Preserved CC-MIG-11 evidence: final release set v0.4.2 lane cd."
+    },
+    {
+      "path": "lanes/final-release-set-v0.4.2-lane-ef.md",
+      "sha256": "fa3e9a6f279b754453f7df74ee958bbe128fc85bcc81a81255b5f721cdb2698d",
+      "kind": "lane-e-browser-privacy-accessibility",
+      "description": "Preserved CC-MIG-11 evidence: final release set v0.4.2 lane ef."
     },
     {
       "path": "lanes/focused-docs-only-final-release-supplement.md",
@@ -200,6 +218,24 @@
       "sha256": "18d020e6a00746646ffed913eb88f1e4b148aa2725872db647823019f1e65dba",
       "kind": "lane-a-numerical",
       "description": "Preserved CC-MIG-11 evidence: core v0.4.1 baseline parity."
+    },
+    {
+      "path": "results/core-v0.4.2-baseline-parity.json",
+      "sha256": "3fba7ca9657a914e744fe9ec4412343f6fe33f9f53643673b8a4d03d55325e1b",
+      "kind": "lane-a-numerical",
+      "description": "Preserved CC-MIG-11 evidence: core v0.4.2 baseline parity."
+    },
+    {
+      "path": "results/core-v0.4.2-independent-recomputation.json",
+      "sha256": "151a638738060d0279963f559db2ebb36e111d3d622b9db82dd824c538e4239e",
+      "kind": "lane-a-numerical",
+      "description": "Preserved CC-MIG-11 evidence: core v0.4.2 independent recomputation."
+    },
+    {
+      "path": "results/final-release-set-v0.4.2-cold-start.json",
+      "sha256": "8e458bd35daf487015a6e1a462f131757aee442ea10e945023b0c3edd8082faa",
+      "kind": "lane-c-cold-start",
+      "description": "Preserved CC-MIG-11 evidence: final release set v0.4.2 cold start."
     },
     {
       "path": "results/focused-docs-only-final-release-supplement.json",

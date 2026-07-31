@@ -45,9 +45,12 @@ REQUIRED_FINAL_RECORDS = {
     "drivers/required_error_recovery_audit.py": "audit-driver",
     "inventory/release-inventory.json": "release-inventory",
     "lanes/all-ticket-acceptance-final.md": "lane-f-docs-rights",
-    "lanes/focused-docs-only-final-release-supplement.md": "lane-f-docs-rights",
-    "lanes/integrated-v0.2.5-cdef.md": "lane-c-cold-start",
-    "results/core-v0.4.1-baseline-parity.json": "lane-a-numerical",
+    "lanes/final-release-set-v0.4.2-lane-ab.md": "lane-b-parity",
+    "lanes/final-release-set-v0.4.2-lane-cd.md": "lane-d-provenance",
+    "lanes/final-release-set-v0.4.2-lane-ef.md": ("lane-e-browser-privacy-accessibility"),
+    "results/core-v0.4.2-baseline-parity.json": "lane-a-numerical",
+    "results/core-v0.4.2-independent-recomputation.json": "lane-a-numerical",
+    "results/final-release-set-v0.4.2-cold-start.json": "lane-c-cold-start",
 }
 SEMVER_RE = re.compile(r"^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)$")
 SHA256_RE = re.compile(r"^[0-9a-f]{64}$")

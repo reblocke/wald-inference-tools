@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Report a vulnerability privately
+    url: https://github.com/reblocke/wald-inference-tools/security/advisories/new
+    about: Do not disclose vulnerabilities, secrets, sensitive values, or health information in a public issue.
+  - name: Review catalog validation policy
+    url: https://github.com/reblocke/wald-inference-tools/blob/main/docs/VALIDATION.md
+    about: Confirm the evidence and repository boundary before requesting a metadata or validation-status change.
