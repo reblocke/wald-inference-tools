@@ -1,0 +1,181 @@
+{
+  "verdict": "pass_with_nonblocking_numerical_contract_exception",
+  "tolerance": {
+    "rtol": 1e-12,
+    "atol": 1e-14
+  },
+  "core_frozen_parity": {
+    "successful_numeric_cases": 14,
+    "matched_error_cases": 6,
+    "app_owned_exclusions": 2,
+    "compared_values": 23095,
+    "max_absolute_difference": 5.329070518200751e-15,
+    "max_relative_difference": 4.449372536648163e-16
+  },
+  "core_b01_b08_numeric_cases": [
+    {
+      "case_id": "B01",
+      "compared_values": 2046,
+      "max_absolute_difference": 5.329070518200751e-15,
+      "max_relative_difference": 4.1266019082733676e-16
+    },
+    {
+      "case_id": "B02",
+      "compared_values": 2046,
+      "max_absolute_difference": 5.329070518200751e-15,
+      "max_relative_difference": 4.449372536648163e-16
+    },
+    {
+      "case_id": "B03",
+      "compared_values": 1645,
+      "max_absolute_difference": 5.329070518200751e-15,
+      "max_relative_difference": 4.449372536648163e-16
+    },
+    {
+      "case_id": "B04",
+      "compared_values": 4897,
+      "max_absolute_difference": 5.329070518200751e-15,
+      "max_relative_difference": 4.1266019082733676e-16
+    },
+    {
+      "case_id": "B05",
+      "compared_values": 4889,
+      "max_absolute_difference": 0.0,
+      "max_relative_difference": 0.0
+    },
+    {
+      "case_id": "B06",
+      "compared_values": 4901,
+      "max_absolute_difference": 0.0,
+      "max_relative_difference": 0.0
+    },
+    {
+      "case_id": "B07a-null",
+      "compared_values": 129,
+      "max_absolute_difference": 0.0,
+      "max_relative_difference": 0.0
+    },
+    {
+      "case_id": "B07b-near-null",
+      "compared_values": 135,
+      "max_absolute_difference": 0.0,
+      "max_relative_difference": 0.0
+    },
+    {
+      "case_id": "B07c-threshold-infeasible",
+      "compared_values": 129,
+      "max_absolute_difference": 0.0,
+      "max_relative_difference": 0.0
+    },
+    {
+      "case_id": "B07k-disabled-design-ignored",
+      "compared_values": 2046,
+      "max_absolute_difference": 5.329070518200751e-15,
+      "max_relative_difference": 4.1266019082733676e-16
+    },
+    {
+      "case_id": "B08a-additive-midpoint",
+      "compared_values": 58,
+      "max_absolute_difference": 0.0,
+      "max_relative_difference": 0.0
+    },
+    {
+      "case_id": "B08b-s-minus-2-clipping",
+      "compared_values": 58,
+      "max_absolute_difference": 0.0,
+      "max_relative_difference": 0.0
+    },
+    {
+      "case_id": "B08c-log-likelihood-fallback",
+      "compared_values": 58,
+      "max_absolute_difference": 0.0,
+      "max_relative_difference": 0.0
+    },
+    {
+      "case_id": "B08d-ratio-natural-clipping",
+      "compared_values": 58,
+      "max_absolute_difference": 0.0,
+      "max_relative_difference": 0.0
+    }
+  ],
+  "core_b01_b08_error_and_exclusion_counts": {
+    "matched_errors": 6,
+    "matched_error_case_ids": [
+      "B07d-alpha-zero",
+      "B07e-alpha-one",
+      "B07f-alpha-nonnumeric",
+      "B07g-alpha-underflow",
+      "B07j-ratio-positive",
+      "B08e-unrepresentable-design-distance"
+    ],
+    "app_owned_exclusions": 2,
+    "app_owned_exclusion_case_ids": [
+      "B07h-display-range-pair",
+      "B07i-design-range-pair"
+    ]
+  },
+  "integrated_full_response_comparison": {
+    "cases": 22,
+    "float_comparisons": 27268,
+    "max_absolute_difference": 5.3290705182007514e-15,
+    "max_relative_difference": 4.4493725366481632e-16
+  },
+  "focused_catalog_driver_comparisons": [
+    {
+      "repository": "compatibility-curve",
+      "numeric_comparisons": 35,
+      "max_absolute_difference": 0.0,
+      "max_relative_difference": 0.0
+    },
+    {
+      "repository": "critical-effect-size",
+      "numeric_comparisons": 4,
+      "max_absolute_difference": 2.3314683517128287e-14,
+      "max_relative_difference": 4.0338449175803973e-14
+    },
+    {
+      "repository": "type-s-m-calibrator",
+      "numeric_comparisons": 49,
+      "max_absolute_difference": 3.9968028886505635e-15,
+      "max_relative_difference": 1.1027325787414086e-14
+    },
+    {
+      "repository": "precision-guardrail-planner",
+      "numeric_comparisons": 22,
+      "max_absolute_difference": 0.0,
+      "max_relative_difference": 0.0
+    }
+  ],
+  "supplemental_cross_app_comparisons": [
+    {
+      "repository": "compatibility-curve",
+      "numeric_comparisons": 33,
+      "max_absolute_difference": 0.0,
+      "max_relative_difference": 0.0
+    },
+    {
+      "repository": "wald-likelihood-support",
+      "numeric_comparisons": 33,
+      "max_absolute_difference": 5.3290705182007514e-15,
+      "max_relative_difference": 4.4493725366481632e-16
+    },
+    {
+      "repository": "critical-effect-size",
+      "numeric_comparisons": 4,
+      "max_absolute_difference": 2.3314683517128287e-14,
+      "max_relative_difference": 4.0338449175803973e-14
+    },
+    {
+      "repository": "type-s-m-calibrator",
+      "numeric_comparisons": 49,
+      "max_absolute_difference": 3.9968028886505635e-15,
+      "max_relative_difference": 1.1027325787414086e-14
+    },
+    {
+      "repository": "precision-guardrail-planner",
+      "numeric_comparisons": 22,
+      "max_absolute_difference": 0.0,
+      "max_relative_difference": 0.0
+    }
+  ]
+}

@@ -1,5 +1,18 @@
 # Catalog decisions
 
+## 2026-07-31 — Validation carrier updates use a released catalog predecessor
+
+Catalog v0.2.1 refreshes the independent portfolio evidence for Core v0.4.2 and the corresponding
+template, focused-app, and integrated-workbench releases. Its checked-in catalog row audits the
+already published v0.2.0 predecessor. The v0.2.1 tag object, stable immutable release, exact eight
+assets, successful workflows, and Pages bytes are the terminal external reconciliation after
+publication.
+
+This boundary is intentional: a commit cannot contain the digest and publication identity of its
+own immutable release assets. Publishing v0.2.2 solely to describe v0.2.1 would move, not solve,
+that self-reference. The external reconciliation therefore closes v0.2.1 without being used as
+evidence for the scientific verdict carried inside v0.2.1.
+
 ## 2026-07-31 — Release integrity does not require account-level credentials
 
 At the repository owner's direction, new releases no longer require GitHub's verified-signature

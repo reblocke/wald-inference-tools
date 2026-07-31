@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "verdict": "pass_with_nonblocking_cross_platform_archive_compression_limitation",
+  "audit_window": {
+    "started_after": "2026-07-31T13:02:45Z",
+    "completed_at": "2026-07-31T13:41:49Z"
+  },
+  "environment": {
+    "operating_system": "macOS 26.5.2 build 25F84",
+    "architecture": "arm64",
+    "uv": "0.11.11",
+    "git": "2.50.1",
+    "github_cli": "2.92.0"
+  },
+  "release_invariants": {
+    "annotated_tags": true,
+    "tag_targets_equal_main": true,
+    "all_releases_stable": true,
+    "all_releases_non_draft": true,
+    "all_releases_non_prerelease": true,
+    "all_releases_immutable": true,
+    "all_sha256sums_pass": true,
+    "all_live_manifests_match_release_assets": true,
+    "all_cold_starts_pass": true,
+    "all_final_worktrees_clean": true
+  },
+  "repositories": [
+    {
+      "name": "reblocke/wald-inference-core",
+      "release": "v0.4.2",
+      "tag_object": "26ea4a721b2dfa07f75c2f388a42d6272c88477c",
+      "commit": "8afd0a463cc1d2586b8ce5cf92f40900647c3190",
+      "non_browser_tests": 396,
+      "chromium_tests": 0,
+      "webkit_tests": 0
+    },
+    {
+      "name": "reblocke/scientific-applet-template",
+      "release": "v0.1.2",
+      "tag_object": "accc5cf8855f4c03140348f17c87fe960996feb8",
+      "commit": "04353d7bb07ee74ae0585107431563db89387f05",
+      "non_browser_tests": 38,
+      "chromium_tests": 5,
+      "webkit_tests": 1
+    },
+    {
+      "name": "reblocke/compatibility-curve",
+      "release": "v0.1.4",
+      "tag_object": "50ed9acd5391984e1b9164773ff7d6902fdb6a7c",
+      "commit": "eeaff9a374bc022c2d5ca16fdb3c59fbdfcd90f4",
+      "non_browser_tests": 64,
+      "chromium_tests": 7,
+      "webkit_tests": 1
+    },
+    {
+      "name": "reblocke/wald-likelihood-support",
+      "release": "v0.1.3",
+      "tag_object": "917ab253d92fc8754a4c7701fac17247fd0b734e",
+      "commit": "beb18d87939f3ba9738b97e1c2e10724e31c5945",
+      "non_browser_tests": 80,
+      "chromium_tests": 11,
+      "webkit_tests": 1
+    },
+    {
+      "name": "reblocke/critical-effect-size",
+      "release": "v0.1.4",
+      "tag_object": "f1b40c7b48dd6f55735fd2abaaa6763bf475a85b",
+      "commit": "1c451fe9ed7d7d21fe732ec5da178248053fe912",
+      "non_browser_tests": 67,
+      "chromium_tests": 12,
+      "webkit_tests": 1
+    },
+    {
+      "name": "reblocke/type-s-m-calibrator",
+      "release": "v0.1.4",
+      "tag_object": "b92bb2e510bf2ab6ea77e75d458719aa6958039c",
+      "commit": "bb4372c55a2e839b9f57d8424f797c944f5b4eb0",
+      "non_browser_tests": 84,
+      "chromium_tests": 21,
+      "webkit_tests": 1
+    },
+    {
+      "name": "reblocke/precision-guardrail-planner",
+      "release": "v0.1.3",
+      "tag_object": "795c1d4dd19193d3a8e61062a94a4da4468316f5",
+      "commit": "a88926b966766a94b00a61799539351cce44581a",
+      "non_browser_tests": 60,
+      "chromium_tests": 6,
+      "webkit_tests": 1
+    },
+    {
+      "name": "reblocke/conf_curve_likelihood",
+      "release": "v0.2.6",
+      "tag_object": "1694d1727d7e071689ad7fa301f34ac32e547b34",
+      "commit": "60ca0e3f5d6f05bb943cb4b7b7d02ed5a1d5714a",
+      "non_browser_tests": 219,
+      "chromium_tests": 50,
+      "webkit_tests": 0
+    }
+  ],
+  "core_artifacts": {
+    "wheel_sha256": "225331d7b9d7b70e2508eecb92851a92a8c4e245baf412a1eb0f464d85da1349",
+    "sdist_sha256": "86808922f5ab9164523380e0838b324e24bed6a7228deb37ce2ca4cc19f06fe3",
+    "byte_reproducible": true,
+    "official_wheel_cold_smoke": true,
+    "slsa_attestations_verified": true
+  },
+  "app_archives": {
+    "decompressed_tar_streams_byte_identical": true,
+    "compressed_bytes_cross_platform_identical": false,
+    "content_difference_observed": false
+  }
+}

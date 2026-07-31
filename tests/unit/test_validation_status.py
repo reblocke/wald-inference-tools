@@ -16,15 +16,15 @@ from scripts.validate_validation_status import (
 )
 
 RELEASES = {
-    "reblocke/wald-inference-core": "v0.4.1",
-    "reblocke/scientific-applet-template": "v0.1.1",
-    "reblocke/compatibility-curve": "v0.1.3",
-    "reblocke/wald-likelihood-support": "v0.1.2",
-    "reblocke/critical-effect-size": "v0.1.3",
-    "reblocke/type-s-m-calibrator": "v0.1.3",
-    "reblocke/precision-guardrail-planner": "v0.1.2",
-    "reblocke/wald-inference-tools": "v0.1.1",
-    "reblocke/conf_curve_likelihood": "v0.2.5",
+    "reblocke/wald-inference-core": "v0.4.2",
+    "reblocke/scientific-applet-template": "v0.1.2",
+    "reblocke/compatibility-curve": "v0.1.4",
+    "reblocke/wald-likelihood-support": "v0.1.3",
+    "reblocke/critical-effect-size": "v0.1.4",
+    "reblocke/type-s-m-calibrator": "v0.1.4",
+    "reblocke/precision-guardrail-planner": "v0.1.3",
+    "reblocke/wald-inference-tools": "v0.2.0",
+    "reblocke/conf_curve_likelihood": "v0.2.6",
 }
 
 
@@ -39,10 +39,10 @@ def _manifest(validation_status: str = "conditionally-validated") -> dict:
         "reblocke/conf_curve_likelihood": "confcurve",
     }
     return {
-        "catalog_version": "0.2.0",
+        "catalog_version": "0.2.1",
         "core": {
             "repository": "https://github.com/reblocke/wald-inference-core",
-            "latest_validated_release": "0.4.1",
+            "latest_validated_release": "0.4.2",
             "validation_status": validation_status,
         },
         "portfolio_status": validation_status,
@@ -51,7 +51,7 @@ def _manifest(validation_status: str = "conditionally-validated") -> dict:
                 "repository_url": f"https://github.com/{name}",
                 "app_version": app_versions[name],
                 "app_distribution": distribution,
-                "core_version": "0.4.1",
+                "core_version": "0.4.2",
                 "manifest_url": (
                     f"https://reblocke.github.io/{name.split('/')[1]}/assets/py/manifest.json"
                 ),
@@ -72,7 +72,7 @@ def _status(
         "schema_version": 1,
         "validated_at": "2026-07-30T14:00:00Z",
         "verdict": verdict,
-        "core_version": "0.4.1",
+        "core_version": "0.4.2",
         "repositories": [
             {
                 "name": name,
@@ -127,6 +127,10 @@ def _release_asset_names(name: str, release: str) -> tuple[set[str], str | None]
             {
                 "SHA256SUMS",
                 live_asset,
+                f"PORTFOLIO_VALIDATION_REPORT-{release}.md",
+                f"validation_status-{release}.json",
+                f"validation-evidence-index-{release}.json",
+                f"portfolio-validation-evidence-{release}.tar.gz",
                 f"{repository}-site-{release}.zip",
                 f"{repository}-{release}.tar.gz",
             },
@@ -183,7 +187,7 @@ def _staged_package(
             {
                 "artifact_url": (
                     "https://github.com/reblocke/wald-inference-core/releases/download/"
-                    "v0.4.1/wald_inference-0.4.1-py3-none-any.whl"
+                    "v0.4.2/wald_inference-0.4.2-py3-none-any.whl"
                     if role == "core"
                     else None
                 ),
@@ -222,7 +226,7 @@ def _release_inventory(status: dict, manifest: dict | None = None) -> dict:
                     "url": "https://reblocke.github.io/wald-inference-tools/data/tools.json",
                     "sha256": "a" * 64,
                     "source_commit": None,
-                    "catalog_version": "0.1.1",
+                    "catalog_version": "0.2.0",
                     "bundle_sha256": None,
                     "packages": None,
                     "staged_files_verified": None,
@@ -231,7 +235,7 @@ def _release_inventory(status: dict, manifest: dict | None = None) -> dict:
                 packages = [
                     _staged_package(
                         distribution="scientific-applet-template-package",
-                        version="0.1.1",
+                        version="0.1.2",
                         role="app",
                         core_artifact_digest="b" * 64,
                     )
@@ -308,11 +312,8 @@ def _release_inventory(status: dict, manifest: dict | None = None) -> dict:
                     "name": release,
                     "published_at": "2026-07-30T14:00:00Z",
                     "is_draft": False,
-                    "is_prerelease": name
-                    not in {
-                        "reblocke/wald-inference-core",
-                        "reblocke/scientific-applet-template",
-                    },
+                    "is_prerelease": False,
+                    "is_immutable": name != "reblocke/wald-inference-tools",
                     "assets": [
                         {
                             "name": asset_name,
@@ -340,8 +341,8 @@ def _release_inventory(status: dict, manifest: dict | None = None) -> dict:
         "schema_version": 1,
         "audited_at": status["validated_at"],
         "catalog_evidence_carrier": {
-            "release": "v0.2.0",
-            "note": "The audited predecessor is v0.1.1.",
+            "release": "v0.2.1",
+            "note": "The independently audited predecessor is v0.2.0.",
         },
         "repositories": repositories,
     }
@@ -601,7 +602,7 @@ def test_status_rejects_manifest_release_mismatch(tmp_path: Path, monkeypatch) -
 
 def test_status_rejects_non_manifest_predecessor_release(tmp_path: Path, monkeypatch) -> None:
     value = _status()
-    value["repositories"][1]["release"] = "v0.1.2"
+    value["repositories"][1]["release"] = "v0.1.1"
     value, report = _complete_status(tmp_path, value)
     monkeypatch.setattr(
         "scripts.validate_validation_status.load_manifest",
@@ -726,6 +727,12 @@ def _mutate_core_file_and_rehash(value: dict) -> None:
             "prerelease state contradicts",
         ),
         (
+            lambda value: value["repositories"][0]["release_record"].update(
+                {"is_immutable": False}
+            ),
+            "immutable state contradicts",
+        ),
+        (
             lambda value: value["repositories"][0].update({"successful_ci_runs": []}),
             "successful_ci_runs must be a non-empty",
         ),
@@ -745,7 +752,7 @@ def _mutate_core_file_and_rehash(value: dict) -> None:
             lambda value: value["repositories"][2]["live"]["packages"][0].update(
                 {"version": "9.9.9"}
             ),
-            "has no unique compatibility-curve 0.1.3 package",
+            "has no unique compatibility-curve 0.1.4 package",
         ),
         (
             lambda value: value["repositories"][2]["live"]["packages"][1].update(
@@ -771,7 +778,7 @@ def _mutate_core_file_and_rehash(value: dict) -> None:
                     "name": "unexpected.bin",
                     "url": (
                         "https://github.com/reblocke/compatibility-curve/releases/"
-                        "download/v0.1.3/unexpected.bin"
+                        "download/v0.1.4/unexpected.bin"
                     ),
                 }
             ),
@@ -781,7 +788,7 @@ def _mutate_core_file_and_rehash(value: dict) -> None:
             lambda value: next(
                 asset
                 for asset in value["repositories"][2]["release_record"]["assets"]
-                if asset["name"] == "browser-stage-manifest-v0.1.3.json"
+                if asset["name"] == "browser-stage-manifest-v0.1.4.json"
             ).update({"digest": f"sha256:{'f' * 64}"}),
             "live bytes do not match the released live-data asset",
         ),

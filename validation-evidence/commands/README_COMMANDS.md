@@ -407,3 +407,120 @@ Temporary build directories are not committed. The release workflow repeats the
 deterministic build from the content-addressed commit reached by the published
 `v0.2.0` annotated tag; the tag ref and GitHub release remain mutable
 administrative objects.
+
+## Core v0.4.2 final release-set refresh (2026-07-31)
+
+This section records the command families used for the final stable/immutable
+release set. Historical commands above remain preserved as evidence of the
+earlier corrective sequence.
+
+### Fresh-context Lane A/B
+
+For each exact remote tag, the numerical lane used a fresh clone and detached
+checkout, then resolved the annotated tag object and peeled commit:
+
+    git clone --no-local https://github.com/reblocke/REPOSITORY.git CHECKOUT
+    git -C CHECKOUT checkout --detach TAG^{}
+    git -C CHECKOUT ls-remote origin refs/tags/TAG refs/tags/TAG^{}
+    (cd CHECKOUT && uv sync --locked && make test)
+    (cd CHECKOUT && git status --porcelain)
+
+Core additionally used:
+
+    uv sync --locked --all-groups
+    make parity
+
+The independent SciPy/normal-identity recomputation, formula-ownership scans,
+staged-file byte comparisons, and B01-B08 comparison commands are described in
+lanes/final-release-set-v0.4.2-lane-ab.md. Machine results are in
+results/core-v0.4.2-baseline-parity.json and
+results/core-v0.4.2-independent-recomputation.json.
+
+### Fresh-context Lane C/D
+
+Each published release was downloaded into an isolated parent and used a
+release-specific fresh uv cache:
+
+    git clone --no-local https://github.com/reblocke/REPOSITORY.git PARENT/REPOSITORY
+    git -C PARENT/REPOSITORY checkout --detach TAG^{}
+    env UV_CACHE_DIR=FRESH_CACHE uv sync --locked
+    env PLAYWRIGHT_BROWSERS_PATH=FRESH_BROWSER_CACHE uv run playwright install chromium webkit
+    make verify
+    git status --porcelain
+    gh release download TAG --repo reblocke/REPOSITORY --dir RELEASE_ASSETS
+    (cd RELEASE_ASSETS && shasum -a 256 -c SHA256SUMS)
+    gh release verify TAG --repo reblocke/REPOSITORY
+    gh release view TAG --repo reblocke/REPOSITORY --json tagName,isDraft,isPrerelease,isImmutable,targetCommitish,assets
+    gh api repos/reblocke/REPOSITORY/git/ref/tags/TAG
+    gh api repos/reblocke/REPOSITORY/git/tags/TAG_OBJECT
+
+Core reproducibility and official-wheel smoke used:
+
+    uv run python scripts/build_release_artifacts.py --version 0.4.2 --output REBUILT_CORE
+    cmp REBUILT_CORE/wald_inference-0.4.2-py3-none-any.whl RELEASE_ASSETS/wald_inference-0.4.2-py3-none-any.whl
+    cmp REBUILT_CORE/wald_inference-0.4.2.tar.gz RELEASE_ASSETS/wald_inference-0.4.2.tar.gz
+    uv venv OFFICIAL_WHEEL_VENV
+    env UV_CACHE_DIR=FRESH_WHEEL_CACHE uv pip install --python OFFICIAL_WHEEL_VENV/bin/python RELEASE_ASSETS/wald_inference-0.4.2-py3-none-any.whl
+    OFFICIAL_WHEEL_VENV/bin/python -c 'import wald_inference; print(wald_inference.__version__)'
+
+Live manifest bytes were downloaded with curl --fail --location and compared
+with each release manifest asset and staged file records. Exact results are in
+lanes/final-release-set-v0.4.2-lane-cd.md and
+results/final-release-set-v0.4.2-cold-start.json.
+
+### Refreshed Lane E browser records
+
+    CC_MIG_11_BROWSER_ARTIFACT_DIR=/private/tmp/cc-mig-11-v042-browser-artifacts \
+      uv run python validation-evidence/drivers/live_browser_audit.py
+    jq -e '[.sites[] | .chromium_desktop.ok, .chromium_mobile_390.ok, .webkit_smoke.ok] | all' \
+      validation-evidence/browser/corrected-live-browser-results.json
+    CC_MIG_11_BROWSER_ARTIFACT_DIR=/private/tmp/cc-mig-11-v042-browser-artifacts \
+      uv run python validation-evidence/drivers/mobile_containment_audit.py
+    jq -e '[.sites[].pass] | all' \
+      validation-evidence/browser/corrected-mobile-containment.json
+    uv run python validation-evidence/drivers/required_error_recovery_audit.py
+    jq -e '[.sites[].pass] | all' \
+      validation-evidence/browser/corrected-required-error-recovery.json
+
+All three semantic assertions returned true. The independent E/F lane used the
+same preserved driver from a separate temporary root and independently
+inspected exact release snapshots, manifests, links, rights, and public copy.
+
+### Final inventory, checksum chain, and catalog carrier
+
+The final freeze uses one RFC 3339 UTC timestamp in the status, inventory,
+browser summary, evidence index, and report:
+
+    validated_at="$(jq -er '.validated_at' data/validation_status.json)"
+    node validation-evidence/drivers/collect_release_inventory.mjs \
+      --validated-at "$validated_at" \
+      --output validation-evidence/inventory/release-inventory.json
+    node validation-evidence/drivers/build_evidence_index.mjs \
+      --root validation-evidence \
+      --catalog-version 0.2.1 \
+      --validated-at "$validated_at"
+    shasum -a 256 validation-evidence/index.json
+    shasum -a 256 docs/PORTFOLIO_VALIDATION_REPORT.md
+    uv run python scripts/validate_validation_evidence.py
+    uv run python scripts/validate_validation_status.py --require-releasable
+    make verify
+    make live-check
+    git diff --check
+
+Catalog v0.2.1 artifacts are built twice and compared:
+
+    release_root="$(mktemp -d "$PWD/.cc-mig-11-catalog-v021.XXXXXX")"
+    uv run python scripts/build_release_artifacts.py \
+      --version 0.2.1 --output "$release_root/release-a"
+    uv run python scripts/build_release_artifacts.py \
+      --version 0.2.1 --output "$release_root/release-b"
+    diff -rq "$release_root/release-a" "$release_root/release-b"
+    (cd "$release_root/release-a" && shasum -a 256 -c SHA256SUMS)
+    (cd "$release_root/release-b" && shasum -a 256 -c SHA256SUMS)
+
+The repository-owner-approved release model deliberately omits cryptographic
+tag signing and an Administration-read release-settings token. It retains
+annotated tag-object identity, exact commit/main containment, stable
+non-prerelease publication, immutable releases, deterministic checksummed
+assets, draft-first publication, exact release-workflow identity, and
+post-publication byte verification.

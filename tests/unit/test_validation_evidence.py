@@ -487,7 +487,7 @@ def test_evidence_index_requires_every_lane_and_driver_kind(tmp_path: Path) -> N
     index["files"].remove(removed)
     (root / removed["path"]).unlink()
 
-    with pytest.raises(ValidationEvidenceError, match="missing required kinds"):
+    with pytest.raises(ValidationEvidenceError, match="required final records"):
         validate_evidence_index(index, evidence_root=root)
 
 
@@ -505,9 +505,9 @@ def test_evidence_index_requires_named_final_records(tmp_path: Path) -> None:
 def test_evidence_index_rejects_misclassified_final_record(tmp_path: Path) -> None:
     root = tmp_path / "validation-evidence"
     index, _ = _write_evidence(root)
-    required_path = "lanes/integrated-v0.2.5-cdef.md"
+    required_path = "lanes/final-release-set-v0.4.2-lane-cd.md"
     next(record for record in index["files"] if record["path"] == required_path)["kind"] = (
-        "lane-d-provenance"
+        "lane-c-cold-start"
     )
 
     with pytest.raises(ValidationEvidenceError, match="incorrect kinds"):

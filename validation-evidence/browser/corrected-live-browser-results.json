@@ -1,6 +1,6 @@
 {
-  "artifact_directory": "/private/tmp/cc-mig-11-final-browser-artifacts",
-  "completed_at": "2026-07-30T18:34:34Z",
+  "artifact_directory": "/private/tmp/cc-mig-11-v042-browser-artifacts",
+  "completed_at": "2026-07-31T13:37:27Z",
   "driver": {
     "path": "validation-evidence/drivers/live_browser_audit.py",
     "sha256": "67490befd6a85c2147d93e6057edf0632f25f953a09ade21b77c570cfaff0377"
@@ -33,7 +33,7 @@
               "bytes": 59899,
               "enabled": true,
               "filename": "wald-compatibility-curve.csv",
-              "path": "/private/tmp/cc-mig-11-final-browser-artifacts/compatibility-curve-export-csv-wald-compatibility-curve.csv",
+              "path": "/private/tmp/cc-mig-11-v042-browser-artifacts/compatibility-curve-export-csv-wald-compatibility-curve.csv",
               "png_signature": false,
               "present": true,
               "selector": "#export-csv",
@@ -44,7 +44,7 @@
               "bytes": 296424,
               "enabled": true,
               "filename": "wald-compatibility-curve-manuscript.png",
-              "path": "/private/tmp/cc-mig-11-final-browser-artifacts/compatibility-curve-export-manuscript-wald-compatibility-curve-manuscript.png",
+              "path": "/private/tmp/cc-mig-11-v042-browser-artifacts/compatibility-curve-export-manuscript-wald-compatibility-curve-manuscript.png",
               "png_signature": true,
               "present": true,
               "selector": "#export-manuscript",
@@ -55,7 +55,7 @@
               "bytes": 158684,
               "enabled": true,
               "filename": "wald-compatibility-curve-dashboard.png",
-              "path": "/private/tmp/cc-mig-11-final-browser-artifacts/compatibility-curve-export-dashboard-wald-compatibility-curve-dashboard.png",
+              "path": "/private/tmp/cc-mig-11-v042-browser-artifacts/compatibility-curve-export-dashboard-wald-compatibility-curve-dashboard.png",
               "png_signature": true,
               "present": true,
               "selector": "#export-dashboard",
@@ -319,13 +319,13 @@
                 "method": "GET",
                 "post_data": null,
                 "resource_type": "image",
-                "url": "blob:https://reblocke.github.io/ae602125-0267-4d9f-84c8-41ec0052ecb7"
+                "url": "blob:https://reblocke.github.io/6026ea1b-4b09-4499-96f1-4486b8659408"
               },
               {
                 "method": "GET",
                 "post_data": null,
                 "resource_type": "image",
-                "url": "blob:https://reblocke.github.io/f546dad1-d7d8-42e7-bd30-d377873c3926"
+                "url": "blob:https://reblocke.github.io/88e8ddda-5860-444d-a7a5-7b48a4240aad"
               }
             ],
             "hosts": {
@@ -359,7 +359,7 @@
             "https://github.com/reblocke/compatibility-curve/blob/main/docs/SCIENTIFIC_SCOPE.md",
             "https://github.com/reblocke/compatibility-curve/blob/main/llms.txt",
             "https://github.com/reblocke/wald-inference-core",
-            "https://github.com/reblocke/wald-inference-core/releases/tag/v0.4.1",
+            "https://github.com/reblocke/wald-inference-core/releases/tag/v0.4.2",
             "https://reblocke.github.io/compatibility-curve/#main-content",
             "https://reblocke.github.io/conf_curve_likelihood/",
             "https://reblocke.github.io/wald-inference-tools/",
@@ -551,32 +551,32 @@
           ],
           "downloads": [
             {
-              "bytes": 217762,
+              "bytes": 95146,
               "enabled": true,
               "filename": "wald-confidence-curves.csv",
-              "path": "/private/tmp/cc-mig-11-final-browser-artifacts/conf_curve_likelihood-export-csv-wald-confidence-curves.csv",
+              "path": "/private/tmp/cc-mig-11-v042-browser-artifacts/conf_curve_likelihood-export-csv-wald-confidence-curves.csv",
               "png_signature": false,
               "present": true,
               "selector": "#export-csv",
-              "sha256": "73fc24efcac0e6b59167d8f36850075165bb236ad0124b9a60e248491caea9e4",
+              "sha256": "b77093f74f7212a0225f00e9c1087919d621279b9d4b7a4c5ecb84441a870444",
               "signature_hex": "6566666563745f64"
             },
             {
-              "bytes": 634270,
+              "bytes": 385967,
               "enabled": true,
               "filename": "wald-confidence-curves.png",
-              "path": "/private/tmp/cc-mig-11-final-browser-artifacts/conf_curve_likelihood-export-png-wald-confidence-curves.png",
+              "path": "/private/tmp/cc-mig-11-v042-browser-artifacts/conf_curve_likelihood-export-png-wald-confidence-curves.png",
               "png_signature": true,
               "present": true,
               "selector": "#export-png",
-              "sha256": "9db1651c71334cb136b21bc6b6c11d81a5ca4a27982bd516910a2384afb7f34d",
+              "sha256": "c03ff1d6d0213bed03257ae76d8560cb524535febfdf8fe33d9fa1c864ffc675",
               "signature_hex": "89504e470d0a1a0a"
             },
             {
               "bytes": 583629,
               "enabled": true,
               "filename": "wald-confidence-curves-manuscript.png",
-              "path": "/private/tmp/cc-mig-11-final-browser-artifacts/conf_curve_likelihood-export-manuscript-png-wald-confidence-curves-manuscript.png",
+              "path": "/private/tmp/cc-mig-11-v042-browser-artifacts/conf_curve_likelihood-export-manuscript-png-wald-confidence-curves-manuscript.png",
               "png_signature": true,
               "present": true,
               "selector": "#export-manuscript-png",
@@ -620,7 +620,7 @@
                 "hidden": false,
                 "id": "technical-version",
                 "role": null,
-                "text": "confcurve app 0.2.5 \u00b7 wald-inference core 0.4.1"
+                "text": "confcurve app 0.2.6 \u00b7 wald-inference core 0.4.2"
               }
             ],
             "controls": [
@@ -877,13 +877,13 @@
                 "method": "GET",
                 "post_data": null,
                 "resource_type": "image",
-                "url": "blob:https://reblocke.github.io/5ead2cee-ec51-488a-85b9-fcf46013e1f5"
+                "url": "blob:https://reblocke.github.io/cd6364ee-7ee6-47cf-b243-9de5d223479e"
               },
               {
                 "method": "GET",
                 "post_data": null,
                 "resource_type": "image",
-                "url": "blob:https://reblocke.github.io/5a7f0436-739e-4ce5-8132-78fc90c75755"
+                "url": "blob:https://reblocke.github.io/8af51b5d-38db-4dd8-a005-54859c9bdb13"
               }
             ],
             "hosts": {
@@ -913,7 +913,7 @@
           "related_links": [
             "https://github.com/reblocke/conf_curve_likelihood",
             "https://github.com/reblocke/conf_curve_likelihood/blob/main/docs/PRIVACY.md",
-            "https://github.com/reblocke/wald-inference-core/releases/tag/v0.4.1",
+            "https://github.com/reblocke/wald-inference-core/releases/tag/v0.4.2",
             "https://reblocke.github.io/compatibility-curve/",
             "https://reblocke.github.io/conf_curve_likelihood/",
             "https://reblocke.github.io/critical-effect-size/",
@@ -1094,7 +1094,7 @@
               "bytes": 24251,
               "enabled": true,
               "filename": "wald-critical-effect-size-probability-curve.csv",
-              "path": "/private/tmp/cc-mig-11-final-browser-artifacts/critical-effect-size-export-csv-wald-critical-effect-size-probability-curve.csv",
+              "path": "/private/tmp/cc-mig-11-v042-browser-artifacts/critical-effect-size-export-csv-wald-critical-effect-size-probability-curve.csv",
               "png_signature": false,
               "present": true,
               "selector": "#export-csv",
@@ -1105,7 +1105,7 @@
               "bytes": 150809,
               "enabled": true,
               "filename": "wald-critical-effect-size-figure.png",
-              "path": "/private/tmp/cc-mig-11-final-browser-artifacts/critical-effect-size-export-figure-wald-critical-effect-size-figure.png",
+              "path": "/private/tmp/cc-mig-11-v042-browser-artifacts/critical-effect-size-export-figure-wald-critical-effect-size-figure.png",
               "png_signature": true,
               "present": true,
               "selector": "#export-figure",
@@ -1116,7 +1116,7 @@
               "bytes": 175269,
               "enabled": true,
               "filename": "wald-critical-effect-size-dashboard.png",
-              "path": "/private/tmp/cc-mig-11-final-browser-artifacts/critical-effect-size-export-dashboard-wald-critical-effect-size-dashboard.png",
+              "path": "/private/tmp/cc-mig-11-v042-browser-artifacts/critical-effect-size-export-dashboard-wald-critical-effect-size-dashboard.png",
               "png_signature": true,
               "present": true,
               "selector": "#export-dashboard",
@@ -1398,13 +1398,13 @@
                 "method": "GET",
                 "post_data": null,
                 "resource_type": "image",
-                "url": "blob:https://reblocke.github.io/c4887ce0-e764-49ee-aa81-d1f52c057e1d"
+                "url": "blob:https://reblocke.github.io/85ff2587-8a96-479c-820f-d854364b56f8"
               },
               {
                 "method": "GET",
                 "post_data": null,
                 "resource_type": "image",
-                "url": "blob:https://reblocke.github.io/a17d31a7-0043-4564-8535-9570f107bf95"
+                "url": "blob:https://reblocke.github.io/b048652f-2dbb-4c84-9a9a-9f8127b943bf"
               }
             ],
             "hosts": {
@@ -1436,7 +1436,7 @@
             "https://github.com/reblocke/critical-effect-size",
             "https://github.com/reblocke/critical-effect-size/blob/main/docs/PRIVACY.md",
             "https://github.com/reblocke/critical-effect-size/blob/main/docs/SCIENTIFIC_SCOPE.md",
-            "https://github.com/reblocke/wald-inference-core/releases/tag/v0.4.1",
+            "https://github.com/reblocke/wald-inference-core/releases/tag/v0.4.2",
             "https://reblocke.github.io/conf_curve_likelihood/",
             "https://reblocke.github.io/critical-effect-size/#main-content",
             "https://reblocke.github.io/precision-guardrail-planner/",
@@ -1627,7 +1627,7 @@
               "bytes": 1758,
               "enabled": true,
               "filename": "precision-guardrail-planner-scenario-targets.csv",
-              "path": "/private/tmp/cc-mig-11-final-browser-artifacts/precision-guardrail-planner-export-scenario-csv-precision-guardrail-planner-scenario-targets.csv",
+              "path": "/private/tmp/cc-mig-11-v042-browser-artifacts/precision-guardrail-planner-export-scenario-csv-precision-guardrail-planner-scenario-targets.csv",
               "png_signature": false,
               "present": true,
               "selector": "#export-scenario-csv",
@@ -1638,7 +1638,7 @@
               "bytes": 4095,
               "enabled": true,
               "filename": "precision-guardrail-planner-sensitivity.csv",
-              "path": "/private/tmp/cc-mig-11-final-browser-artifacts/precision-guardrail-planner-export-sensitivity-csv-precision-guardrail-planner-sensitivity.csv",
+              "path": "/private/tmp/cc-mig-11-v042-browser-artifacts/precision-guardrail-planner-export-sensitivity-csv-precision-guardrail-planner-sensitivity.csv",
               "png_signature": false,
               "present": true,
               "selector": "#export-sensitivity-csv",
@@ -1649,7 +1649,7 @@
               "bytes": 98964,
               "enabled": true,
               "filename": "precision-guardrail-planner-figure.png",
-              "path": "/private/tmp/cc-mig-11-final-browser-artifacts/precision-guardrail-planner-export-figure-precision-guardrail-planner-figure.png",
+              "path": "/private/tmp/cc-mig-11-v042-browser-artifacts/precision-guardrail-planner-export-figure-precision-guardrail-planner-figure.png",
               "png_signature": true,
               "present": true,
               "selector": "#export-figure",
@@ -1660,7 +1660,7 @@
               "bytes": 140527,
               "enabled": true,
               "filename": "precision-guardrail-planner-summary.png",
-              "path": "/private/tmp/cc-mig-11-final-browser-artifacts/precision-guardrail-planner-export-dashboard-precision-guardrail-planner-summary.png",
+              "path": "/private/tmp/cc-mig-11-v042-browser-artifacts/precision-guardrail-planner-export-dashboard-precision-guardrail-planner-summary.png",
               "png_signature": true,
               "present": true,
               "selector": "#export-dashboard",
@@ -2047,13 +2047,13 @@
                 "method": "GET",
                 "post_data": null,
                 "resource_type": "image",
-                "url": "blob:https://reblocke.github.io/5b8168b7-0c4a-4d96-b095-98aba79d1070"
+                "url": "blob:https://reblocke.github.io/9087ae47-7727-4f48-8969-19710179b71f"
               },
               {
                 "method": "GET",
                 "post_data": null,
                 "resource_type": "image",
-                "url": "blob:https://reblocke.github.io/1e7add05-f47c-4777-9b5e-18e1322dcbe5"
+                "url": "blob:https://reblocke.github.io/d07b4ac5-cbbd-4b64-b762-7f39882a8c58"
               }
             ],
             "hosts": {
@@ -2086,7 +2086,7 @@
             "https://github.com/reblocke/precision-guardrail-planner/blob/main/docs/PRIVACY.md",
             "https://github.com/reblocke/precision-guardrail-planner/blob/main/docs/SCIENTIFIC_SCOPE.md",
             "https://github.com/reblocke/precision-guardrail-planner/blob/main/docs/VALIDATION.md",
-            "https://github.com/reblocke/wald-inference-core/releases/tag/v0.4.1",
+            "https://github.com/reblocke/wald-inference-core/releases/tag/v0.4.2",
             "https://reblocke.github.io/conf_curve_likelihood/",
             "https://reblocke.github.io/precision-guardrail-planner/#main-content",
             "https://reblocke.github.io/type-s-m-calibrator/",
@@ -2277,7 +2277,7 @@
               "bytes": 67,
               "enabled": true,
               "filename": "scientific-applet-template-results.csv",
-              "path": "/private/tmp/cc-mig-11-final-browser-artifacts/scientific-applet-template-export-csv-scientific-applet-template-results.csv",
+              "path": "/private/tmp/cc-mig-11-v042-browser-artifacts/scientific-applet-template-export-csv-scientific-applet-template-results.csv",
               "png_signature": false,
               "present": true,
               "selector": "#export-csv",
@@ -2288,7 +2288,7 @@
               "bytes": 57481,
               "enabled": true,
               "filename": "scientific-applet-template-figure.png",
-              "path": "/private/tmp/cc-mig-11-final-browser-artifacts/scientific-applet-template-export-figure-scientific-applet-template-figure.png",
+              "path": "/private/tmp/cc-mig-11-v042-browser-artifacts/scientific-applet-template-export-figure-scientific-applet-template-figure.png",
               "png_signature": true,
               "present": true,
               "selector": "#export-figure",
@@ -2299,7 +2299,7 @@
               "bytes": 66592,
               "enabled": true,
               "filename": "scientific-applet-template-dashboard.png",
-              "path": "/private/tmp/cc-mig-11-final-browser-artifacts/scientific-applet-template-export-dashboard-scientific-applet-template-dashboard.png",
+              "path": "/private/tmp/cc-mig-11-v042-browser-artifacts/scientific-applet-template-export-dashboard-scientific-applet-template-dashboard.png",
               "png_signature": true,
               "present": true,
               "selector": "#export-dashboard",
@@ -2458,13 +2458,13 @@
                 "method": "GET",
                 "post_data": null,
                 "resource_type": "image",
-                "url": "blob:https://reblocke.github.io/83ac876c-9f58-40f8-acfe-9bc2f10bd951"
+                "url": "blob:https://reblocke.github.io/733f5522-44eb-4a63-b3d3-27a1936c110e"
               },
               {
                 "method": "GET",
                 "post_data": null,
                 "resource_type": "image",
-                "url": "blob:https://reblocke.github.io/5f92aef0-1d37-43f4-a9dc-75da18038a3d"
+                "url": "blob:https://reblocke.github.io/57d05fbf-070c-44a1-b113-148e2124d101"
               }
             ],
             "hosts": {
@@ -2666,7 +2666,7 @@
               "bytes": 56992,
               "enabled": true,
               "filename": "type-s-m-calibrator-curves.csv",
-              "path": "/private/tmp/cc-mig-11-final-browser-artifacts/type-s-m-calibrator-export-csv-type-s-m-calibrator-curves.csv",
+              "path": "/private/tmp/cc-mig-11-v042-browser-artifacts/type-s-m-calibrator-export-csv-type-s-m-calibrator-curves.csv",
               "png_signature": false,
               "present": true,
               "selector": "#export-csv",
@@ -2677,7 +2677,7 @@
               "bytes": 191131,
               "enabled": true,
               "filename": "type-s-m-calibrator-figure.png",
-              "path": "/private/tmp/cc-mig-11-final-browser-artifacts/type-s-m-calibrator-export-figure-type-s-m-calibrator-figure.png",
+              "path": "/private/tmp/cc-mig-11-v042-browser-artifacts/type-s-m-calibrator-export-figure-type-s-m-calibrator-figure.png",
               "png_signature": true,
               "present": true,
               "selector": "#export-figure",
@@ -2688,7 +2688,7 @@
               "bytes": 211666,
               "enabled": true,
               "filename": "type-s-m-calibrator-dashboard.png",
-              "path": "/private/tmp/cc-mig-11-final-browser-artifacts/type-s-m-calibrator-export-dashboard-type-s-m-calibrator-dashboard.png",
+              "path": "/private/tmp/cc-mig-11-v042-browser-artifacts/type-s-m-calibrator-export-dashboard-type-s-m-calibrator-dashboard.png",
               "png_signature": true,
               "present": true,
               "selector": "#export-dashboard",
@@ -2970,13 +2970,13 @@
                 "method": "GET",
                 "post_data": null,
                 "resource_type": "image",
-                "url": "blob:https://reblocke.github.io/b356b1d4-75db-41d4-9a95-7ab2aefb10da"
+                "url": "blob:https://reblocke.github.io/d6c3fc18-7f5f-4611-9cf8-aac954fa43e8"
               },
               {
                 "method": "GET",
                 "post_data": null,
                 "resource_type": "image",
-                "url": "blob:https://reblocke.github.io/51ad1f21-ddfa-48a9-8bbb-c9363f4a0f0e"
+                "url": "blob:https://reblocke.github.io/45400c40-3d0d-4650-b784-5ad069d7da46"
               }
             ],
             "hosts": {
@@ -3008,7 +3008,7 @@
             "https://github.com/reblocke/type-s-m-calibrator",
             "https://github.com/reblocke/type-s-m-calibrator/blob/main/docs/PRIVACY.md",
             "https://github.com/reblocke/type-s-m-calibrator/blob/main/docs/SCIENTIFIC_SCOPE.md",
-            "https://github.com/reblocke/wald-inference-core/releases/tag/v0.4.1",
+            "https://github.com/reblocke/wald-inference-core/releases/tag/v0.4.2",
             "https://reblocke.github.io/conf_curve_likelihood/",
             "https://reblocke.github.io/precision-guardrail-planner/",
             "https://reblocke.github.io/type-s-m-calibrator/#main-content",
@@ -3219,7 +3219,7 @@
               {
                 "count": 1,
                 "selector": ".tool-grid",
-                "text_length": 4346,
+                "text_length": 4681,
                 "visible": true
               },
               {
@@ -3276,6 +3276,7 @@
             "https://reblocke.github.io/type-s-m-calibrator/",
             "https://reblocke.github.io/wald-inference-tools/#main-content",
             "https://reblocke.github.io/wald-inference-tools/data/tools.json",
+            "https://reblocke.github.io/wald-inference-tools/docs/PORTFOLIO_VALIDATION_REPORT.md",
             "https://reblocke.github.io/wald-inference-tools/docs/PRIVACY.md",
             "https://reblocke.github.io/wald-likelihood-support/"
           ],
@@ -3392,7 +3393,7 @@
               "bytes": 74308,
               "enabled": true,
               "filename": "wald-likelihood-support.csv",
-              "path": "/private/tmp/cc-mig-11-final-browser-artifacts/wald-likelihood-support-export-csv-wald-likelihood-support.csv",
+              "path": "/private/tmp/cc-mig-11-v042-browser-artifacts/wald-likelihood-support-export-csv-wald-likelihood-support.csv",
               "png_signature": false,
               "present": true,
               "selector": "#export-csv",
@@ -3403,7 +3404,7 @@
               "bytes": 286843,
               "enabled": true,
               "filename": "wald-likelihood-support-manuscript.png",
-              "path": "/private/tmp/cc-mig-11-final-browser-artifacts/wald-likelihood-support-export-manuscript-wald-likelihood-support-manuscript.png",
+              "path": "/private/tmp/cc-mig-11-v042-browser-artifacts/wald-likelihood-support-export-manuscript-wald-likelihood-support-manuscript.png",
               "png_signature": true,
               "present": true,
               "selector": "#export-manuscript",
@@ -3414,7 +3415,7 @@
               "bytes": 177592,
               "enabled": true,
               "filename": "wald-likelihood-support-dashboard.png",
-              "path": "/private/tmp/cc-mig-11-final-browser-artifacts/wald-likelihood-support-export-dashboard-wald-likelihood-support-dashboard.png",
+              "path": "/private/tmp/cc-mig-11-v042-browser-artifacts/wald-likelihood-support-export-dashboard-wald-likelihood-support-dashboard.png",
               "png_signature": true,
               "present": true,
               "selector": "#export-dashboard",
@@ -3720,13 +3721,13 @@
                 "method": "GET",
                 "post_data": null,
                 "resource_type": "image",
-                "url": "blob:https://reblocke.github.io/42675091-14dd-489e-ba4a-a3c95363680d"
+                "url": "blob:https://reblocke.github.io/908d7886-4f58-4acf-a6ad-14a3564b2427"
               },
               {
                 "method": "GET",
                 "post_data": null,
                 "resource_type": "image",
-                "url": "blob:https://reblocke.github.io/ce808598-0d0f-44da-a7d6-5348fd7fbdf2"
+                "url": "blob:https://reblocke.github.io/d32337f3-3596-4470-8482-915a220dd558"
               }
             ],
             "hosts": {
@@ -3756,7 +3757,7 @@
           "page_errors": [],
           "related_links": [
             "https://github.com/reblocke/wald-inference-core",
-            "https://github.com/reblocke/wald-inference-core/releases/tag/v0.4.1",
+            "https://github.com/reblocke/wald-inference-core/releases/tag/v0.4.2",
             "https://github.com/reblocke/wald-likelihood-support",
             "https://github.com/reblocke/wald-likelihood-support/blob/main/docs/PRIVACY.md",
             "https://github.com/reblocke/wald-likelihood-support/blob/main/docs/SCIENTIFIC_SCOPE.md",
@@ -3928,5 +3929,5 @@
       }
     }
   },
-  "started_at": "2026-07-30T18:29:54Z"
+  "started_at": "2026-07-31T13:33:20Z"
 }
