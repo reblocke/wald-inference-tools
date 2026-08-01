@@ -4,6 +4,25 @@ All notable changes to this project are documented here.
 
 ## [Unreleased]
 
+## [0.2.2] - 2026-07-31
+
+### Added
+
+- Add a maintenance-release evidence supplement that binds the post-audit dependency,
+  workflow, and version-only changes to exact immutable releases without replacing the prior
+  independent numerical validation.
+
+### Changed
+
+- Record template v0.1.3; compatibility v0.1.5; likelihood v0.1.4; critical effect v0.1.5;
+  Type S/M v0.1.5; precision v0.1.4; integrated workbench v0.2.7; and the audited catalog
+  predecessor v0.2.1. Core remains v0.4.2.
+- Refresh the live release inventory, browser/privacy/accessibility observations,
+  machine-readable status, portfolio report, and checksum-addressed evidence index for the
+  maintenance release set.
+- Publish the refreshed catalog carrier as a stable, immutable release after exact-main CI,
+  Pages, live metadata, release assets, and external carrier reconciliation succeed.
+
 ## [0.2.1] - 2026-07-31
 
 ### Added
@@ -61,7 +80,8 @@ All notable changes to this project are documented here.
 - Added local/live metadata validation, static Pages build, accessibility/privacy browser tests,
   and maintenance documentation.
 
-[Unreleased]: https://github.com/reblocke/wald-inference-tools/compare/v0.2.1...HEAD
+[Unreleased]: https://github.com/reblocke/wald-inference-tools/compare/v0.2.2...HEAD
+[0.2.2]: https://github.com/reblocke/wald-inference-tools/compare/v0.2.1...v0.2.2
 [0.2.1]: https://github.com/reblocke/wald-inference-tools/compare/v0.2.0...v0.2.1
 [0.2.0]: https://github.com/reblocke/wald-inference-tools/compare/v0.1.1...v0.2.0
 [0.1.1]: https://github.com/reblocke/wald-inference-tools/compare/v0.1.0...v0.1.1

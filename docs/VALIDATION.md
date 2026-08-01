@@ -2,12 +2,12 @@
 
 ## Independent validation gates
 
-The stable catalog does not infer validation from release success. Version 0.2.1 carries a
-refreshed independently produced report and machine-readable status for the Core v0.4.2 release
-set. They are checked against the manifest, project-standard rubric, exact released commits, and
-preserved evidence. The catalog row audits the released v0.2.0 predecessor; v0.2.1's own tag,
-assets, and Pages bytes are reconciled externally after publication. The following gates are
-required:
+The stable catalog does not infer validation from release success. Version 0.2.2 carries the
+independent Core v0.4.2 portfolio verdict plus a bounded maintenance supplement for the later
+dependency, workflow, and version-only patch releases. They are checked against the manifest,
+project-standard rubric, exact released commits, and preserved evidence. The catalog row audits
+the immutable v0.2.1 predecessor; v0.2.2's own tag, assets, and Pages bytes are reconciled
+externally after publication. The following gates are required:
 
 - strict JSON parsing with duplicate-key rejection;
 - complete schema, unique slugs, valid adjacency, and exact six-tool coverage;

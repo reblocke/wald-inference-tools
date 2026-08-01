@@ -9,6 +9,54 @@ runs, asset digests, numerical differences, and command outcomes. The blocks
 below contain resolved repository/tag pairs rather than unresolved owner/name
 or tag tokens.
 
+## 2026-08-01 maintenance release refresh
+
+The catalog v0.2.2 refresh used this exact target set:
+
+```text
+reblocke/wald-inference-core v0.4.2
+reblocke/scientific-applet-template v0.1.3
+reblocke/compatibility-curve v0.1.5
+reblocke/wald-likelihood-support v0.1.4
+reblocke/critical-effect-size v0.1.5
+reblocke/type-s-m-calibrator v0.1.5
+reblocke/precision-guardrail-planner v0.1.4
+reblocke/wald-inference-tools v0.2.1
+reblocke/conf_curve_likelihood v0.2.7
+```
+
+Exact predecessor diffs were inspected with:
+
+```bash
+git -C ../scientific-applet-template diff --name-status v0.1.2..v0.1.3
+git -C ../compatibility-curve diff --name-status v0.1.4..v0.1.5
+git -C ../wald-likelihood-support diff --name-status v0.1.3..v0.1.4
+git -C ../critical-effect-size diff --name-status v0.1.4..v0.1.5
+git -C ../type-s-m-calibrator diff --name-status v0.1.4..v0.1.5
+git -C ../precision-guardrail-planner diff --name-status v0.1.3..v0.1.4
+git -C ../conf_curve_likelihood diff --name-status v0.2.6..v0.2.7
+```
+
+The renewed public browser and release evidence was generated with:
+
+```bash
+uv run python validation-evidence/drivers/live_browser_audit.py
+uv run python validation-evidence/drivers/mobile_containment_audit.py
+uv run python validation-evidence/drivers/required_error_recovery_audit.py
+node validation-evidence/drivers/collect_release_inventory.mjs \
+  --validated-at 2026-08-01T03:06:11Z \
+  --output validation-evidence/inventory/release-inventory.json
+```
+
+The collector runs `gh release verify` for every target. Compatibility release run 30672853190
+and Type S/M release run 30677268367 are the only exact exceptions to the successful-workflow
+rule: both published immutable assets before their immediate attestation lookup raced GitHub's
+attestation index, and both now pass current release verification. The exception is bound to the
+exact repository, tag, failed run ID, immutable state, and current successful verification.
+
+The prior CC-MIG-11 command ledger below remains historical evidence for the underlying
+independent numerical and cold-start audit.
+
 ## Content-addressed release identity and hosted provenance
 
 The final inventory is collected from the GitHub API and live Pages sites. Its

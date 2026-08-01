@@ -1,5 +1,19 @@
 # Catalog decisions
 
+## 2026-07-31 — Maintenance-only releases inherit bounded scientific validation
+
+Catalog v0.2.2 records the final dependency, workflow, and version-only patch releases produced
+after the Core v0.4.2 portfolio audit. Core, the scientific implementation modules, the pinned
+Core wheel, and the frozen integrated golden corpus are unchanged. A bounded predecessor-diff
+review, exact-tag verification, full repository CI, regenerated live-package checks, and renewed
+browser/privacy/accessibility observations therefore supplement rather than replace the prior
+independent numerical validation.
+
+The catalog carrier audits immutable predecessor v0.2.1. Its own v0.2.2 tag, release assets,
+workflows, and Pages bytes remain terminal external reconciliation gates after publication. This
+is a genuine metadata refresh for newly released app versions, not a release created solely to
+describe the preceding catalog carrier.
+
 ## 2026-07-31 — Validation carrier updates use a released catalog predecessor
 
 Catalog v0.2.1 refreshes the independent portfolio evidence for Core v0.4.2 and the corresponding

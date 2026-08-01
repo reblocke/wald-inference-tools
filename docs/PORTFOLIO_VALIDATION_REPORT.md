@@ -1,9 +1,9 @@
 # Wald inference portfolio validation report
 
-<!-- validation-evidence-index-sha256:e27565387d560209834eb55455bf7eb2540182a2126811cc9b85ccd1cbe08f25 -->
+<!-- validation-evidence-index-sha256:9ac02eca0131cda984b3ab98568b70688d0431324019c95dacd1a54362f762d8 -->
 
-Validation timestamp: 2026-07-31T13:45:28Z
-Catalog evidence carrier: wald-inference-tools v0.2.1
+Validation timestamp: 2026-08-01T03:06:11Z
+Catalog evidence carrier: wald-inference-tools v0.2.2
 
 ## Executive verdict
 
@@ -16,8 +16,15 @@ Chromium and WebKit, and verified release assets, documentation, privacy,
 accessibility automation, licensing, and provenance. All prior blockers are
 closed.
 
-The catalog carrier audits its already-published v0.2.0 predecessor. Version
-v0.2.1's own immutable release, eight assets, Pages bytes, and exact tag identity
+A bounded maintenance review then compared each later patch tag with its
+independently audited predecessor. Only dependency locks, GitHub Actions,
+release/version surfaces, tests, documentation, and frozen-baseline provenance
+policy changed; Core, scientific formula modules, the pinned Core wheel, and the
+frozen integrated golden corpus did not. Exact-tag CI, release, Pages, staged
+bytes, and live browsers were rerun for the release set recorded below.
+
+The catalog carrier audits its already-published v0.2.1 predecessor. Version
+v0.2.2's own immutable release, eight assets, Pages bytes, and exact tag identity
 are terminal external reconciliation gates because a release cannot contain its
 own publication identity. They are not used as scientific evidence inside the
 carrier.
@@ -29,7 +36,7 @@ are preserved in validation-evidence/commands/README_COMMANDS.md.
 
 <!-- validation-inventory:start -->
 {
-  "validated_at": "2026-07-31T13:45:28Z",
+  "validated_at": "2026-08-01T03:06:11Z",
   "verdict": "Validated for release.",
   "core_version": "0.4.2",
   "repositories": [
@@ -42,57 +49,57 @@ are preserved in validation-evidence/commands/README_COMMANDS.md.
     },
     {
       "name": "reblocke/scientific-applet-template",
-      "commit": "04353d7bb07ee74ae0585107431563db89387f05",
-      "release": "v0.1.2",
+      "commit": "74bb297574641a24b00e3e30e9e5f5ebae51f7a6",
+      "release": "v0.1.3",
       "status": "validated",
       "blocking_findings": []
     },
     {
       "name": "reblocke/compatibility-curve",
-      "commit": "eeaff9a374bc022c2d5ca16fdb3c59fbdfcd90f4",
-      "release": "v0.1.4",
+      "commit": "bda025b36d7f528f287d6ed8586fc329cf592423",
+      "release": "v0.1.5",
       "status": "validated",
       "blocking_findings": []
     },
     {
       "name": "reblocke/wald-likelihood-support",
-      "commit": "beb18d87939f3ba9738b97e1c2e10724e31c5945",
-      "release": "v0.1.3",
+      "commit": "a5d9f938cc9a34cf3aa4f66181e0989b3513a89b",
+      "release": "v0.1.4",
       "status": "validated",
       "blocking_findings": []
     },
     {
       "name": "reblocke/critical-effect-size",
-      "commit": "1c451fe9ed7d7d21fe732ec5da178248053fe912",
-      "release": "v0.1.4",
+      "commit": "9e8987a7022647eed8e5c1437e1541559200d87d",
+      "release": "v0.1.5",
       "status": "validated",
       "blocking_findings": []
     },
     {
       "name": "reblocke/type-s-m-calibrator",
-      "commit": "bb4372c55a2e839b9f57d8424f797c944f5b4eb0",
-      "release": "v0.1.4",
+      "commit": "48e829b2f6dd921bf0875e1ba52c39eca59f068d",
+      "release": "v0.1.5",
       "status": "validated",
       "blocking_findings": []
     },
     {
       "name": "reblocke/precision-guardrail-planner",
-      "commit": "a88926b966766a94b00a61799539351cce44581a",
-      "release": "v0.1.3",
+      "commit": "369809a77365e49d093c43c794e10f2260197269",
+      "release": "v0.1.4",
       "status": "validated",
       "blocking_findings": []
     },
     {
       "name": "reblocke/wald-inference-tools",
-      "commit": "ae76d86f731239e7fe2e902d6813093b35e4e69b",
-      "release": "v0.2.0",
+      "commit": "1daea9d6f035e80f8c470432b6c29d1e7a513fc3",
+      "release": "v0.2.1",
       "status": "validated",
       "blocking_findings": []
     },
     {
       "name": "reblocke/conf_curve_likelihood",
-      "commit": "60ca0e3f5d6f05bb943cb4b7b7d02ed5a1d5714a",
-      "release": "v0.2.6",
+      "commit": "81f4cf0909f16e02fbfe37edfb9cbd55120a6eda",
+      "release": "v0.2.7",
       "status": "validated",
       "blocking_findings": []
     }
@@ -105,14 +112,14 @@ are preserved in validation-evidence/commands/README_COMMANDS.md.
 | Repository | Release | Exact commit | Role |
 |---|---|---|---|
 | wald-inference-core | v0.4.2 | 8afd0a463cc1d2586b8ce5cf92f40900647c3190 | numerical authority |
-| scientific-applet-template | v0.1.2 | 04353d7bb07ee74ae0585107431563db89387f05 | formula-free scaffold |
-| compatibility-curve | v0.1.4 | eeaff9a374bc022c2d5ca16fdb3c59fbdfcd90f4 | focused app |
-| wald-likelihood-support | v0.1.3 | beb18d87939f3ba9738b97e1c2e10724e31c5945 | focused app |
-| critical-effect-size | v0.1.4 | 1c451fe9ed7d7d21fe732ec5da178248053fe912 | focused app |
-| type-s-m-calibrator | v0.1.4 | bb4372c55a2e839b9f57d8424f797c944f5b4eb0 | focused app |
-| precision-guardrail-planner | v0.1.3 | a88926b966766a94b00a61799539351cce44581a | focused app |
-| wald-inference-tools predecessor | v0.2.0 | ae76d86f731239e7fe2e902d6813093b35e4e69b | calculation-free catalog |
-| conf_curve_likelihood | v0.2.6 | 60ca0e3f5d6f05bb943cb4b7b7d02ed5a1d5714a | backward-compatible workbench |
+| scientific-applet-template | v0.1.3 | 74bb297574641a24b00e3e30e9e5f5ebae51f7a6 | formula-free scaffold |
+| compatibility-curve | v0.1.5 | bda025b36d7f528f287d6ed8586fc329cf592423 | focused app |
+| wald-likelihood-support | v0.1.4 | a5d9f938cc9a34cf3aa4f66181e0989b3513a89b | focused app |
+| critical-effect-size | v0.1.5 | 9e8987a7022647eed8e5c1437e1541559200d87d | focused app |
+| type-s-m-calibrator | v0.1.5 | 48e829b2f6dd921bf0875e1ba52c39eca59f068d | focused app |
+| precision-guardrail-planner | v0.1.4 | 369809a77365e49d093c43c794e10f2260197269 | focused app |
+| wald-inference-tools predecessor | v0.2.1 | 1daea9d6f035e80f8c470432b6c29d1e7a513fc3 | calculation-free catalog |
+| conf_curve_likelihood | v0.2.7 | 81f4cf0909f16e02fbfe37edfb9cbd55120a6eda | backward-compatible workbench |
 
 All six scientific consumers use Core 0.4.2. The official wheel URL and SHA-256
 are exact; all six staged copies of the 14-file Core package were byte-identical.
@@ -171,6 +178,10 @@ backward-compatibility exception, not observed disagreement.
 
 ## Cold-start results
 
+These counts are the underlying independent Core v0.4.2 scientific-audit runs. The maintenance
+tags reran their locked tests and browsers in the exact-tag CI and Release workflows recorded in
+the maintenance supplement; no scientific test authority or formula source changed.
+
 | Target | Non-browser tests | Chromium | WebKit | Result |
 |---|---:|---:|---:|---|
 | Core | 396 | not applicable | not applicable | pass |
@@ -201,8 +212,8 @@ SLSA attestations verified both against the v0.4.2 release workflow, exact tag
 and commit, and run 30629025349.
 
 Each regenerated browser manifest was byte-identical to both the release asset
-and live Pages manifest. Catalog predecessor v0.2.0 is stable but predates the
-immutable-release setting; it is historical evidence, not the new carrier.
+and live Pages manifest. Catalog predecessor v0.2.1 is stable and immutable; it
+is historical evidence, not the new carrier.
 
 ## Browser/privacy/accessibility
 
@@ -338,7 +349,7 @@ annotated tags are unsigned.
       "name": "portfolio",
       "domains": {"A": 3, "B": 3, "C": 3, "D": 3, "E": 3, "F": 3, "G": 2, "H": 3},
       "weighted_numerator": 2925,
-      "evidence": ["validation-evidence/lanes/all-ticket-acceptance-final.md", "validation-evidence/inventory/release-inventory.json", "validation-evidence/commands/README_COMMANDS.md"],
+      "evidence": ["validation-evidence/lanes/all-ticket-acceptance-final.md", "validation-evidence/lanes/maintenance-release-set-v0.2.2.md", "validation-evidence/inventory/release-inventory.json", "validation-evidence/commands/README_COMMANDS.md"],
       "gaps": ["The release chain uses unsigned annotated tags."]
     }
   ]
@@ -364,9 +375,8 @@ No release blocker remains.
 
 - Tags are annotated and content-addressed but intentionally unsigned; signer
   identity is not cryptographically proven.
-- The catalog predecessor predates immutable release enforcement. Every newly
-  published final target is immutable; carrier v0.2.1 must be immutable at the
-  terminal external gate.
+- Every audited predecessor and scientific target is immutable. Carrier v0.2.2
+  must independently pass the same immutable-release gate after publication.
 - App tar contents reproduced exactly, but gzip compressed bytes can differ
   across macOS and Ubuntu DEFLATE implementations.
 - GitHub release assets and Pages, rather than PyPI, distribute the packages.

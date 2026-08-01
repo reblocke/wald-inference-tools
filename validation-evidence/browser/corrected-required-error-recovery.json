@@ -1,5 +1,5 @@
 {
-  "completed_at": "2026-07-31T13:39:02Z",
+  "completed_at": "2026-08-01T03:06:11Z",
   "driver": {
     "path": "validation-evidence/drivers/required_error_recovery_audit.py",
     "sha256": "1f8e1436528e7f5553fd090874440ca6056e403c2ab4ce2c66d5fd4bc271169a"
@@ -86,5 +86,5 @@
     }
   },
   "source_driver_sha256": "67490befd6a85c2147d93e6057edf0632f25f953a09ade21b77c570cfaff0377",
-  "started_at": "2026-07-31T13:38:13Z"
+  "started_at": "2026-08-01T03:05:25Z"
 }
