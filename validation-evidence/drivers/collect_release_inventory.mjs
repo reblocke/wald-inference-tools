@@ -12,49 +12,54 @@ const RELEASES = [
   },
   {
     name: "reblocke/scientific-applet-template",
-    tag: "v0.1.2",
+    tag: "v0.1.3",
     liveUrl:
       "https://reblocke.github.io/scientific-applet-template/assets/py/manifest.json",
   },
   {
     name: "reblocke/compatibility-curve",
-    tag: "v0.1.4",
+    tag: "v0.1.5",
     liveUrl: "https://reblocke.github.io/compatibility-curve/assets/py/manifest.json",
   },
   {
     name: "reblocke/wald-likelihood-support",
-    tag: "v0.1.3",
+    tag: "v0.1.4",
     liveUrl:
       "https://reblocke.github.io/wald-likelihood-support/assets/py/manifest.json",
   },
   {
     name: "reblocke/critical-effect-size",
-    tag: "v0.1.4",
+    tag: "v0.1.5",
     liveUrl: "https://reblocke.github.io/critical-effect-size/assets/py/manifest.json",
   },
   {
     name: "reblocke/type-s-m-calibrator",
-    tag: "v0.1.4",
+    tag: "v0.1.5",
     liveUrl: "https://reblocke.github.io/type-s-m-calibrator/assets/py/manifest.json",
   },
   {
     name: "reblocke/precision-guardrail-planner",
-    tag: "v0.1.3",
+    tag: "v0.1.4",
     liveUrl:
       "https://reblocke.github.io/precision-guardrail-planner/assets/py/manifest.json",
   },
   {
     name: "reblocke/wald-inference-tools",
-    tag: "v0.2.0",
+    tag: "v0.2.1",
     liveUrl: "https://reblocke.github.io/wald-inference-tools/data/tools.json",
   },
   {
     name: "reblocke/conf_curve_likelihood",
-    tag: "v0.2.6",
+    tag: "v0.2.7",
     liveUrl:
       "https://reblocke.github.io/conf_curve_likelihood/assets/py/manifest.json",
   },
 ];
+
+const POST_PUBLICATION_ATTESTATION_RACE_RUNS = new Map([
+  ["reblocke/compatibility-curve@v0.1.5", 30672853190],
+  ["reblocke/type-s-m-calibrator@v0.1.5", 30677268367],
+]);
 
 function parseArgs(argv) {
   const values = {};
@@ -225,9 +230,36 @@ async function collect(entry) {
       run.headBranch === entry.tag &&
       run.headSha === commit,
   );
+  const releaseKey = `${entry.name}@${entry.tag}`;
+  const expectedRaceRun = POST_PUBLICATION_ATTESTATION_RACE_RUNS.get(releaseKey);
+  let workflowException = null;
   if (releaseRun.status !== "completed" || releaseRun.conclusion !== "success") {
-    throw new Error(`${entry.name}@${entry.tag} release workflow is not successful`);
+    if (
+      expectedRaceRun === undefined ||
+      releaseRun.databaseId !== expectedRaceRun ||
+      releaseRun.status !== "completed" ||
+      releaseRun.conclusion !== "failure"
+    ) {
+      throw new Error(`${releaseKey} release workflow is not successful`);
+    }
+    const failedLog = execFileSync(
+      "gh",
+      ["run", "view", String(expectedRaceRun), "--repo", entry.name, "--log-failed"],
+      { encoding: "utf8", maxBuffer: 32 * 1024 * 1024 },
+    );
+    if (
+      !failedLog.includes("Publish only the verified draft") ||
+      !failedLog.includes(`no attestations for tag ${entry.tag}`)
+    ) {
+      throw new Error(`${releaseKey} does not match the documented attestation race`);
+    }
+    workflowException = "post-publication-attestation-race";
   }
+  execFileSync(
+    "gh",
+    ["release", "verify", entry.tag, "--repo", entry.name],
+    { encoding: "utf8", maxBuffer: 32 * 1024 * 1024 },
+  );
 
   const ciRuns = runs.filter(
     (run) =>
@@ -327,6 +359,11 @@ async function collect(entry) {
       })),
     },
     release_workflow: releaseRun,
+    release_verification: {
+      verified_at: args["validated-at"],
+      release_attestation_verified: true,
+      workflow_exception: workflowException,
+    },
     successful_ci_runs: ciRuns,
     pages,
     live,
@@ -342,9 +379,9 @@ const inventory = {
   schema_version: 1,
   audited_at: args["validated-at"],
   catalog_evidence_carrier: {
-    release: "v0.2.1",
+    release: "v0.2.2",
     note:
-      "The independently audited catalog predecessor is v0.2.0; v0.2.1 carries this inventory and is reconciled after publication without circularly establishing its own verdict.",
+      "The audited catalog predecessor is v0.2.1; v0.2.2 carries this maintenance-refreshed inventory and is reconciled after publication without circularly establishing its own verdict.",
   },
   repositories,
 };

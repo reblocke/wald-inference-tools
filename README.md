@@ -10,14 +10,14 @@ that condition on assumed true effects and repeated-study selection behavior.
 
 ## Current status
 
-Version `0.2.1` is the validation-bearing catalog release. The portfolio verdict is
+Version `0.2.2` is the validation-bearing catalog release. The portfolio verdict is
 **Validated for release.** The exact audited tags, commits, commands, numerical differences,
 browser observations, release checksums, limitations, and project-standard scores are recorded in
 [`docs/PORTFOLIO_VALIDATION_REPORT.md`](docs/PORTFOLIO_VALIDATION_REPORT.md),
 [`data/validation_status.json`](data/validation_status.json), and the checksum-addressed
 [`validation-evidence/index.json`](validation-evidence/index.json).
 
-The catalog's own independently audited predecessor is v0.2.0. Version 0.2.1 carries the refreshed
+The catalog's own audited predecessor is v0.2.1. Version 0.2.2 carries the maintenance-refreshed
 report for the Core v0.4.2 release set and does not treat its own publication as evidence for the
 verdict. Its tag, release assets, and Pages bytes are reconciled externally after publication.
 

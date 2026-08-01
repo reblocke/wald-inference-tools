@@ -33,8 +33,8 @@ RELEASE_INVENTORY_PATH = (
 
 EXPECTED_REPOSITORIES = set(REPOSITORY_ORDER)
 NON_MANIFEST_RELEASES = {
-    "reblocke/scientific-applet-template": "v0.1.2",
-    "reblocke/wald-inference-tools": "v0.2.0",
+    "reblocke/scientific-applet-template": "v0.1.3",
+    "reblocke/wald-inference-tools": "v0.2.1",
 }
 TOP_LEVEL_FIELDS = {
     "schema_version",
@@ -90,6 +90,7 @@ RELEASE_INVENTORY_REPOSITORY_FIELDS = {
     "tagger",
     "release_record",
     "release_workflow",
+    "release_verification",
     "successful_ci_runs",
     "pages",
     "live",
@@ -116,6 +117,15 @@ WORKFLOW_RUN_FIELDS = {
     "url",
     "createdAt",
     "updatedAt",
+}
+RELEASE_VERIFICATION_FIELDS = {
+    "verified_at",
+    "release_attestation_verified",
+    "workflow_exception",
+}
+POST_PUBLICATION_ATTESTATION_RACE_RUNS = {
+    ("reblocke/compatibility-curve", "v0.1.5"): 30672853190,
+    ("reblocke/type-s-m-calibrator", "v0.1.5"): 30677268367,
 }
 PAGES_FIELDS = {
     "deployment_id",
@@ -426,6 +436,69 @@ def _validate_successful_run(
         _nonempty_string(run[field], f"{location}.{field}")
 
 
+def _validate_release_run(
+    run: Any,
+    verification: Any,
+    *,
+    location: str,
+    name: str,
+    release: str,
+    commit: str,
+    audited_at: str,
+) -> None:
+    verification_location = f"{location}.release_verification"
+    if not isinstance(verification, dict):
+        raise ValidationStatusError(f"{verification_location} must be an object")
+    _exact_fields(verification, RELEASE_VERIFICATION_FIELDS, verification_location)
+    if verification["verified_at"] != audited_at:
+        raise ValidationStatusError(
+            f"{verification_location}.verified_at must equal the inventory audit time"
+        )
+    if verification["release_attestation_verified"] is not True:
+        raise ValidationStatusError(
+            f"{verification_location} must record successful current attestation verification"
+        )
+
+    expected_race_run = POST_PUBLICATION_ATTESTATION_RACE_RUNS.get((name, release))
+    exception = verification["workflow_exception"]
+    if expected_race_run is None:
+        if exception is not None:
+            raise ValidationStatusError(
+                f"{verification_location}.workflow_exception is not authorized for {name}@{release}"
+            )
+        _validate_successful_run(
+            run,
+            location=f"{location}.release_workflow",
+            workflow_name="Release",
+            commit=commit,
+            branch=release,
+        )
+        return
+
+    if exception != "post-publication-attestation-race":
+        raise ValidationStatusError(
+            f"{verification_location}.workflow_exception must identify the documented race"
+        )
+    run_location = f"{location}.release_workflow"
+    if not isinstance(run, dict):
+        raise ValidationStatusError(f"{run_location} must be an object")
+    _exact_fields(run, WORKFLOW_RUN_FIELDS, run_location)
+    if (
+        run["databaseId"] != expected_race_run
+        or run["workflowName"] != "Release"
+        or run["status"] != "completed"
+        or run["conclusion"] != "failure"
+        or run["headSha"] != commit
+        or run["headBranch"] != release
+        or run["event"] != "push"
+    ):
+        raise ValidationStatusError(
+            f"{run_location} does not match the exact documented attestation-race run"
+        )
+    for field in ("url", "createdAt", "updatedAt"):
+        _nonempty_string(run[field], f"{run_location}.{field}")
+
+
 def validate_release_inventory(
     inventory: dict[str, Any],
     *,
@@ -551,7 +624,7 @@ def validate_release_inventory(
             raise ValidationStatusError(
                 f"{location}.release_record prerelease state contradicts the report"
             )
-        expected_immutable = name != CATALOG_NAME
+        expected_immutable = True
         if release_record["is_immutable"] is not expected_immutable:
             raise ValidationStatusError(
                 f"{location}.release_record immutable state contradicts the audited release"
@@ -605,12 +678,14 @@ def validate_release_inventory(
             )
             core_artifact_digest = assets_by_name[core_wheel_name]["digest"].removeprefix("sha256:")
 
-        _validate_successful_run(
+        _validate_release_run(
             entry["release_workflow"],
-            location=f"{location}.release_workflow",
-            workflow_name="Release",
+            entry["release_verification"],
+            location=location,
+            name=name,
+            release=expected["release"],
             commit=expected["commit"],
-            branch=expected["release"],
+            audited_at=inventory["audited_at"],
         )
         ci_runs = entry["successful_ci_runs"]
         if not isinstance(ci_runs, list) or not ci_runs:

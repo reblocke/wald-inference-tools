@@ -94,7 +94,7 @@ def check_local_links(root: Path = PROJECT_ROOT) -> list[str]:
 def _request(url: str, *, expect_json: bool = False, attempts: int = 3) -> Any:
     headers = {
         "Accept": "application/vnd.github+json" if "api.github.com" in url else "*/*",
-        "User-Agent": "wald-inference-tools-catalog-validator/0.2.1",
+        "User-Agent": "wald-inference-tools-catalog-validator/0.2.2",
     }
     token = os.environ.get("GITHUB_TOKEN")
     if token and "api.github.com" in url:

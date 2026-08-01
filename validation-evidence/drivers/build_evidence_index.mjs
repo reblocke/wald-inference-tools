@@ -82,6 +82,7 @@ const EVIDENCE_KINDS = new Map([
   ["lanes/integrated-v0.2.2-blocker-audit.md", "lane-f-docs-rights"],
   ["lanes/integrated-v0.2.5-cdef.md", "lane-c-cold-start"],
   ["lanes/likelihood-v0.1.2-cdef.md", "lane-c-cold-start"],
+  ["lanes/maintenance-release-set-v0.2.2.md", "lane-d-provenance"],
   ["lanes/original-release-set-lane-ab.md", "lane-a-numerical"],
   ["lanes/original-release-set-lane-cd.md", "lane-d-provenance"],
   [

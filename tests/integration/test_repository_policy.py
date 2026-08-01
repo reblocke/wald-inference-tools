@@ -394,12 +394,12 @@ def test_catalog_version_and_validation_semantics_remain_v021() -> None:
     citation = (PROJECT_ROOT / "CITATION.cff").read_text(encoding="utf-8")
     changelog = (PROJECT_ROOT / "CHANGELOG.md").read_text(encoding="utf-8")
 
-    assert project["version"] == "0.2.1"
-    assert manifest["catalog_version"] == "0.2.1"
-    assert evidence_index["catalog_version"] == "0.2.1"
+    assert project["version"] == "0.2.2"
+    assert manifest["catalog_version"] == "0.2.2"
+    assert evidence_index["catalog_version"] == "0.2.2"
     assert status["verdict"] == "Validated for release."
-    assert "version: 0.2.1" in citation
-    assert changelog.count("## [0.2.1] - ") == 1
+    assert "version: 0.2.2" in citation
+    assert changelog.count("## [0.2.2] - ") == 1
 
 
 def test_runtime_provenance_records_nonruntime_boundary_and_exact_tools() -> None:

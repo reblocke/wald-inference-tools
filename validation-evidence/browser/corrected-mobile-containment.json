@@ -1,7 +1,7 @@
 {
-  "artifact_directory": "/private/tmp/cc-mig-11-v042-browser-artifacts",
+  "artifact_directory": "/private/tmp/cc-mig-11-final-browser-artifacts",
   "chromiumVersion": "149.0.7827.55",
-  "completed_at": "2026-07-31T13:39:17Z",
+  "completed_at": "2026-08-01T03:05:19Z",
   "driver": {
     "path": "validation-evidence/drivers/mobile_containment_audit.py",
     "sha256": "378c99d04ac37fde5c15405ba681539d96be54f04bcd03aee2cc1045224f0683"
@@ -29,7 +29,7 @@
       },
       "pageErrors": [],
       "pass": true,
-      "plotScreenshot": "/private/tmp/cc-mig-11-v042-browser-artifacts/compatibility-curve-corrected-mobile-plot.png",
+      "plotScreenshot": "/private/tmp/cc-mig-11-final-browser-artifacts/compatibility-curve-corrected-mobile-plot.png",
       "plotSvgs": [
         {
           "className": "main-svg",
@@ -91,7 +91,7 @@
         }
       ],
       "rawOffenderCount": 2,
-      "screenshot": "/private/tmp/cc-mig-11-v042-browser-artifacts/compatibility-curve-corrected-mobile-viewport.png",
+      "screenshot": "/private/tmp/cc-mig-11-final-browser-artifacts/compatibility-curve-corrected-mobile-viewport.png",
       "tables": [],
       "uncontainedOffenders": []
     },
@@ -107,7 +107,7 @@
       },
       "pageErrors": [],
       "pass": true,
-      "plotScreenshot": "/private/tmp/cc-mig-11-v042-browser-artifacts/conf_curve_likelihood-corrected-mobile-plot.png",
+      "plotScreenshot": "/private/tmp/cc-mig-11-final-browser-artifacts/conf_curve_likelihood-corrected-mobile-plot.png",
       "plotSvgs": [
         {
           "className": "main-svg",
@@ -169,7 +169,7 @@
         }
       ],
       "rawOffenderCount": 2,
-      "screenshot": "/private/tmp/cc-mig-11-v042-browser-artifacts/conf_curve_likelihood-corrected-mobile-viewport.png",
+      "screenshot": "/private/tmp/cc-mig-11-final-browser-artifacts/conf_curve_likelihood-corrected-mobile-viewport.png",
       "tables": [],
       "uncontainedOffenders": []
     },
@@ -190,7 +190,7 @@
       },
       "pageErrors": [],
       "pass": true,
-      "plotScreenshot": "/private/tmp/cc-mig-11-v042-browser-artifacts/critical-effect-size-corrected-mobile-plot.png",
+      "plotScreenshot": "/private/tmp/cc-mig-11-final-browser-artifacts/critical-effect-size-corrected-mobile-plot.png",
       "plotSvgs": [
         {
           "className": "main-svg",
@@ -252,7 +252,7 @@
         }
       ],
       "rawOffenderCount": 58,
-      "screenshot": "/private/tmp/cc-mig-11-v042-browser-artifacts/critical-effect-size-corrected-mobile-viewport.png",
+      "screenshot": "/private/tmp/cc-mig-11-final-browser-artifacts/critical-effect-size-corrected-mobile-viewport.png",
       "tables": [
         {
           "boundedByScroller": true,
@@ -314,7 +314,7 @@
       },
       "pageErrors": [],
       "pass": true,
-      "plotScreenshot": "/private/tmp/cc-mig-11-v042-browser-artifacts/precision-guardrail-planner-corrected-mobile-plot.png",
+      "plotScreenshot": "/private/tmp/cc-mig-11-final-browser-artifacts/precision-guardrail-planner-corrected-mobile-plot.png",
       "plotSvgs": [
         {
           "className": "main-svg",
@@ -376,7 +376,7 @@
         }
       ],
       "rawOffenderCount": 38,
-      "screenshot": "/private/tmp/cc-mig-11-v042-browser-artifacts/precision-guardrail-planner-corrected-mobile-viewport.png",
+      "screenshot": "/private/tmp/cc-mig-11-final-browser-artifacts/precision-guardrail-planner-corrected-mobile-viewport.png",
       "tables": [
         {
           "boundedByScroller": true,
@@ -429,7 +429,7 @@
       },
       "pageErrors": [],
       "pass": true,
-      "plotScreenshot": "/private/tmp/cc-mig-11-v042-browser-artifacts/scientific-applet-template-corrected-mobile-plot.png",
+      "plotScreenshot": "/private/tmp/cc-mig-11-final-browser-artifacts/scientific-applet-template-corrected-mobile-plot.png",
       "plotSvgs": [
         {
           "className": "main-svg",
@@ -491,7 +491,7 @@
         }
       ],
       "rawOffenderCount": 2,
-      "screenshot": "/private/tmp/cc-mig-11-v042-browser-artifacts/scientific-applet-template-corrected-mobile-viewport.png",
+      "screenshot": "/private/tmp/cc-mig-11-final-browser-artifacts/scientific-applet-template-corrected-mobile-viewport.png",
       "tables": [
         {
           "boundedByScroller": true,
@@ -544,7 +544,7 @@
       },
       "pageErrors": [],
       "pass": true,
-      "plotScreenshot": "/private/tmp/cc-mig-11-v042-browser-artifacts/type-s-m-calibrator-corrected-mobile-plot.png",
+      "plotScreenshot": "/private/tmp/cc-mig-11-final-browser-artifacts/type-s-m-calibrator-corrected-mobile-plot.png",
       "plotSvgs": [
         {
           "className": "main-svg",
@@ -606,7 +606,7 @@
         }
       ],
       "rawOffenderCount": 36,
-      "screenshot": "/private/tmp/cc-mig-11-v042-browser-artifacts/type-s-m-calibrator-corrected-mobile-viewport.png",
+      "screenshot": "/private/tmp/cc-mig-11-final-browser-artifacts/type-s-m-calibrator-corrected-mobile-viewport.png",
       "tables": [
         {
           "boundedByScroller": true,
@@ -665,7 +665,7 @@
       },
       "pageErrors": [],
       "pass": true,
-      "plotScreenshot": "/private/tmp/cc-mig-11-v042-browser-artifacts/wald-likelihood-support-corrected-mobile-plot.png",
+      "plotScreenshot": "/private/tmp/cc-mig-11-final-browser-artifacts/wald-likelihood-support-corrected-mobile-plot.png",
       "plotSvgs": [
         {
           "className": "main-svg",
@@ -727,7 +727,7 @@
         }
       ],
       "rawOffenderCount": 20,
-      "screenshot": "/private/tmp/cc-mig-11-v042-browser-artifacts/wald-likelihood-support-corrected-mobile-viewport.png",
+      "screenshot": "/private/tmp/cc-mig-11-final-browser-artifacts/wald-likelihood-support-corrected-mobile-viewport.png",
       "tables": [
         {
           "boundedByScroller": true,
@@ -765,5 +765,5 @@
     }
   },
   "source_driver_sha256": "67490befd6a85c2147d93e6057edf0632f25f953a09ade21b77c570cfaff0377",
-  "started_at": "2026-07-31T13:38:13Z"
+  "started_at": "2026-08-01T03:04:09Z"
 }

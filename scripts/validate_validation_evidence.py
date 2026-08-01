@@ -48,6 +48,7 @@ REQUIRED_FINAL_RECORDS = {
     "lanes/final-release-set-v0.4.2-lane-ab.md": "lane-b-parity",
     "lanes/final-release-set-v0.4.2-lane-cd.md": "lane-d-provenance",
     "lanes/final-release-set-v0.4.2-lane-ef.md": ("lane-e-browser-privacy-accessibility"),
+    "lanes/maintenance-release-set-v0.2.2.md": "lane-d-provenance",
     "results/core-v0.4.2-baseline-parity.json": "lane-a-numerical",
     "results/core-v0.4.2-independent-recomputation.json": "lane-a-numerical",
     "results/final-release-set-v0.4.2-cold-start.json": "lane-c-cold-start",

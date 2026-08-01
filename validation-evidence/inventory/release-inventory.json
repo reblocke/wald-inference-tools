@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "audited_at": "2026-07-31T13:45:28Z",
+  "audited_at": "2026-08-01T03:06:11Z",
   "catalog_evidence_carrier": {
-    "release": "v0.2.1",
-    "note": "The independently audited catalog predecessor is v0.2.0; v0.2.1 carries this inventory and is reconciled after publication without circularly establishing its own verdict."
+    "release": "v0.2.2",
+    "note": "The audited catalog predecessor is v0.2.1; v0.2.2 carries this maintenance-refreshed inventory and is reconciled after publication without circularly establishing its own verdict."
   },
   "repositories": [
     {
@@ -77,6 +77,11 @@
         "url": "https://github.com/reblocke/wald-inference-core/actions/runs/30629025349",
         "workflowName": "Release"
       },
+      "release_verification": {
+        "verified_at": "2026-08-01T03:06:11Z",
+        "release_attestation_verified": true,
+        "workflow_exception": null
+      },
       "successful_ci_runs": [
         {
           "conclusion": "success",
@@ -101,105 +106,110 @@
       "default_branch": "main",
       "is_template": true,
       "license": "mit",
-      "release": "v0.1.2",
-      "tag_object": "accc5cf8855f4c03140348f17c87fe960996feb8",
-      "peeled_commit": "04353d7bb07ee74ae0585107431563db89387f05",
+      "release": "v0.1.3",
+      "tag_object": "67b79d9f7736f43bd9ebd491a460b4c4e5e10cc5",
+      "peeled_commit": "74bb297574641a24b00e3e30e9e5f5ebae51f7a6",
       "tag_ref": {
-        "name": "v0.1.2",
+        "name": "v0.1.3",
         "type": "tag",
-        "sha": "accc5cf8855f4c03140348f17c87fe960996feb8"
+        "sha": "67b79d9f7736f43bd9ebd491a460b4c4e5e10cc5"
       },
       "tag_target": {
         "type": "commit",
-        "sha": "04353d7bb07ee74ae0585107431563db89387f05"
+        "sha": "74bb297574641a24b00e3e30e9e5f5ebae51f7a6"
       },
       "tagger": {
         "name": "Brian Locke",
         "email": "reblocke@gmail.com",
-        "date": "2026-07-31T12:05:22Z"
+        "date": "2026-08-01T01:26:53Z"
       },
       "release_record": {
-        "tag_name": "v0.1.2",
-        "url": "https://github.com/reblocke/scientific-applet-template/releases/tag/v0.1.2",
-        "name": "v0.1.2",
-        "published_at": "2026-07-31T12:07:38Z",
+        "tag_name": "v0.1.3",
+        "url": "https://github.com/reblocke/scientific-applet-template/releases/tag/v0.1.3",
+        "name": "v0.1.3",
+        "published_at": "2026-08-01T01:28:51Z",
         "is_draft": false,
         "is_prerelease": false,
         "is_immutable": true,
         "assets": [
           {
-            "name": "browser-stage-manifest-v0.1.2.json",
+            "name": "browser-stage-manifest-v0.1.3.json",
             "size": 1310,
-            "digest": "sha256:eece3892a028aa512701926039b9ba8c94b8b9ce26047f0a5a22357908840544",
-            "url": "https://github.com/reblocke/scientific-applet-template/releases/download/v0.1.2/browser-stage-manifest-v0.1.2.json"
+            "digest": "sha256:c8818489dc989a8ed7542639ed54fdaeda69425203581a67d2c9ee246e61c180",
+            "url": "https://github.com/reblocke/scientific-applet-template/releases/download/v0.1.3/browser-stage-manifest-v0.1.3.json"
           },
           {
-            "name": "scientific-applet-template-v0.1.2.tar.gz",
-            "size": 75997,
-            "digest": "sha256:746da90a83d904e2bf8023d9e4e2337e4182365dc0a909873b77b1f454638271",
-            "url": "https://github.com/reblocke/scientific-applet-template/releases/download/v0.1.2/scientific-applet-template-v0.1.2.tar.gz"
+            "name": "scientific-applet-template-v0.1.3.tar.gz",
+            "size": 76272,
+            "digest": "sha256:7cbd315963591b0ad71efeb29e2593f08293c1f8e0ef23f91e3dcba8e2ea97e0",
+            "url": "https://github.com/reblocke/scientific-applet-template/releases/download/v0.1.3/scientific-applet-template-v0.1.3.tar.gz"
           },
           {
             "name": "SHA256SUMS",
             "size": 208,
-            "digest": "sha256:006754850025a2fce8eda9932f93486639a7f8073beeb138ec4350874e9e5e19",
-            "url": "https://github.com/reblocke/scientific-applet-template/releases/download/v0.1.2/SHA256SUMS"
+            "digest": "sha256:9216caee9142d024fea87730c3a97330adcba4d9c7b7994ee8dfd8dd13ff8266",
+            "url": "https://github.com/reblocke/scientific-applet-template/releases/download/v0.1.3/SHA256SUMS"
           }
         ]
       },
       "release_workflow": {
         "conclusion": "success",
-        "createdAt": "2026-07-31T12:05:26Z",
-        "databaseId": 30629337962,
+        "createdAt": "2026-08-01T01:26:56Z",
+        "databaseId": 30677931872,
         "event": "push",
-        "headBranch": "v0.1.2",
-        "headSha": "04353d7bb07ee74ae0585107431563db89387f05",
+        "headBranch": "v0.1.3",
+        "headSha": "74bb297574641a24b00e3e30e9e5f5ebae51f7a6",
         "status": "completed",
-        "updatedAt": "2026-07-31T12:07:51Z",
-        "url": "https://github.com/reblocke/scientific-applet-template/actions/runs/30629337962",
+        "updatedAt": "2026-08-01T01:29:02Z",
+        "url": "https://github.com/reblocke/scientific-applet-template/actions/runs/30677931872",
         "workflowName": "Release"
+      },
+      "release_verification": {
+        "verified_at": "2026-08-01T03:06:11Z",
+        "release_attestation_verified": true,
+        "workflow_exception": null
       },
       "successful_ci_runs": [
         {
           "conclusion": "success",
-          "createdAt": "2026-07-31T11:54:06Z",
-          "databaseId": 30628651628,
+          "createdAt": "2026-08-01T01:24:56Z",
+          "databaseId": 30677858148,
           "event": "push",
           "headBranch": "main",
-          "headSha": "04353d7bb07ee74ae0585107431563db89387f05",
+          "headSha": "74bb297574641a24b00e3e30e9e5f5ebae51f7a6",
           "status": "completed",
-          "updatedAt": "2026-07-31T11:56:22Z",
-          "url": "https://github.com/reblocke/scientific-applet-template/actions/runs/30628651628",
+          "updatedAt": "2026-08-01T01:26:34Z",
+          "url": "https://github.com/reblocke/scientific-applet-template/actions/runs/30677858148",
           "workflowName": "CI"
         }
       ],
       "pages": {
-        "deployment_id": 5691059511,
-        "sha": "04353d7bb07ee74ae0585107431563db89387f05",
-        "created_at": "2026-07-31T11:54:26Z",
+        "deployment_id": 5700335054,
+        "sha": "74bb297574641a24b00e3e30e9e5f5ebae51f7a6",
+        "created_at": "2026-08-01T01:25:13Z",
         "status": "success",
         "environment_url": "https://reblocke.github.io/scientific-applet-template/",
         "workflow_runs": [
           {
             "conclusion": "success",
-            "createdAt": "2026-07-31T11:54:05Z",
-            "databaseId": 30628651512,
+            "createdAt": "2026-08-01T01:24:56Z",
+            "databaseId": 30677858145,
             "event": "push",
             "headBranch": "main",
-            "headSha": "04353d7bb07ee74ae0585107431563db89387f05",
+            "headSha": "74bb297574641a24b00e3e30e9e5f5ebae51f7a6",
             "status": "completed",
-            "updatedAt": "2026-07-31T11:54:47Z",
-            "url": "https://github.com/reblocke/scientific-applet-template/actions/runs/30628651512",
+            "updatedAt": "2026-08-01T01:25:29Z",
+            "url": "https://github.com/reblocke/scientific-applet-template/actions/runs/30677858145",
             "workflowName": "Deploy Pages"
           }
         ]
       },
       "live": {
         "url": "https://reblocke.github.io/scientific-applet-template/assets/py/manifest.json",
-        "sha256": "eece3892a028aa512701926039b9ba8c94b8b9ce26047f0a5a22357908840544",
-        "source_commit": "04353d7bb07ee74ae0585107431563db89387f05",
+        "sha256": "c8818489dc989a8ed7542639ed54fdaeda69425203581a67d2c9ee246e61c180",
+        "source_commit": "74bb297574641a24b00e3e30e9e5f5ebae51f7a6",
         "catalog_version": null,
-        "bundle_sha256": "d3a6ff4db259397f899f792d6cf6094af6eea260e45b2b83cfecc6877fc29285",
+        "bundle_sha256": "64ec422bb1cd26dc2b37dd6d59f7e1633a02b32632df766c099519a00200155c",
         "packages": [
           {
             "artifact_sha256": null,
@@ -224,13 +234,13 @@
               {
                 "bytes": 99,
                 "path": "template_applet/version.py",
-                "sha256": "50800ca86b300ca4b1dd550c43cfdaef185b9f5b3d96b357d4abf880167f76b6"
+                "sha256": "9c1513e6b1ae206927d17e3e0668cbccf496003f9ba0e666631c5e7cea82f295"
               }
             ],
             "import_name": "template_applet",
-            "package_sha256": "d3a6ff4db259397f899f792d6cf6094af6eea260e45b2b83cfecc6877fc29285",
+            "package_sha256": "64ec422bb1cd26dc2b37dd6d59f7e1633a02b32632df766c099519a00200155c",
             "role": "app",
-            "version": "0.1.2"
+            "version": "0.1.3"
           }
         ],
         "staged_files_verified": true
@@ -243,105 +253,110 @@
       "default_branch": "main",
       "is_template": false,
       "license": "mit",
-      "release": "v0.1.4",
-      "tag_object": "50ed9acd5391984e1b9164773ff7d6902fdb6a7c",
-      "peeled_commit": "eeaff9a374bc022c2d5ca16fdb3c59fbdfcd90f4",
+      "release": "v0.1.5",
+      "tag_object": "2e06c380df3831673426a48f4036073fc27e4bac",
+      "peeled_commit": "bda025b36d7f528f287d6ed8586fc329cf592423",
       "tag_ref": {
-        "name": "v0.1.4",
+        "name": "v0.1.5",
         "type": "tag",
-        "sha": "50ed9acd5391984e1b9164773ff7d6902fdb6a7c"
+        "sha": "2e06c380df3831673426a48f4036073fc27e4bac"
       },
       "tag_target": {
         "type": "commit",
-        "sha": "eeaff9a374bc022c2d5ca16fdb3c59fbdfcd90f4"
+        "sha": "bda025b36d7f528f287d6ed8586fc329cf592423"
       },
       "tagger": {
         "name": "Brian Locke",
         "email": "reblocke@gmail.com",
-        "date": "2026-07-31T13:05:14Z"
+        "date": "2026-07-31T23:25:41Z"
       },
       "release_record": {
-        "tag_name": "v0.1.4",
-        "url": "https://github.com/reblocke/compatibility-curve/releases/tag/v0.1.4",
-        "name": "v0.1.4",
-        "published_at": "2026-07-31T13:09:09Z",
+        "tag_name": "v0.1.5",
+        "url": "https://github.com/reblocke/compatibility-curve/releases/tag/v0.1.5",
+        "name": "v0.1.5",
+        "published_at": "2026-07-31T23:28:25Z",
         "is_draft": false,
         "is_prerelease": false,
         "is_immutable": true,
         "assets": [
           {
-            "name": "browser-stage-manifest-v0.1.4.json",
+            "name": "browser-stage-manifest-v0.1.5.json",
             "size": 4547,
-            "digest": "sha256:5dcf381340688e73bd23cb577aaabe19ff4294f05b49c3db7d8420904a66daae",
-            "url": "https://github.com/reblocke/compatibility-curve/releases/download/v0.1.4/browser-stage-manifest-v0.1.4.json"
+            "digest": "sha256:142b77a61f54e7ab4d2999e0dd68e4c87f08f1164ba1d7993676d32f68883f32",
+            "url": "https://github.com/reblocke/compatibility-curve/releases/download/v0.1.5/browser-stage-manifest-v0.1.5.json"
           },
           {
-            "name": "compatibility-curve-v0.1.4.tar.gz",
-            "size": 101587,
-            "digest": "sha256:78b2f521a9b57c3789fca275128adeffd516c68357c7737585580b819284a0f3",
-            "url": "https://github.com/reblocke/compatibility-curve/releases/download/v0.1.4/compatibility-curve-v0.1.4.tar.gz"
+            "name": "compatibility-curve-v0.1.5.tar.gz",
+            "size": 101893,
+            "digest": "sha256:7d9727460e3fbae4002d8435c2489ff0419598323a5b5adaf13195f4c2f5b7cb",
+            "url": "https://github.com/reblocke/compatibility-curve/releases/download/v0.1.5/compatibility-curve-v0.1.5.tar.gz"
           },
           {
             "name": "SHA256SUMS",
             "size": 201,
-            "digest": "sha256:ff58a0be57d4fad726d55f69deaadeeff5cbd1f613bac2a4e3a790d4376bcf5a",
-            "url": "https://github.com/reblocke/compatibility-curve/releases/download/v0.1.4/SHA256SUMS"
+            "digest": "sha256:05f651c02279061b29d9b8c7a04ddaa1e37ece1f1fceb6965ba0d2fdda86e3c2",
+            "url": "https://github.com/reblocke/compatibility-curve/releases/download/v0.1.5/SHA256SUMS"
           }
         ]
       },
       "release_workflow": {
-        "conclusion": "success",
-        "createdAt": "2026-07-31T13:05:20Z",
-        "databaseId": 30633071578,
+        "conclusion": "failure",
+        "createdAt": "2026-07-31T23:25:44Z",
+        "databaseId": 30672853190,
         "event": "push",
-        "headBranch": "v0.1.4",
-        "headSha": "eeaff9a374bc022c2d5ca16fdb3c59fbdfcd90f4",
+        "headBranch": "v0.1.5",
+        "headSha": "bda025b36d7f528f287d6ed8586fc329cf592423",
         "status": "completed",
-        "updatedAt": "2026-07-31T13:09:24Z",
-        "url": "https://github.com/reblocke/compatibility-curve/actions/runs/30633071578",
+        "updatedAt": "2026-07-31T23:28:28Z",
+        "url": "https://github.com/reblocke/compatibility-curve/actions/runs/30672853190",
         "workflowName": "Release"
+      },
+      "release_verification": {
+        "verified_at": "2026-08-01T03:06:11Z",
+        "release_attestation_verified": true,
+        "workflow_exception": "post-publication-attestation-race"
       },
       "successful_ci_runs": [
         {
           "conclusion": "success",
-          "createdAt": "2026-07-31T12:56:35Z",
-          "databaseId": 30632502159,
+          "createdAt": "2026-07-31T23:22:50Z",
+          "databaseId": 30672716842,
           "event": "push",
           "headBranch": "main",
-          "headSha": "eeaff9a374bc022c2d5ca16fdb3c59fbdfcd90f4",
+          "headSha": "bda025b36d7f528f287d6ed8586fc329cf592423",
           "status": "completed",
-          "updatedAt": "2026-07-31T13:02:53Z",
-          "url": "https://github.com/reblocke/compatibility-curve/actions/runs/30632502159",
+          "updatedAt": "2026-07-31T23:25:18Z",
+          "url": "https://github.com/reblocke/compatibility-curve/actions/runs/30672716842",
           "workflowName": "CI"
         }
       ],
       "pages": {
-        "deployment_id": 5691852234,
-        "sha": "eeaff9a374bc022c2d5ca16fdb3c59fbdfcd90f4",
-        "created_at": "2026-07-31T12:57:09Z",
+        "deployment_id": 5699473229,
+        "sha": "bda025b36d7f528f287d6ed8586fc329cf592423",
+        "created_at": "2026-07-31T23:23:24Z",
         "status": "success",
         "environment_url": "https://reblocke.github.io/compatibility-curve/",
         "workflow_runs": [
           {
             "conclusion": "success",
-            "createdAt": "2026-07-31T12:56:35Z",
-            "databaseId": 30632502273,
+            "createdAt": "2026-07-31T23:22:50Z",
+            "databaseId": 30672716848,
             "event": "push",
             "headBranch": "main",
-            "headSha": "eeaff9a374bc022c2d5ca16fdb3c59fbdfcd90f4",
+            "headSha": "bda025b36d7f528f287d6ed8586fc329cf592423",
             "status": "completed",
-            "updatedAt": "2026-07-31T12:57:24Z",
-            "url": "https://github.com/reblocke/compatibility-curve/actions/runs/30632502273",
+            "updatedAt": "2026-07-31T23:23:37Z",
+            "url": "https://github.com/reblocke/compatibility-curve/actions/runs/30672716848",
             "workflowName": "Deploy Pages"
           }
         ]
       },
       "live": {
         "url": "https://reblocke.github.io/compatibility-curve/assets/py/manifest.json",
-        "sha256": "5dcf381340688e73bd23cb577aaabe19ff4294f05b49c3db7d8420904a66daae",
-        "source_commit": "eeaff9a374bc022c2d5ca16fdb3c59fbdfcd90f4",
+        "sha256": "142b77a61f54e7ab4d2999e0dd68e4c87f08f1164ba1d7993676d32f68883f32",
+        "source_commit": "bda025b36d7f528f287d6ed8586fc329cf592423",
         "catalog_version": null,
-        "bundle_sha256": "3459038213507f0cb38ecf16e3c0b91f14809d030d06f90ad94dda0778941699",
+        "bundle_sha256": "f9a2b8e0e977e5946394615f734488bb24bb17640641ea6aea1ce1a127ee07b1",
         "packages": [
           {
             "artifact_sha256": null,
@@ -371,13 +386,13 @@
               {
                 "bytes": 99,
                 "path": "compatibility_curve/version.py",
-                "sha256": "2ac3b3dc3b63586f565cc49c5ed55923daa2fb851dcf1ff39f53191403573cdf"
+                "sha256": "224a091f1e50d9d970fc455283711d372d77ba68b76e7c80ec017b546c6739ef"
               }
             ],
             "import_name": "compatibility_curve",
-            "package_sha256": "487062cd47fe43f5c6a935a26f71e7968fd6c0d9deb31bcc7b33f4f60b711921",
+            "package_sha256": "bc79c17ac215e48d380bb7c3e0bcbd8f2902393f0b00beb3e9329b0e938848eb",
             "role": "app",
-            "version": "0.1.4"
+            "version": "0.1.5"
           },
           {
             "artifact_sha256": "225331d7b9d7b70e2508eecb92851a92a8c4e245baf412a1eb0f464d85da1349",
@@ -471,105 +486,110 @@
       "default_branch": "main",
       "is_template": false,
       "license": "mit",
-      "release": "v0.1.3",
-      "tag_object": "917ab253d92fc8754a4c7701fac17247fd0b734e",
-      "peeled_commit": "beb18d87939f3ba9738b97e1c2e10724e31c5945",
+      "release": "v0.1.4",
+      "tag_object": "dbfc45d7dfb631a5e743b0da4acb5ad68b4a87d1",
+      "peeled_commit": "a5d9f938cc9a34cf3aa4f66181e0989b3513a89b",
       "tag_ref": {
-        "name": "v0.1.3",
+        "name": "v0.1.4",
         "type": "tag",
-        "sha": "917ab253d92fc8754a4c7701fac17247fd0b734e"
+        "sha": "dbfc45d7dfb631a5e743b0da4acb5ad68b4a87d1"
       },
       "tag_target": {
         "type": "commit",
-        "sha": "beb18d87939f3ba9738b97e1c2e10724e31c5945"
+        "sha": "a5d9f938cc9a34cf3aa4f66181e0989b3513a89b"
       },
       "tagger": {
         "name": "Brian Locke",
         "email": "reblocke@gmail.com",
-        "date": "2026-07-31T12:58:58Z"
+        "date": "2026-07-31T23:56:48Z"
       },
       "release_record": {
-        "tag_name": "v0.1.3",
-        "url": "https://github.com/reblocke/wald-likelihood-support/releases/tag/v0.1.3",
-        "name": "v0.1.3",
-        "published_at": "2026-07-31T13:02:45Z",
+        "tag_name": "v0.1.4",
+        "url": "https://github.com/reblocke/wald-likelihood-support/releases/tag/v0.1.4",
+        "name": "v0.1.4",
+        "published_at": "2026-08-01T00:00:54Z",
         "is_draft": false,
         "is_prerelease": false,
         "is_immutable": true,
         "assets": [
           {
-            "name": "browser-stage-manifest-v0.1.3.json",
+            "name": "browser-stage-manifest-v0.1.4.json",
             "size": 4576,
-            "digest": "sha256:c4dd0ba582177cfb352af9825dd7c6cb0f3b6881674e1912b2634e8aff2b7952",
-            "url": "https://github.com/reblocke/wald-likelihood-support/releases/download/v0.1.3/browser-stage-manifest-v0.1.3.json"
+            "digest": "sha256:c0b4cf90c5b2129838c20bffbb94ac7cdcf5313fc69074af45e29aaf112b7b66",
+            "url": "https://github.com/reblocke/wald-likelihood-support/releases/download/v0.1.4/browser-stage-manifest-v0.1.4.json"
           },
           {
             "name": "SHA256SUMS",
             "size": 205,
-            "digest": "sha256:e227b52f5bc460733f1b8a29aab682c74bfe911b121a788ab3c495ff1463c49c",
-            "url": "https://github.com/reblocke/wald-likelihood-support/releases/download/v0.1.3/SHA256SUMS"
+            "digest": "sha256:8615a7a80957606c54b8ca7d6389310bfc27d77d14eb2f81613b742d011358ab",
+            "url": "https://github.com/reblocke/wald-likelihood-support/releases/download/v0.1.4/SHA256SUMS"
           },
           {
-            "name": "wald-likelihood-support-v0.1.3.tar.gz",
-            "size": 113843,
-            "digest": "sha256:f7f9afea124a20b8a7339b5073937941a97b68f6a2668841ae5d81c92636b2d7",
-            "url": "https://github.com/reblocke/wald-likelihood-support/releases/download/v0.1.3/wald-likelihood-support-v0.1.3.tar.gz"
+            "name": "wald-likelihood-support-v0.1.4.tar.gz",
+            "size": 114474,
+            "digest": "sha256:69afd4aa6a0efcac569dee96f77103b9720f4b04ace244299b7084889ac33e82",
+            "url": "https://github.com/reblocke/wald-likelihood-support/releases/download/v0.1.4/wald-likelihood-support-v0.1.4.tar.gz"
           }
         ]
       },
       "release_workflow": {
         "conclusion": "success",
-        "createdAt": "2026-07-31T12:59:01Z",
-        "databaseId": 30632656526,
+        "createdAt": "2026-07-31T23:56:51Z",
+        "databaseId": 30674245810,
         "event": "push",
-        "headBranch": "v0.1.3",
-        "headSha": "beb18d87939f3ba9738b97e1c2e10724e31c5945",
+        "headBranch": "v0.1.4",
+        "headSha": "a5d9f938cc9a34cf3aa4f66181e0989b3513a89b",
         "status": "completed",
-        "updatedAt": "2026-07-31T13:02:57Z",
-        "url": "https://github.com/reblocke/wald-likelihood-support/actions/runs/30632656526",
+        "updatedAt": "2026-08-01T00:01:05Z",
+        "url": "https://github.com/reblocke/wald-likelihood-support/actions/runs/30674245810",
         "workflowName": "Release"
+      },
+      "release_verification": {
+        "verified_at": "2026-08-01T03:06:11Z",
+        "release_attestation_verified": true,
+        "workflow_exception": null
       },
       "successful_ci_runs": [
         {
           "conclusion": "success",
-          "createdAt": "2026-07-31T12:54:37Z",
-          "databaseId": 30632374706,
+          "createdAt": "2026-07-31T23:44:17Z",
+          "databaseId": 30673696470,
           "event": "push",
           "headBranch": "main",
-          "headSha": "beb18d87939f3ba9738b97e1c2e10724e31c5945",
+          "headSha": "a5d9f938cc9a34cf3aa4f66181e0989b3513a89b",
           "status": "completed",
-          "updatedAt": "2026-07-31T12:57:58Z",
-          "url": "https://github.com/reblocke/wald-likelihood-support/actions/runs/30632374706",
+          "updatedAt": "2026-07-31T23:56:33Z",
+          "url": "https://github.com/reblocke/wald-likelihood-support/actions/runs/30673696470",
           "workflowName": "CI"
         }
       ],
       "pages": {
-        "deployment_id": 5691817593,
-        "sha": "beb18d87939f3ba9738b97e1c2e10724e31c5945",
-        "created_at": "2026-07-31T12:54:53Z",
+        "deployment_id": 5699635249,
+        "sha": "a5d9f938cc9a34cf3aa4f66181e0989b3513a89b",
+        "created_at": "2026-07-31T23:44:47Z",
         "status": "success",
         "environment_url": "https://reblocke.github.io/wald-likelihood-support/",
         "workflow_runs": [
           {
             "conclusion": "success",
-            "createdAt": "2026-07-31T12:54:37Z",
-            "databaseId": 30632374736,
+            "createdAt": "2026-07-31T23:44:17Z",
+            "databaseId": 30673696429,
             "event": "push",
             "headBranch": "main",
-            "headSha": "beb18d87939f3ba9738b97e1c2e10724e31c5945",
+            "headSha": "a5d9f938cc9a34cf3aa4f66181e0989b3513a89b",
             "status": "completed",
-            "updatedAt": "2026-07-31T12:55:25Z",
-            "url": "https://github.com/reblocke/wald-likelihood-support/actions/runs/30632374736",
+            "updatedAt": "2026-07-31T23:45:02Z",
+            "url": "https://github.com/reblocke/wald-likelihood-support/actions/runs/30673696429",
             "workflowName": "Deploy Pages"
           }
         ]
       },
       "live": {
         "url": "https://reblocke.github.io/wald-likelihood-support/assets/py/manifest.json",
-        "sha256": "c4dd0ba582177cfb352af9825dd7c6cb0f3b6881674e1912b2634e8aff2b7952",
-        "source_commit": "beb18d87939f3ba9738b97e1c2e10724e31c5945",
+        "sha256": "c0b4cf90c5b2129838c20bffbb94ac7cdcf5313fc69074af45e29aaf112b7b66",
+        "source_commit": "a5d9f938cc9a34cf3aa4f66181e0989b3513a89b",
         "catalog_version": null,
-        "bundle_sha256": "17e405bce178a54650540f01cc26d7e526730160626a28af39ecd4c04a55e880",
+        "bundle_sha256": "fc6e66833b974b6171fd324dfd9a88807560fc709f9d1eb7d97a560d01272af3",
         "packages": [
           {
             "artifact_sha256": null,
@@ -599,13 +619,13 @@
               {
                 "bytes": 99,
                 "path": "wald_likelihood_support/version.py",
-                "sha256": "9c1513e6b1ae206927d17e3e0668cbccf496003f9ba0e666631c5e7cea82f295"
+                "sha256": "2ac3b3dc3b63586f565cc49c5ed55923daa2fb851dcf1ff39f53191403573cdf"
               }
             ],
             "import_name": "wald_likelihood_support",
-            "package_sha256": "55384191e4b853881944c04c9353287d478e40cdecb89b33a90ca5b59896a462",
+            "package_sha256": "cd34f7109fd27456e7b6f45d84a4aa6301cc30d3bed8fde4479bd8f914cb4210",
             "role": "app",
-            "version": "0.1.3"
+            "version": "0.1.4"
           },
           {
             "artifact_sha256": "225331d7b9d7b70e2508eecb92851a92a8c4e245baf412a1eb0f464d85da1349",
@@ -699,105 +719,110 @@
       "default_branch": "main",
       "is_template": false,
       "license": "mit",
-      "release": "v0.1.4",
-      "tag_object": "f1b40c7b48dd6f55735fd2abaaa6763bf475a85b",
-      "peeled_commit": "1c451fe9ed7d7d21fe732ec5da178248053fe912",
+      "release": "v0.1.5",
+      "tag_object": "a702e8039e5274ba0cd71e394defd75b4df73951",
+      "peeled_commit": "9e8987a7022647eed8e5c1437e1541559200d87d",
       "tag_ref": {
-        "name": "v0.1.4",
+        "name": "v0.1.5",
         "type": "tag",
-        "sha": "f1b40c7b48dd6f55735fd2abaaa6763bf475a85b"
+        "sha": "a702e8039e5274ba0cd71e394defd75b4df73951"
       },
       "tag_target": {
         "type": "commit",
-        "sha": "1c451fe9ed7d7d21fe732ec5da178248053fe912"
+        "sha": "9e8987a7022647eed8e5c1437e1541559200d87d"
       },
       "tagger": {
         "name": "Brian Locke",
         "email": "reblocke@gmail.com",
-        "date": "2026-07-31T12:59:01Z"
+        "date": "2026-08-01T00:32:04Z"
       },
       "release_record": {
-        "tag_name": "v0.1.4",
-        "url": "https://github.com/reblocke/critical-effect-size/releases/tag/v0.1.4",
-        "name": "v0.1.4",
-        "published_at": "2026-07-31T13:03:29Z",
+        "tag_name": "v0.1.5",
+        "url": "https://github.com/reblocke/critical-effect-size/releases/tag/v0.1.5",
+        "name": "v0.1.5",
+        "published_at": "2026-08-01T00:36:24Z",
         "is_draft": false,
         "is_prerelease": false,
         "is_immutable": true,
         "assets": [
           {
-            "name": "browser-stage-manifest-v0.1.4.json",
+            "name": "browser-stage-manifest-v0.1.5.json",
             "size": 4554,
-            "digest": "sha256:4a57f9659d1d039ee5a366bbe73583cb9bad6bcf7f3b908b1cd0f70d1894c2b0",
-            "url": "https://github.com/reblocke/critical-effect-size/releases/download/v0.1.4/browser-stage-manifest-v0.1.4.json"
+            "digest": "sha256:117bf8ac7e016d454e45d0105f5b2bda6b23365a5e76766231e549b6e7b24084",
+            "url": "https://github.com/reblocke/critical-effect-size/releases/download/v0.1.5/browser-stage-manifest-v0.1.5.json"
           },
           {
-            "name": "critical-effect-size-v0.1.4.tar.gz",
-            "size": 106266,
-            "digest": "sha256:feb5e375a65fab8d1e13284b620b155f2bf6c6df13a77f5ea0eaf48ebb4156f9",
-            "url": "https://github.com/reblocke/critical-effect-size/releases/download/v0.1.4/critical-effect-size-v0.1.4.tar.gz"
+            "name": "critical-effect-size-v0.1.5.tar.gz",
+            "size": 106535,
+            "digest": "sha256:b03e3834e3b4209262b9a904d6a589186d152f8c1c886c26f3dcd9bf769c36a9",
+            "url": "https://github.com/reblocke/critical-effect-size/releases/download/v0.1.5/critical-effect-size-v0.1.5.tar.gz"
           },
           {
             "name": "SHA256SUMS",
             "size": 202,
-            "digest": "sha256:8d7b25b9843949583df4fd5bc4cdb53d42d3067c0db9a25c59e689696c0cc059",
-            "url": "https://github.com/reblocke/critical-effect-size/releases/download/v0.1.4/SHA256SUMS"
+            "digest": "sha256:020b01fb281e203b31bb06d7de7a29e0d104c6dd01ada923fa744d15bf9035c1",
+            "url": "https://github.com/reblocke/critical-effect-size/releases/download/v0.1.5/SHA256SUMS"
           }
         ]
       },
       "release_workflow": {
         "conclusion": "success",
-        "createdAt": "2026-07-31T12:59:04Z",
-        "databaseId": 30632660179,
+        "createdAt": "2026-08-01T00:32:07Z",
+        "databaseId": 30675772344,
         "event": "push",
-        "headBranch": "v0.1.4",
-        "headSha": "1c451fe9ed7d7d21fe732ec5da178248053fe912",
+        "headBranch": "v0.1.5",
+        "headSha": "9e8987a7022647eed8e5c1437e1541559200d87d",
         "status": "completed",
-        "updatedAt": "2026-07-31T13:03:40Z",
-        "url": "https://github.com/reblocke/critical-effect-size/actions/runs/30632660179",
+        "updatedAt": "2026-08-01T00:36:36Z",
+        "url": "https://github.com/reblocke/critical-effect-size/actions/runs/30675772344",
         "workflowName": "Release"
+      },
+      "release_verification": {
+        "verified_at": "2026-08-01T03:06:11Z",
+        "release_attestation_verified": true,
+        "workflow_exception": null
       },
       "successful_ci_runs": [
         {
           "conclusion": "success",
-          "createdAt": "2026-07-31T12:54:43Z",
-          "databaseId": 30632381645,
+          "createdAt": "2026-08-01T00:28:03Z",
+          "databaseId": 30675603861,
           "event": "push",
           "headBranch": "main",
-          "headSha": "1c451fe9ed7d7d21fe732ec5da178248053fe912",
+          "headSha": "9e8987a7022647eed8e5c1437e1541559200d87d",
           "status": "completed",
-          "updatedAt": "2026-07-31T12:58:24Z",
-          "url": "https://github.com/reblocke/critical-effect-size/actions/runs/30632381645",
+          "updatedAt": "2026-08-01T00:31:50Z",
+          "url": "https://github.com/reblocke/critical-effect-size/actions/runs/30675603861",
           "workflowName": "CI"
         }
       ],
       "pages": {
-        "deployment_id": 5691824290,
-        "sha": "1c451fe9ed7d7d21fe732ec5da178248053fe912",
-        "created_at": "2026-07-31T12:55:19Z",
+        "deployment_id": 5699956698,
+        "sha": "9e8987a7022647eed8e5c1437e1541559200d87d",
+        "created_at": "2026-08-01T00:28:37Z",
         "status": "success",
         "environment_url": "https://reblocke.github.io/critical-effect-size/",
         "workflow_runs": [
           {
             "conclusion": "success",
-            "createdAt": "2026-07-31T12:54:44Z",
-            "databaseId": 30632381871,
+            "createdAt": "2026-08-01T00:28:03Z",
+            "databaseId": 30675603890,
             "event": "push",
             "headBranch": "main",
-            "headSha": "1c451fe9ed7d7d21fe732ec5da178248053fe912",
+            "headSha": "9e8987a7022647eed8e5c1437e1541559200d87d",
             "status": "completed",
-            "updatedAt": "2026-07-31T12:55:38Z",
-            "url": "https://github.com/reblocke/critical-effect-size/actions/runs/30632381871",
+            "updatedAt": "2026-08-01T00:28:52Z",
+            "url": "https://github.com/reblocke/critical-effect-size/actions/runs/30675603890",
             "workflowName": "Deploy Pages"
           }
         ]
       },
       "live": {
         "url": "https://reblocke.github.io/critical-effect-size/assets/py/manifest.json",
-        "sha256": "4a57f9659d1d039ee5a366bbe73583cb9bad6bcf7f3b908b1cd0f70d1894c2b0",
-        "source_commit": "1c451fe9ed7d7d21fe732ec5da178248053fe912",
+        "sha256": "117bf8ac7e016d454e45d0105f5b2bda6b23365a5e76766231e549b6e7b24084",
+        "source_commit": "9e8987a7022647eed8e5c1437e1541559200d87d",
         "catalog_version": null,
-        "bundle_sha256": "c3076cb36fd89d63329fbe411a79e3ce4e43ba75c688d3c62e04fadca691c495",
+        "bundle_sha256": "3b71be2eb6cfb0a50ef1906fbd39630fb0b8c04a182ea129e35a668fc2ad7add",
         "packages": [
           {
             "artifact_sha256": null,
@@ -827,13 +852,13 @@
               {
                 "bytes": 99,
                 "path": "critical_effect_size/version.py",
-                "sha256": "2ac3b3dc3b63586f565cc49c5ed55923daa2fb851dcf1ff39f53191403573cdf"
+                "sha256": "224a091f1e50d9d970fc455283711d372d77ba68b76e7c80ec017b546c6739ef"
               }
             ],
             "import_name": "critical_effect_size",
-            "package_sha256": "70682d9a2bc0594d15beb3fc4f55fe659d3a4d68ce77318011be7f49ef81164e",
+            "package_sha256": "f8287511711510c28e75ef9d8b6ac64e192016bbccc4adde5e646dd31ede80bb",
             "role": "app",
-            "version": "0.1.4"
+            "version": "0.1.5"
           },
           {
             "artifact_sha256": "225331d7b9d7b70e2508eecb92851a92a8c4e245baf412a1eb0f464d85da1349",
@@ -927,105 +952,110 @@
       "default_branch": "main",
       "is_template": false,
       "license": "mit",
-      "release": "v0.1.4",
-      "tag_object": "b92bb2e510bf2ab6ea77e75d458719aa6958039c",
-      "peeled_commit": "bb4372c55a2e839b9f57d8424f797c944f5b4eb0",
+      "release": "v0.1.5",
+      "tag_object": "e5fedacbb716b13b4d2a54c08de41aa25931e554",
+      "peeled_commit": "48e829b2f6dd921bf0875e1ba52c39eca59f068d",
       "tag_ref": {
-        "name": "v0.1.4",
+        "name": "v0.1.5",
         "type": "tag",
-        "sha": "b92bb2e510bf2ab6ea77e75d458719aa6958039c"
+        "sha": "e5fedacbb716b13b4d2a54c08de41aa25931e554"
       },
       "tag_target": {
         "type": "commit",
-        "sha": "bb4372c55a2e839b9f57d8424f797c944f5b4eb0"
+        "sha": "48e829b2f6dd921bf0875e1ba52c39eca59f068d"
       },
       "tagger": {
         "name": "Brian Locke",
         "email": "reblocke@gmail.com",
-        "date": "2026-07-31T12:37:57Z"
+        "date": "2026-08-01T01:09:09Z"
       },
       "release_record": {
-        "tag_name": "v0.1.4",
-        "url": "https://github.com/reblocke/type-s-m-calibrator/releases/tag/v0.1.4",
-        "name": "v0.1.4",
-        "published_at": "2026-07-31T12:42:53Z",
+        "tag_name": "v0.1.5",
+        "url": "https://github.com/reblocke/type-s-m-calibrator/releases/tag/v0.1.5",
+        "name": "v0.1.5",
+        "published_at": "2026-08-01T01:14:34Z",
         "is_draft": false,
         "is_prerelease": false,
         "is_immutable": true,
         "assets": [
           {
-            "name": "browser-stage-manifest-v0.1.4.json",
+            "name": "browser-stage-manifest-v0.1.5.json",
             "size": 4541,
-            "digest": "sha256:d978e3ca1f4a8626899dbf5e980e633c5e02cb31caa924adffa8bc1be51973d2",
-            "url": "https://github.com/reblocke/type-s-m-calibrator/releases/download/v0.1.4/browser-stage-manifest-v0.1.4.json"
+            "digest": "sha256:36da329e790fcc276f24e673a9bf3d174392d6d443131d9b5cab4c6880f9dbf2",
+            "url": "https://github.com/reblocke/type-s-m-calibrator/releases/download/v0.1.5/browser-stage-manifest-v0.1.5.json"
           },
           {
             "name": "SHA256SUMS",
             "size": 201,
-            "digest": "sha256:e9a83c6db76f1e1d26523e9ebfd07b6aa98fb939e899d1491f192c03b704c85c",
-            "url": "https://github.com/reblocke/type-s-m-calibrator/releases/download/v0.1.4/SHA256SUMS"
+            "digest": "sha256:8951cbe3321dbd03e54abb356f7ff7b71cc188a0b1d6cb936879265e9edf1a9b",
+            "url": "https://github.com/reblocke/type-s-m-calibrator/releases/download/v0.1.5/SHA256SUMS"
           },
           {
-            "name": "type-s-m-calibrator-v0.1.4.tar.gz",
-            "size": 115908,
-            "digest": "sha256:b081a4168522a9574dd2745b9f87e9e7028f579126332463a936379124bb88f9",
-            "url": "https://github.com/reblocke/type-s-m-calibrator/releases/download/v0.1.4/type-s-m-calibrator-v0.1.4.tar.gz"
+            "name": "type-s-m-calibrator-v0.1.5.tar.gz",
+            "size": 116246,
+            "digest": "sha256:affeea5df7e82e6b24cc6fd4061fa98511f6a7ae26784af93321ee94bdd163f1",
+            "url": "https://github.com/reblocke/type-s-m-calibrator/releases/download/v0.1.5/type-s-m-calibrator-v0.1.5.tar.gz"
           }
         ]
       },
       "release_workflow": {
-        "conclusion": "success",
-        "createdAt": "2026-07-31T12:38:00Z",
-        "databaseId": 30631326888,
+        "conclusion": "failure",
+        "createdAt": "2026-08-01T01:09:13Z",
+        "databaseId": 30677268367,
         "event": "push",
-        "headBranch": "v0.1.4",
-        "headSha": "bb4372c55a2e839b9f57d8424f797c944f5b4eb0",
+        "headBranch": "v0.1.5",
+        "headSha": "48e829b2f6dd921bf0875e1ba52c39eca59f068d",
         "status": "completed",
-        "updatedAt": "2026-07-31T12:43:07Z",
-        "url": "https://github.com/reblocke/type-s-m-calibrator/actions/runs/30631326888",
+        "updatedAt": "2026-08-01T01:14:38Z",
+        "url": "https://github.com/reblocke/type-s-m-calibrator/actions/runs/30677268367",
         "workflowName": "Release"
+      },
+      "release_verification": {
+        "verified_at": "2026-08-01T03:06:11Z",
+        "release_attestation_verified": true,
+        "workflow_exception": "post-publication-attestation-race"
       },
       "successful_ci_runs": [
         {
           "conclusion": "success",
-          "createdAt": "2026-07-31T12:28:43Z",
-          "databaseId": 30630757430,
+          "createdAt": "2026-08-01T01:04:07Z",
+          "databaseId": 30677065561,
           "event": "push",
           "headBranch": "main",
-          "headSha": "bb4372c55a2e839b9f57d8424f797c944f5b4eb0",
+          "headSha": "48e829b2f6dd921bf0875e1ba52c39eca59f068d",
           "status": "completed",
-          "updatedAt": "2026-07-31T12:36:30Z",
-          "url": "https://github.com/reblocke/type-s-m-calibrator/actions/runs/30630757430",
+          "updatedAt": "2026-08-01T01:08:48Z",
+          "url": "https://github.com/reblocke/type-s-m-calibrator/actions/runs/30677065561",
           "workflowName": "CI"
         }
       ],
       "pages": {
-        "deployment_id": 5691481301,
-        "sha": "bb4372c55a2e839b9f57d8424f797c944f5b4eb0",
-        "created_at": "2026-07-31T12:29:07Z",
+        "deployment_id": 5700211956,
+        "sha": "48e829b2f6dd921bf0875e1ba52c39eca59f068d",
+        "created_at": "2026-08-01T01:04:38Z",
         "status": "success",
         "environment_url": "https://reblocke.github.io/type-s-m-calibrator/",
         "workflow_runs": [
           {
             "conclusion": "success",
-            "createdAt": "2026-07-31T12:28:43Z",
-            "databaseId": 30630757438,
+            "createdAt": "2026-08-01T01:04:07Z",
+            "databaseId": 30677065562,
             "event": "push",
             "headBranch": "main",
-            "headSha": "bb4372c55a2e839b9f57d8424f797c944f5b4eb0",
+            "headSha": "48e829b2f6dd921bf0875e1ba52c39eca59f068d",
             "status": "completed",
-            "updatedAt": "2026-07-31T12:29:20Z",
-            "url": "https://github.com/reblocke/type-s-m-calibrator/actions/runs/30630757438",
+            "updatedAt": "2026-08-01T01:04:56Z",
+            "url": "https://github.com/reblocke/type-s-m-calibrator/actions/runs/30677065562",
             "workflowName": "Deploy Pages"
           }
         ]
       },
       "live": {
         "url": "https://reblocke.github.io/type-s-m-calibrator/assets/py/manifest.json",
-        "sha256": "d978e3ca1f4a8626899dbf5e980e633c5e02cb31caa924adffa8bc1be51973d2",
-        "source_commit": "bb4372c55a2e839b9f57d8424f797c944f5b4eb0",
+        "sha256": "36da329e790fcc276f24e673a9bf3d174392d6d443131d9b5cab4c6880f9dbf2",
+        "source_commit": "48e829b2f6dd921bf0875e1ba52c39eca59f068d",
         "catalog_version": null,
-        "bundle_sha256": "ad32135d3e3c6042d5925cf5bd2fc5eab3036daef461d2fb57bf93485e8e669a",
+        "bundle_sha256": "95112d99a04562c6b34ce7e437777bc2c61bb80e1a373b31e4f9a21de9dc3e3a",
         "packages": [
           {
             "artifact_sha256": null,
@@ -1055,13 +1085,13 @@
               {
                 "bytes": 99,
                 "path": "type_sm_calibrator/version.py",
-                "sha256": "2ac3b3dc3b63586f565cc49c5ed55923daa2fb851dcf1ff39f53191403573cdf"
+                "sha256": "224a091f1e50d9d970fc455283711d372d77ba68b76e7c80ec017b546c6739ef"
               }
             ],
             "import_name": "type_sm_calibrator",
-            "package_sha256": "5674c0fd0c7de7a68ce2011f9ad5df21e5a568588250eb26cfdb3ac80f60c71e",
+            "package_sha256": "3845cda4d4264331f39d08377bb1cbdce8d583e44c254357b25e5fbf7cc84514",
             "role": "app",
-            "version": "0.1.4"
+            "version": "0.1.5"
           },
           {
             "artifact_sha256": "225331d7b9d7b70e2508eecb92851a92a8c4e245baf412a1eb0f464d85da1349",
@@ -1155,105 +1185,110 @@
       "default_branch": "main",
       "is_template": false,
       "license": "mit",
-      "release": "v0.1.3",
-      "tag_object": "795c1d4dd19193d3a8e61062a94a4da4468316f5",
-      "peeled_commit": "a88926b966766a94b00a61799539351cce44581a",
+      "release": "v0.1.4",
+      "tag_object": "9c8ef7e1792e2183c9f8f7d3b9df802b3b0b7f2d",
+      "peeled_commit": "369809a77365e49d093c43c794e10f2260197269",
       "tag_ref": {
-        "name": "v0.1.3",
+        "name": "v0.1.4",
         "type": "tag",
-        "sha": "795c1d4dd19193d3a8e61062a94a4da4468316f5"
+        "sha": "9c8ef7e1792e2183c9f8f7d3b9df802b3b0b7f2d"
       },
       "tag_target": {
         "type": "commit",
-        "sha": "a88926b966766a94b00a61799539351cce44581a"
+        "sha": "369809a77365e49d093c43c794e10f2260197269"
       },
       "tagger": {
         "name": "Brian Locke",
         "email": "reblocke@gmail.com",
-        "date": "2026-07-31T12:31:52Z"
+        "date": "2026-08-01T01:45:47Z"
       },
       "release_record": {
-        "tag_name": "v0.1.3",
-        "url": "https://github.com/reblocke/precision-guardrail-planner/releases/tag/v0.1.3",
-        "name": "v0.1.3",
-        "published_at": "2026-07-31T12:34:43Z",
+        "tag_name": "v0.1.4",
+        "url": "https://github.com/reblocke/precision-guardrail-planner/releases/tag/v0.1.4",
+        "name": "v0.1.4",
+        "published_at": "2026-08-01T01:48:46Z",
         "is_draft": false,
         "is_prerelease": false,
         "is_immutable": true,
         "assets": [
           {
-            "name": "browser-stage-manifest-v0.1.3.json",
+            "name": "browser-stage-manifest-v0.1.4.json",
             "size": 4375,
-            "digest": "sha256:19cc748d4778e80c55fa7232ea4d0737c4d628f777fcb8039e8feef1b99576c7",
-            "url": "https://github.com/reblocke/precision-guardrail-planner/releases/download/v0.1.3/browser-stage-manifest-v0.1.3.json"
+            "digest": "sha256:309a71c76615845ee47fbc738780b4299d77645fa72f521fb8555e8b05ed9237",
+            "url": "https://github.com/reblocke/precision-guardrail-planner/releases/download/v0.1.4/browser-stage-manifest-v0.1.4.json"
           },
           {
-            "name": "precision-guardrail-planner-v0.1.3.tar.gz",
-            "size": 103767,
-            "digest": "sha256:d375680d503298e91232831d6b0e22f0321485f6326ea71689746a1b0a5382ce",
-            "url": "https://github.com/reblocke/precision-guardrail-planner/releases/download/v0.1.3/precision-guardrail-planner-v0.1.3.tar.gz"
+            "name": "precision-guardrail-planner-v0.1.4.tar.gz",
+            "size": 104080,
+            "digest": "sha256:63d11ee573fde3f6920997c25f524fba0b528d2d6749731cbb80dc1098619acb",
+            "url": "https://github.com/reblocke/precision-guardrail-planner/releases/download/v0.1.4/precision-guardrail-planner-v0.1.4.tar.gz"
           },
           {
             "name": "SHA256SUMS",
             "size": 209,
-            "digest": "sha256:560a4581db85a38e0928e0570a2e013b894f60c0747738eeb572feaac3f089fa",
-            "url": "https://github.com/reblocke/precision-guardrail-planner/releases/download/v0.1.3/SHA256SUMS"
+            "digest": "sha256:73d822b3e32cad70af690ed96d31e13e8645b897fd9c355de908bba140d73248",
+            "url": "https://github.com/reblocke/precision-guardrail-planner/releases/download/v0.1.4/SHA256SUMS"
           }
         ]
       },
       "release_workflow": {
         "conclusion": "success",
-        "createdAt": "2026-07-31T12:31:55Z",
-        "databaseId": 30630959413,
+        "createdAt": "2026-08-01T01:45:50Z",
+        "databaseId": 30678618747,
         "event": "push",
-        "headBranch": "v0.1.3",
-        "headSha": "a88926b966766a94b00a61799539351cce44581a",
+        "headBranch": "v0.1.4",
+        "headSha": "369809a77365e49d093c43c794e10f2260197269",
         "status": "completed",
-        "updatedAt": "2026-07-31T12:35:16Z",
-        "url": "https://github.com/reblocke/precision-guardrail-planner/actions/runs/30630959413",
+        "updatedAt": "2026-08-01T01:48:58Z",
+        "url": "https://github.com/reblocke/precision-guardrail-planner/actions/runs/30678618747",
         "workflowName": "Release"
+      },
+      "release_verification": {
+        "verified_at": "2026-08-01T03:06:11Z",
+        "release_attestation_verified": true,
+        "workflow_exception": null
       },
       "successful_ci_runs": [
         {
           "conclusion": "success",
-          "createdAt": "2026-07-31T12:28:48Z",
-          "databaseId": 30630762244,
+          "createdAt": "2026-08-01T01:43:13Z",
+          "databaseId": 30678524106,
           "event": "push",
           "headBranch": "main",
-          "headSha": "a88926b966766a94b00a61799539351cce44581a",
+          "headSha": "369809a77365e49d093c43c794e10f2260197269",
           "status": "completed",
-          "updatedAt": "2026-07-31T12:31:14Z",
-          "url": "https://github.com/reblocke/precision-guardrail-planner/actions/runs/30630762244",
+          "updatedAt": "2026-08-01T01:45:31Z",
+          "url": "https://github.com/reblocke/precision-guardrail-planner/actions/runs/30678524106",
           "workflowName": "CI"
         }
       ],
       "pages": {
-        "deployment_id": 5691482638,
-        "sha": "a88926b966766a94b00a61799539351cce44581a",
-        "created_at": "2026-07-31T12:29:14Z",
+        "deployment_id": 5700470342,
+        "sha": "369809a77365e49d093c43c794e10f2260197269",
+        "created_at": "2026-08-01T01:43:40Z",
         "status": "success",
         "environment_url": "https://reblocke.github.io/precision-guardrail-planner/",
         "workflow_runs": [
           {
             "conclusion": "success",
-            "createdAt": "2026-07-31T12:28:48Z",
-            "databaseId": 30630762192,
+            "createdAt": "2026-08-01T01:43:13Z",
+            "databaseId": 30678524099,
             "event": "push",
             "headBranch": "main",
-            "headSha": "a88926b966766a94b00a61799539351cce44581a",
+            "headSha": "369809a77365e49d093c43c794e10f2260197269",
             "status": "completed",
-            "updatedAt": "2026-07-31T12:29:28Z",
-            "url": "https://github.com/reblocke/precision-guardrail-planner/actions/runs/30630762192",
+            "updatedAt": "2026-08-01T01:43:56Z",
+            "url": "https://github.com/reblocke/precision-guardrail-planner/actions/runs/30678524099",
             "workflowName": "Deploy Pages"
           }
         ]
       },
       "live": {
         "url": "https://reblocke.github.io/precision-guardrail-planner/assets/py/manifest.json",
-        "sha256": "19cc748d4778e80c55fa7232ea4d0737c4d628f777fcb8039e8feef1b99576c7",
-        "source_commit": "a88926b966766a94b00a61799539351cce44581a",
+        "sha256": "309a71c76615845ee47fbc738780b4299d77645fa72f521fb8555e8b05ed9237",
+        "source_commit": "369809a77365e49d093c43c794e10f2260197269",
         "catalog_version": null,
-        "bundle_sha256": "e8ea880f027c3474bca2b8cc66ef8608657797a4278889a8797f74da05062eba",
+        "bundle_sha256": "6d996464f7bc8d040314334a20e09b19809ab3f72a6640e65d42f570294a2c83",
         "packages": [
           {
             "artifact_sha256": null,
@@ -1278,13 +1313,13 @@
               {
                 "bytes": 99,
                 "path": "precision_guardrail/version.py",
-                "sha256": "9c1513e6b1ae206927d17e3e0668cbccf496003f9ba0e666631c5e7cea82f295"
+                "sha256": "2ac3b3dc3b63586f565cc49c5ed55923daa2fb851dcf1ff39f53191403573cdf"
               }
             ],
             "import_name": "precision_guardrail",
-            "package_sha256": "b1fcced2388ce5102dfda8a5884cb51535295a7232fd4edd8e53462ab7fb3d0a",
+            "package_sha256": "f8cb202e829579db8585fd22a2db65c67f304c1eea3ff6363d1a33bec5f2537a",
             "role": "app",
-            "version": "0.1.3"
+            "version": "0.1.4"
           },
           {
             "artifact_sha256": "225331d7b9d7b70e2508eecb92851a92a8c4e245baf412a1eb0f464d85da1349",
@@ -1378,134 +1413,139 @@
       "default_branch": "main",
       "is_template": false,
       "license": "mit",
-      "release": "v0.2.0",
-      "tag_object": "3bdec03bfeb3e6ee991d042ffcbcd97ea2c65c9a",
-      "peeled_commit": "ae76d86f731239e7fe2e902d6813093b35e4e69b",
+      "release": "v0.2.1",
+      "tag_object": "e1cfafd1e55ebb89041513a2444959e16cdac6eb",
+      "peeled_commit": "1daea9d6f035e80f8c470432b6c29d1e7a513fc3",
       "tag_ref": {
-        "name": "v0.2.0",
+        "name": "v0.2.1",
         "type": "tag",
-        "sha": "3bdec03bfeb3e6ee991d042ffcbcd97ea2c65c9a"
+        "sha": "e1cfafd1e55ebb89041513a2444959e16cdac6eb"
       },
       "tag_target": {
         "type": "commit",
-        "sha": "ae76d86f731239e7fe2e902d6813093b35e4e69b"
+        "sha": "1daea9d6f035e80f8c470432b6c29d1e7a513fc3"
       },
       "tagger": {
         "name": "Brian Locke",
         "email": "reblocke@gmail.com",
-        "date": "2026-07-30T19:08:54Z"
+        "date": "2026-07-31T14:11:53Z"
       },
       "release_record": {
-        "tag_name": "v0.2.0",
-        "url": "https://github.com/reblocke/wald-inference-tools/releases/tag/v0.2.0",
-        "name": "v0.2.0",
-        "published_at": "2026-07-30T19:11:04Z",
+        "tag_name": "v0.2.1",
+        "url": "https://github.com/reblocke/wald-inference-tools/releases/tag/v0.2.1",
+        "name": "v0.2.1",
+        "published_at": "2026-07-31T14:14:08Z",
         "is_draft": false,
         "is_prerelease": false,
-        "is_immutable": false,
+        "is_immutable": true,
         "assets": [
           {
-            "name": "portfolio-validation-evidence-v0.2.0.tar.gz",
-            "size": 154462,
-            "digest": "sha256:b7bd903fdba60c274207f661fb58a8815b31d1f8c7a6e95c085a059cdd6cbb61",
-            "url": "https://github.com/reblocke/wald-inference-tools/releases/download/v0.2.0/portfolio-validation-evidence-v0.2.0.tar.gz"
+            "name": "portfolio-validation-evidence-v0.2.1.tar.gz",
+            "size": 165119,
+            "digest": "sha256:1e0581ec203f3dde87feb19f65bea9a739b45230bfbad56c7f4ce0d7512c1e3c",
+            "url": "https://github.com/reblocke/wald-inference-tools/releases/download/v0.2.1/portfolio-validation-evidence-v0.2.1.tar.gz"
           },
           {
-            "name": "PORTFOLIO_VALIDATION_REPORT-v0.2.0.md",
-            "size": 31008,
-            "digest": "sha256:f41b5982247824a19d07dd599551517a86a9ba9cc327283374e5f3262389eb97",
-            "url": "https://github.com/reblocke/wald-inference-tools/releases/download/v0.2.0/PORTFOLIO_VALIDATION_REPORT-v0.2.0.md"
+            "name": "PORTFOLIO_VALIDATION_REPORT-v0.2.1.md",
+            "size": 20744,
+            "digest": "sha256:b64d1d5a25e23881610b064c7f6c7e504cfa91ec90b22a9b47db4a448a7656e9",
+            "url": "https://github.com/reblocke/wald-inference-tools/releases/download/v0.2.1/PORTFOLIO_VALIDATION_REPORT-v0.2.1.md"
           },
           {
             "name": "SHA256SUMS",
             "size": 702,
-            "digest": "sha256:abb244345482c4268e0f6545b09334aee53f7136ee9fec8ac6c5d31402f90c12",
-            "url": "https://github.com/reblocke/wald-inference-tools/releases/download/v0.2.0/SHA256SUMS"
+            "digest": "sha256:77a9b91c3eb081b40ef6da316759c5a7d4e26a061877fd6d26f7c153fe51d46c",
+            "url": "https://github.com/reblocke/wald-inference-tools/releases/download/v0.2.1/SHA256SUMS"
           },
           {
-            "name": "tools-v0.2.0.json",
+            "name": "tools-v0.2.1.json",
             "size": 10184,
-            "digest": "sha256:39f2ea1a91caa4e9a8649cd5f6e7be18020910121610b7ef847d62fd196e5653",
-            "url": "https://github.com/reblocke/wald-inference-tools/releases/download/v0.2.0/tools-v0.2.0.json"
+            "digest": "sha256:e3f243ec2f7ec6c6d701f18dc97fa6ce21db2e580e2703b14adc7b25939b94d5",
+            "url": "https://github.com/reblocke/wald-inference-tools/releases/download/v0.2.1/tools-v0.2.1.json"
           },
           {
-            "name": "validation-evidence-index-v0.2.0.json",
-            "size": 9207,
-            "digest": "sha256:07dfb86fccc3ffdb8782fafd6b51b604add61c979dbd8bfca90dcb87decac9eb",
-            "url": "https://github.com/reblocke/wald-inference-tools/releases/download/v0.2.0/validation-evidence-index-v0.2.0.json"
+            "name": "validation-evidence-index-v0.2.1.json",
+            "size": 10906,
+            "digest": "sha256:e27565387d560209834eb55455bf7eb2540182a2126811cc9b85ccd1cbe08f25",
+            "url": "https://github.com/reblocke/wald-inference-tools/releases/download/v0.2.1/validation-evidence-index-v0.2.1.json"
           },
           {
-            "name": "validation_status-v0.2.0.json",
+            "name": "validation_status-v0.2.1.json",
             "size": 2113,
-            "digest": "sha256:e6113569a0112c5cc0040b05510d9977816b323ddb8d2418bac8f87eb760df0c",
-            "url": "https://github.com/reblocke/wald-inference-tools/releases/download/v0.2.0/validation_status-v0.2.0.json"
+            "digest": "sha256:b8a276e211508b7cf3381e059e98be1183e1bfb4a1712c3bdf6e6e1fed5560bf",
+            "url": "https://github.com/reblocke/wald-inference-tools/releases/download/v0.2.1/validation_status-v0.2.1.json"
           },
           {
-            "name": "wald-inference-tools-site-v0.2.0.zip",
-            "size": 24075,
-            "digest": "sha256:454eebcb442c0cc031114b4eae10ac87b21974c13f316dc31fa24c535f0d89e7",
-            "url": "https://github.com/reblocke/wald-inference-tools/releases/download/v0.2.0/wald-inference-tools-site-v0.2.0.zip"
+            "name": "wald-inference-tools-site-v0.2.1.zip",
+            "size": 25524,
+            "digest": "sha256:13b56d3cb0e7e69848179d63140c784ace55fcd2cd83ba88c86cf8243ab97109",
+            "url": "https://github.com/reblocke/wald-inference-tools/releases/download/v0.2.1/wald-inference-tools-site-v0.2.1.zip"
           },
           {
-            "name": "wald-inference-tools-v0.2.0.tar.gz",
-            "size": 241670,
-            "digest": "sha256:d56c59da32a74f11607782f56b9967a621d4505694b646e4d9f4be16079c2d0f",
-            "url": "https://github.com/reblocke/wald-inference-tools/releases/download/v0.2.0/wald-inference-tools-v0.2.0.tar.gz"
+            "name": "wald-inference-tools-v0.2.1.tar.gz",
+            "size": 265173,
+            "digest": "sha256:0717e29b9a896c1a76a5ebdfbddf590c7e1cd2f736cf8b44245ba301f9c4bc64",
+            "url": "https://github.com/reblocke/wald-inference-tools/releases/download/v0.2.1/wald-inference-tools-v0.2.1.tar.gz"
           }
         ]
       },
       "release_workflow": {
         "conclusion": "success",
-        "createdAt": "2026-07-30T19:08:59Z",
-        "databaseId": 30573560066,
+        "createdAt": "2026-07-31T14:12:01Z",
+        "databaseId": 30637591770,
         "event": "push",
-        "headBranch": "v0.2.0",
-        "headSha": "ae76d86f731239e7fe2e902d6813093b35e4e69b",
+        "headBranch": "v0.2.1",
+        "headSha": "1daea9d6f035e80f8c470432b6c29d1e7a513fc3",
         "status": "completed",
-        "updatedAt": "2026-07-30T19:11:10Z",
-        "url": "https://github.com/reblocke/wald-inference-tools/actions/runs/30573560066",
+        "updatedAt": "2026-07-31T14:14:36Z",
+        "url": "https://github.com/reblocke/wald-inference-tools/actions/runs/30637591770",
         "workflowName": "Release"
+      },
+      "release_verification": {
+        "verified_at": "2026-08-01T03:06:11Z",
+        "release_attestation_verified": true,
+        "workflow_exception": null
       },
       "successful_ci_runs": [
         {
           "conclusion": "success",
-          "createdAt": "2026-07-30T19:06:36Z",
-          "databaseId": 30573390448,
+          "createdAt": "2026-07-31T14:09:18Z",
+          "databaseId": 30637402713,
           "event": "push",
           "headBranch": "main",
-          "headSha": "ae76d86f731239e7fe2e902d6813093b35e4e69b",
+          "headSha": "1daea9d6f035e80f8c470432b6c29d1e7a513fc3",
           "status": "completed",
-          "updatedAt": "2026-07-30T19:08:34Z",
-          "url": "https://github.com/reblocke/wald-inference-tools/actions/runs/30573390448",
+          "updatedAt": "2026-07-31T14:10:43Z",
+          "url": "https://github.com/reblocke/wald-inference-tools/actions/runs/30637402713",
           "workflowName": "CI"
         }
       ],
       "pages": {
-        "deployment_id": 5680720972,
-        "sha": "ae76d86f731239e7fe2e902d6813093b35e4e69b",
-        "created_at": "2026-07-30T19:07:03Z",
+        "deployment_id": 5692858581,
+        "sha": "1daea9d6f035e80f8c470432b6c29d1e7a513fc3",
+        "created_at": "2026-07-31T14:09:41Z",
         "status": "success",
         "environment_url": "https://reblocke.github.io/wald-inference-tools/",
         "workflow_runs": [
           {
             "conclusion": "success",
-            "createdAt": "2026-07-30T19:06:36Z",
-            "databaseId": 30573390459,
+            "createdAt": "2026-07-31T14:09:18Z",
+            "databaseId": 30637403039,
             "event": "push",
             "headBranch": "main",
-            "headSha": "ae76d86f731239e7fe2e902d6813093b35e4e69b",
+            "headSha": "1daea9d6f035e80f8c470432b6c29d1e7a513fc3",
             "status": "completed",
-            "updatedAt": "2026-07-30T19:07:20Z",
-            "url": "https://github.com/reblocke/wald-inference-tools/actions/runs/30573390459",
+            "updatedAt": "2026-07-31T14:09:56Z",
+            "url": "https://github.com/reblocke/wald-inference-tools/actions/runs/30637403039",
             "workflowName": "Deploy Pages"
           }
         ]
       },
       "live": {
         "url": "https://reblocke.github.io/wald-inference-tools/data/tools.json",
-        "sha256": "39f2ea1a91caa4e9a8649cd5f6e7be18020910121610b7ef847d62fd196e5653",
+        "sha256": "e3f243ec2f7ec6c6d701f18dc97fa6ce21db2e580e2703b14adc7b25939b94d5",
         "source_commit": null,
-        "catalog_version": "0.2.0",
+        "catalog_version": "0.2.1",
         "bundle_sha256": null,
         "packages": null,
         "staged_files_verified": null
@@ -1518,28 +1558,28 @@
       "default_branch": "main",
       "is_template": false,
       "license": "mit",
-      "release": "v0.2.6",
-      "tag_object": "1694d1727d7e071689ad7fa301f34ac32e547b34",
-      "peeled_commit": "60ca0e3f5d6f05bb943cb4b7b7d02ed5a1d5714a",
+      "release": "v0.2.7",
+      "tag_object": "57c850979727a25ff924efde0d5a90892e7b8c53",
+      "peeled_commit": "81f4cf0909f16e02fbfe37edfb9cbd55120a6eda",
       "tag_ref": {
-        "name": "v0.2.6",
+        "name": "v0.2.7",
         "type": "tag",
-        "sha": "1694d1727d7e071689ad7fa301f34ac32e547b34"
+        "sha": "57c850979727a25ff924efde0d5a90892e7b8c53"
       },
       "tag_target": {
         "type": "commit",
-        "sha": "60ca0e3f5d6f05bb943cb4b7b7d02ed5a1d5714a"
+        "sha": "81f4cf0909f16e02fbfe37edfb9cbd55120a6eda"
       },
       "tagger": {
         "name": "Brian Locke",
         "email": "reblocke@gmail.com",
-        "date": "2026-07-31T13:05:14Z"
+        "date": "2026-08-01T02:49:52Z"
       },
       "release_record": {
-        "tag_name": "v0.2.6",
-        "url": "https://github.com/reblocke/conf_curve_likelihood/releases/tag/v0.2.6",
-        "name": "Integrated Wald Inference Workbench 0.2.6",
-        "published_at": "2026-07-31T13:14:27Z",
+        "tag_name": "v0.2.7",
+        "url": "https://github.com/reblocke/conf_curve_likelihood/releases/tag/v0.2.7",
+        "name": "Integrated Wald Inference Workbench 0.2.7",
+        "published_at": "2026-08-01T03:00:50Z",
         "is_draft": false,
         "is_prerelease": false,
         "is_immutable": true,
@@ -1547,87 +1587,92 @@
           {
             "name": "browser-stage-manifest.json",
             "size": 4308,
-            "digest": "sha256:6093fcd4e2de7fdf3ad9ffc28d92d406e8c0ea745019c3d7cc01246bf3e54e25",
-            "url": "https://github.com/reblocke/conf_curve_likelihood/releases/download/v0.2.6/browser-stage-manifest.json"
+            "digest": "sha256:79459002ea2b4093b32cf07c4840530906078451d7e335fafcf987540703592a",
+            "url": "https://github.com/reblocke/conf_curve_likelihood/releases/download/v0.2.7/browser-stage-manifest.json"
           },
           {
-            "name": "conf_curve_likelihood-0.2.6.tar.gz",
-            "size": 491933,
-            "digest": "sha256:8e1a05dd709b1801564331e1428e1008c2c877a2772fae5675b587305ddcbfb0",
-            "url": "https://github.com/reblocke/conf_curve_likelihood/releases/download/v0.2.6/conf_curve_likelihood-0.2.6.tar.gz"
+            "name": "conf_curve_likelihood-0.2.7.tar.gz",
+            "size": 498491,
+            "digest": "sha256:0e2eea86df1f26e3a1c1756217a2a148b7da1f7a2dc1654c7c66e398b486373f",
+            "url": "https://github.com/reblocke/conf_curve_likelihood/releases/download/v0.2.7/conf_curve_likelihood-0.2.7.tar.gz"
           },
           {
             "name": "SHA256SUMS",
             "size": 195,
-            "digest": "sha256:0bbc9d7a4557ea6ca636e90270b4449197871d6f5154f883ce7625a7dca73d76",
-            "url": "https://github.com/reblocke/conf_curve_likelihood/releases/download/v0.2.6/SHA256SUMS"
+            "digest": "sha256:6eabc9eefad9556832937739f880b0dffe596d84ab8c46d97bbc9bd3637a3c39",
+            "url": "https://github.com/reblocke/conf_curve_likelihood/releases/download/v0.2.7/SHA256SUMS"
           }
         ]
       },
       "release_workflow": {
         "conclusion": "success",
-        "createdAt": "2026-07-31T13:05:17Z",
-        "databaseId": 30633067799,
+        "createdAt": "2026-08-01T02:50:07Z",
+        "databaseId": 30680786034,
         "event": "push",
-        "headBranch": "v0.2.6",
-        "headSha": "60ca0e3f5d6f05bb943cb4b7b7d02ed5a1d5714a",
+        "headBranch": "v0.2.7",
+        "headSha": "81f4cf0909f16e02fbfe37edfb9cbd55120a6eda",
         "status": "completed",
-        "updatedAt": "2026-07-31T13:14:41Z",
-        "url": "https://github.com/reblocke/conf_curve_likelihood/actions/runs/30633067799",
+        "updatedAt": "2026-08-01T03:01:04Z",
+        "url": "https://github.com/reblocke/conf_curve_likelihood/actions/runs/30680786034",
         "workflowName": "Release"
+      },
+      "release_verification": {
+        "verified_at": "2026-08-01T03:06:11Z",
+        "release_attestation_verified": true,
+        "workflow_exception": null
       },
       "successful_ci_runs": [
         {
           "conclusion": "success",
-          "createdAt": "2026-07-31T12:51:06Z",
-          "databaseId": 30632150534,
+          "createdAt": "2026-08-01T02:36:54Z",
+          "databaseId": 30680357838,
           "event": "push",
           "headBranch": "main",
-          "headSha": "60ca0e3f5d6f05bb943cb4b7b7d02ed5a1d5714a",
+          "headSha": "81f4cf0909f16e02fbfe37edfb9cbd55120a6eda",
           "status": "completed",
-          "updatedAt": "2026-07-31T13:01:27Z",
-          "url": "https://github.com/reblocke/conf_curve_likelihood/actions/runs/30632150534",
+          "updatedAt": "2026-08-01T02:49:32Z",
+          "url": "https://github.com/reblocke/conf_curve_likelihood/actions/runs/30680357838",
           "workflowName": "CI"
         }
       ],
       "pages": {
-        "deployment_id": 5691768164,
-        "sha": "60ca0e3f5d6f05bb943cb4b7b7d02ed5a1d5714a",
-        "created_at": "2026-07-31T12:51:29Z",
+        "deployment_id": 5700931353,
+        "sha": "81f4cf0909f16e02fbfe37edfb9cbd55120a6eda",
+        "created_at": "2026-08-01T02:37:18Z",
         "status": "success",
         "environment_url": "https://reblocke.github.io/conf_curve_likelihood/",
         "workflow_runs": [
           {
             "conclusion": "success",
-            "createdAt": "2026-07-31T12:51:06Z",
-            "databaseId": 30632150518,
+            "createdAt": "2026-08-01T02:36:54Z",
+            "databaseId": 30680357849,
             "event": "push",
             "headBranch": "main",
-            "headSha": "60ca0e3f5d6f05bb943cb4b7b7d02ed5a1d5714a",
+            "headSha": "81f4cf0909f16e02fbfe37edfb9cbd55120a6eda",
             "status": "completed",
-            "updatedAt": "2026-07-31T12:52:30Z",
-            "url": "https://github.com/reblocke/conf_curve_likelihood/actions/runs/30632150518",
+            "updatedAt": "2026-08-01T02:37:32Z",
+            "url": "https://github.com/reblocke/conf_curve_likelihood/actions/runs/30680357849",
             "workflowName": "Deploy Pages"
           }
         ]
       },
       "live": {
         "url": "https://reblocke.github.io/conf_curve_likelihood/assets/py/manifest.json",
-        "sha256": "6093fcd4e2de7fdf3ad9ffc28d92d406e8c0ea745019c3d7cc01246bf3e54e25",
-        "source_commit": "60ca0e3f5d6f05bb943cb4b7b7d02ed5a1d5714a",
+        "sha256": "79459002ea2b4093b32cf07c4840530906078451d7e335fafcf987540703592a",
+        "source_commit": "81f4cf0909f16e02fbfe37edfb9cbd55120a6eda",
         "catalog_version": null,
-        "bundle_sha256": "807227dbbed7a4ddef3001cfd7dda21a2e7f09d48fbfe4d005632f529f89b9b1",
+        "bundle_sha256": "c79a70e9c1d449c1131be583692f8bf3a91f4a05ba813867dd30f8b2c96fef2f",
         "packages": [
           {
             "role": "app",
             "distribution": "confcurve",
             "import_name": "confcurve",
-            "version": "0.2.6",
+            "version": "0.2.7",
             "files": [
               {
                 "path": "confcurve/__init__.py",
                 "bytes": 1315,
-                "sha256": "738cea9164d5aab4080b0ae484152f791b7fbf4449fc112fdd0981ba9716b9b9"
+                "sha256": "07d196888934afda85a8e757a120782eaaf8c04cbfaa6fce04d98b1cc35958e2"
               },
               {
                 "path": "confcurve/core.py",
@@ -1652,7 +1697,7 @@
               {
                 "path": "confcurve/staging.py",
                 "bytes": 15613,
-                "sha256": "b60a46c13da2d9a8f6a00eb5dfd3d9a99a3656ace06cf9e205015f82e1a24e51"
+                "sha256": "5303841b8c366e0f7d20aac675708e1d7c10cf612fbe9b0ea2f15598fd3d419e"
               },
               {
                 "path": "confcurve/web_contract.py",

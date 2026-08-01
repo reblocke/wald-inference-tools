@@ -17,14 +17,18 @@ from scripts.validate_validation_status import (
 
 RELEASES = {
     "reblocke/wald-inference-core": "v0.4.2",
-    "reblocke/scientific-applet-template": "v0.1.2",
-    "reblocke/compatibility-curve": "v0.1.4",
-    "reblocke/wald-likelihood-support": "v0.1.3",
-    "reblocke/critical-effect-size": "v0.1.4",
-    "reblocke/type-s-m-calibrator": "v0.1.4",
-    "reblocke/precision-guardrail-planner": "v0.1.3",
-    "reblocke/wald-inference-tools": "v0.2.0",
-    "reblocke/conf_curve_likelihood": "v0.2.6",
+    "reblocke/scientific-applet-template": "v0.1.3",
+    "reblocke/compatibility-curve": "v0.1.5",
+    "reblocke/wald-likelihood-support": "v0.1.4",
+    "reblocke/critical-effect-size": "v0.1.5",
+    "reblocke/type-s-m-calibrator": "v0.1.5",
+    "reblocke/precision-guardrail-planner": "v0.1.4",
+    "reblocke/wald-inference-tools": "v0.2.1",
+    "reblocke/conf_curve_likelihood": "v0.2.7",
+}
+ATTESTATION_RACE_RUNS = {
+    "reblocke/compatibility-curve": 30672853190,
+    "reblocke/type-s-m-calibrator": 30677268367,
 }
 
 
@@ -39,7 +43,7 @@ def _manifest(validation_status: str = "conditionally-validated") -> dict:
         "reblocke/conf_curve_likelihood": "confcurve",
     }
     return {
-        "catalog_version": "0.2.1",
+        "catalog_version": "0.2.2",
         "core": {
             "repository": "https://github.com/reblocke/wald-inference-core",
             "latest_validated_release": "0.4.2",
@@ -226,7 +230,7 @@ def _release_inventory(status: dict, manifest: dict | None = None) -> dict:
                     "url": "https://reblocke.github.io/wald-inference-tools/data/tools.json",
                     "sha256": "a" * 64,
                     "source_commit": None,
-                    "catalog_version": "0.2.0",
+                    "catalog_version": "0.2.1",
                     "bundle_sha256": None,
                     "packages": None,
                     "staged_files_verified": None,
@@ -235,7 +239,7 @@ def _release_inventory(status: dict, manifest: dict | None = None) -> dict:
                 packages = [
                     _staged_package(
                         distribution="scientific-applet-template-package",
-                        version="0.1.2",
+                        version="0.1.3",
                         role="app",
                         core_artifact_digest="b" * 64,
                     )
@@ -313,7 +317,7 @@ def _release_inventory(status: dict, manifest: dict | None = None) -> dict:
                     "published_at": "2026-07-30T14:00:00Z",
                     "is_draft": False,
                     "is_prerelease": False,
-                    "is_immutable": name != "reblocke/wald-inference-tools",
+                    "is_immutable": True,
                     "assets": [
                         {
                             "name": asset_name,
@@ -331,7 +335,24 @@ def _release_inventory(status: dict, manifest: dict | None = None) -> dict:
                         for asset_name in sorted(asset_names)
                     ],
                 },
-                "release_workflow": _successful_run("Release", commit, release),
+                "release_workflow": (
+                    {
+                        **_successful_run("Release", commit, release),
+                        "databaseId": ATTESTATION_RACE_RUNS[name],
+                        "conclusion": "failure",
+                    }
+                    if name in ATTESTATION_RACE_RUNS
+                    else _successful_run("Release", commit, release)
+                ),
+                "release_verification": {
+                    "verified_at": status["validated_at"],
+                    "release_attestation_verified": True,
+                    "workflow_exception": (
+                        "post-publication-attestation-race"
+                        if name in ATTESTATION_RACE_RUNS
+                        else None
+                    ),
+                },
                 "successful_ci_runs": [_successful_run("CI", commit, "main")],
                 "pages": pages,
                 "live": live,
@@ -341,8 +362,8 @@ def _release_inventory(status: dict, manifest: dict | None = None) -> dict:
         "schema_version": 1,
         "audited_at": status["validated_at"],
         "catalog_evidence_carrier": {
-            "release": "v0.2.1",
-            "note": "The independently audited predecessor is v0.2.0.",
+            "release": "v0.2.2",
+            "note": "The audited predecessor is v0.2.1.",
         },
         "repositories": repositories,
     }
@@ -733,6 +754,12 @@ def _mutate_core_file_and_rehash(value: dict) -> None:
             "immutable state contradicts",
         ),
         (
+            lambda value: value["repositories"][0]["release_verification"].update(
+                {"release_attestation_verified": False}
+            ),
+            "successful current attestation verification",
+        ),
+        (
             lambda value: value["repositories"][0].update({"successful_ci_runs": []}),
             "successful_ci_runs must be a non-empty",
         ),
@@ -752,7 +779,7 @@ def _mutate_core_file_and_rehash(value: dict) -> None:
             lambda value: value["repositories"][2]["live"]["packages"][0].update(
                 {"version": "9.9.9"}
             ),
-            "has no unique compatibility-curve 0.1.4 package",
+            "has no unique compatibility-curve 0.1.5 package",
         ),
         (
             lambda value: value["repositories"][2]["live"]["packages"][1].update(
@@ -778,7 +805,7 @@ def _mutate_core_file_and_rehash(value: dict) -> None:
                     "name": "unexpected.bin",
                     "url": (
                         "https://github.com/reblocke/compatibility-curve/releases/"
-                        "download/v0.1.4/unexpected.bin"
+                        "download/v0.1.5/unexpected.bin"
                     ),
                 }
             ),
@@ -788,7 +815,7 @@ def _mutate_core_file_and_rehash(value: dict) -> None:
             lambda value: next(
                 asset
                 for asset in value["repositories"][2]["release_record"]["assets"]
-                if asset["name"] == "browser-stage-manifest-v0.1.4.json"
+                if asset["name"] == "browser-stage-manifest-v0.1.5.json"
             ).update({"digest": f"sha256:{'f' * 64}"}),
             "live bytes do not match the released live-data asset",
         ),

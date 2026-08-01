@@ -23,7 +23,7 @@ def test_question_cards_and_comparison_render_from_manifest(page: Page, catalog_
     expect(page.locator(".tool-card").first).to_contain_text("Clinical decision support")
     expect(page.locator(".validation-badge").first).to_have_text("Software validated")
     expect(page.locator(".scope-note").last).to_contain_text("does not mean clinical validation")
-    expect(page.locator("#catalog-version")).to_contain_text("Catalog 0.2.1")
+    expect(page.locator("#catalog-version")).to_contain_text("Catalog 0.2.2")
     expect(page.locator("#core-repository-link")).to_have_attribute(
         "href", "https://github.com/reblocke/wald-inference-core"
     )
